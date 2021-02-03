@@ -1,2 +1,2 @@
 # Software-Development-Group-Project
-Software Development Group Project module coursework for tutorial 5CS06 group 4 (Dataverse)
+Second year Software Development Group Project module coursework - Tutorial 5CS06 Group D (2021)
