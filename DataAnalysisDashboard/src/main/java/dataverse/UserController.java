@@ -53,8 +53,7 @@ public class UserController {
         
         database.createTables();
         
-    }
-      
+    }     
 }
 
 class UserDatabase {
