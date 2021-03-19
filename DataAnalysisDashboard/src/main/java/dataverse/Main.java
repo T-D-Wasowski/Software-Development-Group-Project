@@ -24,9 +24,6 @@ public class Main {
         //controller.register("Yasin", "test", "1");
         
         System.out.println(controller.login("Tomasz", "test"));
-        
-        //Hi
-      
     }
     
 }
