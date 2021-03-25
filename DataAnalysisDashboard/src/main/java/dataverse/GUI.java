@@ -24,10 +24,16 @@ public class GUI {
        window.setSize(400,400); //Setting size of frame
        window.setVisible(true); //Ensuring that frame is visible
        
+       //creating main panel
+       JPanel mainPanel = new JPanel(new BorderLayout());
+       window.add(mainPanel);
+       mainPanel.setSize(400,400);
+       
     
        //creating panel for bottom buttons
        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
        bottomPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+       mainPanel.add(bottomPanel, BorderLayout.SOUTH);
       
        
        
@@ -47,6 +53,7 @@ public class GUI {
        //creating upper panel for user details
        JPanel upperPanel = new JPanel();
        upperPanel.setLayout(new GridLayout(0,1));
+       mainPanel.add(upperPanel, BorderLayout.NORTH);
        
        //welcome message
        JLabel welcomeMessage = new JLabel("Welcome to Dataverse");
@@ -65,13 +72,8 @@ public class GUI {
        JPasswordField passwordInput = new JPasswordField(100);
        passwordInput.setSize(200,24);
        upperPanel.add(passwordInput);
+  
        
-       //creating main panel
-       JPanel mainPanel = new JPanel(new BorderLayout());
-       window.add(mainPanel);
-       mainPanel.add(upperPanel, BorderLayout.NORTH);
-       mainPanel.add(bottomPanel, BorderLayout.SOUTH);
-       mainPanel.setSize(400,400);
        
 
     }
