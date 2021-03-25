@@ -29,13 +29,5 @@ public class Main {
         GUI gui = new GUI();
         gui.login();
     }
-    //works well :)
-    //hey
-
-    //hi
-
-    
-    //Dawid update
-    //Dawid update 2
 
 }
