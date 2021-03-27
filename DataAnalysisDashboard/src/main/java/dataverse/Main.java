@@ -27,6 +27,7 @@ public class Main {
         
         
         GUI gui = new GUI();
+        gui.homePage();
     }
 
 }
