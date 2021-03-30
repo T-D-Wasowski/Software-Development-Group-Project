@@ -3,7 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import java.awt.GridBagLayout;
 import javax . swing .*;
 import java . awt . event .*;
 
@@ -22,61 +22,70 @@ public class GUI {
        window.setTitle("Login");
        window.addWindowListener(new MyWindowListener());
        window.setSize(400,400); //Setting size of frame
-       window.setVisible(true); //Ensuring that frame is visible
+       
+       
        
        //creating main panel
        JPanel mainPanel = new JPanel(new BorderLayout());
        window.add(mainPanel);
-       mainPanel.setSize(400,400);
+       
        
     
        //creating panel for bottom buttons
        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
        bottomPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-       mainPanel.add(bottomPanel, BorderLayout.SOUTH);
       
-       
-       
        //adding login button
        JButton loginButton = new JButton("Login");
-       loginButton.setBounds(130,100,100,40);
+       loginButton.setPreferredSize(new Dimension(100,50));
        
        bottomPanel.add(loginButton);
        
        
        //adding register button
        JButton registerButton = new JButton("Register");
-       registerButton.setBounds(130,100,100,40);
+       registerButton.setPreferredSize(new Dimension(100,50));
        
        bottomPanel.add(registerButton);   
       
        //creating upper panel for user details
        JPanel upperPanel = new JPanel();
-       upperPanel.setLayout(new GridLayout(0,1));
-       mainPanel.add(upperPanel, BorderLayout.NORTH);
+       
+       //creating upperp panel GridBagLayout
+       GridBagLayout upperPanelLayout = new GridBagLayout();
+       
+       upperPanel.setLayout(new GridBagLayout());
+       
        
        //welcome message
        JLabel welcomeMessage = new JLabel("Welcome to Dataverse");
        welcomeMessage.setHorizontalAlignment(SwingConstants.CENTER);
        upperPanel.add(welcomeMessage);
        
+       
        //text fields for input
        JLabel usernameLabel = new JLabel("Username");      
        JTextField usernameInput = new JTextField(20);
-       
-       
-       
-       usernameInput.setPreferredSize(new Dimension(50,24));
+     
+       usernameInput.setPreferredSize(new Dimension(100,50));
        upperPanel.add(usernameInput);
        
        JPasswordField passwordInput = new JPasswordField(100);
-       passwordInput.setSize(200,24);
+       passwordInput.setPreferredSize(new Dimension(100,50));
        upperPanel.add(passwordInput);
-  
+      
+       //adding bottom and upper panels to mainPanel
+       mainPanel.add(bottomPanel, BorderLayout.SOUTH);
+       mainPanel.add(upperPanel, BorderLayout.NORTH);
        
-       
+       window.setVisible(true); //Ensuring that frame is visible
 
     }
+    
+    
+    public void loginPage2() {
+    
+}
    
     
     public void homePage() {
