@@ -10,7 +10,7 @@ package dataverse;
  * @author Dawid
  */
 public class Main {
-
+    //Yasin was here
     /**
      * @param args the command line arguments
      */
@@ -25,9 +25,10 @@ public class Main {
         
         System.out.println(controller.login("Tomasz", "test"));
         
-        
-        
+       
+        GUI gui = new GUI();
+        gui.homePage();
+
     }
-    //works well :)
-    //hey
+
 }
