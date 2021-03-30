@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 C:\Users\sufia\Documents\GSPApache\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\UserController.java
 C:\Users\sufia\Documents\GSPApache\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\Main.java
 C:\Users\sufia\Documents\GSPApache\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\User.java
 C:\Users\sufia\Documents\GSPApache\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\TrafficController.java
 C:\Users\sufia\Documents\GSPApache\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\GUI.java
 C:\Users\sufia\Documents\GSPApache\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\Log.java
+=======
+C:\Users\Admin\Desktop\Software Dev Group Work Git (Main)\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\GUI.java
+C:\Users\Admin\Desktop\Software Dev Group Work Git (Main)\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\Log.java
+C:\Users\Admin\Desktop\Software Dev Group Work Git (Main)\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\TrafficController.java
+C:\Users\Admin\Desktop\Software Dev Group Work Git (Main)\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\User.java
+C:\Users\Admin\Desktop\Software Dev Group Work Git (Main)\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\Main.java
+C:\Users\Admin\Desktop\Software Dev Group Work Git (Main)\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\PasswordUtility.java
+C:\Users\Admin\Desktop\Software Dev Group Work Git (Main)\Software-Development-Group-Project\DataAnalysisDashboard\src\main\java\dataverse\UserController.java
+>>>>>>> origin/Isa
