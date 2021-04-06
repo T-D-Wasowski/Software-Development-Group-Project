@@ -10,11 +10,18 @@ package dataverse;
  * @author Dawid
  */
 public class Main {
-    //Yasin was here
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        //traffic database @Adelin
+        TrafficController trafficController = new TrafficController();
+//        trafficController.createTables();             //function used to create the tables
+//        trafficController.insertDataIntoTables();     //function used to insert data into the created tables
+        
+
+
         
         UserController controller = new UserController();
         
