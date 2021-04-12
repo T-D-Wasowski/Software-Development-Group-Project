@@ -26,8 +26,11 @@ public class Main {
         System.out.println(controller.login("Tomasz", "test"));
         
        
-        GUI gui = new GUI();
-        gui.homePage();
+        /*GUI gui = new GUI();
+        gui.homePage();*/
+        
+        NewLoginGUI loginGUI = new NewLoginGUI();
+        loginGUI.loginExecute();
 
     }
 
