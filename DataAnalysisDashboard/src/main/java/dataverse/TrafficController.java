@@ -23,7 +23,7 @@ public class TrafficController {
 
     public void insertDataIntoTables() {
         
-        ArrayList<String> fileContents = CSVReader.readFile("./trafficStoredData.csv"); // store scv file into array list
+        ArrayList<String> fileContents = CSVReader.readFile("../trafficStoredData.csv"); // store scv file into array list
         //Insert data into tables
         RegionTable.batchInsert(fileContents);
         RoadTable.batchInsert(fileContents);
@@ -36,7 +36,7 @@ public class TrafficController {
 
         public static Connection getConnection() {
 
-            String urlSQLite = "jdbc:sqlite:trafficDatabase.db";
+            String urlSQLite = "jdbc:sqlite:../traffic.db";
 
             try {
                 Driver driverSQLite = new org.sqlite.JDBC();
