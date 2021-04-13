@@ -2,6 +2,7 @@
 package dataverse;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.*;
 
 public class HomePage extends JFrame {
@@ -64,8 +65,18 @@ public class HomePage extends JFrame {
         jLabel2.setForeground(new java.awt.Color(142, 142, 142));
         jLabel2.setText("verse");
 
-        LogOut.setBackground(new java.awt.Color(255, 255, 255));
+        LogOut.setBackground(new java.awt.Color(132, 213, 255));
+        LogOut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LogOut.setForeground(new java.awt.Color(255, 255, 255));
         LogOut.setText("Log Out");
+        LogOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LogOutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LogOutMouseExited(evt);
+            }
+        });
         LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogOutActionPerformed(evt);
@@ -178,35 +189,90 @@ public class HomePage extends JFrame {
         jPanel3.setBackground(new java.awt.Color(177, 220, 253));
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Dashboard1.setText("Dashboard1");
+        Dashboard1.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard1.setText("Dashboard 1");
+        Dashboard1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Dashboard1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Dashboard1MouseExited(evt);
+            }
+        });
         Dashboard1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Dashboard1ActionPerformed(evt);
             }
         });
 
-        Dashboard2.setText("Dashboard2");
+        Dashboard2.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Dashboard2.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard2.setText("Dashboard 2");
+        Dashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Dashboard2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Dashboard2MouseExited(evt);
+            }
+        });
         Dashboard2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Dashboard2ActionPerformed(evt);
             }
         });
 
-        Dashboard3.setText("Dashboard3");
+        Dashboard3.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Dashboard3.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard3.setText("Dashboard 3");
+        Dashboard3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Dashboard3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Dashboard3MouseExited(evt);
+            }
+        });
         Dashboard3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Dashboard3ActionPerformed(evt);
             }
         });
 
-        Dashboard4.setText("Dashboard4");
+        Dashboard4.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Dashboard4.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard4.setText("Dashboard 4");
+        Dashboard4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Dashboard4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Dashboard4MouseExited(evt);
+            }
+        });
         Dashboard4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Dashboard4ActionPerformed(evt);
             }
         });
 
+        AdminPanel.setBackground(new java.awt.Color(132, 213, 255));
+        AdminPanel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        AdminPanel.setForeground(new java.awt.Color(255, 255, 255));
         AdminPanel.setText("Admin Panel");
+        AdminPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AdminPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AdminPanelMouseExited(evt);
+            }
+        });
         AdminPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdminPanelActionPerformed(evt);
@@ -248,11 +314,11 @@ public class HomePage extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_5, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_5, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -381,6 +447,66 @@ public class HomePage extends JFrame {
         
 
     }//GEN-LAST:event_Dashboard1ActionPerformed
+
+    private void Dashboard1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseEntered
+        //dashboard 1 hover
+        Dashboard1.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_Dashboard1MouseEntered
+
+    private void Dashboard1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseExited
+        //dashboard 1 unhover
+        Dashboard1.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_Dashboard1MouseExited
+
+    private void Dashboard2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseEntered
+        //dashboard 2 hover
+        Dashboard2.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_Dashboard2MouseEntered
+
+    private void Dashboard2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseExited
+        //dashboard 2 unhover
+        Dashboard2.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_Dashboard2MouseExited
+
+    private void Dashboard3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseEntered
+        //dashboard 3 hover
+        Dashboard3.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_Dashboard3MouseEntered
+
+    private void Dashboard3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseExited
+        //dashboard 3 unhover
+        Dashboard3.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_Dashboard3MouseExited
+
+    private void Dashboard4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseEntered
+        //dashboard 4 hover
+        Dashboard4.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_Dashboard4MouseEntered
+
+    private void Dashboard4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseExited
+        //dashboard 4 unhover
+        Dashboard4.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_Dashboard4MouseExited
+
+    private void AdminPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseEntered
+        //AdminPanel hover
+        AdminPanel.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_AdminPanelMouseEntered
+
+    private void AdminPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseExited
+        //AdminPanel unhover
+        AdminPanel.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_AdminPanelMouseExited
+
+    private void LogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseEntered
+        //LogOut hover
+        LogOut.setBackground(new Color(255,43,43));          //red
+    }//GEN-LAST:event_LogOutMouseEntered
+
+    private void LogOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseExited
+        //LogOut unhover
+        LogOut.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_LogOutMouseExited
     
     
     public void createHomePage(){
