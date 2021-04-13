@@ -3,6 +3,7 @@ package dataverse;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Cursor;
 import javax.swing.*;
 
 public class HomePage extends JFrame {
@@ -69,6 +70,11 @@ public class HomePage extends JFrame {
         LogOut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LogOut.setForeground(new java.awt.Color(255, 255, 255));
         LogOut.setText("Log Out");
+        LogOut.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                LogOutMouseMoved(evt);
+            }
+        });
         LogOut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LogOutMouseEntered(evt);
@@ -193,6 +199,11 @@ public class HomePage extends JFrame {
         Dashboard1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard1.setText("Dashboard 1");
+        Dashboard1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Dashboard1MouseMoved(evt);
+            }
+        });
         Dashboard1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Dashboard1MouseEntered(evt);
@@ -211,6 +222,11 @@ public class HomePage extends JFrame {
         Dashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard2.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard2.setText("Dashboard 2");
+        Dashboard2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Dashboard2MouseMoved(evt);
+            }
+        });
         Dashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Dashboard2MouseEntered(evt);
@@ -229,6 +245,11 @@ public class HomePage extends JFrame {
         Dashboard3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard3.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard3.setText("Dashboard 3");
+        Dashboard3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Dashboard3MouseMoved(evt);
+            }
+        });
         Dashboard3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Dashboard3MouseEntered(evt);
@@ -247,6 +268,11 @@ public class HomePage extends JFrame {
         Dashboard4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard4.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard4.setText("Dashboard 4");
+        Dashboard4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Dashboard4MouseMoved(evt);
+            }
+        });
         Dashboard4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Dashboard4MouseEntered(evt);
@@ -265,6 +291,11 @@ public class HomePage extends JFrame {
         AdminPanel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         AdminPanel.setForeground(new java.awt.Color(255, 255, 255));
         AdminPanel.setText("Admin Panel");
+        AdminPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                AdminPanelMouseMoved(evt);
+            }
+        });
         AdminPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 AdminPanelMouseEntered(evt);
@@ -507,6 +538,30 @@ public class HomePage extends JFrame {
         //LogOut unhover
         LogOut.setBackground(new Color(132,213,255));      //blue
     }//GEN-LAST:event_LogOutMouseExited
+
+    private void Dashboard1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseMoved
+        Dashboard1.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_Dashboard1MouseMoved
+
+    private void Dashboard2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseMoved
+        Dashboard2.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_Dashboard2MouseMoved
+
+    private void Dashboard3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseMoved
+        Dashboard3.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_Dashboard3MouseMoved
+
+    private void Dashboard4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseMoved
+        Dashboard4.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_Dashboard4MouseMoved
+
+    private void AdminPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseMoved
+        AdminPanel.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_AdminPanelMouseMoved
+
+    private void LogOutMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseMoved
+        LogOut.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_LogOutMouseMoved
     
     
     public void createHomePage(){
