@@ -33,8 +33,9 @@ public class Main {
         System.out.println(controller.login("Tomasz", "test"));
         
         
+        
         GUI gui = new GUI();
-        gui.homePage();
+        gui.home.createHomePage();      //open home page window
     }
 
 }
