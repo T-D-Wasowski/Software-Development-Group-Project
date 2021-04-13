@@ -93,6 +93,8 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         loginLoginButton.setBackground(new java.awt.Color(132, 213, 255));
+        loginLoginButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
+        loginLoginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginLoginButton.setText("Login");
         loginLoginButton.setBorder(null);
         loginLoginButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -115,6 +117,8 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         loginRegisterButton.setBackground(new java.awt.Color(132, 213, 255));
+        loginRegisterButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
+        loginRegisterButton.setForeground(new java.awt.Color(255, 255, 255));
         loginRegisterButton.setText("Register");
         loginRegisterButton.setBorder(null);
         loginRegisterButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -268,6 +272,8 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel8.setText("Email");
 
         loginRegisterButton1.setBackground(new java.awt.Color(132, 213, 255));
+        loginRegisterButton1.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
+        loginRegisterButton1.setForeground(new java.awt.Color(255, 255, 255));
         loginRegisterButton1.setText("Register");
         loginRegisterButton1.setBorder(null);
         loginRegisterButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -290,6 +296,8 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         loginLoginButton1.setBackground(new java.awt.Color(132, 213, 255));
+        loginLoginButton1.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
+        loginLoginButton1.setForeground(new java.awt.Color(255, 255, 255));
         loginLoginButton1.setText("Back");
         loginLoginButton1.setBorder(null);
         loginLoginButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
