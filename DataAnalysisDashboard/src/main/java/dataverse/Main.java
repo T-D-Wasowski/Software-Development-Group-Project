@@ -29,8 +29,8 @@ public class Main {
         /*GUI gui = new GUI();
         gui.homePage();*/
         
-        NewLoginGUI loginGUI = new NewLoginGUI();
-        loginGUI.loginExecute();
+        LoginPage loginGUI = new LoginPage();
+        loginGUI.createLoginPage();
 
     }
 
