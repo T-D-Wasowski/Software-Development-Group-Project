@@ -5,6 +5,7 @@
  */
 package dataverse;
 
+import java.awt.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -91,14 +92,45 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        loginLoginButton.setBackground(new java.awt.Color(132, 213, 255));
         loginLoginButton.setText("Login");
+        loginLoginButton.setBorder(null);
+        loginLoginButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                loginLoginButtonMouseMoved(evt);
+            }
+        });
+        loginLoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginLoginButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginLoginButtonMouseExited(evt);
+            }
+        });
         loginLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginLoginButtonActionPerformed(evt);
             }
         });
 
+        loginRegisterButton.setBackground(new java.awt.Color(132, 213, 255));
         loginRegisterButton.setText("Register");
+        loginRegisterButton.setBorder(null);
+        loginRegisterButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        loginRegisterButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                loginRegisterButtonMouseMoved(evt);
+            }
+        });
+        loginRegisterButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginRegisterButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginRegisterButtonMouseExited(evt);
+            }
+        });
         loginRegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginRegisterButtonActionPerformed(evt);
@@ -235,14 +267,44 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Email");
 
+        loginRegisterButton1.setBackground(new java.awt.Color(132, 213, 255));
         loginRegisterButton1.setText("Register");
+        loginRegisterButton1.setBorder(null);
+        loginRegisterButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                loginRegisterButton1MouseMoved(evt);
+            }
+        });
+        loginRegisterButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginRegisterButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginRegisterButton1MouseExited(evt);
+            }
+        });
         loginRegisterButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginRegisterButton1ActionPerformed(evt);
             }
         });
 
+        loginLoginButton1.setBackground(new java.awt.Color(132, 213, 255));
         loginLoginButton1.setText("Back");
+        loginLoginButton1.setBorder(null);
+        loginLoginButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                loginLoginButton1MouseMoved(evt);
+            }
+        });
+        loginLoginButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginLoginButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginLoginButton1MouseExited(evt);
+            }
+        });
         loginLoginButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginLoginButton1ActionPerformed(evt);
@@ -250,6 +312,11 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         registerAdminCheckBox.setText("Admin");
+        registerAdminCheckBox.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                registerAdminCheckBoxMouseMoved(evt);
+            }
+        });
         registerAdminCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerAdminCheckBoxActionPerformed(evt);
@@ -266,21 +333,19 @@ public class LoginPage extends javax.swing.JFrame {
                         .addGap(69, 69, 69)
                         .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                .addComponent(registerUsernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                        .addComponent(registerPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel8)
-                                                .addComponent(registerEmailTextBox, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(registerPanelLayout.createSequentialGroup()
-                                                .addGap(1, 1, 1)
-                                                .addComponent(jLabel7)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(registerAdminCheckBox))))
-                                    .addComponent(jLabel5)))))
+                            .addComponent(registerUsernameTextField, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(registerPasswordTextField, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.CENTER, registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel8)
+                                        .addComponent(registerEmailTextBox, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(registerPanelLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jLabel7)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(registerAdminCheckBox)))
+                                .addComponent(jLabel5))))
                     .addGroup(registerPanelLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(loginLoginButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -388,7 +453,67 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_registerAdminCheckBoxActionPerformed
 
-    /**
+    private void loginLoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseEntered
+        // login button hover
+        loginLoginButton.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_loginLoginButtonMouseEntered
+
+    private void loginLoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseExited
+        // login button unhover
+        loginLoginButton.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_loginLoginButtonMouseExited
+
+    private void loginRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseEntered
+        // register button hover
+        loginRegisterButton.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_loginRegisterButtonMouseEntered
+
+    private void loginRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseExited
+        // register button unhover
+        loginRegisterButton.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_loginRegisterButtonMouseExited
+
+    private void loginLoginButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButton1MouseEntered
+        // back button hover
+        loginLoginButton1.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_loginLoginButton1MouseEntered
+
+    private void loginLoginButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButton1MouseExited
+        // back button unhover
+        loginLoginButton1.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_loginLoginButton1MouseExited
+
+    private void loginRegisterButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButton1MouseEntered
+        // register 2 button hover
+        loginRegisterButton1.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_loginRegisterButton1MouseEntered
+
+    private void loginRegisterButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButton1MouseExited
+        // register 2 button unhover
+        loginRegisterButton1.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_loginRegisterButton1MouseExited
+
+    private void loginLoginButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseMoved
+        loginLoginButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_loginLoginButtonMouseMoved
+
+    private void loginRegisterButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseMoved
+        loginRegisterButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_loginRegisterButtonMouseMoved
+
+    private void loginLoginButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButton1MouseMoved
+        loginLoginButton1.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_loginLoginButton1MouseMoved
+
+    private void loginRegisterButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButton1MouseMoved
+        loginRegisterButton1.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_loginRegisterButton1MouseMoved
+
+    private void registerAdminCheckBoxMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerAdminCheckBoxMouseMoved
+        registerAdminCheckBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_registerAdminCheckBoxMouseMoved
+ 
+   /**
      * @param args the command line arguments
      */
     public void createLoginPage() {
