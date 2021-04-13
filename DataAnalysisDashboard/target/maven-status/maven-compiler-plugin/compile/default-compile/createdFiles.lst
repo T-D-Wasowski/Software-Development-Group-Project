@@ -1,9 +1,7 @@
-dataverse\Main.class
-dataverse\TrafficController.class
-dataverse\GUI.class
-dataverse\User.class
 dataverse\PasswordUtility.class
-dataverse\GUI$MyWindowListener.class
 dataverse\Log.class
 dataverse\UserDatabase.class
 dataverse\UserController.class
+dataverse\TrafficController.class
+dataverse\GUI.class
+dataverse\User.class
