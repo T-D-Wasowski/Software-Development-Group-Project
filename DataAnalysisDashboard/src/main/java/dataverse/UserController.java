@@ -15,38 +15,46 @@ public class UserController {
     
     UserDatabase database = new UserDatabase();
     
-    public void register(String username, String password, String adminFlag) {
+    public void register(String username, String email, String password, String adminFlag) {
         
         String salt = PasswordUtility.getSalt(30);
         String securePassword = PasswordUtility.generateSecurePassword(password, salt);
         
-        database.addUser(username, securePassword, salt, adminFlag);
+        database.addUser(username, email, securePassword, salt, adminFlag);
         
     }
     
-    public Boolean login(String username, String password) {
+    public int login(String username, String password) {
         
         ResultSet user = database.getUserByUsername(username);
         
-        if(user == null) {
-            System.out.println("User does not exist, please register.");
-            return false;
-        } else {
+        try {
+            //Checks next result in result set, which is the first result (starts at 0)
+            //If it's false, means result set is empty.
+            if(user.next() == false) {
+                
+                System.out.println("User does not exist, please register.");
+                return 0; //Return 0 when user doesn't exist
+                
+            } else {
+                
+                    boolean passwordMatch = PasswordUtility.verifyUserPassword(
+                            password,
+                            user.getString("userEncryptedPassword"),
+                            user.getString("userEncryptionSalt")
+                    );
+                    
+                    if (passwordMatch) {
+                        return 1; //Return 1 when password matches
+                    } else {
+                        return 2; //Return 2 when password doesnt match
+                    }        
+                }
             
-            try {               
-                boolean passwordMatch = PasswordUtility.verifyUserPassword(
-                        password, 
-                        user.getString("userEncryptedPassword"),
-                        user.getString("userEncryptionSalt")
-                );
-                
-                return passwordMatch;
-                
-            } catch(SQLException e) {              
-                System.out.println("Error verifying password: " + e.getMessage());
-                return false;               
-            }
-        }
+        } catch (SQLException e) {                           
+            System.out.println("SQL Exception error: " + e.getMessage());
+            return 3; //Return 3 when there is an SQL exception error               
+        }    
     }
     
     public void recreateDatabase() {
@@ -111,6 +119,7 @@ class UserDatabase {
                 + "("
                     + "userID INTEGER PRIMARY KEY,"
                     + "userName VARCHAR(255) UNIQUE NOT NULL,"
+                    + "userEmail VARCHAR(255) UNIQUE NOT NULL,"
                     + "userEncryptedPassword VARCHAR(44) NOT NULL,"
                     + "userEncryptionSalt VARCHAR(30) NOT NULL," 
                     + "userAdminFlag BOOLEAN NOT NULL"
@@ -147,18 +156,20 @@ class UserDatabase {
         
     }
     
-    public void addUser(String username, String password, String salt, String adminFlag) {
+    public void addUser(String username, String email, String password, String salt, String adminFlag) {
         
         Connection connection = connect();
         
         String sqlString = "INSERT INTO User"
                 + "("
                     + "userName,"
+                    + "userEmail,"
                     + "userEncryptedPassword,"
                     + "userEncryptionSalt,"
                     + "userAdminFlag"
                 + ") VALUES ("
                     + "'" + username + "',"
+                    + "'" + email + "',"
                     + "'" + password + "',"
                     + "'" + salt + "',"
                     + adminFlag

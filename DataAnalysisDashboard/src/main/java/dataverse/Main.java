@@ -25,7 +25,8 @@ public class Main {
         
         UserController controller = new UserController();
         
-        //controller.register("Adelin", "test", "1");
+        
+        controller.register("Tomasz", "tomasz@email.com", "test", "1");
         //controller.register("Isa", "test", "1");
         //controller.register("Sefa", "test", "1");
         //controller.register("Yasin", "test", "1");
@@ -39,10 +40,8 @@ public class Main {
 
         
         GUI gui = new GUI();
-        gui.home.createHomePage();      //open home page window
-
-
-        gui.loginGUI.createLoginPage();
+        //gui.homePage.createHomePage();      //open home page window
+        gui.loginPage.createLoginPage();    
 
 
     }
