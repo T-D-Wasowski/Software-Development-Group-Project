@@ -14,14 +14,52 @@ import javax.crypto.spec.PBEKeySpec;
 public class UserController {
     
     UserDatabase database = new UserDatabase();
-    
-    public void register(String username, String email, String password, String adminFlag) {
+
+    public int register(String username, String email, String password, Boolean adminFlag) {
         
-        String salt = PasswordUtility.getSalt(30);
-        String securePassword = PasswordUtility.generateSecurePassword(password, salt);
+        ResultSet userNameResults = database.getUserByUsername(username);
         
-        database.addUser(username, email, securePassword, salt, adminFlag);
+        try {
+            if (userNameResults.next() == false && (username.length() >= 3 && username.length() <= 32)) {
+                
+                ResultSet userEmailResults = database.getUserByEmail(email);
+                
+                if (userEmailResults.next() == false && (email.length() >= 3 && email.length() <= 255)) {                   
+                    
+
+                    if (password.length() >= 8 && password.length() <= 32) {
+                        
+                        String salt = PasswordUtility.getSalt(30);
+                        String securePassword = PasswordUtility.generateSecurePassword(password, salt);
+                        
+                        String isAdmin;
+                        
+                        if (adminFlag) {
+                            isAdmin = "1";
+                        } else {
+                            isAdmin = "0";
+                        }
         
+                        database.addUser(username, email, securePassword, salt, isAdmin);
+                        
+                        return 1; //Return 1 if account is created successfully
+                        
+                    } else {
+                        return 3; //Returns 3 if password is invalid
+                    }
+                    
+                } else {
+                    return 2; //Return 2 if email is aleady taken or invalid       
+                }      
+                
+            } else {
+                return 0; //Returns 0 if username already taken or username is invalid
+            }
+            
+        } catch (SQLException e) {            
+            System.out.println("SQL Exception error: " + e.getMessage());
+            return 4; //Return 4 when there is an SQL exception error
+        }
     }
     
     public int login(String username, String password) {
@@ -65,7 +103,6 @@ public class UserController {
 }
 
 class UserDatabase {
-    
         
     private void downloadDriver() {
         try {
@@ -156,7 +193,7 @@ class UserDatabase {
         
     }
     
-    public void addUser(String username, String email, String password, String salt, String adminFlag) {
+    public void addUser(String username, String email, String password, String salt, String adminFlag) throws SQLException {
         
         Connection connection = connect();
         
@@ -174,16 +211,12 @@ class UserDatabase {
                     + "'" + salt + "',"
                     + adminFlag
                 + ");";
-        
-        try {
-            Statement sqlStatement = connection.createStatement();
-            sqlStatement.executeUpdate(sqlString);      
-            
-            System.out.println("User inserted into database.");
-        } catch(SQLException e) {
-            System.out.println("Problem inserting user into database: " + e.getMessage());
-        }
-        
+
+        Statement sqlStatement = connection.createStatement();
+        sqlStatement.executeUpdate(sqlString);      
+
+        System.out.println("User inserted into database.");
+       
         disconnect(connection);
     }
     
@@ -203,7 +236,7 @@ class UserDatabase {
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by id: " + e.getMessage());
         }
-        
+
         return result;
         
     }
@@ -225,6 +258,27 @@ class UserDatabase {
             System.out.println("Problem retrieving user by username: " + e.getMessage());
         }
         
+        return result;
+        
+    }
+    
+    public ResultSet getUserByEmail(String userEmail) {
+        
+        Connection connection = connect();
+        
+        String sqlString = "SELECT * FROM user "
+                + "WHERE userEmail = '" + userEmail + "';";
+  
+        ResultSet result = null;
+        
+        try { 
+            Statement sqlStatement = connection.createStatement(); 
+            result = sqlStatement.executeQuery(sqlString);
+            System.out.println("Results retrieved from database.");
+        } catch (SQLException e) {
+            System.out.println("Problem retrieving user by username: " + e.getMessage());
+        }
+
         return result;
         
     }

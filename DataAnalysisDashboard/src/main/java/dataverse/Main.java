@@ -26,7 +26,7 @@ public class Main {
         UserController controller = new UserController();
         
         
-        controller.register("Tomasz", "tomasz@email.com", "test", "1");
+        //controller.register("Tomasz", "tomasz@email.com", "test", true);
         //controller.register("Isa", "test", "1");
         //controller.register("Sefa", "test", "1");
         //controller.register("Yasin", "test", "1");

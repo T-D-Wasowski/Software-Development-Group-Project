@@ -20,7 +20,7 @@ public class LoginPage extends javax.swing.JFrame {
     public LoginPage() {
         initComponents();
         registerPanel.setVisible(false);
-        loginNotificationLabel.setVisible(false);
+        hideNotifications();
         loginPanel.setVisible(true);   
         pack();
     }
@@ -44,6 +44,8 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        logoNotificationLabel = new javax.swing.JPanel();
+        loginNotificationLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         registerPanel = new javax.swing.JPanel();
         registerPasswordTextField = new javax.swing.JPasswordField();
@@ -94,7 +96,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Username");
 
-        loginUsernameTextField.setToolTipText("Please Enter Username");
+        loginUsernameTextField.setToolTipText("");
         loginUsernameTextField.setName(""); // NOI18N
         loginUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,6 +240,26 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(145, 145, 145));
         jLabel4.setText("verse");
 
+        logoNotificationLabel.setBackground(new java.awt.Color(208, 239, 255));
+
+        loginNotificationLabel1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        loginNotificationLabel1.setText("Notification");
+
+        javax.swing.GroupLayout logoNotificationLabelLayout = new javax.swing.GroupLayout(logoNotificationLabel);
+        logoNotificationLabel.setLayout(logoNotificationLabelLayout);
+        logoNotificationLabelLayout.setHorizontalGroup(
+            logoNotificationLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoNotificationLabelLayout.createSequentialGroup()
+                .addComponent(loginNotificationLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        logoNotificationLabelLayout.setVerticalGroup(
+            logoNotificationLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoNotificationLabelLayout.createSequentialGroup()
+                .addComponent(loginNotificationLabel1)
+                .addGap(0, 8, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -248,6 +270,10 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(logoNotificationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +282,8 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addGap(33, 33, 33))
+                .addGap(10, 10, 10)
+                .addComponent(logoNotificationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -286,9 +313,9 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Password");
+        jLabel5.setText("Password (8 - 32 Characters)");
 
-        registerUsernameTextField.setToolTipText("Please Enter Username");
+        registerUsernameTextField.setToolTipText("");
         registerUsernameTextField.setName(""); // NOI18N
         registerUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,11 +324,11 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Username");
+        jLabel6.setText("Username (3 - 32 Characters)");
 
         jLabel7.setText("Is this an Administrative account?");
 
-        registerEmailTextField.setToolTipText("Please Enter Username");
+        registerEmailTextField.setToolTipText("");
         registerEmailTextField.setName(""); // NOI18N
         registerEmailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,7 +337,7 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Email");
+        jLabel8.setText("Email (3 - 255 Characters)");
 
         registerRegisterButton.setBackground(new java.awt.Color(132, 213, 255));
         registerRegisterButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
@@ -469,31 +496,15 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_loginUsernameTextFieldActionPerformed
 
     private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginLoginButtonActionPerformed
-        loginNotificationLabel.setVisible(false);
         
-        //Put all this in a method in GUI and call the method from here instead!!!
-        int result = userController.login(loginUsernameTextField.getText(), loginPasswordTextField.getText());
-        switch (result) {
-            case 0 -> {
-                changeNotification("Error: This username does not exist. Please enter a valid username.", false);
-            }
-            case 1 -> {       
-                homePage.createHomePage();
-                this.dispose();
-            }
-            case 2 -> {
-                changeNotification("Error: The password does not match. Please enter a valid password.", false);
-            }
-            default -> {
-                changeNotification("Error: There was an SQL error. Please verify your credentials and try again.", false);
-            }
-        }
+        loginLogin();
         
     }//GEN-LAST:event_loginLoginButtonActionPerformed
 
     private void loginRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginRegisterButtonActionPerformed
-        loginPanel.setVisible(false);
-        registerPanel.setVisible(true);
+        
+        loginRegister();
+        
     }//GEN-LAST:event_loginRegisterButtonActionPerformed
 
     private void registerPasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPasswordTextFieldActionPerformed
@@ -509,20 +520,15 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_registerEmailTextFieldActionPerformed
 
     private void registerBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBackButtonActionPerformed
-        registerPanel.setVisible(false);
-        loginPanel.setVisible(true);
         
-        //Empties text fields from register panel when back is pressed
-        registerUsernameTextField.setText("");
-        registerEmailTextField.setText("");
-        registerPasswordTextField.setText("");
+        registerBack();
+        
     }//GEN-LAST:event_registerBackButtonActionPerformed
 
     private void registerRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerRegisterButtonActionPerformed
-       
-        
-        
-        
+      
+       registerRegister();
+              
     }//GEN-LAST:event_registerRegisterButtonActionPerformed
 
     private void registerAdminCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerAdminCheckBoxActionPerformed
@@ -625,19 +631,124 @@ public class LoginPage extends javax.swing.JFrame {
         });
     }
     
-    private void changeNotification(String message, Boolean colour) {
+    private void showNotification(Boolean label, String message, Boolean colour) {
         
-        loginNotificationLabel.setText(message);
-        
-        //True = green, False = red
-        if (colour) {
-            loginNotificationLabel.setForeground(Color.GREEN);
+        if (label) {
+                    
+            loginNotificationLabel1.setText(message);
+
+            //True = green, False = red
+            if (colour) {
+                loginNotificationLabel1.setForeground(new Color(0,153,0));
+            } else {
+                loginNotificationLabel1.setForeground(Color.RED);
+            }
+
+            loginNotificationLabel1.setVisible(true); 
+
         } else {
-        loginNotificationLabel.setForeground(Color.RED);
+            
+            loginNotificationLabel.setText(message);
+
+            //True = green, False = red
+            if (colour) {
+                loginNotificationLabel.setForeground(new Color(0,153,0));
+            } else {
+                loginNotificationLabel.setForeground(Color.RED);
+            }
+
+            loginNotificationLabel.setVisible(true);     
         }
+    }
+    
+    private void hideNotifications() {
+        loginNotificationLabel1.setVisible(false);
+        loginNotificationLabel.setVisible(false);
+    }
+    
+    private void clearLoginTextFields() {
+        loginUsernameTextField.setText("");
+        loginPasswordTextField.setText("");
+    }
+    
+    private void clearRegisterTextFields() {
+        registerUsernameTextField.setText("");
+        registerPasswordTextField.setText("");
+        registerEmailTextField.setText("");
+        registerAdminCheckBox.setSelected(false);
+    }
+    
+    private void loginLogin() {
+        loginNotificationLabel.setVisible(false);
         
-        loginNotificationLabel.setVisible(true);
+        //Put all this in a method in GUI and call the method from here instead!!!
+        int status = userController.login(loginUsernameTextField.getText(), loginPasswordTextField.getText());
+        switch (status) {
+            case 0 -> {
+                showNotification(false, "Error: This username does not exist. Please enter a valid username.", false);
+                clearLoginTextFields();
+            }
+            case 1 -> {       
+                homePage.createHomePage();
+                this.dispose();
+            }
+            case 2 -> {
+                showNotification(false, "Error: The password does not match. Please enter a valid password.", false);
+                clearLoginTextFields();
+            }
+            default -> {
+                showNotification(false, "Error: There was an SQL error. Please verify your credentials and try again.", false);
+                clearLoginTextFields();
+            }
+        }   
+    }
+    
+    private void loginRegister() {
+        loginPanel.setVisible(false);     
+        registerPanel.setVisible(true);
+        hideNotifications();
         
+        clearLoginTextFields();
+    }
+    
+    private void registerBack() {
+        registerPanel.setVisible(false);
+        loginPanel.setVisible(true);
+        hideNotifications();
+        
+        clearRegisterTextFields();
+    }
+    
+    private void registerRegister() {
+        
+        int status = userController.register(registerUsernameTextField.getText(), 
+                registerEmailTextField.getText(), 
+                registerPasswordTextField.getText(), 
+                registerAdminCheckBox.isSelected()
+        );
+        
+        switch (status) {
+            case 0 -> {
+                showNotification(true, "Error: This username is already taken or invalid. Please enter a valid username.", false);
+                clearRegisterTextFields();
+            }
+            case 1 -> {       
+                registerBack();
+                showNotification(false, "Your account has been successfuly registered.", true);
+            }
+            case 2 -> {
+                showNotification(true, "Error: The email is already taken or invalid. Please enter a valid email.", false);
+                clearRegisterTextFields();
+            }
+            case 3 -> {
+                showNotification(true, "Error: The password is invalid. Please enter a valid password.", false);
+                clearRegisterTextFields();
+            }
+            default -> {
+                showNotification(true, "Error: There was an SQL error. Please verify your credentials and try again.", false);
+                clearRegisterTextFields();
+            }  
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -657,10 +768,12 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JButton loginLoginButton;
     private javax.swing.JLabel loginNotificationLabel;
+    private javax.swing.JLabel loginNotificationLabel1;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPasswordField loginPasswordTextField;
     private javax.swing.JButton loginRegisterButton;
     private javax.swing.JTextField loginUsernameTextField;
+    private javax.swing.JPanel logoNotificationLabel;
     private javax.swing.JCheckBox registerAdminCheckBox;
     private javax.swing.JButton registerBackButton;
     private javax.swing.JTextField registerEmailTextField;
