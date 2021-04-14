@@ -17,8 +17,8 @@ public class Main {
         
         //traffic database @Adelin
         TrafficController trafficController = new TrafficController();
-//        trafficController.createTables();             //function used to create the tables
-//        trafficController.insertDataIntoTables();     //function used to insert data into the created tables
+        trafficController.createTables();             //function used to create the tables
+        trafficController.insertDataIntoTables();     //function used to insert data into the created tables
         
 
 

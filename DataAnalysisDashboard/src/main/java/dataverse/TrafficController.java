@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -22,13 +23,26 @@ public class TrafficController {
     }
 
     public void insertDataIntoTables() {
-        
+
         ArrayList<String> fileContents = CSVReader.readFile("../trafficStoredData.csv"); // store scv file into array list
         //Insert data into tables
         RegionTable.batchInsert(fileContents);
         RoadTable.batchInsert(fileContents);
         Count_Point.batchInsert(fileContents);
         Traffic_Volume.batchInsert(fileContents);
+
+    }
+
+    private static void disconnect(Connection connection) {
+
+        try {
+            if (!connection.isClosed()) {
+                connection.close();
+                System.out.println("Connection successfully closed.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error closing connection: " + e.getMessage());
+        }
 
     }
 
@@ -55,8 +69,6 @@ public class TrafficController {
             return connection;
         }
 
-        public void hello() {
-        }
     }
 
     public static class Tables {    //used to create tables
@@ -78,6 +90,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error creating Region table" + e.getMessage());
             }
+            disconnect(connection);
 
         }
 
@@ -106,6 +119,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error creating Road table" + e.getMessage());
             }
+            disconnect(connection);
 
         }
 
@@ -127,7 +141,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error creating Count_Point table" + e.getMessage());
             }
-
+            disconnect(connection);
         }
 
         public void createTraffic_Volume() {
@@ -161,7 +175,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error creating Traffic_Volume table" + e.getMessage());
             }
-
+            disconnect(connection);
         }
 
     }
@@ -191,10 +205,8 @@ public class TrafficController {
 
     public static class RegionTable {
 
-        static Connection connection = DB.getConnection();
-
         public static void insert(int id, String name, int localId, String localName) {
-
+            Connection connection = DB.getConnection();
             String sql = "INSERT INTO Region (region_id, region_name, local_authority_id, local_authority_name) VALUES"
                     + "("
                     + "'" + id + "',"
@@ -209,6 +221,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error inserting data into Region table" + e.getMessage());
             }
+            disconnect(connection);
 
         }
 
@@ -226,6 +239,7 @@ public class TrafficController {
 
         //collect sql data based on id
         public static ResultSet get(int id) {
+            Connection connection = DB.getConnection();
             String sql = "SELECT * FROM Region WHERE region_id = " + id;        //remove everything past WHERE to collect all the data and not just for a specific id
             ResultSet result = null;
             try {
@@ -234,7 +248,7 @@ public class TrafficController {
                 if (result.next()) {
                     // System.out.println("Region name is " + result.getString("region_name"));
                 }
-
+                disconnect(connection);
             } catch (Exception e) {
                 System.out.println("Error readiong from Region table" + e.getMessage());
             } finally {
@@ -245,13 +259,14 @@ public class TrafficController {
 
         //update the sql data
         public static void update(int id, String name, int localId, String localName) {
-
+            Connection connection = DB.getConnection();
             String sql = "UPDATE Region SET region_name = '" + name + "', local_authority_id = '" + localId + "', local_authority_name = '" + localName + "' WHERE region_id = " + id;
 
             try {
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sql);
                 System.out.println("Data updated");
+                disconnect(connection);
             } catch (Exception e) {
                 System.out.println("Error updating Region table" + e.getMessage());
             }
@@ -259,13 +274,14 @@ public class TrafficController {
         }
 
         public static void delete(int id) {
-
+            Connection connection = DB.getConnection();
             String sql = "DELETE FROM Region WHERE region_id = " + id;
 
             try {
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sql);
                 System.out.println("Data deleted");
+                disconnect(connection);
             } catch (Exception e) {
                 System.out.println("Error removing data from Region table" + e.getMessage());
             }
@@ -276,10 +292,8 @@ public class TrafficController {
 
     public static class RoadTable {
 
-        static Connection connection = DB.getConnection();
-
         public static void insert(String road_name, int region_id, String road_type, String start_junction_road_name, String end_junction_road_name, int easting, int northing, Double latitude, Double longitude, String link_length_km, String link_length_miles) {
-
+            Connection connection = DB.getConnection();
 //        System.out.println(road_name + " " + region_id + " " + road_type + " " + start_junction_road_name + " " + end_junction_road_name + " " + easting +  " " +northing +  " " + latitude + " " + longitude + " " + link_length_km + " " + link_length_miles);
             String sql = "INSERT INTO Road (road_name, region_id, road_type, start_junction_road_name, end_junction_road_name, easting, northing, latitude, longitude, link_length_km, link_length_miles) VALUES"
                     + "("
@@ -303,6 +317,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error inserting data into Road table" + e.getMessage());
             }
+            disconnect(connection);
 
         }
 
@@ -343,10 +358,8 @@ public class TrafficController {
 
     public static class Count_Point {
 
-        static Connection connection = DB.getConnection();
-
         public static void insert(int count_point_id, String road_name, String the_year, String count_date) {
-
+            Connection connection = DB.getConnection();
             String sql = "INSERT INTO Count_Point (count_point_id, road_name, the_year, count_date) VALUES"
                     + "("
                     + "'" + count_point_id + "',"
@@ -362,6 +375,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error inserting data into Count_Point table" + e.getMessage());
             }
+            disconnect(connection);
 
         }
 
@@ -381,10 +395,8 @@ public class TrafficController {
 
     public static class Traffic_Volume {
 
-        static Connection connection = DB.getConnection();
-
         public static void insert(int traffic_volume_id, int count_point_id, int pedal_cycles, int two_wheeled_motor_vehicles, int cars_and_taxis, int buses_and_coaches, int lgvs, int hgvs_2_rigid_axle, int hgvs_3_rigid_axle, int hgvs_4_or_more_rigid_axle, int hgvs_3_or_4_articulated_axle, int hgvs_5_articulated_axle, int hgvs_6_articulated_axle, int all_hgvs, int all_motor_vehicles, int the_hour, char direction_of_travel) {
-
+            Connection connection = DB.getConnection();
             String sql = "INSERT INTO Traffic_Volume (traffic_volume_id, count_point_id, pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, hgvs_2_rigid_axle, hgvs_3_rigid_axle, hgvs_4_or_more_rigid_axle, hgvs_3_or_4_articulated_axle, hgvs_5_articulated_axle, hgvs_6_articulated_axle, all_hgvs, all_motor_vehicles, the_hour, direction_of_travel) VALUES"
                     + "("
                     + "'" + traffic_volume_id + "',"
@@ -412,7 +424,7 @@ public class TrafficController {
             } catch (Exception e) {
                 System.out.println("Error inserting data into Traffic_Volume table" + e.getMessage());
             }
-
+            disconnect(connection);
         }
 
         public static void batchInsert(ArrayList<String> input) {
