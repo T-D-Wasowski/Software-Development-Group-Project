@@ -1,9 +1,8 @@
 
 package dataverse;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Cursor;
+import java.awt.*;
+import java.util.*;
 import javax.swing.*;
 
 public class HomePage extends JFrame {
@@ -32,6 +31,7 @@ public class HomePage extends JFrame {
         jPanel2 = new javax.swing.JPanel();
         DashboardPanel_1 = new javax.swing.JPanel();
         DashboardPanel_2 = new javax.swing.JPanel();
+        Dashboard2Container = new javax.swing.JPanel();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
         DashboardPanel_5 = new javax.swing.JPanel();
@@ -137,15 +137,24 @@ public class HomePage extends JFrame {
         DashboardPanel_2.setMaximumSize(new java.awt.Dimension(30000, 30000));
         DashboardPanel_2.setPreferredSize(new java.awt.Dimension(900, 500));
 
+        Dashboard2Container.setPreferredSize(new java.awt.Dimension(813, 370));
+        Dashboard2Container.setLayout(new java.awt.BorderLayout());
+
         javax.swing.GroupLayout DashboardPanel_2Layout = new javax.swing.GroupLayout(DashboardPanel_2);
         DashboardPanel_2.setLayout(DashboardPanel_2Layout);
         DashboardPanel_2Layout.setHorizontalGroup(
             DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(DashboardPanel_2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Dashboard2Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         DashboardPanel_2Layout.setVerticalGroup(
             DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(DashboardPanel_2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -346,7 +355,7 @@ public class HomePage extends JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
             .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
             .addComponent(DashboardPanel_5, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
@@ -457,6 +466,23 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setVisible(false);
         DashboardPanel_5.setVisible(false);
         DashboardPanel_2.setVisible(true);       //add one panel
+        
+        
+        
+        Dashboard2Container.removeAll();
+        Dashboard2Container.repaint();
+        Dashboard2Container.revalidate();
+        
+        
+        JPanel c = Dashboard2Chart.getChart();
+        Dashboard2Container.add(c);
+        Dashboard2Container.repaint();
+        Dashboard2Container.validate();
+        
+        
+        
+        
+        
         
 
     }//GEN-LAST:event_Dashboard2ActionPerformed
@@ -616,6 +642,7 @@ public class HomePage extends JFrame {
     private javax.swing.JButton AdminPanel;
     private javax.swing.JButton Dashboard1;
     private javax.swing.JButton Dashboard2;
+    private javax.swing.JPanel Dashboard2Container;
     private javax.swing.JButton Dashboard3;
     private javax.swing.JButton Dashboard4;
     private javax.swing.JPanel DashboardPanel_1;
@@ -631,4 +658,134 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
+
+public static class Dashboard2Chart extends JPanel {
+
+    private static Map<Color, Integer> bars = new LinkedHashMap<>();
+    static int barWidth = 70;
+    static int barGap = 30;
+
+    private void addVehicle(Color color, int noVehicles) {        //add bar to HashMap       
+        bars.put(color, noVehicles);
+        repaint();
+    }
+
+    protected static int findMaxHeight() {
+        int maxHeight = Integer.MIN_VALUE;
+
+        for (Integer value : bars.values()) {
+
+            maxHeight = Math.max(maxHeight, value);
+
+        }
+        return maxHeight;
+    }
+
+    protected static int getPanelWidth() {
+        int panelWidth = bars.size() * (barWidth + barGap);
+        return panelWidth;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+
+        int maxHeight = findMaxHeight();
+
+        int x = 2;          //the value at which the bar will start at (x-axis value)
+
+        for (Color color : bars.keySet()) {
+
+            int barHeight = bars.get(color);
+
+            int newBarHeight = (int) ((getHeight() - 20) * ((double) barHeight / maxHeight));
+
+            g.setColor(color);
+            g.fillRect(x, getHeight() - newBarHeight, barWidth, newBarHeight);      //paint the rectangle with a color
+
+            //text above rectangle(no. of vehicles)
+            g.setColor(Color.black);
+            Font font = new Font("Arial", Font.BOLD, 12);
+            g.setFont(font);
+            g.drawString(String.valueOf(barHeight), x + 5, (getHeight() - newBarHeight) - 2);
+
+            System.out.println("Panel height: " + getHeight() + " bar height: " + newBarHeight + " color: " + color);
+
+            x += (barWidth + barGap);   // the value at which the next bar will start at (gap added #10)
+
+        }
+
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+        //set size of panel
+        int panelWidth = getPanelWidth();
+        int panelHeight = 320;
+        return new Dimension(panelWidth, panelHeight);
+
+    }
+
+    public static JPanel getChart() {
+        Dashboard2Chart chart = new Dashboard2Chart();
+        JPanel container = new JPanel();
+        Dashboard2LablesPanel labels = new Dashboard2LablesPanel();
+
+        //all colours must be different otherwise bars won't show
+        chart.addVehicle(new Color(144, 144, 144), 2000);
+
+        chart.addVehicle(Color.black, 100);
+
+        chart.addVehicle(new Color(50, 50, 144), 2000);
+
+        chart.addVehicle(new Color(50, 144, 50), 2800);
+
+        chart.addVehicle(Color.yellow, 2040);
+
+        chart.addVehicle(Color.DARK_GRAY, 1800);
+
+        chart.addVehicle(new Color(200, 50, 0), 2000);
+
+        chart.addVehicle(Color.ORANGE, 2040);
+
+        container.setPreferredSize(new Dimension(getPanelWidth(), 370));
+
+        container.add(chart, BorderLayout.NORTH);
+        container.add(labels, BorderLayout.SOUTH);
+
+        return container;
+
+    }
+
+    public static class Dashboard2LablesPanel extends JPanel {
+        
+        @Override
+        public Dimension getPreferredSize() {
+            //set size of panel
+            int panelWidth = getPanelWidth();
+            int panelHeight = 50;
+            return new Dimension(panelWidth, panelHeight);
+
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            String vehicles[] = {"Pedal cycles" , "2 wmv" , "Cars" , "Buses" , "LGVS" , "HGVS" , "HGVS" , "All motor veh"};
+            int x = 2;
+            int i = 0;
+            int maxHeight = findMaxHeight();
+            for (Color color : bars.keySet()) {
+                int barHeight = bars.get(color);
+                int newBarHeight = (int) ((getHeight() - 20) * ((double) barHeight / maxHeight));
+
+                //text below rectangles (type of vehicle)
+                Font font = new Font("Arial", Font.PLAIN, 15);
+                g.setFont(font);
+                g.drawString(vehicles[i++], x, 20);
+                x += (barWidth + barGap);
+            }
+        }
+
+    }
+
+}
 }
