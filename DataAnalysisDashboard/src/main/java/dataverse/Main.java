@@ -16,14 +16,14 @@ public class Main {
     public static void main(String[] args) {
         
         //traffic database @Adelin
-        TrafficController trafficController = new TrafficController();
+        //TrafficController trafficController = new TrafficController();
 //        trafficController.createTables();             //function used to create the tables
 //        trafficController.insertDataIntoTables();     //function used to insert data into the created tables
         
 
 
         
-        UserController controller = new UserController();
+        //UserController controller = new UserController();
         
         
         //controller.register("Tomasz", "tomasz@email.com", "test", true);
@@ -31,7 +31,7 @@ public class Main {
         //controller.register("Sefa", "test", "1");
         //controller.register("Yasin", "test", "1");
         
-        System.out.println(controller.login("Tomasz", "test"));
+        //System.out.println(controller.login("Tomasz", "test"));
         
        
         /*GUI gui = new GUI();

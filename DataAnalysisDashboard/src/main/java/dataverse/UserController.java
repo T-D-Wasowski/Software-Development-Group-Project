@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
@@ -21,12 +23,11 @@ public class UserController {
         
         try {
             if (userNameResults.next() == false && (username.length() >= 3 && username.length() <= 32)) {
-                
+                              
                 ResultSet userEmailResults = database.getUserByEmail(email);
                 
                 if (userEmailResults.next() == false && (email.length() >= 3 && email.length() <= 255)) {                   
                     
-
                     if (password.length() >= 8 && password.length() <= 32) {
                         
                         String salt = PasswordUtility.getSalt(30);
@@ -39,7 +40,7 @@ public class UserController {
                         } else {
                             isAdmin = "0";
                         }
-        
+                        
                         database.addUser(username, email, securePassword, salt, isAdmin);
                         
                         return 1; //Return 1 if account is created successfully
@@ -59,6 +60,8 @@ public class UserController {
         } catch (SQLException e) {            
             System.out.println("SQL Exception error: " + e.getMessage());
             return 4; //Return 4 when there is an SQL exception error
+        } finally {
+            database.disconnect();
         }
     }
     
@@ -92,7 +95,11 @@ public class UserController {
         } catch (SQLException e) {                           
             System.out.println("SQL Exception error: " + e.getMessage());
             return 3; //Return 3 when there is an SQL exception error               
-        }    
+        } finally {
+            database.disconnect();
+        }
+        
+        
     }
     
     public void recreateDatabase() {
@@ -103,6 +110,8 @@ public class UserController {
 }
 
 class UserDatabase {
+    
+    Connection connection;
         
     private void downloadDriver() {
         try {
@@ -115,11 +124,11 @@ class UserDatabase {
     }
     
     
-    private Connection connect() {
+    private void connect() {
         
         downloadDriver();
         
-        Connection connection = null;
+        //Connection connection = null;
         
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:../user.db");
@@ -128,11 +137,11 @@ class UserDatabase {
             System.out.println("Error connecting to database: " + e.getMessage());
         }
         
-        return connection;
+        //return connection;
         
     }
     
-    private void disconnect(Connection connection) {
+    public void disconnect(/*Connection connection*/) {
         
         try {
             if (!connection.isClosed()) {
@@ -147,7 +156,7 @@ class UserDatabase {
     
     public void createTables() {
         
-        Connection connection = connect();
+        /*Connection connection = */connect();
         
         String sqlDropLogString = "DROP TABLE IF EXISTS log;";
         String sqlDropUserString = "DROP TABLE IF EXISTS user;";
@@ -189,13 +198,13 @@ class UserDatabase {
             System.out.println("Problem creating database tables: " + e.getMessage());       
         }
 
-        disconnect(connection); 
+        disconnect(/*connection*/); 
         
     }
     
     public void addUser(String username, String email, String password, String salt, String adminFlag) throws SQLException {
         
-        Connection connection = connect();
+        /*Connection connection = */connect();
         
         String sqlString = "INSERT INTO User"
                 + "("
@@ -217,12 +226,12 @@ class UserDatabase {
 
         System.out.println("User inserted into database.");
        
-        disconnect(connection);
+        disconnect(/*connection*/);
     }
     
     public ResultSet getUserById(int userId) {
     
-        Connection connection = connect();
+        /*Connection connection = */connect();
         
         String sqlString = "SELECT * FROM user"
                 + "WHERE userID = " + userId + ";";
@@ -243,7 +252,7 @@ class UserDatabase {
     
     public ResultSet getUserByUsername(String userName) {
         
-        Connection connection = connect();
+        /*Connection connection = */connect();
         
         String sqlString = "SELECT * FROM user "
                 + "WHERE userName = '" + userName + "';";
@@ -254,6 +263,7 @@ class UserDatabase {
             Statement sqlStatement = connection.createStatement(); 
             result = sqlStatement.executeQuery(sqlString);
             System.out.println("Results retrieved from database.");
+            
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by username: " + e.getMessage());
         }
@@ -264,7 +274,7 @@ class UserDatabase {
     
     public ResultSet getUserByEmail(String userEmail) {
         
-        Connection connection = connect();
+        /*Connection connection = */connect();
         
         String sqlString = "SELECT * FROM user "
                 + "WHERE userEmail = '" + userEmail + "';";
