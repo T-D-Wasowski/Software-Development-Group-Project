@@ -179,7 +179,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="loginUsernameTextField">
               <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AccessibilityProperties>
@@ -202,7 +201,7 @@
             <Component class="javax.swing.JButton" name="loginLoginButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="d5" red="84" type="rgb"/>
+                  <Color blue="b9" green="8f" red="3e" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="15" style="1"/>
@@ -225,7 +224,7 @@
             <Component class="javax.swing.JButton" name="loginRegisterButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="d5" red="84" type="rgb"/>
+                  <Color blue="b9" green="8f" red="3e" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="15" style="1"/>
@@ -503,7 +502,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="registerUsernameTextField">
               <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <Events>
@@ -525,7 +523,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="registerEmailTextField">
               <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <Events>
@@ -543,7 +540,7 @@
             <Component class="javax.swing.JButton" name="registerRegisterButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="d5" red="84" type="rgb"/>
+                  <Color blue="b9" green="8f" red="3e" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="15" style="1"/>
@@ -566,7 +563,7 @@
             <Component class="javax.swing.JButton" name="registerBackButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="d5" red="84" type="rgb"/>
+                  <Color blue="b9" green="8f" red="3e" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="15" style="1"/>

@@ -84,7 +84,11 @@ public class UserController {
                     );
                     
                     if (passwordMatch) {
-                        return 1; //Return 1 when password matches
+                        if (user.getBoolean("userAdminFlag") == true) {
+                            return 1; //Return 1 when password matches and is admin
+                        } else {
+                            return 4; //Return 4 when password matches and is NOT admin
+                        }
                     } else {
                         return 2; //Return 2 when password doesnt match
                     }        

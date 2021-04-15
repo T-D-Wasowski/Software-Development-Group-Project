@@ -66,7 +66,7 @@ public class HomePage extends JFrame {
         jLabel2.setForeground(new java.awt.Color(142, 142, 142));
         jLabel2.setText("verse");
 
-        LogOut.setBackground(new java.awt.Color(132, 213, 255));
+        LogOut.setBackground(new java.awt.Color(62, 143, 185));
         LogOut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LogOut.setForeground(new java.awt.Color(255, 255, 255));
         LogOut.setText("Log Out");
@@ -195,7 +195,7 @@ public class HomePage extends JFrame {
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Dashboard1.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard1.setBackground(new java.awt.Color(62, 143, 185));
         Dashboard1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard1.setText("Dashboard 1");
@@ -218,7 +218,7 @@ public class HomePage extends JFrame {
             }
         });
 
-        Dashboard2.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard2.setBackground(new java.awt.Color(62, 143, 185));
         Dashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard2.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard2.setText("Dashboard 2");
@@ -241,7 +241,7 @@ public class HomePage extends JFrame {
             }
         });
 
-        Dashboard3.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard3.setBackground(new java.awt.Color(62, 143, 185));
         Dashboard3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard3.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard3.setText("Dashboard 3");
@@ -264,7 +264,7 @@ public class HomePage extends JFrame {
             }
         });
 
-        Dashboard4.setBackground(new java.awt.Color(132, 213, 255));
+        Dashboard4.setBackground(new java.awt.Color(62, 143, 185));
         Dashboard4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard4.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard4.setText("Dashboard 4");
@@ -287,7 +287,7 @@ public class HomePage extends JFrame {
             }
         });
 
-        AdminPanel.setBackground(new java.awt.Color(132, 213, 255));
+        AdminPanel.setBackground(new java.awt.Color(62, 143, 185));
         AdminPanel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         AdminPanel.setForeground(new java.awt.Color(255, 255, 255));
         AdminPanel.setText("Admin Panel");
@@ -486,7 +486,7 @@ public class HomePage extends JFrame {
 
     private void Dashboard1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseExited
         //dashboard 1 unhover
-        Dashboard1.setBackground(new Color(132,213,255));      //blue
+        Dashboard1.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_Dashboard1MouseExited
 
     private void Dashboard2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseEntered
@@ -496,7 +496,7 @@ public class HomePage extends JFrame {
 
     private void Dashboard2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseExited
         //dashboard 2 unhover
-        Dashboard2.setBackground(new Color(132,213,255));      //blue
+        Dashboard2.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_Dashboard2MouseExited
 
     private void Dashboard3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseEntered
@@ -506,7 +506,7 @@ public class HomePage extends JFrame {
 
     private void Dashboard3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseExited
         //dashboard 3 unhover
-        Dashboard3.setBackground(new Color(132,213,255));      //blue
+        Dashboard3.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_Dashboard3MouseExited
 
     private void Dashboard4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseEntered
@@ -516,7 +516,7 @@ public class HomePage extends JFrame {
 
     private void Dashboard4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseExited
         //dashboard 4 unhover
-        Dashboard4.setBackground(new Color(132,213,255));      //blue
+        Dashboard4.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_Dashboard4MouseExited
 
     private void AdminPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseEntered
@@ -526,7 +526,7 @@ public class HomePage extends JFrame {
 
     private void AdminPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseExited
         //AdminPanel unhover
-        AdminPanel.setBackground(new Color(132,213,255));      //blue
+        AdminPanel.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_AdminPanelMouseExited
 
     private void LogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseEntered
@@ -536,7 +536,7 @@ public class HomePage extends JFrame {
 
     private void LogOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseExited
         //LogOut unhover
-        LogOut.setBackground(new Color(132,213,255));      //blue
+        LogOut.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_LogOutMouseExited
 
     private void Dashboard1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseMoved
@@ -563,7 +563,7 @@ public class HomePage extends JFrame {
         LogOut.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
     }//GEN-LAST:event_LogOutMouseMoved
     
-    public void createHomePage(){
+    public void createHomePage(Boolean isAdmin){
                 /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -594,8 +594,16 @@ public class HomePage extends JFrame {
                 HomePage h = new HomePage();
                 h.setVisible(true);
                 
+                if (isAdmin == false) {
+                    h.hideAdmin();
+                }
+  
             }
         });
+    }
+    
+    public void hideAdmin() {
+        AdminPanel.setVisible(false);
     }
     
     private void logout() {

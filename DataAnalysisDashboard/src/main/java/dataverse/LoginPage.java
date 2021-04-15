@@ -96,7 +96,6 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Username");
 
-        loginUsernameTextField.setToolTipText("");
         loginUsernameTextField.setName(""); // NOI18N
         loginUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +111,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        loginLoginButton.setBackground(new java.awt.Color(132, 213, 255));
+        loginLoginButton.setBackground(new java.awt.Color(62, 143, 185));
         loginLoginButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
         loginLoginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginLoginButton.setText("Login");
@@ -136,7 +135,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        loginRegisterButton.setBackground(new java.awt.Color(132, 213, 255));
+        loginRegisterButton.setBackground(new java.awt.Color(62, 143, 185));
         loginRegisterButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
         loginRegisterButton.setForeground(new java.awt.Color(255, 255, 255));
         loginRegisterButton.setText("Register");
@@ -315,7 +314,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel5.setText("Password (8 - 32 Characters)");
 
-        registerUsernameTextField.setToolTipText("");
         registerUsernameTextField.setName(""); // NOI18N
         registerUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,7 +326,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel7.setText("Is this an Administrative account?");
 
-        registerEmailTextField.setToolTipText("");
         registerEmailTextField.setName(""); // NOI18N
         registerEmailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,7 +336,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Email (3 - 255 Characters)");
 
-        registerRegisterButton.setBackground(new java.awt.Color(132, 213, 255));
+        registerRegisterButton.setBackground(new java.awt.Color(62, 143, 185));
         registerRegisterButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
         registerRegisterButton.setForeground(new java.awt.Color(255, 255, 255));
         registerRegisterButton.setText("Register");
@@ -363,7 +360,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        registerBackButton.setBackground(new java.awt.Color(132, 213, 255));
+        registerBackButton.setBackground(new java.awt.Color(62, 143, 185));
         registerBackButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
         registerBackButton.setForeground(new java.awt.Color(255, 255, 255));
         registerBackButton.setText("Back");
@@ -542,7 +539,7 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginLoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseExited
         // login button unhover
-        loginLoginButton.setBackground(new Color(132,213,255));      //blue
+        loginLoginButton.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_loginLoginButtonMouseExited
 
     private void loginRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseEntered
@@ -552,7 +549,7 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseExited
         // register button unhover
-        loginRegisterButton.setBackground(new Color(132,213,255));      //blue
+        loginRegisterButton.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_loginRegisterButtonMouseExited
 
     private void registerBackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseEntered
@@ -562,7 +559,7 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void registerBackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseExited
         // back button unhover
-        registerBackButton.setBackground(new Color(132,213,255));      //blue
+        registerBackButton.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_registerBackButtonMouseExited
 
     private void registerRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseEntered
@@ -572,7 +569,7 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void registerRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseExited
         // register 2 button unhover
-        registerRegisterButton.setBackground(new Color(132,213,255));      //blue
+        registerRegisterButton.setBackground(new Color(62,143,185));      //blue
     }//GEN-LAST:event_registerRegisterButtonMouseExited
 
     private void loginLoginButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseMoved
@@ -689,19 +686,26 @@ public class LoginPage extends javax.swing.JFrame {
                 clearLoginTextFields();
             }
             case 1 -> {  
-                HomePage homePage = new HomePage();
-                homePage.createHomePage();
-                this.dispose();
+                runHomePage(true); //Is admin
             }
             case 2 -> {
                 showNotification(false, "Error: The password does not match. Please enter a valid password.", false);
                 clearLoginTextFields();
+            }
+            case 4 -> {
+                runHomePage(false); //Is NOT admin
             }
             default -> {
                 showNotification(false, "Error: There was an SQL error. Please verify your credentials and try again.", false);
                 clearLoginTextFields();
             }
         }   
+    }
+    
+    private void runHomePage(Boolean isAdmin) {
+        HomePage homePage = new HomePage();
+        homePage.createHomePage(isAdmin);
+        this.dispose();
     }
     
     private void loginRegister() {
