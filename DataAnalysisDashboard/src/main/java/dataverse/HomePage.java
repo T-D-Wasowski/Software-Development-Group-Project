@@ -10,6 +10,9 @@ import javax.swing.*;
 
 public class HomePage extends JFrame {
 
+    int hour_dashboard2 = 7;
+    int year_dashboard2 = 2005;
+
     public HomePage() {
         initComponents();
         Dashboard1.setEnabled(false);
@@ -35,6 +38,13 @@ public class HomePage extends JFrame {
         DashboardPanel_1 = new javax.swing.JPanel();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
+        filtersPanelDashboard2 = new javax.swing.JPanel();
+        BackButtonDashboard2 = new javax.swing.JButton();
+        labelHourDashboard2 = new java.awt.Label();
+        NextButtonDashboard2 = new javax.swing.JButton();
+        choice1 = new java.awt.Choice();
+        jSlider1 = new javax.swing.JSlider();
+        lableYearDashboard2 = new javax.swing.JLabel();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
         DashboardPanel_5 = new javax.swing.JPanel();
@@ -102,7 +112,7 @@ public class HomePage extends JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 561, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 586, Short.MAX_VALUE)
                 .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -143,13 +153,75 @@ public class HomePage extends JFrame {
         Dashboard2Container.setPreferredSize(new java.awt.Dimension(813, 370));
         Dashboard2Container.setLayout(new java.awt.BorderLayout());
 
+        BackButtonDashboard2.setText("Back");
+        BackButtonDashboard2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonDashboard2ActionPerformed(evt);
+            }
+        });
+
+        labelHourDashboard2.setText("7 am");
+
+        NextButtonDashboard2.setText("Next");
+        NextButtonDashboard2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButtonDashboard2ActionPerformed(evt);
+            }
+        });
+
+        jSlider1.setMinorTickSpacing(5);
+        jSlider1.setPaintLabels(true);
+        jSlider1.setPaintTicks(true);
+        jSlider1.setSnapToTicks(true);
+        jSlider1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        lableYearDashboard2.setText("2005");
+
+        javax.swing.GroupLayout filtersPanelDashboard2Layout = new javax.swing.GroupLayout(filtersPanelDashboard2);
+        filtersPanelDashboard2.setLayout(filtersPanelDashboard2Layout);
+        filtersPanelDashboard2Layout.setHorizontalGroup(
+            filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(BackButtonDashboard2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelHourDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(NextButtonDashboard2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, filtersPanelDashboard2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lableYearDashboard2)
+                .addGap(153, 153, 153))
+        );
+        filtersPanelDashboard2Layout.setVerticalGroup(
+            filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelHourDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackButtonDashboard2)
+                    .addComponent(NextButtonDashboard2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lableYearDashboard2)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout DashboardPanel_2Layout = new javax.swing.GroupLayout(DashboardPanel_2);
         DashboardPanel_2.setLayout(DashboardPanel_2Layout);
         DashboardPanel_2Layout.setHorizontalGroup(
             DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DashboardPanel_2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Dashboard2Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Dashboard2Container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                    .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         DashboardPanel_2Layout.setVerticalGroup(
@@ -157,7 +229,9 @@ public class HomePage extends JFrame {
             .addGroup(DashboardPanel_2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -337,7 +411,7 @@ public class HomePage extends JFrame {
                 .addComponent(Dashboard4)
                 .addGap(62, 62, 62)
                 .addComponent(AdminPanel)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,11 +431,11 @@ public class HomePage extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_5, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_5, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -470,16 +544,7 @@ public class HomePage extends JFrame {
         DashboardPanel_5.setVisible(false);
         DashboardPanel_2.setVisible(true);       //add one panel
 
-        Dashboard2Container.removeAll();
-        Dashboard2Container.repaint();
-        Dashboard2Container.revalidate();
-
-        JPanel c = Dashboard2Chart.getChart();
-        Dashboard2Container.add(c);
-        Dashboard2Container.repaint();
-        Dashboard2Container.validate();
-
-
+        repaintDashboard2(hour_dashboard2);
     }//GEN-LAST:event_Dashboard2ActionPerformed
 
     private void Dashboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard1ActionPerformed
@@ -584,6 +649,59 @@ public class HomePage extends JFrame {
         LogOut.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_LogOutMouseMoved
 
+    private void NextButtonDashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButtonDashboard2ActionPerformed
+        //change hour
+        if (hour_dashboard2 == 18) {
+            hour_dashboard2 = 7;
+        } else {
+            hour_dashboard2++;
+        }
+
+        //display hour
+        if (hour_dashboard2 < 12) {
+            labelHourDashboard2.setText(hour_dashboard2 + " am");
+        } else {
+            labelHourDashboard2.setText(hour_dashboard2 + " pm");
+        }
+        labelHourDashboard2.repaint();
+
+        repaintDashboard2(hour_dashboard2);
+
+    }//GEN-LAST:event_NextButtonDashboard2ActionPerformed
+
+    private void BackButtonDashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonDashboard2ActionPerformed
+        //change hour
+        if (hour_dashboard2 == 7) {
+            hour_dashboard2 = 18;
+        } else {
+            hour_dashboard2--;
+        }
+
+        //display hour
+        if (hour_dashboard2 < 12) {
+            labelHourDashboard2.setText(hour_dashboard2 + " am");
+        } else {
+            labelHourDashboard2.setText(hour_dashboard2 + " pm");
+        }
+        labelHourDashboard2.repaint();
+
+        repaintDashboard2(hour_dashboard2);
+
+
+    }//GEN-LAST:event_BackButtonDashboard2ActionPerformed
+
+    public void repaintDashboard2(int hour) {
+        Dashboard2Container.removeAll();
+        Dashboard2Container.repaint();
+        Dashboard2Container.revalidate();
+
+        JPanel c = Dashboard2Chart.getChart(hour_dashboard2);
+        Dashboard2Container.add(c);
+        Dashboard2Container.repaint();
+        Dashboard2Container.validate();
+
+    }
+
     public void createHomePage(Boolean isAdmin) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -635,6 +753,7 @@ public class HomePage extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdminPanel;
+    private javax.swing.JButton BackButtonDashboard2;
     private javax.swing.JButton Dashboard1;
     private javax.swing.JButton Dashboard2;
     private javax.swing.JPanel Dashboard2Container;
@@ -646,12 +765,18 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_4;
     private javax.swing.JPanel DashboardPanel_5;
     private javax.swing.JButton LogOut;
+    private javax.swing.JButton NextButtonDashboard2;
+    private java.awt.Choice choice1;
+    private javax.swing.JPanel filtersPanelDashboard2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JSlider jSlider1;
+    private java.awt.Label labelHourDashboard2;
+    private javax.swing.JLabel lableYearDashboard2;
     // End of variables declaration//GEN-END:variables
 
     public static class Dashboard2Chart extends JPanel {
@@ -720,15 +845,14 @@ public class HomePage extends JFrame {
 
         }
 
-        public static JPanel getChart() {
+        public static JPanel getChart(int hour) {
             Dashboard2Chart chart = new Dashboard2Chart();
             JPanel container = new JPanel();
             Dashboard2LablesPanel labels = new Dashboard2LablesPanel();
 
             TrafficController controller = new TrafficController();
-            controller.getHighestTrafficVolume();
 
-            ResultSet result = controller.getHighestTrafficVolume();
+            ResultSet result = controller.getHighestTrafficVolume(hour);
 
             int ped = 0;
             int twoMV = 0;
@@ -737,21 +861,36 @@ public class HomePage extends JFrame {
             int lgvs = 0;
             int hgvs = 0;
             int allveh = 0;
-            
+
             try {
-                System.out.println("pedal_cycles " + result.getString("pedal_cycles"));
-                System.out.println("all_motor_vehicles " + result.getString("MAX(all_motor_vehicles)"));
+                try {
+                    ped = (Integer.parseInt(result.getString("pedal_cycles")));
+                    twoMV = (Integer.parseInt(result.getString("two_wheeled_motor_vehicles")));
+                    cars = (Integer.parseInt(result.getString("cars_and_taxis")));
+                    buses = (Integer.parseInt(result.getString("buses_and_coaches")));
+                    lgvs = (Integer.parseInt(result.getString("lgvs")));
+                    hgvs = (Integer.parseInt(result.getString("all_hgvs")));
+                    allveh = (Integer.parseInt(result.getString("MAX(all_motor_vehicles)")));
 
-                ped = (Integer.parseInt(result.getString("pedal_cycles")));
-                twoMV = (Integer.parseInt(result.getString("two_wheeled_motor_vehicles")));
-                cars = (Integer.parseInt(result.getString("cars_and_taxis")));
-                buses = (Integer.parseInt(result.getString("buses_and_coaches")));
-                lgvs = (Integer.parseInt(result.getString("lgvs")));
-                hgvs = (Integer.parseInt(result.getString("all_hgvs")));
-                allveh = (Integer.parseInt(result.getString("MAX(all_motor_vehicles)")));
+                } catch (SQLException ex) {
+                    ped = 0;
+                    twoMV = 0;
+                    cars = 0;
+                    buses = 0;
+                    lgvs = 0;
+                    hgvs = 0;
+                    allveh = 0;
+                    Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
-            } catch (SQLException ex) {
-                Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception e) {     //if int values are null
+                ped = 0;
+                twoMV = 0;
+                cars = 0;
+                buses = 0;
+                lgvs = 0;
+                hgvs = 0;
+                allveh = 0;
             }
 
             //all colours must be different otherwise bars won't show
@@ -791,7 +930,7 @@ public class HomePage extends JFrame {
 
             @Override
             protected void paintComponent(Graphics g) {
-                String vehicles[] = {"Pedal cycles", "2 wmv", "Cars", "Buses", "LGVS", "HGVS", "All motor vehicles"};       //list of vehicles
+                String vehicles[] = {"Pedal cycles", "2 wmv", "Cars", "Buses", "LGVS", "HGVS", "All motor vehic"};       //list of vehicles
                 int x = 2;
                 int i = 0;
                 int maxHeight = findMaxHeight();
