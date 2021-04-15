@@ -388,8 +388,8 @@ public class HomePage extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
-
-        System.out.println("This is Log Out Button.");
+        logout();
+        //System.out.println("This is Log Out Button.");
     }//GEN-LAST:event_LogOutActionPerformed
 
     private void AdminPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminPanelActionPerformed
@@ -563,7 +563,6 @@ public class HomePage extends JFrame {
         LogOut.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
     }//GEN-LAST:event_LogOutMouseMoved
     
-    
     public void createHomePage(){
                 /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -597,6 +596,12 @@ public class HomePage extends JFrame {
                 
             }
         });
+    }
+    
+    private void logout() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.createLoginPage();
+        this.dispose();      
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

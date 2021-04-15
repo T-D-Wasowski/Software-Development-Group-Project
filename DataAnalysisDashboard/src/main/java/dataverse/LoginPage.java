@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class LoginPage extends javax.swing.JFrame {
     
     UserController userController = new UserController();
-    HomePage homePage = new HomePage(); //Get rid off once in GUI
+    //HomePage homePage = new HomePage(); //Get rid off once in GUI
 
     public LoginPage() {
         initComponents();
@@ -688,7 +688,8 @@ public class LoginPage extends javax.swing.JFrame {
                 showNotification(false, "Error: This username does not exist. Please enter a valid username.", false);
                 clearLoginTextFields();
             }
-            case 1 -> {       
+            case 1 -> {  
+                HomePage homePage = new HomePage();
                 homePage.createHomePage();
                 this.dispose();
             }
