@@ -14,7 +14,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        //hi, testing new branch
         //traffic database @Adelin
         TrafficController trafficController = new TrafficController();
 //        trafficController.createTables();             //function used to create the tables
