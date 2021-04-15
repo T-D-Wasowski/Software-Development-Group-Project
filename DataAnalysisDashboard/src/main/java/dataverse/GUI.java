@@ -10,9 +10,9 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class GUI {
-    HomePage home = new HomePage();
-    LoginPage loginGUI = new LoginPage();
-
+    LoginPage loginPage = new LoginPage();
+    HomePage homePage = new HomePage();
     
+    UserController userController = new UserController();
     
 }

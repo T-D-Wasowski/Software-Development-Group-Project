@@ -13,11 +13,15 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class LoginPage extends javax.swing.JFrame {
+    
+    UserController userController = new UserController();
+    HomePage homePage = new HomePage(); //Get rid off once in GUI
 
     public LoginPage() {
         initComponents();
         registerPanel.setVisible(false);
-        loginPanel.setVisible(true);
+        hideNotifications();
+        loginPanel.setVisible(true);   
         pack();
     }
 
@@ -26,6 +30,7 @@ public class LoginPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         loginPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -34,9 +39,13 @@ public class LoginPage extends javax.swing.JFrame {
         loginPasswordTextField = new javax.swing.JPasswordField();
         loginLoginButton = new javax.swing.JButton();
         loginRegisterButton = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        loginNotificationLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        logoNotificationLabel = new javax.swing.JPanel();
+        loginNotificationLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         registerPanel = new javax.swing.JPanel();
         registerPasswordTextField = new javax.swing.JPasswordField();
@@ -44,10 +53,10 @@ public class LoginPage extends javax.swing.JFrame {
         registerUsernameTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        registerEmailTextBox = new javax.swing.JTextField();
+        registerEmailTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        loginRegisterButton1 = new javax.swing.JButton();
-        loginLoginButton1 = new javax.swing.JButton();
+        registerRegisterButton = new javax.swing.JButton();
+        registerBackButton = new javax.swing.JButton();
         registerAdminCheckBox = new javax.swing.JCheckBox();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -58,6 +67,17 @@ public class LoginPage extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
@@ -76,7 +96,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Username");
 
-        loginUsernameTextField.setToolTipText("Please Enter Username");
+        loginUsernameTextField.setToolTipText("");
         loginUsernameTextField.setName(""); // NOI18N
         loginUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +161,26 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        jPanel6.setBackground(new java.awt.Color(208, 239, 255));
+
+        loginNotificationLabel.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        loginNotificationLabel.setText("Notification");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(loginNotificationLabel)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(loginNotificationLabel)
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
         loginPanelLayout.setHorizontalGroup(
@@ -154,13 +194,14 @@ public class LoginPage extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.CENTER, loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                 .addComponent(loginPasswordTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(loginUsernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2)))
+                            .addComponent(jLabel2)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(loginLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(loginRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
 
         loginPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {loginPasswordTextField, loginUsernameTextField});
@@ -176,7 +217,9 @@ public class LoginPage extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -197,6 +240,26 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(145, 145, 145));
         jLabel4.setText("verse");
 
+        logoNotificationLabel.setBackground(new java.awt.Color(208, 239, 255));
+
+        loginNotificationLabel1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        loginNotificationLabel1.setText("Notification");
+
+        javax.swing.GroupLayout logoNotificationLabelLayout = new javax.swing.GroupLayout(logoNotificationLabel);
+        logoNotificationLabel.setLayout(logoNotificationLabelLayout);
+        logoNotificationLabelLayout.setHorizontalGroup(
+            logoNotificationLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoNotificationLabelLayout.createSequentialGroup()
+                .addComponent(loginNotificationLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        logoNotificationLabelLayout.setVerticalGroup(
+            logoNotificationLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoNotificationLabelLayout.createSequentialGroup()
+                .addComponent(loginNotificationLabel1)
+                .addGap(0, 8, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -207,6 +270,10 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(logoNotificationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,7 +282,8 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addGap(33, 33, 33))
+                .addGap(10, 10, 10)
+                .addComponent(logoNotificationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -245,9 +313,9 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Password");
+        jLabel5.setText("Password (8 - 32 Characters)");
 
-        registerUsernameTextField.setToolTipText("Please Enter Username");
+        registerUsernameTextField.setToolTipText("");
         registerUsernameTextField.setName(""); // NOI18N
         registerUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,66 +324,66 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Username");
+        jLabel6.setText("Username (3 - 32 Characters)");
 
         jLabel7.setText("Is this an Administrative account?");
 
-        registerEmailTextBox.setToolTipText("Please Enter Username");
-        registerEmailTextBox.setName(""); // NOI18N
-        registerEmailTextBox.addActionListener(new java.awt.event.ActionListener() {
+        registerEmailTextField.setToolTipText("");
+        registerEmailTextField.setName(""); // NOI18N
+        registerEmailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerEmailTextBoxActionPerformed(evt);
+                registerEmailTextFieldActionPerformed(evt);
             }
         });
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Email");
+        jLabel8.setText("Email (3 - 255 Characters)");
 
-        loginRegisterButton1.setBackground(new java.awt.Color(132, 213, 255));
-        loginRegisterButton1.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
-        loginRegisterButton1.setForeground(new java.awt.Color(255, 255, 255));
-        loginRegisterButton1.setText("Register");
-        loginRegisterButton1.setBorder(null);
-        loginRegisterButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        registerRegisterButton.setBackground(new java.awt.Color(132, 213, 255));
+        registerRegisterButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
+        registerRegisterButton.setForeground(new java.awt.Color(255, 255, 255));
+        registerRegisterButton.setText("Register");
+        registerRegisterButton.setBorder(null);
+        registerRegisterButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                loginRegisterButton1MouseMoved(evt);
+                registerRegisterButtonMouseMoved(evt);
             }
         });
-        loginRegisterButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        registerRegisterButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                loginRegisterButton1MouseEntered(evt);
+                registerRegisterButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                loginRegisterButton1MouseExited(evt);
+                registerRegisterButtonMouseExited(evt);
             }
         });
-        loginRegisterButton1.addActionListener(new java.awt.event.ActionListener() {
+        registerRegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginRegisterButton1ActionPerformed(evt);
+                registerRegisterButtonActionPerformed(evt);
             }
         });
 
-        loginLoginButton1.setBackground(new java.awt.Color(132, 213, 255));
-        loginLoginButton1.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
-        loginLoginButton1.setForeground(new java.awt.Color(255, 255, 255));
-        loginLoginButton1.setText("Back");
-        loginLoginButton1.setBorder(null);
-        loginLoginButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        registerBackButton.setBackground(new java.awt.Color(132, 213, 255));
+        registerBackButton.setFont(new java.awt.Font("Verdana", 1, 15)); // NOI18N
+        registerBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        registerBackButton.setText("Back");
+        registerBackButton.setBorder(null);
+        registerBackButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                loginLoginButton1MouseMoved(evt);
+                registerBackButtonMouseMoved(evt);
             }
         });
-        loginLoginButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        registerBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                loginLoginButton1MouseEntered(evt);
+                registerBackButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                loginLoginButton1MouseExited(evt);
+                registerBackButtonMouseExited(evt);
             }
         });
-        loginLoginButton1.addActionListener(new java.awt.event.ActionListener() {
+        registerBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginLoginButton1ActionPerformed(evt);
+                registerBackButtonActionPerformed(evt);
             }
         });
 
@@ -347,7 +415,7 @@ public class LoginPage extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.CENTER, registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel8)
-                                        .addComponent(registerEmailTextBox, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(registerEmailTextField, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(registerPanelLayout.createSequentialGroup()
                                         .addGap(1, 1, 1)
                                         .addComponent(jLabel7)
@@ -356,9 +424,9 @@ public class LoginPage extends javax.swing.JFrame {
                                 .addComponent(jLabel5))))
                     .addGroup(registerPanelLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(loginLoginButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(registerBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
-                        .addComponent(loginRegisterButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(registerRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         registerPanelLayout.setVerticalGroup(
@@ -375,15 +443,15 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(registerEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registerEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(registerAdminCheckBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginLoginButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginRegisterButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(registerBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(registerRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32))
         );
 
@@ -428,12 +496,15 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_loginUsernameTextFieldActionPerformed
 
     private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginLoginButtonActionPerformed
-   
+        
+        loginLogin();
+        
     }//GEN-LAST:event_loginLoginButtonActionPerformed
 
     private void loginRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginRegisterButtonActionPerformed
-        loginPanel.setVisible(false);
-        registerPanel.setVisible(true);
+        
+        loginRegister();
+        
     }//GEN-LAST:event_loginRegisterButtonActionPerformed
 
     private void registerPasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPasswordTextFieldActionPerformed
@@ -444,18 +515,21 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_registerUsernameTextFieldActionPerformed
 
-    private void registerEmailTextBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerEmailTextBoxActionPerformed
+    private void registerEmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerEmailTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_registerEmailTextBoxActionPerformed
+    }//GEN-LAST:event_registerEmailTextFieldActionPerformed
 
-    private void loginLoginButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginLoginButton1ActionPerformed
-        registerPanel.setVisible(false);
-        loginPanel.setVisible(true);
-    }//GEN-LAST:event_loginLoginButton1ActionPerformed
+    private void registerBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBackButtonActionPerformed
+        
+        registerBack();
+        
+    }//GEN-LAST:event_registerBackButtonActionPerformed
 
-    private void loginRegisterButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginRegisterButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginRegisterButton1ActionPerformed
+    private void registerRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerRegisterButtonActionPerformed
+      
+       registerRegister();
+              
+    }//GEN-LAST:event_registerRegisterButtonActionPerformed
 
     private void registerAdminCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerAdminCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -481,25 +555,25 @@ public class LoginPage extends javax.swing.JFrame {
         loginRegisterButton.setBackground(new Color(132,213,255));      //blue
     }//GEN-LAST:event_loginRegisterButtonMouseExited
 
-    private void loginLoginButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButton1MouseEntered
+    private void registerBackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseEntered
         // back button hover
-        loginLoginButton1.setBackground(new Color(245,160,39));          //orange
-    }//GEN-LAST:event_loginLoginButton1MouseEntered
+        registerBackButton.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_registerBackButtonMouseEntered
 
-    private void loginLoginButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButton1MouseExited
+    private void registerBackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseExited
         // back button unhover
-        loginLoginButton1.setBackground(new Color(132,213,255));      //blue
-    }//GEN-LAST:event_loginLoginButton1MouseExited
+        registerBackButton.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_registerBackButtonMouseExited
 
-    private void loginRegisterButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButton1MouseEntered
+    private void registerRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseEntered
         // register 2 button hover
-        loginRegisterButton1.setBackground(new Color(245,160,39));          //orange
-    }//GEN-LAST:event_loginRegisterButton1MouseEntered
+        registerRegisterButton.setBackground(new Color(245,160,39));          //orange
+    }//GEN-LAST:event_registerRegisterButtonMouseEntered
 
-    private void loginRegisterButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButton1MouseExited
+    private void registerRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseExited
         // register 2 button unhover
-        loginRegisterButton1.setBackground(new Color(132,213,255));      //blue
-    }//GEN-LAST:event_loginRegisterButton1MouseExited
+        registerRegisterButton.setBackground(new Color(132,213,255));      //blue
+    }//GEN-LAST:event_registerRegisterButtonMouseExited
 
     private void loginLoginButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseMoved
         loginLoginButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
@@ -509,13 +583,13 @@ public class LoginPage extends javax.swing.JFrame {
         loginRegisterButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
     }//GEN-LAST:event_loginRegisterButtonMouseMoved
 
-    private void loginLoginButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButton1MouseMoved
-        loginLoginButton1.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
-    }//GEN-LAST:event_loginLoginButton1MouseMoved
+    private void registerBackButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseMoved
+        registerBackButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_registerBackButtonMouseMoved
 
-    private void loginRegisterButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButton1MouseMoved
-        loginRegisterButton1.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
-    }//GEN-LAST:event_loginRegisterButton1MouseMoved
+    private void registerRegisterButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseMoved
+        registerRegisterButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+    }//GEN-LAST:event_registerRegisterButtonMouseMoved
 
     private void registerAdminCheckBoxMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerAdminCheckBoxMouseMoved
         registerAdminCheckBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -556,6 +630,126 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void showNotification(Boolean label, String message, Boolean colour) {
+        
+        if (label) {
+                    
+            loginNotificationLabel1.setText(message);
+
+            //True = green, False = red
+            if (colour) {
+                loginNotificationLabel1.setForeground(new Color(0,153,0));
+            } else {
+                loginNotificationLabel1.setForeground(Color.RED);
+            }
+
+            loginNotificationLabel1.setVisible(true); 
+
+        } else {
+            
+            loginNotificationLabel.setText(message);
+
+            //True = green, False = red
+            if (colour) {
+                loginNotificationLabel.setForeground(new Color(0,153,0));
+            } else {
+                loginNotificationLabel.setForeground(Color.RED);
+            }
+
+            loginNotificationLabel.setVisible(true);     
+        }
+    }
+    
+    private void hideNotifications() {
+        loginNotificationLabel1.setVisible(false);
+        loginNotificationLabel.setVisible(false);
+    }
+    
+    private void clearLoginTextFields() {
+        loginUsernameTextField.setText("");
+        loginPasswordTextField.setText("");
+    }
+    
+    private void clearRegisterTextFields() {
+        registerUsernameTextField.setText("");
+        registerPasswordTextField.setText("");
+        registerEmailTextField.setText("");
+        registerAdminCheckBox.setSelected(false);
+    }
+    
+    private void loginLogin() {
+        loginNotificationLabel.setVisible(false);
+        
+        //Put all this in a method in GUI and call the method from here instead!!!
+        int status = userController.login(loginUsernameTextField.getText(), loginPasswordTextField.getText());
+        switch (status) {
+            case 0 -> {
+                showNotification(false, "Error: This username does not exist. Please enter a valid username.", false);
+                clearLoginTextFields();
+            }
+            case 1 -> {       
+                homePage.createHomePage();
+                this.dispose();
+            }
+            case 2 -> {
+                showNotification(false, "Error: The password does not match. Please enter a valid password.", false);
+                clearLoginTextFields();
+            }
+            default -> {
+                showNotification(false, "Error: There was an SQL error. Please verify your credentials and try again.", false);
+                clearLoginTextFields();
+            }
+        }   
+    }
+    
+    private void loginRegister() {
+        loginPanel.setVisible(false);     
+        registerPanel.setVisible(true);
+        hideNotifications();
+        
+        clearLoginTextFields();
+    }
+    
+    private void registerBack() {
+        registerPanel.setVisible(false);
+        loginPanel.setVisible(true);
+        hideNotifications();
+        
+        clearRegisterTextFields();
+    }
+    
+    private void registerRegister() {
+        
+        int status = userController.register(registerUsernameTextField.getText(), 
+                registerEmailTextField.getText(), 
+                registerPasswordTextField.getText(), 
+                registerAdminCheckBox.isSelected()
+        );
+        
+        switch (status) {
+            case 0 -> {
+                showNotification(true, "Error: This username is already taken or invalid. Please enter a valid username.", false);
+                clearRegisterTextFields();
+            }
+            case 1 -> {       
+                registerBack();
+                showNotification(false, "Your account has been successfuly registered.", true);
+            }
+            case 2 -> {
+                showNotification(true, "Error: The email is already taken or invalid. Please enter a valid email.", false);
+                clearRegisterTextFields();
+            }
+            case 3 -> {
+                showNotification(true, "Error: The password is invalid. Please enter a valid password.", false);
+                clearRegisterTextFields();
+            }
+            default -> {
+                showNotification(true, "Error: There was an SQL error. Please verify your credentials and try again.", false);
+                clearRegisterTextFields();
+            }  
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -570,17 +764,22 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JButton loginLoginButton;
-    private javax.swing.JButton loginLoginButton1;
+    private javax.swing.JLabel loginNotificationLabel;
+    private javax.swing.JLabel loginNotificationLabel1;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPasswordField loginPasswordTextField;
     private javax.swing.JButton loginRegisterButton;
-    private javax.swing.JButton loginRegisterButton1;
     private javax.swing.JTextField loginUsernameTextField;
+    private javax.swing.JPanel logoNotificationLabel;
     private javax.swing.JCheckBox registerAdminCheckBox;
-    private javax.swing.JTextField registerEmailTextBox;
+    private javax.swing.JButton registerBackButton;
+    private javax.swing.JTextField registerEmailTextField;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JPasswordField registerPasswordTextField;
+    private javax.swing.JButton registerRegisterButton;
     private javax.swing.JTextField registerUsernameTextField;
     // End of variables declaration//GEN-END:variables
 }

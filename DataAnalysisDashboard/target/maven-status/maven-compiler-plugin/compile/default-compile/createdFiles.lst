@@ -1,29 +1,20 @@
-<<<<<<< HEAD
-=======
+dataverse\UserController.class
+dataverse\GUI.class
+dataverse\LoginPage$9.class
+dataverse\LoginPage.class
+dataverse\LoginPage$1.class
 dataverse\LoginPage$6.class
-dataverse\LoginPage$11.class
+dataverse\LoginPage$3.class
+dataverse\Main.class
 dataverse\LoginPage$10.class
->>>>>>> origin/Isa
+dataverse\LoginPage$7.class
+dataverse\LoginPage$4.class
+dataverse\LoginPage$11.class
 dataverse\PasswordUtility.class
 dataverse\Log.class
 dataverse\UserDatabase.class
 dataverse\LoginPage$8.class
-dataverse\LoginPage$7.class
-dataverse\UserController.class
-<<<<<<< HEAD
 dataverse\TrafficController.class
-dataverse\GUI.class
-dataverse\User.class
-=======
-dataverse\LoginPage$3.class
-dataverse\Main.class
-dataverse\TrafficController.class
-dataverse\GUI.class
-dataverse\LoginPage$9.class
 dataverse\LoginPage$2.class
 dataverse\User.class
-dataverse\LoginPage$4.class
-dataverse\LoginPage.class
-dataverse\LoginPage$1.class
 dataverse\LoginPage$5.class
->>>>>>> origin/Isa
