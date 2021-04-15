@@ -55,6 +55,7 @@ public class HomePage extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(177, 220, 253));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(208, 239, 255));
 
@@ -120,7 +121,6 @@ public class HomePage extends JFrame {
 
         DashboardPanel_1.setBackground(new java.awt.Color(235, 64, 52));
         DashboardPanel_1.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        DashboardPanel_1.setPreferredSize(new java.awt.Dimension(900, 400));
 
         javax.swing.GroupLayout DashboardPanel_1Layout = new javax.swing.GroupLayout(DashboardPanel_1);
         DashboardPanel_1.setLayout(DashboardPanel_1Layout);
@@ -130,12 +130,12 @@ public class HomePage extends JFrame {
         );
         DashboardPanel_1Layout.setVerticalGroup(
             DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         DashboardPanel_2.setBackground(new java.awt.Color(52, 137, 235));
         DashboardPanel_2.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        DashboardPanel_2.setPreferredSize(new java.awt.Dimension(900, 400));
+        DashboardPanel_2.setPreferredSize(new java.awt.Dimension(900, 500));
 
         javax.swing.GroupLayout DashboardPanel_2Layout = new javax.swing.GroupLayout(DashboardPanel_2);
         DashboardPanel_2.setLayout(DashboardPanel_2Layout);
@@ -145,12 +145,12 @@ public class HomePage extends JFrame {
         );
         DashboardPanel_2Layout.setVerticalGroup(
             DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
         DashboardPanel_3.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        DashboardPanel_3.setPreferredSize(new java.awt.Dimension(900, 400));
+        DashboardPanel_3.setPreferredSize(new java.awt.Dimension(900, 500));
 
         javax.swing.GroupLayout DashboardPanel_3Layout = new javax.swing.GroupLayout(DashboardPanel_3);
         DashboardPanel_3.setLayout(DashboardPanel_3Layout);
@@ -160,12 +160,12 @@ public class HomePage extends JFrame {
         );
         DashboardPanel_3Layout.setVerticalGroup(
             DashboardPanel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         DashboardPanel_4.setBackground(new java.awt.Color(134, 52, 235));
         DashboardPanel_4.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        DashboardPanel_4.setPreferredSize(new java.awt.Dimension(900, 400));
+        DashboardPanel_4.setPreferredSize(new java.awt.Dimension(900, 500));
 
         javax.swing.GroupLayout DashboardPanel_4Layout = new javax.swing.GroupLayout(DashboardPanel_4);
         DashboardPanel_4.setLayout(DashboardPanel_4Layout);
@@ -175,11 +175,11 @@ public class HomePage extends JFrame {
         );
         DashboardPanel_4Layout.setVerticalGroup(
             DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         DashboardPanel_5.setBackground(new java.awt.Color(235, 131, 52));
-        DashboardPanel_5.setPreferredSize(new java.awt.Dimension(900, 400));
+        DashboardPanel_5.setPreferredSize(new java.awt.Dimension(900, 500));
 
         javax.swing.GroupLayout DashboardPanel_5Layout = new javax.swing.GroupLayout(DashboardPanel_5);
         DashboardPanel_5.setLayout(DashboardPanel_5Layout);
@@ -189,7 +189,7 @@ public class HomePage extends JFrame {
         );
         DashboardPanel_5Layout.setVerticalGroup(
             DashboardPanel_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
@@ -379,7 +379,7 @@ public class HomePage extends JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
