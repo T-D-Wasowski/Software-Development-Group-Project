@@ -1,8 +1,11 @@
-
 package dataverse;
 
 import java.awt.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class HomePage extends JFrame {
@@ -414,7 +417,7 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setVisible(false);
         DashboardPanel_1.setVisible(false);
         DashboardPanel_5.setVisible(true);       //add one panel
-        
+
 
     }//GEN-LAST:event_AdminPanelActionPerformed
 
@@ -432,7 +435,7 @@ public class HomePage extends JFrame {
         DashboardPanel_1.setVisible(false);
         DashboardPanel_5.setVisible(false);
         DashboardPanel_4.setVisible(true);       //add one panel
-        
+
 
     }//GEN-LAST:event_Dashboard4ActionPerformed
 
@@ -449,7 +452,7 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setVisible(false);
         DashboardPanel_5.setVisible(false);
         DashboardPanel_3.setVisible(true);       //add one panel
-        
+
 
     }//GEN-LAST:event_Dashboard3ActionPerformed
 
@@ -466,24 +469,16 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setVisible(false);
         DashboardPanel_5.setVisible(false);
         DashboardPanel_2.setVisible(true);       //add one panel
-        
-        
-        
+
         Dashboard2Container.removeAll();
         Dashboard2Container.repaint();
         Dashboard2Container.revalidate();
-        
-        
+
         JPanel c = Dashboard2Chart.getChart();
         Dashboard2Container.add(c);
         Dashboard2Container.repaint();
         Dashboard2Container.validate();
-        
-        
-        
-        
-        
-        
+
 
     }//GEN-LAST:event_Dashboard2ActionPerformed
 
@@ -501,96 +496,96 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setVisible(false);
         DashboardPanel_5.setVisible(false);
         DashboardPanel_1.setVisible(true);       //add one panel
-        
+
 
     }//GEN-LAST:event_Dashboard1ActionPerformed
 
     private void Dashboard1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseEntered
         //dashboard 1 hover
-        Dashboard1.setBackground(new Color(245,160,39));          //orange
+        Dashboard1.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_Dashboard1MouseEntered
 
     private void Dashboard1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseExited
         //dashboard 1 unhover
-        Dashboard1.setBackground(new Color(62,143,185));      //blue
+        Dashboard1.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_Dashboard1MouseExited
 
     private void Dashboard2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseEntered
         //dashboard 2 hover
-        Dashboard2.setBackground(new Color(245,160,39));          //orange
+        Dashboard2.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_Dashboard2MouseEntered
 
     private void Dashboard2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseExited
         //dashboard 2 unhover
-        Dashboard2.setBackground(new Color(62,143,185));      //blue
+        Dashboard2.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_Dashboard2MouseExited
 
     private void Dashboard3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseEntered
         //dashboard 3 hover
-        Dashboard3.setBackground(new Color(245,160,39));          //orange
+        Dashboard3.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_Dashboard3MouseEntered
 
     private void Dashboard3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseExited
         //dashboard 3 unhover
-        Dashboard3.setBackground(new Color(62,143,185));      //blue
+        Dashboard3.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_Dashboard3MouseExited
 
     private void Dashboard4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseEntered
         //dashboard 4 hover
-        Dashboard4.setBackground(new Color(245,160,39));          //orange
+        Dashboard4.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_Dashboard4MouseEntered
 
     private void Dashboard4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseExited
         //dashboard 4 unhover
-        Dashboard4.setBackground(new Color(62,143,185));      //blue
+        Dashboard4.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_Dashboard4MouseExited
 
     private void AdminPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseEntered
         //AdminPanel hover
-        AdminPanel.setBackground(new Color(245,160,39));          //orange
+        AdminPanel.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_AdminPanelMouseEntered
 
     private void AdminPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseExited
         //AdminPanel unhover
-        AdminPanel.setBackground(new Color(62,143,185));      //blue
+        AdminPanel.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_AdminPanelMouseExited
 
     private void LogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseEntered
         //LogOut hover
-        LogOut.setBackground(new Color(255,43,43));          //red
+        LogOut.setBackground(new Color(255, 43, 43));          //red
     }//GEN-LAST:event_LogOutMouseEntered
 
     private void LogOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseExited
         //LogOut unhover
-        LogOut.setBackground(new Color(62,143,185));      //blue
+        LogOut.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_LogOutMouseExited
 
     private void Dashboard1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseMoved
-        Dashboard1.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        Dashboard1.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_Dashboard1MouseMoved
 
     private void Dashboard2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard2MouseMoved
-        Dashboard2.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        Dashboard2.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_Dashboard2MouseMoved
 
     private void Dashboard3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard3MouseMoved
-        Dashboard3.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        Dashboard3.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_Dashboard3MouseMoved
 
     private void Dashboard4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard4MouseMoved
-        Dashboard4.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        Dashboard4.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_Dashboard4MouseMoved
 
     private void AdminPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseMoved
-        AdminPanel.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        AdminPanel.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_AdminPanelMouseMoved
 
     private void LogOutMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseMoved
-        LogOut.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        LogOut.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_LogOutMouseMoved
-    
-    public void createHomePage(Boolean isAdmin){
-                /* Set the Nimbus look and feel */
+
+    public void createHomePage(Boolean isAdmin) {
+        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -619,23 +614,23 @@ public class HomePage extends JFrame {
             public void run() {
                 HomePage h = new HomePage();
                 h.setVisible(true);
-                
+
                 if (isAdmin == false) {
                     h.hideAdmin();
                 }
-  
+
             }
         });
     }
-    
+
     public void hideAdmin() {
         AdminPanel.setVisible(false);
     }
-    
+
     private void logout() {
         LoginPage loginPage = new LoginPage();
         loginPage.createLoginPage();
-        this.dispose();      
+        this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -659,133 +654,160 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 
-public static class Dashboard2Chart extends JPanel {
+    public static class Dashboard2Chart extends JPanel {
 
-    private static Map<Color, Integer> bars = new LinkedHashMap<>();
-    static int barWidth = 70;
-    static int barGap = 30;
+        private static Map<Color, Integer> bars = new LinkedHashMap<>();
+        static int barWidth = 80;
+        static int barGap = 30;
 
-    private void addVehicle(Color color, int noVehicles) {        //add bar to HashMap       
-        bars.put(color, noVehicles);
-        repaint();
-    }
-
-    protected static int findMaxHeight() {
-        int maxHeight = Integer.MIN_VALUE;
-
-        for (Integer value : bars.values()) {
-
-            maxHeight = Math.max(maxHeight, value);
-
-        }
-        return maxHeight;
-    }
-
-    protected static int getPanelWidth() {
-        int panelWidth = bars.size() * (barWidth + barGap);
-        return panelWidth;
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-
-        int maxHeight = findMaxHeight();
-
-        int x = 2;          //the value at which the bar will start at (x-axis value)
-
-        for (Color color : bars.keySet()) {
-
-            int barHeight = bars.get(color);
-
-            int newBarHeight = (int) ((getHeight() - 20) * ((double) barHeight / maxHeight));
-
-            g.setColor(color);
-            g.fillRect(x, getHeight() - newBarHeight, barWidth, newBarHeight);      //paint the rectangle with a color
-
-            //text above rectangle(no. of vehicles)
-            g.setColor(Color.black);
-            Font font = new Font("Arial", Font.BOLD, 12);
-            g.setFont(font);
-            g.drawString(String.valueOf(barHeight), x + 5, (getHeight() - newBarHeight) - 2);
-
-            System.out.println("Panel height: " + getHeight() + " bar height: " + newBarHeight + " color: " + color);
-
-            x += (barWidth + barGap);   // the value at which the next bar will start at (gap added #10)
-
+        private void addVehicle(Color color, int noVehicles) {        //add bar to HashMap       
+            bars.put(color, noVehicles);
+            repaint();
         }
 
-    }
+        protected static int findMaxHeight() {
+            int maxHeight = Integer.MIN_VALUE;
 
-    @Override
-    public Dimension getPreferredSize() {
-        //set size of panel
-        int panelWidth = getPanelWidth();
-        int panelHeight = 320;
-        return new Dimension(panelWidth, panelHeight);
+            for (Integer value : bars.values()) {
 
-    }
+                maxHeight = Math.max(maxHeight, value);
 
-    public static JPanel getChart() {
-        Dashboard2Chart chart = new Dashboard2Chart();
-        JPanel container = new JPanel();
-        Dashboard2LablesPanel labels = new Dashboard2LablesPanel();
+            }
+            return maxHeight;
+        }
 
-        //all colours must be different otherwise bars won't show
-        chart.addVehicle(new Color(144, 144, 144), 2000);
-
-        chart.addVehicle(Color.black, 100);
-
-        chart.addVehicle(new Color(50, 50, 144), 2000);
-
-        chart.addVehicle(new Color(50, 144, 50), 2800);
-
-        chart.addVehicle(Color.yellow, 2040);
-
-        chart.addVehicle(Color.DARK_GRAY, 1800);
-
-        chart.addVehicle(new Color(200, 50, 0), 2000);
-
-        chart.addVehicle(Color.ORANGE, 2040);
-
-        container.setPreferredSize(new Dimension(getPanelWidth(), 370));
-
-        container.add(chart, BorderLayout.NORTH);
-        container.add(labels, BorderLayout.SOUTH);
-
-        return container;
-
-    }
-
-    public static class Dashboard2LablesPanel extends JPanel {
-        
-        @Override
-        public Dimension getPreferredSize() {
-            //set size of panel
-            int panelWidth = getPanelWidth();
-            int panelHeight = 50;
-            return new Dimension(panelWidth, panelHeight);
-
+        protected static int getPanelWidth() {
+            int panelWidth = bars.size() * (barWidth + barGap);
+            return panelWidth;
         }
 
         @Override
         protected void paintComponent(Graphics g) {
-            String vehicles[] = {"Pedal cycles" , "2 wmv" , "Cars" , "Buses" , "LGVS" , "HGVS" , "HGVS" , "All motor veh"};
-            int x = 2;
-            int i = 0;
+
             int maxHeight = findMaxHeight();
+
+            int x = 2;          //the value at which the bar will start at (x-axis value)
+
             for (Color color : bars.keySet()) {
+
                 int barHeight = bars.get(color);
+
                 int newBarHeight = (int) ((getHeight() - 20) * ((double) barHeight / maxHeight));
 
-                //text below rectangles (type of vehicle)
-                Font font = new Font("Arial", Font.PLAIN, 15);
+                g.setColor(color);
+                g.fillRect(x, getHeight() - newBarHeight, barWidth, newBarHeight);      //paint the rectangle with a color
+
+                //text above rectangle(no. of vehicles)
+                g.setColor(Color.black);
+                Font font = new Font("Arial", Font.BOLD, 12);
                 g.setFont(font);
-                g.drawString(vehicles[i++], x, 20);
-                x += (barWidth + barGap);
+                g.drawString(String.valueOf(barHeight), x + 5, (getHeight() - newBarHeight) - 2);
+
+                System.out.println("Panel height: " + getHeight() + " bar height: " + newBarHeight + " color: " + color);
+
+                x += (barWidth + barGap);   // the value at which the next bar will start at (gap added #10)
+
             }
+
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            //set size of panel
+            int panelWidth = getPanelWidth();
+            int panelHeight = 320;
+            return new Dimension(panelWidth, panelHeight);
+
+        }
+
+        public static JPanel getChart() {
+            Dashboard2Chart chart = new Dashboard2Chart();
+            JPanel container = new JPanel();
+            Dashboard2LablesPanel labels = new Dashboard2LablesPanel();
+
+            TrafficController controller = new TrafficController();
+            controller.getHighestTrafficVolume();
+
+            ResultSet result = controller.getHighestTrafficVolume();
+
+            int ped = 0;
+            int twoMV = 0;
+            int cars = 0;
+            int buses = 0;
+            int lgvs = 0;
+            int hgvs = 0;
+            int allveh = 0;
+            
+            try {
+                System.out.println("pedal_cycles " + result.getString("pedal_cycles"));
+                System.out.println("all_motor_vehicles " + result.getString("MAX(all_motor_vehicles)"));
+
+                ped = (Integer.parseInt(result.getString("pedal_cycles")));
+                twoMV = (Integer.parseInt(result.getString("two_wheeled_motor_vehicles")));
+                cars = (Integer.parseInt(result.getString("cars_and_taxis")));
+                buses = (Integer.parseInt(result.getString("buses_and_coaches")));
+                lgvs = (Integer.parseInt(result.getString("lgvs")));
+                hgvs = (Integer.parseInt(result.getString("all_hgvs")));
+                allveh = (Integer.parseInt(result.getString("MAX(all_motor_vehicles)")));
+
+            } catch (SQLException ex) {
+                Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            //all colours must be different otherwise bars won't show
+            chart.addVehicle(new Color(144, 144, 144), ped);
+
+            chart.addVehicle(new Color(50, 50, 144), twoMV);
+
+            chart.addVehicle(new Color(50, 144, 50), cars);
+
+            chart.addVehicle(Color.yellow, buses);
+
+            chart.addVehicle(Color.DARK_GRAY, lgvs);
+
+            chart.addVehicle(new Color(200, 50, 0), hgvs);
+
+            chart.addVehicle(Color.ORANGE, allveh);
+
+            container.setPreferredSize(new Dimension(getPanelWidth(), 370));
+
+            container.add(chart, BorderLayout.NORTH);
+            container.add(labels, BorderLayout.SOUTH);
+
+            return container;
+
+        }
+
+        public static class Dashboard2LablesPanel extends JPanel {
+
+            @Override
+            public Dimension getPreferredSize() {
+                //set size of panel
+                int panelWidth = getPanelWidth();
+                int panelHeight = 50;
+                return new Dimension(panelWidth, panelHeight);
+
+            }
+
+            @Override
+            protected void paintComponent(Graphics g) {
+                String vehicles[] = {"Pedal cycles", "2 wmv", "Cars", "Buses", "LGVS", "HGVS", "All motor vehicles"};       //list of vehicles
+                int x = 2;
+                int i = 0;
+                int maxHeight = findMaxHeight();
+                for (Color color : bars.keySet()) {
+                    int barHeight = bars.get(color);
+                    int newBarHeight = (int) ((getHeight() - 20) * ((double) barHeight / maxHeight));
+
+                    //text below rectangles (type of vehicle)
+                    Font font = new Font("Arial", Font.PLAIN, 15);
+                    g.setFont(font);
+                    g.drawString(vehicles[i++], x, 20);
+                    x += (barWidth + barGap);
+                }
+            }
+
         }
 
     }
-
-}
 }

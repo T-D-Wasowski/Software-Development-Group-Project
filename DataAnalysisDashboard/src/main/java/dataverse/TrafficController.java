@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ public class TrafficController {
     }
 
     public void insertDataIntoTables() {
-        
+
         ArrayList<String> fileContents = CSVReader.readFile("../trafficStoredData.csv"); // store scv file into array list
         //Insert data into tables
         RegionTable.batchInsert(fileContents);
@@ -30,6 +31,47 @@ public class TrafficController {
         Count_Point.batchInsert(fileContents);
         Traffic_Volume.batchInsert(fileContents);
 
+    }
+
+    public static void disconnect(Connection connection) {
+
+        try {
+            if (!connection.isClosed()) {
+                connection.close();
+                System.out.println("Connection successfully closed.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error closing connection: " + e.getMessage());
+        }
+
+    }
+
+    //selests the highest traffic at a specific road in a specific point in time
+    public ResultSet getHighestTrafficVolume() {
+        Connection connection = DB.getConnection();
+        String sql = "SELECT pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, all_hgvs, MAX(all_motor_vehicles)\n"
+                + "FROM Traffic_Volume, Road , Count_Point, Region\n"
+                + "WHERE Traffic_Volume.the_hour = 7\n"
+                + "AND Count_Point.the_year = 2005\n"
+                + "AND Road.road_name = 'A6093'\n"
+                + "AND Count_Point.count_point_id = Traffic_Volume.count_point_id\n"
+                + "AND Count_Point.count_point_id = Traffic_Volume.count_point_id\n"
+                + "AND Count_Point.road_name = Road.road_name;";
+        ResultSet result = null;
+        try {
+            Statement statement = connection.createStatement();
+            result = statement.executeQuery(sql);
+            if (result.next()) {
+                // System.out.println("Region name is " + result.getString("region_name"));
+            }
+            return result;
+
+        } catch (Exception e) {
+            System.out.println("Error readiong from Region table" + e.getMessage());
+        } finally {
+            
+        }
+        return result;
     }
 
     public static class DB {
