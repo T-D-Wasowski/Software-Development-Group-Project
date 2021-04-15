@@ -56,7 +56,7 @@ public class HomePage extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(177, 220, 253));
 
-        jPanel1.setBackground(new java.awt.Color(177, 220, 253));
+        jPanel1.setBackground(new java.awt.Color(208, 239, 255));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 3, 34)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(245, 160, 39));
@@ -116,7 +116,7 @@ public class HomePage extends JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(177, 220, 253));
+        jPanel2.setBackground(new java.awt.Color(208, 239, 255));
 
         DashboardPanel_1.setBackground(new java.awt.Color(235, 64, 52));
         DashboardPanel_1.setMaximumSize(new java.awt.Dimension(30000, 30000));
@@ -192,7 +192,7 @@ public class HomePage extends JFrame {
             .addGap(0, 400, Short.MAX_VALUE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(177, 220, 253));
+        jPanel3.setBackground(new java.awt.Color(208, 239, 255));
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Dashboard1.setBackground(new java.awt.Color(132, 213, 255));
@@ -365,8 +365,7 @@ public class HomePage extends JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(DashboardPanel_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(DashboardPanel_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addComponent(DashboardPanel_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -380,8 +379,9 @@ public class HomePage extends JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
