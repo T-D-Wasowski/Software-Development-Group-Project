@@ -175,7 +175,7 @@ public class HomePage extends JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        DashboardPanel_2.setBackground(new java.awt.Color(52, 137, 235));
+        DashboardPanel_2.setBackground(new java.awt.Color(208, 239, 255));
         DashboardPanel_2.setMaximumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_2.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_2.setPreferredSize(new java.awt.Dimension(836, 500));
@@ -1364,6 +1364,8 @@ public class HomePage extends JFrame {
 
                 g.setColor(color);
                 g.fillRect(x, getHeight() - newBarHeight, barWidth, newBarHeight);      //paint the rectangle with a color
+                g.setColor(Color.black);
+                g.drawRect(x, getHeight() - newBarHeight, barWidth, newBarHeight);                     //paint border around rectangle with black
 
                 //text above rectangle(no. of vehicles)
                 g.setColor(Color.black);
@@ -1391,6 +1393,8 @@ public class HomePage extends JFrame {
         public static JPanel getChart(int hour) {
             Dashboard2Chart chart = new Dashboard2Chart();
             JPanel container = new JPanel();
+            container.setBackground(new Color(208,239,255));                    // blue - graph background color
+            
             Dashboard2LablesPanel labels = new Dashboard2LablesPanel();
 
             TrafficController controller = new TrafficController();
