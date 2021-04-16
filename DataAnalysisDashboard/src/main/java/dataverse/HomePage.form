@@ -330,6 +330,9 @@
                   </Events>
                 </Component>
                 <Component class="java.awt.Choice" name="RoadChoiceDashboard2">
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="RoadChoiceDashboard2ItemStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JSlider" name="SlideBarDashboard2">
                   <Properties>

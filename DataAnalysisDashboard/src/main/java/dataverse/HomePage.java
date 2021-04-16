@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.*;
 
 public class HomePage extends JFrame {
-
+    String road_dashboard2 = "A1";
     int hour_dashboard2 = 7;
     int year_dashboard2 = 2005;
 
@@ -196,6 +196,12 @@ public class HomePage extends JFrame {
         NextButtonDashboard2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NextButtonDashboard2ActionPerformed(evt);
+            }
+        });
+
+        RoadChoiceDashboard2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                RoadChoiceDashboard2ItemStateChanged(evt);
             }
         });
 
@@ -952,7 +958,7 @@ public class HomePage extends JFrame {
         DashboardPanel_2.setVisible(true);       //add one panel
 
         addElementsToChoiceDashboard2();        //fills up the dropdown with road choices       
-        repaintDashboard2(hour_dashboard2);     //repaint dashboard
+        repaintDashboard2();     //repaint dashboard
         
     }//GEN-LAST:event_Dashboard2ActionPerformed
 
@@ -1186,7 +1192,7 @@ public class HomePage extends JFrame {
         }
         labelHourDashboard2.repaint();
 
-        repaintDashboard2(hour_dashboard2);
+        repaintDashboard2();
 
     }//GEN-LAST:event_BackButtonDashboard2ActionPerformed
 
@@ -1206,15 +1212,21 @@ public class HomePage extends JFrame {
         }
         labelHourDashboard2.repaint();
 
-        repaintDashboard2(hour_dashboard2);
+        repaintDashboard2();
     }//GEN-LAST:event_NextButtonDashboard2ActionPerformed
 
-    public void repaintDashboard2(int hour) {
+    private void RoadChoiceDashboard2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RoadChoiceDashboard2ItemStateChanged
+        System.out.println(RoadChoiceDashboard2.getSelectedItem());
+        road_dashboard2 = RoadChoiceDashboard2.getSelectedItem(); 
+        repaintDashboard2();
+    }//GEN-LAST:event_RoadChoiceDashboard2ItemStateChanged
+
+    public void repaintDashboard2() {
         Dashboard2Container.removeAll();
         Dashboard2Container.repaint();
         Dashboard2Container.revalidate();
 
-        JPanel c = Dashboard2Chart.getChart(hour_dashboard2);
+        JPanel c = Dashboard2Chart.getChart(hour_dashboard2, road_dashboard2);
         Dashboard2Container.add(c);
         Dashboard2Container.repaint();
         Dashboard2Container.validate();
@@ -1402,7 +1414,7 @@ public class HomePage extends JFrame {
 
         }
 
-        public static JPanel getChart(int hour) {
+        public static JPanel getChart(int hour, String road) { 
             Dashboard2Chart chart = new Dashboard2Chart();
             JPanel container = new JPanel();
             container.setBackground(new Color(208, 239, 255));                    // blue - graph background color
@@ -1411,7 +1423,7 @@ public class HomePage extends JFrame {
 
             TrafficController controller = new TrafficController();
 
-            ResultSet result = controller.getHighestTrafficVolume(hour);
+            ResultSet result = controller.getHighestTrafficVolume(hour, road);
 
             int ped = 0;
             int twoMV = 0;
