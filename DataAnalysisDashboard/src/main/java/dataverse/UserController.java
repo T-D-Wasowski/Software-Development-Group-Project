@@ -9,6 +9,11 @@ import java.util.Base64;
 import java.util.Random;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 public class UserController {
@@ -83,7 +88,10 @@ public class UserController {
                             user.getString("userEncryptionSalt")
                     );
                     
-                    if (passwordMatch) {
+                    if (passwordMatch) {   
+                        
+                        
+                        //Determine if user is admin                       
                         if (user.getBoolean("userAdminFlag") == true) {
                             return 1; //Return 1 when password matches and is admin
                         } else {
@@ -99,9 +107,37 @@ public class UserController {
             return 3; //Return 3 when there is an SQL exception error               
         } finally {
             database.disconnect();
+        }            
+    }
+    
+    public void createLog(Boolean logReason, String username) {
+        
+        //Getting current date and time
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        
+        System.out.println(formatter.format(now)); //Test
+        
+        //Getting userID & add log to database
+        Integer userID = null;
+        ResultSet userResults = database.getUserByUsername(username);
+        try {
+            userID = userResults.getInt("userID");
+            System.out.println(userID);
+            
+        } catch (SQLException e) {           
+            System.out.println("Error getting userID :" + e.getMessage());
+        } finally {
+            database.disconnect();
         }
         
-        
+        try {
+            database.addLog(formatter.format(now), logReason, userID);
+            System.out.println("Log successfully created and added to the database.");
+        } catch (SQLException e) {
+            System.out.println("Error adding log to database: " + e.getMessage());
+        }
+           
     }
     
     public void recreateDatabase() {
@@ -229,6 +265,30 @@ class UserDatabase {
         System.out.println("User inserted into database.");
        
         disconnect(/*connection*/);
+    }
+    
+    public void addLog(String logDateTime, Boolean logReason, Integer userID) throws SQLException {
+        
+        /*Connection connection = */connect();
+        
+        String sqlString = "INSERT INTO Log"
+                + "("
+                    + "logDateTime,"
+                    + "logReason,"
+                    + "userID" 
+                + ") VALUES ("
+                    + "'" + logDateTime + "',"
+                    + logReason + ","
+                    + userID
+                + ");";
+        
+        Statement sqlStatement = connection.createStatement();
+        sqlStatement.executeUpdate(sqlString);      
+
+        System.out.println("Log inserted into database.");
+       
+        disconnect(/*connection*/);
+        
     }
     
     public ResultSet getUserById(int userId) {
