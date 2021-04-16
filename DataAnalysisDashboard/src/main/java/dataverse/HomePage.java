@@ -42,6 +42,28 @@ public class HomePage extends JFrame {
         viewAllLogsButton = new javax.swing.JButton();
         viewAllUsersButton = new javax.swing.JButton();
         deleteUserButton = new javax.swing.JButton();
+        adminRightPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        adminNewUsernameTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        adminNewEmailTextField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        adminNewPasswordTextField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        adminChangeAdminStatusCheckBox = new javax.swing.JCheckBox();
+        clearButton = new javax.swing.JButton();
+        confirmButton = new javax.swing.JButton();
+        adminNotificationLabel = new javax.swing.JLabel();
+        adminUsernameLabel = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        adminStatusLabel = new javax.swing.JLabel();
+        adminLeftPanel = new javax.swing.JPanel();
+        adminScrollPane = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Dashboard1 = new javax.swing.JButton();
         Dashboard2 = new javax.swing.JButton();
@@ -113,15 +135,16 @@ public class HomePage extends JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(logoutButton)))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logoutButton)
-                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(208, 239, 255));
@@ -194,7 +217,7 @@ public class HomePage extends JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        AdminPanel.setBackground(new java.awt.Color(235, 131, 52));
+        AdminPanel.setBackground(new java.awt.Color(255, 153, 51));
         AdminPanel.setPreferredSize(new java.awt.Dimension(900, 500));
 
         editUserButton.setBackground(new java.awt.Color(62, 143, 185));
@@ -278,7 +301,7 @@ public class HomePage extends JFrame {
         deleteUserButton.setBackground(new java.awt.Color(62, 143, 185));
         deleteUserButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         deleteUserButton.setForeground(new java.awt.Color(255, 255, 255));
-        deleteUserButton.setText("Edit User");
+        deleteUserButton.setText("Delete User");
         deleteUserButton.setMaximumSize(new java.awt.Dimension(112, 23));
         deleteUserButton.setMinimumSize(new java.awt.Dimension(112, 23));
         deleteUserButton.setPreferredSize(new java.awt.Dimension(112, 23));
@@ -301,32 +324,269 @@ public class HomePage extends JFrame {
             }
         });
 
+        adminRightPanel.setBackground(new java.awt.Color(208, 239, 255));
+        adminRightPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        adminRightPanel.setMaximumSize(new java.awt.Dimension(313, 442));
+        adminRightPanel.setMinimumSize(new java.awt.Dimension(313, 442));
+        adminRightPanel.setPreferredSize(new java.awt.Dimension(313, 442));
+
+        jLabel3.setText("Current Username:");
+
+        jLabel4.setText("New Username:");
+
+        adminNewUsernameTextField.setMaximumSize(new java.awt.Dimension(273, 31));
+        adminNewUsernameTextField.setMinimumSize(new java.awt.Dimension(273, 31));
+        adminNewUsernameTextField.setName(""); // NOI18N
+        adminNewUsernameTextField.setPreferredSize(new java.awt.Dimension(273, 31));
+        adminNewUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminNewUsernameTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Current Email:");
+
+        jLabel6.setText("New Email:");
+
+        adminNewEmailTextField.setMaximumSize(new java.awt.Dimension(273, 31));
+        adminNewEmailTextField.setMinimumSize(new java.awt.Dimension(273, 31));
+        adminNewEmailTextField.setName(""); // NOI18N
+        adminNewEmailTextField.setPreferredSize(new java.awt.Dimension(273, 31));
+        adminNewEmailTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminNewEmailTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("New Password:");
+
+        adminNewPasswordTextField.setMaximumSize(new java.awt.Dimension(273, 31));
+        adminNewPasswordTextField.setMinimumSize(new java.awt.Dimension(273, 31));
+        adminNewPasswordTextField.setName(""); // NOI18N
+        adminNewPasswordTextField.setPreferredSize(new java.awt.Dimension(273, 31));
+        adminNewPasswordTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminNewPasswordTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Current Admin Status:");
+
+        adminChangeAdminStatusCheckBox.setText("Change Admin Status?");
+        adminChangeAdminStatusCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminChangeAdminStatusCheckBoxActionPerformed(evt);
+            }
+        });
+
+        clearButton.setBackground(new java.awt.Color(62, 143, 185));
+        clearButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        clearButton.setForeground(new java.awt.Color(255, 255, 255));
+        clearButton.setText("Clear");
+        clearButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        clearButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        clearButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        clearButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                clearButtonMouseMoved(evt);
+            }
+        });
+        clearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearButtonMouseExited(evt);
+            }
+        });
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+
+        confirmButton.setBackground(new java.awt.Color(62, 185, 143));
+        confirmButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        confirmButton.setForeground(new java.awt.Color(255, 255, 255));
+        confirmButton.setText("Confirm");
+        confirmButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        confirmButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        confirmButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        confirmButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseMoved(evt);
+            }
+        });
+        confirmButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseExited(evt);
+            }
+        });
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
+
+        adminNotificationLabel.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        adminNotificationLabel.setText("Notification");
+
+        adminUsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        adminUsernameLabel.setText("Username");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setText("adminEmailLabel");
+
+        adminStatusLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        adminStatusLabel.setText("AdminStatus");
+
+        javax.swing.GroupLayout adminRightPanelLayout = new javax.swing.GroupLayout(adminRightPanel);
+        adminRightPanel.setLayout(adminRightPanelLayout);
+        adminRightPanelLayout.setHorizontalGroup(
+            adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminRightPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminNotificationLabel)
+                    .addComponent(adminChangeAdminStatusCheckBox)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addGroup(adminRightPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(adminStatusLabel)
+                            .addComponent(jLabel12)
+                            .addComponent(adminUsernameLabel)))
+                    .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, adminRightPanelLayout.createSequentialGroup()
+                            .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(adminNewEmailTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(adminNewPasswordTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(adminNewUsernameTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
+        );
+        adminRightPanelLayout.setVerticalGroup(
+            adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminRightPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(8, 8, 8)
+                .addComponent(adminUsernameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminNewUsernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminNewEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminNewPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addGap(8, 8, 8)
+                .addComponent(adminStatusLabel)
+                .addGap(9, 9, 9)
+                .addComponent(adminChangeAdminStatusCheckBox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(adminNotificationLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        adminLeftPanel.setMaximumSize(new java.awt.Dimension(313, 442));
+        adminLeftPanel.setMinimumSize(new java.awt.Dimension(313, 442));
+        adminLeftPanel.setPreferredSize(new java.awt.Dimension(313, 442));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        adminScrollPane.setViewportView(jTable1);
+
+        javax.swing.GroupLayout adminLeftPanelLayout = new javax.swing.GroupLayout(adminLeftPanel);
+        adminLeftPanel.setLayout(adminLeftPanelLayout);
+        adminLeftPanelLayout.setHorizontalGroup(
+            adminLeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adminScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+        );
+        adminLeftPanelLayout.setVerticalGroup(
+            adminLeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adminScrollPane)
+        );
+
+        jLabel9.setText("User Details");
+
+        jLabel10.setText("User / Log List");
+
         javax.swing.GroupLayout AdminPanelLayout = new javax.swing.GroupLayout(AdminPanel);
         AdminPanel.setLayout(AdminPanelLayout);
         AdminPanelLayout.setHorizontalGroup(
             AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(viewAllUsersButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(viewAllLogsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminLeftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(AdminPanelLayout.createSequentialGroup()
+                        .addComponent(adminRightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(viewAllUsersButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(viewAllLogsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(26, 26, 26))
         );
         AdminPanelLayout.setVerticalGroup(
             AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(viewAllLogsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(viewAllUsersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(adminLeftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminRightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(AdminPanelLayout.createSequentialGroup()
+                        .addComponent(viewAllLogsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(viewAllUsersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
@@ -787,6 +1047,54 @@ public class HomePage extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteUserButtonActionPerformed
 
+    private void adminChangeAdminStatusCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminChangeAdminStatusCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminChangeAdminStatusCheckBoxActionPerformed
+
+    private void adminNewPasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminNewPasswordTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminNewPasswordTextFieldActionPerformed
+
+    private void adminNewEmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminNewEmailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminNewEmailTextFieldActionPerformed
+
+    private void adminNewUsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminNewUsernameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminNewUsernameTextFieldActionPerformed
+
+    private void clearButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseMoved
+        clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_clearButtonMouseMoved
+
+    private void clearButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseEntered
+        clearButton.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_clearButtonMouseEntered
+
+    private void clearButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseExited
+        clearButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_clearButtonMouseExited
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void confirmButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseMoved
+        confirmButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_confirmButtonMouseMoved
+
+    private void confirmButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseEntered
+        confirmButton.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_confirmButtonMouseEntered
+
+    private void confirmButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseExited
+        confirmButton.setBackground(new Color(62, 185, 143));      //blue
+    }//GEN-LAST:event_confirmButtonMouseExited
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmButtonActionPerformed
+
     public void createHomePage(Boolean isAdmin) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -847,15 +1155,37 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_2;
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
+    private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
+    private javax.swing.JPanel adminLeftPanel;
+    private javax.swing.JTextField adminNewEmailTextField;
+    private javax.swing.JTextField adminNewPasswordTextField;
+    private javax.swing.JTextField adminNewUsernameTextField;
+    private javax.swing.JLabel adminNotificationLabel;
     private javax.swing.JButton adminPanelButton;
+    private javax.swing.JPanel adminRightPanel;
+    private javax.swing.JScrollPane adminScrollPane;
+    private javax.swing.JLabel adminStatusLabel;
+    private javax.swing.JLabel adminUsernameLabel;
+    private javax.swing.JButton clearButton;
+    private javax.swing.JButton confirmButton;
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JButton editUserButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton viewAllLogsButton;
     private javax.swing.JButton viewAllUsersButton;
