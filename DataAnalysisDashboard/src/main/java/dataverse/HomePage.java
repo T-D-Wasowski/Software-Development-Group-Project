@@ -19,7 +19,7 @@ public class HomePage extends JFrame {
         DashboardPanel_2.setVisible(false);      //remove other panels
         DashboardPanel_3.setVisible(false);
         DashboardPanel_4.setVisible(false);
-        DashboardPanel_5.setVisible(false);
+        AdminPanel.setVisible(false);
         DashboardPanel_1.setVisible(true);       //add one panel
         pack();
 
@@ -33,7 +33,7 @@ public class HomePage extends JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        LogOut = new javax.swing.JButton();
+        logoutButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         DashboardPanel_1 = new javax.swing.JPanel();
         DashboardPanel_2 = new javax.swing.JPanel();
@@ -47,13 +47,39 @@ public class HomePage extends JFrame {
         lableYearDashboard2 = new javax.swing.JLabel();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
-        DashboardPanel_5 = new javax.swing.JPanel();
+        AdminPanel = new javax.swing.JPanel();
+        editUserButton = new javax.swing.JButton();
+        viewAllLogsButton = new javax.swing.JButton();
+        viewAllUsersButton = new javax.swing.JButton();
+        deleteUserButton = new javax.swing.JButton();
+        adminRightPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        adminNewUsernameTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        adminNewEmailTextField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        adminNewPasswordTextField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        adminChangeAdminStatusCheckBox = new javax.swing.JCheckBox();
+        clearButton = new javax.swing.JButton();
+        confirmButton = new javax.swing.JButton();
+        adminNotificationLabel = new javax.swing.JLabel();
+        adminUsernameLabel = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        adminStatusLabel = new javax.swing.JLabel();
+        adminLeftPanel = new javax.swing.JPanel();
+        adminScrollPane = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Dashboard1 = new javax.swing.JButton();
         Dashboard2 = new javax.swing.JButton();
         Dashboard3 = new javax.swing.JButton();
         Dashboard4 = new javax.swing.JButton();
-        AdminPanel = new javax.swing.JButton();
+        adminPanelButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -80,26 +106,26 @@ public class HomePage extends JFrame {
         jLabel2.setForeground(new java.awt.Color(142, 142, 142));
         jLabel2.setText("verse");
 
-        LogOut.setBackground(new java.awt.Color(62, 143, 185));
-        LogOut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        LogOut.setForeground(new java.awt.Color(255, 255, 255));
-        LogOut.setText("Log Out");
-        LogOut.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        logoutButton.setBackground(new java.awt.Color(62, 143, 185));
+        logoutButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        logoutButton.setForeground(new java.awt.Color(255, 255, 255));
+        logoutButton.setText("Log Out");
+        logoutButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                LogOutMouseMoved(evt);
+                logoutButtonMouseMoved(evt);
             }
         });
-        LogOut.addMouseListener(new java.awt.event.MouseAdapter() {
+        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LogOutMouseEntered(evt);
+                logoutButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                LogOutMouseExited(evt);
+                logoutButtonMouseExited(evt);
             }
         });
-        LogOut.addActionListener(new java.awt.event.ActionListener() {
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogOutActionPerformed(evt);
+                logoutButtonActionPerformed(evt);
             }
         });
 
@@ -112,22 +138,28 @@ public class HomePage extends JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 586, Short.MAX_VALUE)
                 .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> main
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(logoutButton)))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LogOut)
-                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(208, 239, 255));
@@ -219,9 +251,13 @@ public class HomePage extends JFrame {
             DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DashboardPanel_2Layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addGroup(DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Dashboard2Container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
                     .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addComponent(Dashboard2Container, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+>>>>>>> main
                 .addContainerGap())
         );
         DashboardPanel_2Layout.setVerticalGroup(
@@ -264,18 +300,376 @@ public class HomePage extends JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        DashboardPanel_5.setBackground(new java.awt.Color(235, 131, 52));
-        DashboardPanel_5.setPreferredSize(new java.awt.Dimension(900, 500));
+        AdminPanel.setBackground(new java.awt.Color(255, 153, 51));
+        AdminPanel.setPreferredSize(new java.awt.Dimension(900, 500));
 
-        javax.swing.GroupLayout DashboardPanel_5Layout = new javax.swing.GroupLayout(DashboardPanel_5);
-        DashboardPanel_5.setLayout(DashboardPanel_5Layout);
-        DashboardPanel_5Layout.setHorizontalGroup(
-            DashboardPanel_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        editUserButton.setBackground(new java.awt.Color(62, 143, 185));
+        editUserButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        editUserButton.setForeground(new java.awt.Color(255, 255, 255));
+        editUserButton.setText("Edit User");
+        editUserButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        editUserButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        editUserButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        editUserButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                editUserButtonMouseMoved(evt);
+            }
+        });
+        editUserButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                editUserButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                editUserButtonMouseExited(evt);
+            }
+        });
+        editUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editUserButtonActionPerformed(evt);
+            }
+        });
+
+        viewAllLogsButton.setBackground(new java.awt.Color(62, 143, 185));
+        viewAllLogsButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        viewAllLogsButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewAllLogsButton.setText("View All Logs");
+        viewAllLogsButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        viewAllLogsButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        viewAllLogsButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        viewAllLogsButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                viewAllLogsButtonMouseMoved(evt);
+            }
+        });
+        viewAllLogsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                viewAllLogsButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                viewAllLogsButtonMouseExited(evt);
+            }
+        });
+        viewAllLogsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllLogsButtonActionPerformed(evt);
+            }
+        });
+
+        viewAllUsersButton.setBackground(new java.awt.Color(62, 143, 185));
+        viewAllUsersButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        viewAllUsersButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewAllUsersButton.setText("View All Users");
+        viewAllUsersButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        viewAllUsersButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        viewAllUsersButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        viewAllUsersButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                viewAllUsersButtonMouseMoved(evt);
+            }
+        });
+        viewAllUsersButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                viewAllUsersButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                viewAllUsersButtonMouseExited(evt);
+            }
+        });
+        viewAllUsersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllUsersButtonActionPerformed(evt);
+            }
+        });
+
+        deleteUserButton.setBackground(new java.awt.Color(62, 143, 185));
+        deleteUserButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        deleteUserButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteUserButton.setText("Delete User");
+        deleteUserButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        deleteUserButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        deleteUserButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        deleteUserButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                deleteUserButtonMouseMoved(evt);
+            }
+        });
+        deleteUserButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteUserButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteUserButtonMouseExited(evt);
+            }
+        });
+        deleteUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteUserButtonActionPerformed(evt);
+            }
+        });
+
+        adminRightPanel.setBackground(new java.awt.Color(208, 239, 255));
+        adminRightPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        adminRightPanel.setMaximumSize(new java.awt.Dimension(313, 442));
+        adminRightPanel.setMinimumSize(new java.awt.Dimension(313, 442));
+        adminRightPanel.setPreferredSize(new java.awt.Dimension(313, 442));
+
+        jLabel3.setText("Current Username:");
+
+        jLabel4.setText("New Username:");
+
+        adminNewUsernameTextField.setMaximumSize(new java.awt.Dimension(273, 31));
+        adminNewUsernameTextField.setMinimumSize(new java.awt.Dimension(273, 31));
+        adminNewUsernameTextField.setName(""); // NOI18N
+        adminNewUsernameTextField.setPreferredSize(new java.awt.Dimension(273, 31));
+        adminNewUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminNewUsernameTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Current Email:");
+
+        jLabel6.setText("New Email:");
+
+        adminNewEmailTextField.setMaximumSize(new java.awt.Dimension(273, 31));
+        adminNewEmailTextField.setMinimumSize(new java.awt.Dimension(273, 31));
+        adminNewEmailTextField.setName(""); // NOI18N
+        adminNewEmailTextField.setPreferredSize(new java.awt.Dimension(273, 31));
+        adminNewEmailTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminNewEmailTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("New Password:");
+
+        adminNewPasswordTextField.setMaximumSize(new java.awt.Dimension(273, 31));
+        adminNewPasswordTextField.setMinimumSize(new java.awt.Dimension(273, 31));
+        adminNewPasswordTextField.setName(""); // NOI18N
+        adminNewPasswordTextField.setPreferredSize(new java.awt.Dimension(273, 31));
+        adminNewPasswordTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminNewPasswordTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Current Admin Status:");
+
+        adminChangeAdminStatusCheckBox.setText("Change Admin Status?");
+        adminChangeAdminStatusCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminChangeAdminStatusCheckBoxActionPerformed(evt);
+            }
+        });
+
+        clearButton.setBackground(new java.awt.Color(62, 143, 185));
+        clearButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        clearButton.setForeground(new java.awt.Color(255, 255, 255));
+        clearButton.setText("Clear");
+        clearButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        clearButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        clearButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        clearButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                clearButtonMouseMoved(evt);
+            }
+        });
+        clearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearButtonMouseExited(evt);
+            }
+        });
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+
+        confirmButton.setBackground(new java.awt.Color(62, 185, 143));
+        confirmButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        confirmButton.setForeground(new java.awt.Color(255, 255, 255));
+        confirmButton.setText("Confirm");
+        confirmButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        confirmButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        confirmButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        confirmButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseMoved(evt);
+            }
+        });
+        confirmButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseExited(evt);
+            }
+        });
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
+
+        adminNotificationLabel.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        adminNotificationLabel.setText("Notification");
+
+        adminUsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        adminUsernameLabel.setText("Username");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setText("adminEmailLabel");
+
+        adminStatusLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        adminStatusLabel.setText("AdminStatus");
+
+        javax.swing.GroupLayout adminRightPanelLayout = new javax.swing.GroupLayout(adminRightPanel);
+        adminRightPanel.setLayout(adminRightPanelLayout);
+        adminRightPanelLayout.setHorizontalGroup(
+            adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminRightPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminNotificationLabel)
+                    .addComponent(adminChangeAdminStatusCheckBox)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addGroup(adminRightPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(adminStatusLabel)
+                            .addComponent(jLabel12)
+                            .addComponent(adminUsernameLabel)))
+                    .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, adminRightPanelLayout.createSequentialGroup()
+                            .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(adminNewEmailTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(adminNewPasswordTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(adminNewUsernameTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
         );
-        DashboardPanel_5Layout.setVerticalGroup(
-            DashboardPanel_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        adminRightPanelLayout.setVerticalGroup(
+            adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminRightPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(8, 8, 8)
+                .addComponent(adminUsernameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminNewUsernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminNewEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminNewPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addGap(8, 8, 8)
+                .addComponent(adminStatusLabel)
+                .addGap(9, 9, 9)
+                .addComponent(adminChangeAdminStatusCheckBox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(adminNotificationLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        adminLeftPanel.setMaximumSize(new java.awt.Dimension(313, 442));
+        adminLeftPanel.setMinimumSize(new java.awt.Dimension(313, 442));
+        adminLeftPanel.setPreferredSize(new java.awt.Dimension(313, 442));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        adminScrollPane.setViewportView(jTable1);
+
+        javax.swing.GroupLayout adminLeftPanelLayout = new javax.swing.GroupLayout(adminLeftPanel);
+        adminLeftPanel.setLayout(adminLeftPanelLayout);
+        adminLeftPanelLayout.setHorizontalGroup(
+            adminLeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adminScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+        );
+        adminLeftPanelLayout.setVerticalGroup(
+            adminLeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adminScrollPane)
+        );
+
+        jLabel9.setText("User Details");
+
+        jLabel10.setText("User / Log List");
+
+        javax.swing.GroupLayout AdminPanelLayout = new javax.swing.GroupLayout(AdminPanel);
+        AdminPanel.setLayout(AdminPanelLayout);
+        AdminPanelLayout.setHorizontalGroup(
+            AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminLeftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(AdminPanelLayout.createSequentialGroup()
+                        .addComponent(adminRightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(viewAllUsersButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(viewAllLogsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(26, 26, 26))
+        );
+        AdminPanelLayout.setVerticalGroup(
+            AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminPanelLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(adminLeftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminRightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(AdminPanelLayout.createSequentialGroup()
+                        .addComponent(viewAllLogsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(viewAllUsersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
@@ -285,6 +679,9 @@ public class HomePage extends JFrame {
         Dashboard1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard1.setText("Dashboard 1");
+        Dashboard1.setMaximumSize(new java.awt.Dimension(112, 23));
+        Dashboard1.setMinimumSize(new java.awt.Dimension(112, 23));
+        Dashboard1.setPreferredSize(new java.awt.Dimension(112, 23));
         Dashboard1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Dashboard1MouseMoved(evt);
@@ -308,6 +705,9 @@ public class HomePage extends JFrame {
         Dashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard2.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard2.setText("Dashboard 2");
+        Dashboard2.setMaximumSize(new java.awt.Dimension(112, 23));
+        Dashboard2.setMinimumSize(new java.awt.Dimension(112, 23));
+        Dashboard2.setPreferredSize(new java.awt.Dimension(112, 23));
         Dashboard2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Dashboard2MouseMoved(evt);
@@ -331,6 +731,9 @@ public class HomePage extends JFrame {
         Dashboard3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard3.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard3.setText("Dashboard 3");
+        Dashboard3.setMaximumSize(new java.awt.Dimension(112, 23));
+        Dashboard3.setMinimumSize(new java.awt.Dimension(112, 23));
+        Dashboard3.setPreferredSize(new java.awt.Dimension(112, 23));
         Dashboard3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Dashboard3MouseMoved(evt);
@@ -354,6 +757,9 @@ public class HomePage extends JFrame {
         Dashboard4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Dashboard4.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard4.setText("Dashboard 4");
+        Dashboard4.setMaximumSize(new java.awt.Dimension(112, 23));
+        Dashboard4.setMinimumSize(new java.awt.Dimension(112, 23));
+        Dashboard4.setPreferredSize(new java.awt.Dimension(112, 23));
         Dashboard4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Dashboard4MouseMoved(evt);
@@ -373,26 +779,29 @@ public class HomePage extends JFrame {
             }
         });
 
-        AdminPanel.setBackground(new java.awt.Color(62, 143, 185));
-        AdminPanel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        AdminPanel.setForeground(new java.awt.Color(255, 255, 255));
-        AdminPanel.setText("Admin Panel");
-        AdminPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        adminPanelButton.setBackground(new java.awt.Color(62, 143, 185));
+        adminPanelButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        adminPanelButton.setForeground(new java.awt.Color(255, 255, 255));
+        adminPanelButton.setText("Admin Panel");
+        adminPanelButton.setMaximumSize(new java.awt.Dimension(112, 23));
+        adminPanelButton.setMinimumSize(new java.awt.Dimension(112, 23));
+        adminPanelButton.setPreferredSize(new java.awt.Dimension(112, 23));
+        adminPanelButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                AdminPanelMouseMoved(evt);
+                adminPanelButtonMouseMoved(evt);
             }
         });
-        AdminPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminPanelButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                AdminPanelMouseEntered(evt);
+                adminPanelButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                AdminPanelMouseExited(evt);
+                adminPanelButtonMouseExited(evt);
             }
         });
-        AdminPanel.addActionListener(new java.awt.event.ActionListener() {
+        adminPanelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdminPanelActionPerformed(evt);
+                adminPanelButtonActionPerformed(evt);
             }
         });
 
@@ -401,6 +810,7 @@ public class HomePage extends JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(31, 31, 31)
                 .addComponent(Dashboard1)
                 .addGap(62, 62, 62)
@@ -412,18 +822,30 @@ public class HomePage extends JFrame {
                 .addGap(62, 62, 62)
                 .addComponent(AdminPanel)
                 .addContainerGap(64, Short.MAX_VALUE))
+=======
+                .addGap(26, 26, 26)
+                .addComponent(Dashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(Dashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(Dashboard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(Dashboard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(adminPanelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+>>>>>>> main
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AdminPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Dashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Dashboard3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Dashboard4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Dashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Dashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Dashboard3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Dashboard4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Dashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminPanelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -431,11 +853,19 @@ public class HomePage extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(DashboardPanel_5, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+=======
+            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+            .addComponent(AdminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+>>>>>>> main
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -451,7 +881,7 @@ public class HomePage extends JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(DashboardPanel_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(DashboardPanel_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(AdminPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -473,13 +903,13 @@ public class HomePage extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         logout();
         //System.out.println("This is Log Out Button.");
-    }//GEN-LAST:event_LogOutActionPerformed
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
-    private void AdminPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminPanelActionPerformed
-        AdminPanel.setEnabled(false);
+    private void adminPanelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminPanelButtonActionPerformed
+        adminPanelButton.setEnabled(false);
         Dashboard1.setEnabled(true);
         Dashboard2.setEnabled(true);
         Dashboard3.setEnabled(true);
@@ -490,14 +920,14 @@ public class HomePage extends JFrame {
         DashboardPanel_3.setVisible(false);
         DashboardPanel_4.setVisible(false);
         DashboardPanel_1.setVisible(false);
-        DashboardPanel_5.setVisible(true);       //add one panel
+        AdminPanel.setVisible(true);       //add one panel
 
 
-    }//GEN-LAST:event_AdminPanelActionPerformed
+    }//GEN-LAST:event_adminPanelButtonActionPerformed
 
     private void Dashboard4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard4ActionPerformed
         Dashboard4.setEnabled(false);
-        AdminPanel.setEnabled(true);
+        adminPanelButton.setEnabled(true);
         Dashboard1.setEnabled(true);
         Dashboard2.setEnabled(true);
         Dashboard3.setEnabled(true);
@@ -507,7 +937,7 @@ public class HomePage extends JFrame {
         DashboardPanel_2.setVisible(false);      //remove other panels
         DashboardPanel_3.setVisible(false);
         DashboardPanel_1.setVisible(false);
-        DashboardPanel_5.setVisible(false);
+        AdminPanel.setVisible(false);
         DashboardPanel_4.setVisible(true);       //add one panel
 
 
@@ -515,7 +945,7 @@ public class HomePage extends JFrame {
 
     private void Dashboard3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard3ActionPerformed
         Dashboard3.setEnabled(false);
-        AdminPanel.setEnabled(true);
+        adminPanelButton.setEnabled(true);
         Dashboard1.setEnabled(true);
         Dashboard2.setEnabled(true);
         Dashboard4.setEnabled(true);
@@ -524,7 +954,7 @@ public class HomePage extends JFrame {
         DashboardPanel_2.setVisible(false);      //remove other panels
         DashboardPanel_1.setVisible(false);
         DashboardPanel_4.setVisible(false);
-        DashboardPanel_5.setVisible(false);
+        AdminPanel.setVisible(false);
         DashboardPanel_3.setVisible(true);       //add one panel
 
 
@@ -532,7 +962,7 @@ public class HomePage extends JFrame {
 
     private void Dashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard2ActionPerformed
         Dashboard2.setEnabled(false);
-        AdminPanel.setEnabled(true);
+        adminPanelButton.setEnabled(true);
         Dashboard1.setEnabled(true);
         Dashboard3.setEnabled(true);
         Dashboard4.setEnabled(true);
@@ -541,7 +971,7 @@ public class HomePage extends JFrame {
         DashboardPanel_1.setVisible(false);      //remove other panels
         DashboardPanel_3.setVisible(false);
         DashboardPanel_4.setVisible(false);
-        DashboardPanel_5.setVisible(false);
+        AdminPanel.setVisible(false);
         DashboardPanel_2.setVisible(true);       //add one panel
 
         repaintDashboard2(hour_dashboard2);
@@ -549,7 +979,7 @@ public class HomePage extends JFrame {
 
     private void Dashboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard1ActionPerformed
         Dashboard1.setEnabled(false);
-        AdminPanel.setEnabled(true);
+        adminPanelButton.setEnabled(true);
         Dashboard2.setEnabled(true);
         Dashboard3.setEnabled(true);
         Dashboard4.setEnabled(true);
@@ -559,7 +989,7 @@ public class HomePage extends JFrame {
         DashboardPanel_2.setVisible(false);      //remove other panels
         DashboardPanel_3.setVisible(false);
         DashboardPanel_4.setVisible(false);
-        DashboardPanel_5.setVisible(false);
+        AdminPanel.setVisible(false);
         DashboardPanel_1.setVisible(true);       //add one panel
 
 
@@ -605,25 +1035,25 @@ public class HomePage extends JFrame {
         Dashboard4.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_Dashboard4MouseExited
 
-    private void AdminPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseEntered
+    private void adminPanelButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminPanelButtonMouseEntered
         //AdminPanel hover
-        AdminPanel.setBackground(new Color(245, 160, 39));          //orange
-    }//GEN-LAST:event_AdminPanelMouseEntered
+        adminPanelButton.setBackground(new Color(245, 160, 39));          //orange
+    }//GEN-LAST:event_adminPanelButtonMouseEntered
 
-    private void AdminPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseExited
+    private void adminPanelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminPanelButtonMouseExited
         //AdminPanel unhover
-        AdminPanel.setBackground(new Color(62, 143, 185));      //blue
-    }//GEN-LAST:event_AdminPanelMouseExited
+        adminPanelButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_adminPanelButtonMouseExited
 
-    private void LogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseEntered
+    private void logoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseEntered
         //LogOut hover
-        LogOut.setBackground(new Color(255, 43, 43));          //red
-    }//GEN-LAST:event_LogOutMouseEntered
+        logoutButton.setBackground(new Color(255, 43, 43));          //red
+    }//GEN-LAST:event_logoutButtonMouseEntered
 
-    private void LogOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseExited
+    private void logoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseExited
         //LogOut unhover
-        LogOut.setBackground(new Color(62, 143, 185));      //blue
-    }//GEN-LAST:event_LogOutMouseExited
+        logoutButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_logoutButtonMouseExited
 
     private void Dashboard1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseMoved
         Dashboard1.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -641,13 +1071,125 @@ public class HomePage extends JFrame {
         Dashboard4.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_Dashboard4MouseMoved
 
-    private void AdminPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminPanelMouseMoved
-        AdminPanel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_AdminPanelMouseMoved
+    private void adminPanelButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminPanelButtonMouseMoved
+        adminPanelButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_adminPanelButtonMouseMoved
 
-    private void LogOutMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseMoved
-        LogOut.setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_LogOutMouseMoved
+    private void logoutButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseMoved
+        logoutButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_logoutButtonMouseMoved
+
+    private void editUserButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editUserButtonMouseMoved
+        editUserButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_editUserButtonMouseMoved
+
+    private void editUserButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editUserButtonMouseEntered
+        editUserButton.setBackground(new Color(245, 160, 39));      //orange
+    }//GEN-LAST:event_editUserButtonMouseEntered
+
+    private void editUserButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editUserButtonMouseExited
+        editUserButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_editUserButtonMouseExited
+
+    private void editUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUserButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editUserButtonActionPerformed
+
+    private void viewAllLogsButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllLogsButtonMouseMoved
+        viewAllLogsButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_viewAllLogsButtonMouseMoved
+
+    private void viewAllLogsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllLogsButtonMouseEntered
+        viewAllLogsButton.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_viewAllLogsButtonMouseEntered
+
+    private void viewAllLogsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllLogsButtonMouseExited
+        viewAllLogsButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_viewAllLogsButtonMouseExited
+
+    private void viewAllLogsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllLogsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewAllLogsButtonActionPerformed
+
+    private void viewAllUsersButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllUsersButtonMouseMoved
+        viewAllUsersButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_viewAllUsersButtonMouseMoved
+
+    private void viewAllUsersButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllUsersButtonMouseEntered
+        viewAllUsersButton.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_viewAllUsersButtonMouseEntered
+
+    private void viewAllUsersButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllUsersButtonMouseExited
+        viewAllUsersButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_viewAllUsersButtonMouseExited
+
+    private void viewAllUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllUsersButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewAllUsersButtonActionPerformed
+
+    private void deleteUserButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteUserButtonMouseMoved
+        deleteUserButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_deleteUserButtonMouseMoved
+
+    private void deleteUserButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteUserButtonMouseEntered
+        deleteUserButton.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_deleteUserButtonMouseEntered
+
+    private void deleteUserButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteUserButtonMouseExited
+        deleteUserButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_deleteUserButtonMouseExited
+
+    private void deleteUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteUserButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteUserButtonActionPerformed
+
+    private void adminChangeAdminStatusCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminChangeAdminStatusCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminChangeAdminStatusCheckBoxActionPerformed
+
+    private void adminNewPasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminNewPasswordTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminNewPasswordTextFieldActionPerformed
+
+    private void adminNewEmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminNewEmailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminNewEmailTextFieldActionPerformed
+
+    private void adminNewUsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminNewUsernameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminNewUsernameTextFieldActionPerformed
+
+    private void clearButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseMoved
+        clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_clearButtonMouseMoved
+
+    private void clearButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseEntered
+        clearButton.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_clearButtonMouseEntered
+
+    private void clearButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseExited
+        clearButton.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_clearButtonMouseExited
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void confirmButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseMoved
+        confirmButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_confirmButtonMouseMoved
+
+    private void confirmButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseEntered
+        confirmButton.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_confirmButtonMouseEntered
+
+    private void confirmButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseExited
+        confirmButton.setBackground(new Color(62, 185, 143));      //blue
+    }//GEN-LAST:event_confirmButtonMouseExited
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmButtonActionPerformed
 
     private void NextButtonDashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButtonDashboard2ActionPerformed
         //change hour
@@ -742,7 +1284,7 @@ public class HomePage extends JFrame {
     }
 
     public void hideAdmin() {
-        AdminPanel.setVisible(false);
+        adminPanelButton.setVisible(false);
     }
 
     private void logout() {
@@ -752,8 +1294,12 @@ public class HomePage extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton AdminPanel;
     private javax.swing.JButton BackButtonDashboard2;
+=======
+    private javax.swing.JPanel AdminPanel;
+>>>>>>> main
     private javax.swing.JButton Dashboard1;
     private javax.swing.JButton Dashboard2;
     private javax.swing.JPanel Dashboard2Container;
@@ -763,20 +1309,54 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_2;
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
+<<<<<<< HEAD
     private javax.swing.JPanel DashboardPanel_5;
     private javax.swing.JButton LogOut;
     private javax.swing.JButton NextButtonDashboard2;
     private java.awt.Choice choice1;
     private javax.swing.JPanel filtersPanelDashboard2;
+=======
+    private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
+    private javax.swing.JPanel adminLeftPanel;
+    private javax.swing.JTextField adminNewEmailTextField;
+    private javax.swing.JTextField adminNewPasswordTextField;
+    private javax.swing.JTextField adminNewUsernameTextField;
+    private javax.swing.JLabel adminNotificationLabel;
+    private javax.swing.JButton adminPanelButton;
+    private javax.swing.JPanel adminRightPanel;
+    private javax.swing.JScrollPane adminScrollPane;
+    private javax.swing.JLabel adminStatusLabel;
+    private javax.swing.JLabel adminUsernameLabel;
+    private javax.swing.JButton clearButton;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JButton deleteUserButton;
+    private javax.swing.JButton editUserButton;
+>>>>>>> main
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+<<<<<<< HEAD
     private javax.swing.JSlider jSlider1;
     private java.awt.Label labelHourDashboard2;
     private javax.swing.JLabel lableYearDashboard2;
+=======
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton logoutButton;
+    private javax.swing.JButton viewAllLogsButton;
+    private javax.swing.JButton viewAllUsersButton;
+>>>>>>> main
     // End of variables declaration//GEN-END:variables
 
     public static class Dashboard2Chart extends JPanel {
