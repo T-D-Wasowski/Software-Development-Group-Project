@@ -138,13 +138,13 @@ public class HomePage extends JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-<<<<<<< HEAD
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 586, Short.MAX_VALUE)
                 .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> main
+
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -251,13 +251,13 @@ public class HomePage extends JFrame {
             DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DashboardPanel_2Layout.createSequentialGroup()
                 .addContainerGap()
-<<<<<<< HEAD
+
                 .addGroup(DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Dashboard2Container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
                     .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
+
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
->>>>>>> main
+
                 .addContainerGap())
         );
         DashboardPanel_2Layout.setVerticalGroup(
@@ -810,7 +810,6 @@ public class HomePage extends JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-<<<<<<< HEAD
                 .addGap(31, 31, 31)
                 .addComponent(Dashboard1)
                 .addGap(62, 62, 62)
@@ -822,7 +821,6 @@ public class HomePage extends JFrame {
                 .addGap(62, 62, 62)
                 .addComponent(AdminPanel)
                 .addContainerGap(64, Short.MAX_VALUE))
-=======
                 .addGap(26, 26, 26)
                 .addComponent(Dashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
@@ -834,7 +832,6 @@ public class HomePage extends JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(adminPanelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
->>>>>>> main
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -853,19 +850,16 @@ public class HomePage extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addComponent(DashboardPanel_5, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
-=======
             .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
             .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
             .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
             .addComponent(AdminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
->>>>>>> main
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -1294,12 +1288,9 @@ public class HomePage extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
     private javax.swing.JButton AdminPanel;
     private javax.swing.JButton BackButtonDashboard2;
-=======
     private javax.swing.JPanel AdminPanel;
->>>>>>> main
     private javax.swing.JButton Dashboard1;
     private javax.swing.JButton Dashboard2;
     private javax.swing.JPanel Dashboard2Container;
@@ -1309,13 +1300,11 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_2;
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
-<<<<<<< HEAD
     private javax.swing.JPanel DashboardPanel_5;
     private javax.swing.JButton LogOut;
     private javax.swing.JButton NextButtonDashboard2;
     private java.awt.Choice choice1;
     private javax.swing.JPanel filtersPanelDashboard2;
-=======
     private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
     private javax.swing.JPanel adminLeftPanel;
     private javax.swing.JTextField adminNewEmailTextField;
@@ -1331,7 +1320,6 @@ public class HomePage extends JFrame {
     private javax.swing.JButton confirmButton;
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JButton editUserButton;
->>>>>>> main
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -1347,16 +1335,13 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-<<<<<<< HEAD
     private javax.swing.JSlider jSlider1;
     private java.awt.Label labelHourDashboard2;
     private javax.swing.JLabel lableYearDashboard2;
-=======
     private javax.swing.JTable jTable1;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton viewAllLogsButton;
     private javax.swing.JButton viewAllUsersButton;
->>>>>>> main
     // End of variables declaration//GEN-END:variables
 
     public static class Dashboard2Chart extends JPanel {
