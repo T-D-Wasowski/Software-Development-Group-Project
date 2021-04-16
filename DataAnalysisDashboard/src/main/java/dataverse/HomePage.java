@@ -35,6 +35,8 @@ public class HomePage extends JFrame {
         DashboardPanel_1 = new javax.swing.JPanel();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
         AdminPanel = new javax.swing.JPanel();
@@ -173,13 +175,22 @@ public class HomePage extends JFrame {
         Dashboard2Container.setPreferredSize(new java.awt.Dimension(813, 370));
         Dashboard2Container.setLayout(new java.awt.BorderLayout());
 
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
+
         javax.swing.GroupLayout DashboardPanel_2Layout = new javax.swing.GroupLayout(DashboardPanel_2);
         DashboardPanel_2.setLayout(DashboardPanel_2Layout);
         DashboardPanel_2Layout.setHorizontalGroup(
             DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DashboardPanel_2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Dashboard2Container, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+                .addGroup(DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Dashboard2Container, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DashboardPanel_2Layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         DashboardPanel_2Layout.setVerticalGroup(
@@ -187,7 +198,11 @@ public class HomePage extends JFrame {
             .addGroup(DashboardPanel_2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addGroup(DashboardPanel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap())
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -1177,6 +1192,8 @@ public class HomePage extends JFrame {
     private javax.swing.JButton confirmButton;
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JButton editUserButton;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
