@@ -21,7 +21,26 @@ public class TrafficController {
         table.createTraffic_Volume();
 
     }
+    
+    public static ResultSet getYas() {
+            Connection connection = DB.getConnection();
+            String sql = "SELECT * FROM Road";        //remove everything past WHERE to collect all the data and not just for a specific id
+            ResultSet result = null;
+            try {
+                Statement statement = connection.createStatement();
+                result = statement.executeQuery(sql);
+                if (result.next()) {
+                    System.out.println("Road name is " + result.getString("road_name"));
+                }
 
+            } catch (Exception e) {
+                System.out.println("Error readiong from Region table" + e.getMessage());
+            } finally {
+                return result;
+            }
+
+        }
+    
     public void insertDataIntoTables() {
 
         ArrayList<String> fileContents = CSVReader.readFile("../trafficStoredData.csv"); // store scv file into array list

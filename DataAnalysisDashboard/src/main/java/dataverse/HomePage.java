@@ -969,7 +969,7 @@ public class HomePage extends JFrame {
         AdminPanel.setVisible(false);
         DashboardPanel_1.setVisible(true);       //add one panel
 
-
+        TrafficController.getYas();
     }//GEN-LAST:event_Dashboard1ActionPerformed
 
     private void Dashboard1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseEntered
