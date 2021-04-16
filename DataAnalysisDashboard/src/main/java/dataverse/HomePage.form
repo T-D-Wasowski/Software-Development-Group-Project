@@ -157,11 +157,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="DashboardPanel_3" alignment="1" pref="836" max="32767" attributes="0"/>
+              <Component id="DashboardPanel_3" alignment="1" max="32767" attributes="0"/>
               <Component id="DashboardPanel_1" alignment="1" max="32767" attributes="0"/>
-              <Component id="DashboardPanel_2" alignment="0" pref="836" max="32767" attributes="0"/>
-              <Component id="DashboardPanel_4" alignment="0" pref="836" max="32767" attributes="0"/>
-              <Component id="AdminPanel" alignment="0" pref="836" max="32767" attributes="0"/>
+              <Component id="DashboardPanel_2" alignment="0" max="32767" attributes="0"/>
+              <Component id="DashboardPanel_4" alignment="0" max="32767" attributes="0"/>
+              <Component id="AdminPanel" alignment="0" max="32767" attributes="0"/>
               <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
@@ -190,7 +190,13 @@
               <Color blue="34" green="40" red="eb" type="rgb"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[30000, 30000]"/>
+              <Dimension value="[836, 500]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[836, 500]"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[836, 500]"/>
             </Property>
           </Properties>
 
@@ -213,10 +219,13 @@
               <Color blue="eb" green="89" red="34" type="rgb"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[30000, 30000]"/>
+              <Dimension value="[836, 500]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[836, 500]"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[900, 500]"/>
+              <Dimension value="[836, 500]"/>
             </Property>
           </Properties>
 
@@ -258,17 +267,20 @@
               <Color blue="a2" green="eb" red="34" type="rgb"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[30000, 30000]"/>
+              <Dimension value="[836, 500]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[836, 500]"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[900, 500]"/>
+              <Dimension value="[836, 500]"/>
             </Property>
           </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="836" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -284,10 +296,13 @@
               <Color blue="eb" green="34" red="86" type="rgb"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[30000, 30000]"/>
+              <Dimension value="[836, 500]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[836, 500]"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[900, 500]"/>
+              <Dimension value="[836, 500]"/>
             </Property>
           </Properties>
 
@@ -309,8 +324,14 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="99" red="ff" type="rgb"/>
             </Property>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[836, 500]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[836, 500]"/>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[900, 500]"/>
+              <Dimension value="[836, 500]"/>
             </Property>
           </Properties>
 

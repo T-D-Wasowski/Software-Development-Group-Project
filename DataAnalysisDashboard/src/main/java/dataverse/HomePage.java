@@ -150,7 +150,9 @@ public class HomePage extends JFrame {
         jPanel2.setBackground(new java.awt.Color(208, 239, 255));
 
         DashboardPanel_1.setBackground(new java.awt.Color(235, 64, 52));
-        DashboardPanel_1.setMaximumSize(new java.awt.Dimension(30000, 30000));
+        DashboardPanel_1.setMaximumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_1.setMinimumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_1.setPreferredSize(new java.awt.Dimension(836, 500));
 
         javax.swing.GroupLayout DashboardPanel_1Layout = new javax.swing.GroupLayout(DashboardPanel_1);
         DashboardPanel_1.setLayout(DashboardPanel_1Layout);
@@ -164,8 +166,9 @@ public class HomePage extends JFrame {
         );
 
         DashboardPanel_2.setBackground(new java.awt.Color(52, 137, 235));
-        DashboardPanel_2.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        DashboardPanel_2.setPreferredSize(new java.awt.Dimension(900, 500));
+        DashboardPanel_2.setMaximumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_2.setMinimumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_2.setPreferredSize(new java.awt.Dimension(836, 500));
 
         Dashboard2Container.setPreferredSize(new java.awt.Dimension(813, 370));
         Dashboard2Container.setLayout(new java.awt.BorderLayout());
@@ -188,14 +191,15 @@ public class HomePage extends JFrame {
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
-        DashboardPanel_3.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        DashboardPanel_3.setPreferredSize(new java.awt.Dimension(900, 500));
+        DashboardPanel_3.setMaximumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_3.setMinimumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_3.setPreferredSize(new java.awt.Dimension(836, 500));
 
         javax.swing.GroupLayout DashboardPanel_3Layout = new javax.swing.GroupLayout(DashboardPanel_3);
         DashboardPanel_3.setLayout(DashboardPanel_3Layout);
         DashboardPanel_3Layout.setHorizontalGroup(
             DashboardPanel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 836, Short.MAX_VALUE)
         );
         DashboardPanel_3Layout.setVerticalGroup(
             DashboardPanel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,8 +207,9 @@ public class HomePage extends JFrame {
         );
 
         DashboardPanel_4.setBackground(new java.awt.Color(134, 52, 235));
-        DashboardPanel_4.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        DashboardPanel_4.setPreferredSize(new java.awt.Dimension(900, 500));
+        DashboardPanel_4.setMaximumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_4.setMinimumSize(new java.awt.Dimension(836, 500));
+        DashboardPanel_4.setPreferredSize(new java.awt.Dimension(836, 500));
 
         javax.swing.GroupLayout DashboardPanel_4Layout = new javax.swing.GroupLayout(DashboardPanel_4);
         DashboardPanel_4.setLayout(DashboardPanel_4Layout);
@@ -218,7 +223,9 @@ public class HomePage extends JFrame {
         );
 
         AdminPanel.setBackground(new java.awt.Color(255, 153, 51));
-        AdminPanel.setPreferredSize(new java.awt.Dimension(900, 500));
+        AdminPanel.setMaximumSize(new java.awt.Dimension(836, 500));
+        AdminPanel.setMinimumSize(new java.awt.Dimension(836, 500));
+        AdminPanel.setPreferredSize(new java.awt.Dimension(836, 500));
 
         editUserButton.setBackground(new java.awt.Color(62, 143, 185));
         editUserButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -756,11 +763,11 @@ public class HomePage extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
-            .addComponent(AdminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AdminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
