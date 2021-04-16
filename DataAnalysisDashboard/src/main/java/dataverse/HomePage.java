@@ -953,6 +953,7 @@ public class HomePage extends JFrame {
 
         addElementsToChoiceDashboard2();        //fills up the dropdown with road choices       
         repaintDashboard2(hour_dashboard2);     //repaint dashboard
+        
     }//GEN-LAST:event_Dashboard2ActionPerformed
 
     private void Dashboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard1ActionPerformed
@@ -1222,10 +1223,11 @@ public class HomePage extends JFrame {
 
     public void addElementsToChoiceDashboard2() {
         RoadChoiceDashboard2.removeAll();
-        String roads[] = {"A1" + "A1087" + "A198" + "A199" + "A6093" + "A6094" + "A6095" + "A6124" + "A6137" + "A720" + "B1349" + "B1377" + "B6355" + "B6369" + "B6414" + "C" + "U"};
+        String roads[] = {"A1" , "A1087" , "A198" , "A199" , "A6093" , "A6094" , "A6095" , "A6124" , "A6137" , "A720" , "B1349" , "B1377" , "B6355" , "B6369" , "B6414" , "C" , "U"};
         
-        RoadChoiceDashboard2.add("hi");
-        RoadChoiceDashboard2.add("hello");
+        for (String road : roads) {
+            RoadChoiceDashboard2.add(road);
+        }
 
     }
 
