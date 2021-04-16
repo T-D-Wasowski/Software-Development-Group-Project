@@ -157,7 +157,6 @@ public class TrafficController {
                     + "("
                     + "count_point_id INTEGER(7),"
                     + "road_name VARCHAR(10) NOT NULL,"
-                    + "the_year INTEGER(4) NOT NULL,"
                     + "count_date DATE NOT NULL,"
                     + "CONSTRAINT c_cpoint_pk PRIMARY KEY (count_point_id),"
                     + "CONSTRAINT c_rdname_fk FOREIGN KEY (road_name) REFERENCES Road (road_name)"
@@ -193,6 +192,7 @@ public class TrafficController {
                     + "all_motor_vehicles INTEGER(6) NOT NULL,"
                     + "the_hour INTEGER(2) NOT NULL,"
                     + "direction_of_travel CHAR(1) NOT NULL,"
+                    + "the_year INTEGER(4) NOT NULL,"
                     + "CONSTRAINT t_trvol_pk PRIMARY KEY (traffic_volume_id),"
                     + "CONSTRAINT t_cpoint_fk FOREIGN KEY (count_point_id) REFERENCES Count_Point (count_point_id)"
                     + ");";
@@ -387,13 +387,12 @@ public class TrafficController {
 
         static Connection connection = DB.getConnection();
 
-        public static void insert(int count_point_id, String road_name, String the_year, String count_date) {
+        public static void insert(int count_point_id, String road_name,String count_date) {
 
-            String sql = "INSERT INTO Count_Point (count_point_id, road_name, the_year, count_date) VALUES"
+            String sql = "INSERT INTO Count_Point (count_point_id, road_name, count_date) VALUES"
                     + "("
                     + "'" + count_point_id + "',"
                     + "'" + road_name + "',"
-                    + "'" + the_year + "',"
                     + "'" + count_date + "'"
                     + ");";
 
@@ -412,10 +411,9 @@ public class TrafficController {
                 String[] lineArray = currentLine.split(",");
                 int count_point_id = Integer.parseInt(lineArray[0]);
                 String road_name = lineArray[9];
-                String the_year = lineArray[2];
                 String count_date = lineArray[3];
 
-                insert(count_point_id, road_name, the_year, count_date);
+                insert(count_point_id, road_name, count_date);
             }
         }
 
@@ -425,9 +423,9 @@ public class TrafficController {
 
         static Connection connection = DB.getConnection();
 
-        public static void insert(int traffic_volume_id, int count_point_id, int pedal_cycles, int two_wheeled_motor_vehicles, int cars_and_taxis, int buses_and_coaches, int lgvs, int hgvs_2_rigid_axle, int hgvs_3_rigid_axle, int hgvs_4_or_more_rigid_axle, int hgvs_3_or_4_articulated_axle, int hgvs_5_articulated_axle, int hgvs_6_articulated_axle, int all_hgvs, int all_motor_vehicles, int the_hour, char direction_of_travel) {
+        public static void insert(int traffic_volume_id, int count_point_id, int pedal_cycles, int two_wheeled_motor_vehicles, int cars_and_taxis, int buses_and_coaches, int lgvs, int hgvs_2_rigid_axle, int hgvs_3_rigid_axle, int hgvs_4_or_more_rigid_axle, int hgvs_3_or_4_articulated_axle, int hgvs_5_articulated_axle, int hgvs_6_articulated_axle, int all_hgvs, int all_motor_vehicles, int the_hour, char direction_of_travel, String the_year) {
 
-            String sql = "INSERT INTO Traffic_Volume (traffic_volume_id, count_point_id, pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, hgvs_2_rigid_axle, hgvs_3_rigid_axle, hgvs_4_or_more_rigid_axle, hgvs_3_or_4_articulated_axle, hgvs_5_articulated_axle, hgvs_6_articulated_axle, all_hgvs, all_motor_vehicles, the_hour, direction_of_travel) VALUES"
+            String sql = "INSERT INTO Traffic_Volume (traffic_volume_id, count_point_id, pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, hgvs_2_rigid_axle, hgvs_3_rigid_axle, hgvs_4_or_more_rigid_axle, hgvs_3_or_4_articulated_axle, hgvs_5_articulated_axle, hgvs_6_articulated_axle, all_hgvs, all_motor_vehicles, the_hour, direction_of_travel, the_year) VALUES"
                     + "("
                     + "'" + traffic_volume_id + "',"
                     + "'" + count_point_id + "',"
@@ -445,7 +443,8 @@ public class TrafficController {
                     + "'" + all_hgvs + "',"
                     + "'" + all_motor_vehicles + "',"
                     + "'" + the_hour + "',"
-                    + "'" + direction_of_travel + "'"
+                    + "'" + direction_of_travel + "',"
+                    + "'" + the_year + "'"
                     + ");";
             try {
                 Statement statement = connection.createStatement();
@@ -479,8 +478,9 @@ public class TrafficController {
                 int all_motor_vehicles = Integer.parseInt(lineArray[31]);
                 int the_hour = Integer.parseInt(lineArray[4]);
                 char direction_of_travel = lineArray[1].charAt(0);
+                String the_year = lineArray[2];
 
-                insert(traffic_volume_id, count_point_id, pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, hgvs_2_rigid_axle, hgvs_3_rigid_axle, hgvs_4_or_more_rigid_axle, hgvs_3_or_4_articulated_axle, hgvs_5_articulated_axle, hgvs_6_articulated_axle, all_hgvs, all_motor_vehicles, the_hour, direction_of_travel);
+                insert(traffic_volume_id, count_point_id, pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, hgvs_2_rigid_axle, hgvs_3_rigid_axle, hgvs_4_or_more_rigid_axle, hgvs_3_or_4_articulated_axle, hgvs_5_articulated_axle, hgvs_6_articulated_axle, all_hgvs, all_motor_vehicles, the_hour, direction_of_travel, the_year);
             }
         }
     }

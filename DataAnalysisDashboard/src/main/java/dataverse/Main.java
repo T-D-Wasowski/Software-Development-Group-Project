@@ -16,9 +16,9 @@ public class Main {
     public static void main(String[] args) {
         
         //traffic database @Adelin
-        //TrafficController trafficController = new TrafficController();
-//        trafficController.createTables();             //function used to create the tables
-//        trafficController.insertDataIntoTables();     //function used to insert data into the created tables
+        TrafficController trafficController = new TrafficController();
+        trafficController.createTables();             //function used to create the tables
+        trafficController.insertDataIntoTables();     //function used to insert data into the created tables
         
 
 
