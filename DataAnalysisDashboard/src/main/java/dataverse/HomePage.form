@@ -249,7 +249,7 @@
                       <Component id="Dashboard2Container" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="filtersPanelDashboard2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -278,39 +278,31 @@
                           <Component id="NextButtonDashboard2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="66" max="32767" attributes="0"/>
                           <Component id="RoadChoiceDashboard2" min="-2" pref="166" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="SlideBarDashboard2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="SlideBarDashboard2" min="-2" pref="258" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="lableYearDashboard2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="RoadChoiceDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labelHourDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="BackButtonDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="NextButtonDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="SlideBarDashboard2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="SlideBarDashboard2" min="-2" max="-2" attributes="0"/>
+                              <Component id="RoadChoiceDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelHourDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="BackButtonDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="NextButtonDashboard2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="lableYearDashboard2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="35" max="32767" attributes="0"/>
+                          <EmptySpace pref="40" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -319,6 +311,9 @@
                 <Component class="javax.swing.JButton" name="BackButtonDashboard2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Back"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackButtonDashboard2ActionPerformed"/>
@@ -332,22 +327,44 @@
                 <Component class="javax.swing.JButton" name="NextButtonDashboard2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Next"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NextButtonDashboard2ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="java.awt.Choice" name="RoadChoiceDashboard2">
+                  <Properties>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
+                  </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="RoadChoiceDashboard2ItemStateChanged"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lableYearDashboard2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="2005"/>
+                    <Property name="text" type="java.lang.String" value="Year 2005"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSlider" name="SlideBarDashboard2">
+                  <Properties>
+                    <Property name="majorTickSpacing" type="int" value="1"/>
+                    <Property name="maximum" type="int" value="2019"/>
+                    <Property name="minimum" type="int" value="2000"/>
+                    <Property name="paintTicks" type="boolean" value="true"/>
+                    <Property name="snapToTicks" type="boolean" value="true"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SlideBarDashboard2MouseReleased"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
