@@ -43,8 +43,8 @@ public class HomePage extends JFrame {
         labelHourDashboard2 = new java.awt.Label();
         NextButtonDashboard2 = new javax.swing.JButton();
         RoadChoiceDashboard2 = new java.awt.Choice();
-        SlideBarDashboard2 = new javax.swing.JSlider();
         lableYearDashboard2 = new javax.swing.JLabel();
+        SlideBarDashboard2 = new javax.swing.JSlider();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
         AdminPanel = new javax.swing.JPanel();
@@ -205,12 +205,6 @@ public class HomePage extends JFrame {
             }
         });
 
-        SlideBarDashboard2.setMinorTickSpacing(5);
-        SlideBarDashboard2.setPaintLabels(true);
-        SlideBarDashboard2.setPaintTicks(true);
-        SlideBarDashboard2.setSnapToTicks(true);
-        SlideBarDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
         lableYearDashboard2.setText("2005");
 
         javax.swing.GroupLayout filtersPanelDashboard2Layout = new javax.swing.GroupLayout(filtersPanelDashboard2);
@@ -224,7 +218,7 @@ public class HomePage extends JFrame {
                 .addComponent(labelHourDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(NextButtonDashboard2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100)
                 .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,14 +231,19 @@ public class HomePage extends JFrame {
         filtersPanelDashboard2Layout.setVerticalGroup(
             filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelHourDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BackButtonDashboard2)
-                    .addComponent(NextButtonDashboard2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelHourDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BackButtonDashboard2)
+                            .addComponent(NextButtonDashboard2))
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, filtersPanelDashboard2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(lableYearDashboard2)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -1216,7 +1215,7 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_NextButtonDashboard2ActionPerformed
 
     private void RoadChoiceDashboard2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RoadChoiceDashboard2ItemStateChanged
-        System.out.println(RoadChoiceDashboard2.getSelectedItem());
+        System.out.println("New road selected : "+ RoadChoiceDashboard2.getSelectedItem());
         road_dashboard2 = RoadChoiceDashboard2.getSelectedItem(); 
         repaintDashboard2();
     }//GEN-LAST:event_RoadChoiceDashboard2ItemStateChanged
