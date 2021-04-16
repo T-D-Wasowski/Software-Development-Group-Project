@@ -680,6 +680,7 @@ public class LoginPage extends javax.swing.JFrame {
         
         //Put all this in a method in GUI and call the method from here instead!!!
         int status = userController.login(loginUsernameTextField.getText(), loginPasswordTextField.getText());
+        
         switch (status) {
             case 0 -> {
                 showNotification(false, "Error: This username does not exist. Please enter a valid username.", false);
@@ -687,6 +688,8 @@ public class LoginPage extends javax.swing.JFrame {
             }
             case 1 -> {  
                 runHomePage(true); //Is admin
+                //Create log
+                userController.createLog(true, loginUsernameTextField.getText());
             }
             case 2 -> {
                 showNotification(false, "Error: The password does not match. Please enter a valid password.", false);
@@ -694,6 +697,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
             case 4 -> {
                 runHomePage(false); //Is NOT admin
+                userController.createLog(true, loginUsernameTextField.getText());
             }
             default -> {
                 showNotification(false, "Error: There was an SQL error. Please verify your credentials and try again.", false);
