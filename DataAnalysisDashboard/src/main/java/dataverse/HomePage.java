@@ -972,6 +972,8 @@ public class HomePage extends JFrame {
         paintlabelHourDashboard2();
         addElementsToChoiceDashboard2();        //fills up the dropdown with road choices       
         repaintDashboard2();     //repaint dashboard
+        
+        //DO NOT EDIT THIS - 
 
     }//GEN-LAST:event_Dashboard2ActionPerformed
 
@@ -1511,7 +1513,7 @@ public class HomePage extends JFrame {
 
             container.add(chart, BorderLayout.NORTH);
             container.add(labels, BorderLayout.SOUTH);
-
+            container = new JPanel();                   //adelin
             return container;
 
         }
