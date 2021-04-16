@@ -216,7 +216,7 @@
         <Container class="javax.swing.JPanel" name="DashboardPanel_2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="eb" green="89" red="34" type="rgb"/>
+              <Color blue="ff" green="ef" red="d0" type="rgb"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[836, 500]"/>
