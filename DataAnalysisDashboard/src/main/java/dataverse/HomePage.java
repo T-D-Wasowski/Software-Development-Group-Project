@@ -1288,7 +1288,7 @@ public class HomePage extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AdminPanel;
+    private javax.swing.JButton AdminPanelButton;
     private javax.swing.JButton BackButtonDashboard2;
     private javax.swing.JPanel AdminPanel;
     private javax.swing.JButton Dashboard1;
