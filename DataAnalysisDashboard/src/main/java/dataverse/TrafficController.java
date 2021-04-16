@@ -159,7 +159,7 @@ public class TrafficController {
                     + "road_name VARCHAR(10) NOT NULL,"
                     + "the_year INTEGER(4) NOT NULL,"
                     + "count_date DATE NOT NULL,"
-                    + "CONSTRAINT c_cpoint_pk PRIMARY KEY (count_point_id),"
+                    + "CONSTRAINT c_cpoint_pk PRIMARY KEY (count_point_id, count_date),"
                     + "CONSTRAINT c_rdname_fk FOREIGN KEY (road_name) REFERENCES Road (road_name)"
                     + ");";
             try {
