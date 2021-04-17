@@ -678,8 +678,10 @@ public class LoginPage extends javax.swing.JFrame {
     private void loginLogin() {
         loginNotificationLabel.setVisible(false);
         
+        String username = loginUsernameTextField.getText();
+        
         //Put all this in a method in GUI and call the method from here instead!!!
-        int status = userController.login(loginUsernameTextField.getText(), loginPasswordTextField.getText());
+        int status = userController.login(username, loginPasswordTextField.getText());
         
         switch (status) {
             case 0 -> {
@@ -687,17 +689,17 @@ public class LoginPage extends javax.swing.JFrame {
                 clearLoginTextFields();
             }
             case 1 -> {  
-                runHomePage(true); //Is admin
+                runHomePage(true, username); //Is admin
                 //Create log
-                userController.createLog(true, loginUsernameTextField.getText());
+                //userController.createLog(true, username);
             }
             case 2 -> {
                 showNotification(false, "Error: The password does not match. Please enter a valid password.", false);
                 clearLoginTextFields();
             }
-            case 4 -> {
-                runHomePage(false); //Is NOT admin
-                userController.createLog(true, loginUsernameTextField.getText());
+            case 3 -> {
+                runHomePage(false, username); //Is NOT admin
+                //userController.createLog(true, username);
             }
             default -> {
                 showNotification(false, "Error: There was an SQL error. Please verify your credentials and try again.", false);
@@ -706,9 +708,13 @@ public class LoginPage extends javax.swing.JFrame {
         }   
     }
     
-    private void runHomePage(Boolean isAdmin) {
+    private void runHomePage(Boolean isAdmin, String username) {    
+        User user = userController.database.getUserByUsername(username);
+        userController.createLog(true, user);
+        
         HomePage homePage = new HomePage();
-        homePage.createHomePage(isAdmin);
+        homePage.createHomePage(isAdmin, user);
+        
         this.dispose();
     }
     
