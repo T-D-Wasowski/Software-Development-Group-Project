@@ -2,12 +2,12 @@ package dataverse;
 
 public class User {
     
-    Integer userID;
-    String userName;
-    String userEmail;
-    String userEncryptedPassword;
-    String userEncryptionSalt;
-    Boolean userAdminFlag;
+    private Integer userID;
+    private String userName;
+    private String userEmail;
+    private String userEncryptedPassword;
+    private String userEncryptionSalt;
+    private Boolean userAdminFlag;
     
     public User() {
         
