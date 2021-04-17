@@ -159,9 +159,9 @@ public class UserController {
         for (Log log : logList) {
 
             if (log.getLogReason()) {
-               logReason = "Logging in";
+               logReason = "Login";
             } else {
-               logReason = "Logging out";
+               logReason = "Logout";
             }
             
             Object[] logData = {
