@@ -18,7 +18,7 @@ public class HomePage extends JFrame {
 
     User user;
     UserController userController = new UserController();
-    
+
     Boolean editBool = false;
     Boolean deleteBool = false;
 
@@ -63,6 +63,7 @@ public class HomePage extends JFrame {
         lableYearDashboard2 = new javax.swing.JLabel();
         SlideBarDashboard2 = new javax.swing.JSlider();
         ResetButtonDashboard2 = new javax.swing.JButton();
+        DescriptionLabelDashboard2 = new javax.swing.JLabel();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
         AdminPanel = new javax.swing.JPanel();
@@ -207,6 +208,8 @@ public class HomePage extends JFrame {
         filtersPanelDashboard2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         BackButtonDashboard2.setBackground(new java.awt.Color(62, 143, 185));
+        BackButtonDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BackButtonDashboard2.setForeground(new java.awt.Color(255, 255, 255));
         BackButtonDashboard2.setText("Back");
         BackButtonDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BackButtonDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -223,9 +226,12 @@ public class HomePage extends JFrame {
             }
         });
 
+        labelHourDashboard2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         labelHourDashboard2.setText("7 am");
 
         NextButtonDashboard2.setBackground(new java.awt.Color(62, 143, 185));
+        NextButtonDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        NextButtonDashboard2.setForeground(new java.awt.Color(255, 255, 255));
         NextButtonDashboard2.setText("Next");
         NextButtonDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         NextButtonDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -249,6 +255,7 @@ public class HomePage extends JFrame {
             }
         });
 
+        lableYearDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lableYearDashboard2.setText("Year 2005");
 
         SlideBarDashboard2.setMajorTickSpacing(1);
@@ -256,7 +263,6 @@ public class HomePage extends JFrame {
         SlideBarDashboard2.setMinimum(2000);
         SlideBarDashboard2.setPaintTicks(true);
         SlideBarDashboard2.setSnapToTicks(true);
-        SlideBarDashboard2.setToolTipText("");
         SlideBarDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SlideBarDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -265,6 +271,8 @@ public class HomePage extends JFrame {
         });
 
         ResetButtonDashboard2.setBackground(new java.awt.Color(62, 143, 185));
+        ResetButtonDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ResetButtonDashboard2.setForeground(new java.awt.Color(255, 255, 255));
         ResetButtonDashboard2.setText("Reset");
         ResetButtonDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ResetButtonDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -281,6 +289,9 @@ public class HomePage extends JFrame {
             }
         });
 
+        DescriptionLabelDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        DescriptionLabelDashboard2.setText("Highest number of vehicles at 7 am in year 2005 on road A9999999999");
+
         javax.swing.GroupLayout filtersPanelDashboard2Layout = new javax.swing.GroupLayout(filtersPanelDashboard2);
         filtersPanelDashboard2.setLayout(filtersPanelDashboard2Layout);
         filtersPanelDashboard2Layout.setHorizontalGroup(
@@ -293,21 +304,26 @@ public class HomePage extends JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(NextButtonDashboard2)
                 .addGap(35, 35, 35)
-                .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
-                        .addComponent(lableYearDashboard2)
-                        .addGap(105, 105, 105))
-                    .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                        .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
+                                .addComponent(lableYearDashboard2)
+                                .addGap(105, 105, 105))
+                            .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(DescriptionLabelDashboard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(ResetButtonDashboard2)
                 .addGap(31, 31, 31))
         );
         filtersPanelDashboard2Layout.setVerticalGroup(
             filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, filtersPanelDashboard2Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(DescriptionLabelDashboard2)
+                .addGap(18, 18, 18)
                 .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
                         .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,7 +356,7 @@ public class HomePage extends JFrame {
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -785,7 +801,7 @@ public class HomePage extends JFrame {
                         .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
@@ -1018,8 +1034,7 @@ public class HomePage extends JFrame {
 
         adminDisplayUsers();
         resetAdminLabels();
-        
-        
+
 
     }//GEN-LAST:event_adminPanelButtonActionPerformed
 
@@ -1298,15 +1313,13 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_confirmButtonMouseExited
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        
+
         if (deleteBool) {
             deleteUser();
         } else if (editBool) {
-            editUser();      
+            editUser();
         }
-        
-        
-        
+
         adminDisplayUsers();
 
     }//GEN-LAST:event_confirmButtonActionPerformed
@@ -1367,16 +1380,15 @@ public class HomePage extends JFrame {
         road_dashboard2 = "A1";
         hour_dashboard2 = 7;
         year_dashboard2 = 2000;
-        
-        
+
         SlideBarDashboard2.setValue(year_dashboard2);
         SlideBarDashboard2.repaint();
         paintLableYearDashboard2();
         paintlabelHourDashboard2();
-        addElementsToChoiceDashboard2(); 
+        addElementsToChoiceDashboard2();
         repaintDashboard2();
-        
-        
+
+
     }//GEN-LAST:event_ResetButtonDashboard2ActionPerformed
 
     private void BackButtonDashboard2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonDashboard2MouseEntered
@@ -1404,24 +1416,26 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_ResetButtonDashboard2MouseExited
 
     private void adminTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseClicked
-        
+
     }//GEN-LAST:event_adminTableMouseClicked
 
     private void adminScrollPaneMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminScrollPaneMouseReleased
-      
+
     }//GEN-LAST:event_adminScrollPaneMouseReleased
 
     private void adminTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseReleased
-        
+
         if (!viewAllUsersButton.isEnabled()) {
             selectUserFromUserList();
         } else {
             selectUserFromLogList();
         }
-        
+
     }//GEN-LAST:event_adminTableMouseReleased
 
     public void repaintDashboard2() {
+        paintDescriptionLabelDashboard2();
+        
         Dashboard2Container.removeAll();
         Dashboard2Container.repaint();
         Dashboard2Container.revalidate();
@@ -1431,6 +1445,16 @@ public class HomePage extends JFrame {
         Dashboard2Container.repaint();
         Dashboard2Container.validate();
 
+    }
+
+    public void paintDescriptionLabelDashboard2() {
+        if (hour_dashboard2 < 12) {
+            DescriptionLabelDashboard2.setText("Highest number of vehicles at " + hour_dashboard2 + " am in year " + year_dashboard2 + " on road " + road_dashboard2);
+        } else {
+            DescriptionLabelDashboard2.setText("Highest number of vehicles at " + hour_dashboard2 + " pm in year " + year_dashboard2 + " on road " + road_dashboard2);
+        }
+        DescriptionLabelDashboard2.repaint();
+        
     }
 
     public void paintLableYearDashboard2() {
@@ -1517,7 +1541,6 @@ public class HomePage extends JFrame {
 
         Object[][] data = userController.displayLogData();
 
-        
         //Reverse array order
         for (int i = 0; i < data.length / 2; i++) {
             Object[] temp = data[i];
@@ -1525,13 +1548,12 @@ public class HomePage extends JFrame {
             data[data.length - 1 - i] = temp;
         }
 
-
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-    
+
         adjustLogColumns();
-        
+
         viewAllUsersButton.setEnabled(true);
         viewAllLogsButton.setEnabled(false);
     }
@@ -1550,95 +1572,93 @@ public class HomePage extends JFrame {
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-   
+
         adjustUserColumns();
-        
+
         viewAllUsersButton.setEnabled(false);
         viewAllLogsButton.setEnabled(true);
     }
-    
+
     private void selectUserFromUserList() {
-        
+
         int selectedRow = adminTable.getSelectedRow();
-        
+
         adminUsernameLabel.setText(adminTable.getValueAt(selectedRow, 1).toString());
-        
+
         adminEmailLabel.setText(adminTable.getValueAt(selectedRow, 2).toString());
-        
+
         adminStatusLabel.setText(adminTable.getValueAt(selectedRow, 3).toString());
-        
+
         editUserButton.setEnabled(true);
         deleteUserButton.setEnabled(true);
-        
+
     }
-    
+
     private void selectUserFromLogList() {
-        
+
         int selectedRow = adminTable.getSelectedRow();
-        
+
         int userID = Integer.parseInt(adminTable.getValueAt(selectedRow, 3).toString());
-        
+
         System.out.println("UserID: " + userID);
-        
+
         User user = userController.database.getUserById(userID);
-        
+
         resetAdminLabels();
-        
-        if(user == null) {
+
+        if (user == null) {
             adminNotificationLabel.setText("That user no longer exists.");
             adminNotificationLabel.setForeground(Color.RED);
             adminNotificationLabel.setVisible(true);
         } else {
             adminUsernameLabel.setText(user.getUserName());
-        
+
             adminEmailLabel.setText(user.getUserEmail());
-        
+
             adminStatusLabel.setText(user.getUserAdminFlag().toString());
-            
+
             editUserButton.setEnabled(true);
             deleteUserButton.setEnabled(true);
         }
-        
 
-        
     }
-    
+
     private void resetAdminLabels() {
-        
+
         adminNotificationLabel.setVisible(false);
-        
+
         adminUsernameLabel.setText("Username");
         adminEmailLabel.setText("Email");
         adminStatusLabel.setText("Admin Status");
-        
+
         clearAdminTextFields();
-        
+
         editUserButton.setEnabled(false);
         deleteUserButton.setEnabled(false);
-                   
+
         confirmButton.setEnabled(false);
-  
+
     }
-    
+
     private void clearAdminTextFields() {
-        
+
         adminNewUsernameTextField.setText("");
         adminNewEmailTextField.setText("");
         adminNewPasswordTextField.setText("");
         adminChangeAdminStatusCheckBox.setSelected(false);
-  
+
     }
-    
+
     private void editUser() {
-        
+
         int status = userController.editUser(
-                adminUsernameLabel.getText(), 
-                adminNewUsernameTextField.getText(), 
-                adminNewEmailTextField.getText(), 
-                adminNewPasswordTextField.getText(), 
+                adminUsernameLabel.getText(),
+                adminNewUsernameTextField.getText(),
+                adminNewEmailTextField.getText(),
+                adminNewPasswordTextField.getText(),
                 adminChangeAdminStatusCheckBox.isSelected()
         );
-        
+
         switch (status) {
             case 0 -> {
                 adminNotificationLabel.setText("Error: Invalid username.");
@@ -1646,9 +1666,9 @@ public class HomePage extends JFrame {
                 resetAdminLabels();
                 adminNotificationLabel.setVisible(true);
             }
-            case 1 -> {       
+            case 1 -> {
                 adminNotificationLabel.setText("Account updated.");
-                adminNotificationLabel.setForeground(new Color(0,153,0)); //green
+                adminNotificationLabel.setForeground(new Color(0, 153, 0)); //green
                 resetAdminLabels();
                 adminNotificationLabel.setVisible(true);
             }
@@ -1669,18 +1689,18 @@ public class HomePage extends JFrame {
                 adminNotificationLabel.setForeground(Color.RED);
                 resetAdminLabels();
                 adminNotificationLabel.setVisible(true);
-            }  
+            }
         }
-        
+
     }
-    
+
     private void deleteUser() {
-        
+
         if (!adminUsernameLabel.getText().equals("Username")) {
             try {
                 userController.database.deleteUser(adminUsernameLabel.getText());
                 adminNotificationLabel.setText("Account deleted.");
-                adminNotificationLabel.setForeground(new Color(0,153,0)); //green
+                adminNotificationLabel.setForeground(new Color(0, 153, 0)); //green
                 resetAdminLabels();
                 adminNotificationLabel.setVisible(true);
             } catch (SQLException ex) {
@@ -1691,26 +1711,24 @@ public class HomePage extends JFrame {
             }
         }
     }
-    
+
     private void adjustUserColumns() {
         adjustColumnWidth(0, 58);
         adjustColumnWidth(1, 78);
         adjustColumnWidth(2, 118);
         adjustColumnWidth(3, 58);
     }
-    
+
     private void adjustLogColumns() {
         adjustColumnWidth(0, 53);
         adjustColumnWidth(1, 143);
         adjustColumnWidth(2, 58);
         adjustColumnWidth(3, 58);
     }
-    
+
     private void adjustColumnWidth(int col, int width) {
         adminTable.getColumnModel().getColumn(col).setPreferredWidth(width);
     }
-
-    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1725,6 +1743,7 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_2;
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
+    private javax.swing.JLabel DescriptionLabelDashboard2;
     private javax.swing.JButton NextButtonDashboard2;
     private javax.swing.JButton ResetButtonDashboard2;
     private java.awt.Choice RoadChoiceDashboard2;
@@ -1906,7 +1925,7 @@ public class HomePage extends JFrame {
 
             container.add(chart, BorderLayout.NORTH);
             container.add(labels, BorderLayout.SOUTH);
-            
+
             return container;
 
         }

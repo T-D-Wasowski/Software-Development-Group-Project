@@ -6,6 +6,7 @@
 package dataverse;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class LoginPage extends javax.swing.JFrame {
-    
+
     UserController userController = new UserController();
     //HomePage homePage = new HomePage(); //Get rid off once in GUI
 
@@ -21,7 +22,7 @@ public class LoginPage extends javax.swing.JFrame {
         initComponents();
         registerPanel.setVisible(false);
         hideNotifications();
-        loginPanel.setVisible(true);   
+        loginPanel.setVisible(true);
         pack();
     }
 
@@ -108,6 +109,11 @@ public class LoginPage extends javax.swing.JFrame {
         loginPasswordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginPasswordTextFieldActionPerformed(evt);
+            }
+        });
+        loginPasswordTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginPasswordTextFieldKeyPressed(evt);
             }
         });
 
@@ -493,15 +499,15 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_loginUsernameTextFieldActionPerformed
 
     private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginLoginButtonActionPerformed
-        
+
         loginLogin();
-        
+
     }//GEN-LAST:event_loginLoginButtonActionPerformed
 
     private void loginRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginRegisterButtonActionPerformed
-        
+
         loginRegister();
-        
+
     }//GEN-LAST:event_loginRegisterButtonActionPerformed
 
     private void registerPasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPasswordTextFieldActionPerformed
@@ -517,15 +523,15 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_registerEmailTextFieldActionPerformed
 
     private void registerBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBackButtonActionPerformed
-        
+
         registerBack();
-        
+
     }//GEN-LAST:event_registerBackButtonActionPerformed
 
     private void registerRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerRegisterButtonActionPerformed
-      
-       registerRegister();
-              
+
+        registerRegister();
+
     }//GEN-LAST:event_registerRegisterButtonActionPerformed
 
     private void registerAdminCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerAdminCheckBoxActionPerformed
@@ -534,65 +540,71 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginLoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseEntered
         // login button hover
-        loginLoginButton.setBackground(new Color(245,160,39));          //orange
+        loginLoginButton.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_loginLoginButtonMouseEntered
 
     private void loginLoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseExited
         // login button unhover
-        loginLoginButton.setBackground(new Color(62,143,185));      //blue
+        loginLoginButton.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_loginLoginButtonMouseExited
 
     private void loginRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseEntered
         // register button hover
-        loginRegisterButton.setBackground(new Color(245,160,39));          //orange
+        loginRegisterButton.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_loginRegisterButtonMouseEntered
 
     private void loginRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseExited
         // register button unhover
-        loginRegisterButton.setBackground(new Color(62,143,185));      //blue
+        loginRegisterButton.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_loginRegisterButtonMouseExited
 
     private void registerBackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseEntered
         // back button hover
-        registerBackButton.setBackground(new Color(245,160,39));          //orange
+        registerBackButton.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_registerBackButtonMouseEntered
 
     private void registerBackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseExited
         // back button unhover
-        registerBackButton.setBackground(new Color(62,143,185));      //blue
+        registerBackButton.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_registerBackButtonMouseExited
 
     private void registerRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseEntered
         // register 2 button hover
-        registerRegisterButton.setBackground(new Color(245,160,39));          //orange
+        registerRegisterButton.setBackground(new Color(245, 160, 39));          //orange
     }//GEN-LAST:event_registerRegisterButtonMouseEntered
 
     private void registerRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseExited
         // register 2 button unhover
-        registerRegisterButton.setBackground(new Color(62,143,185));      //blue
+        registerRegisterButton.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_registerRegisterButtonMouseExited
 
     private void loginLoginButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLoginButtonMouseMoved
-        loginLoginButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        loginLoginButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_loginLoginButtonMouseMoved
 
     private void loginRegisterButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginRegisterButtonMouseMoved
-        loginRegisterButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        loginRegisterButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_loginRegisterButtonMouseMoved
 
     private void registerBackButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBackButtonMouseMoved
-        registerBackButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        registerBackButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_registerBackButtonMouseMoved
 
     private void registerRegisterButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerRegisterButtonMouseMoved
-        registerRegisterButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); 
+        registerRegisterButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_registerRegisterButtonMouseMoved
 
     private void registerAdminCheckBoxMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerAdminCheckBoxMouseMoved
         registerAdminCheckBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_registerAdminCheckBoxMouseMoved
- 
-   /**
+
+    private void loginPasswordTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginPasswordTextFieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            loginLogin();
+        }
+    }//GEN-LAST:event_loginPasswordTextFieldKeyPressed
+
+    /**
      * @param args the command line arguments
      */
     public void createLoginPage() {
@@ -627,68 +639,68 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private void showNotification(Boolean label, String message, Boolean colour) {
-        
+
         if (label) {
-                    
+
             loginNotificationLabel1.setText(message);
 
             //True = green, False = red
             if (colour) {
-                loginNotificationLabel1.setForeground(new Color(0,153,0));
+                loginNotificationLabel1.setForeground(new Color(0, 153, 0));
             } else {
                 loginNotificationLabel1.setForeground(Color.RED);
             }
 
-            loginNotificationLabel1.setVisible(true); 
+            loginNotificationLabel1.setVisible(true);
 
         } else {
-            
+
             loginNotificationLabel.setText(message);
 
             //True = green, False = red
             if (colour) {
-                loginNotificationLabel.setForeground(new Color(0,153,0));
+                loginNotificationLabel.setForeground(new Color(0, 153, 0));
             } else {
                 loginNotificationLabel.setForeground(Color.RED);
             }
 
-            loginNotificationLabel.setVisible(true);     
+            loginNotificationLabel.setVisible(true);
         }
     }
-    
+
     private void hideNotifications() {
         loginNotificationLabel1.setVisible(false);
         loginNotificationLabel.setVisible(false);
     }
-    
+
     private void clearLoginTextFields() {
         loginUsernameTextField.setText("");
         loginPasswordTextField.setText("");
     }
-    
+
     private void clearRegisterTextFields() {
         registerUsernameTextField.setText("");
         registerPasswordTextField.setText("");
         registerEmailTextField.setText("");
         registerAdminCheckBox.setSelected(false);
     }
-    
+
     private void loginLogin() {
         loginNotificationLabel.setVisible(false);
-        
+
         String username = loginUsernameTextField.getText();
-        
+
         //Put all this in a method in GUI and call the method from here instead!!!
         int status = userController.login(username, loginPasswordTextField.getText());
-        
+
         switch (status) {
             case 0 -> {
                 showNotification(false, "Error: This username does not exist. Please enter a valid username.", false);
                 clearLoginTextFields();
             }
-            case 1 -> {  
+            case 1 -> {
                 runHomePage(true, username); //Is admin
                 //Create log
                 //userController.createLog(true, username);
@@ -705,49 +717,49 @@ public class LoginPage extends javax.swing.JFrame {
                 showNotification(false, "Error: There was an SQL error. Please verify your credentials and try again.", false);
                 clearLoginTextFields();
             }
-        }   
+        }
     }
-    
-    private void runHomePage(Boolean isAdmin, String username) {    
+
+    private void runHomePage(Boolean isAdmin, String username) {
         User user = userController.database.getUserByUsername(username);
         userController.createLog(true, user);
-        
+
         HomePage homePage = new HomePage();
         homePage.createHomePage(isAdmin, user);
-        
+
         this.dispose();
     }
-    
+
     private void loginRegister() {
-        loginPanel.setVisible(false);     
+        loginPanel.setVisible(false);
         registerPanel.setVisible(true);
         hideNotifications();
-        
+
         clearLoginTextFields();
     }
-    
+
     private void registerBack() {
         registerPanel.setVisible(false);
         loginPanel.setVisible(true);
         hideNotifications();
-        
+
         clearRegisterTextFields();
     }
-    
+
     private void registerRegister() {
-        
-        int status = userController.register(registerUsernameTextField.getText(), 
-                registerEmailTextField.getText(), 
-                registerPasswordTextField.getText(), 
+
+        int status = userController.register(registerUsernameTextField.getText(),
+                registerEmailTextField.getText(),
+                registerPasswordTextField.getText(),
                 registerAdminCheckBox.isSelected()
         );
-        
+
         switch (status) {
             case 0 -> {
                 showNotification(true, "Error: This username is already taken or invalid. Please enter a valid username.", false);
                 clearRegisterTextFields();
             }
-            case 1 -> {       
+            case 1 -> {
                 registerBack();
                 showNotification(false, "Your account has been successfuly registered.", true);
             }
@@ -762,7 +774,7 @@ public class LoginPage extends javax.swing.JFrame {
             default -> {
                 showNotification(true, "Error: There was an SQL error. Please verify your credentials and try again.", false);
                 clearRegisterTextFields();
-            }  
+            }
         }
     }
 
