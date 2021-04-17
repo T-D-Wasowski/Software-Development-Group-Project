@@ -1513,7 +1513,7 @@ public class HomePage extends JFrame {
 
             container.add(chart, BorderLayout.NORTH);
             container.add(labels, BorderLayout.SOUTH);
-            container = new JPanel();                   //adelin
+//            container = new JPanel();                   //adelin
             return container;
 
         }
