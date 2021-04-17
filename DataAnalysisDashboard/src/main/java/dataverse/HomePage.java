@@ -18,6 +18,9 @@ public class HomePage extends JFrame {
 
     User user;
     UserController userController = new UserController();
+    
+    Boolean editBool = false;
+    Boolean deleteBool = false;
 
     public HomePage() {
         initComponents();
@@ -1173,7 +1176,9 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_editUserButtonMouseExited
 
     private void editUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUserButtonActionPerformed
-        // TODO add your handling code here:
+        confirmButton.setEnabled(true);
+        editBool = true;
+        deleteBool = false;
     }//GEN-LAST:event_editUserButtonActionPerformed
 
     private void viewAllLogsButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllLogsButtonMouseMoved
@@ -1221,7 +1226,9 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_deleteUserButtonMouseExited
 
     private void deleteUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteUserButtonActionPerformed
-        // TODO add your handling code here:
+        confirmButton.setEnabled(true);
+        deleteBool = true;
+        editBool = false;
     }//GEN-LAST:event_deleteUserButtonActionPerformed
 
     private void adminChangeAdminStatusCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminChangeAdminStatusCheckBoxActionPerformed
@@ -1269,7 +1276,17 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_confirmButtonMouseExited
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        // TODO add your handling code here:
+        
+        if (deleteBool) {
+            //Call delete method here
+        } else if (editBool) {
+            //Call edit method here
+        }
+        
+        resetAdminLabels();
+        
+        adminDisplayUsers();
+
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private void BackButtonDashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonDashboard2ActionPerformed
@@ -1379,9 +1396,10 @@ public class HomePage extends JFrame {
         } else {
             selectUserFromLogList();
         }
-            
         
-        
+        editUserButton.setEnabled(true);
+        deleteUserButton.setEnabled(true);
+ 
     }//GEN-LAST:event_adminTableMouseReleased
 
     public void repaintDashboard2() {
@@ -1497,7 +1515,6 @@ public class HomePage extends JFrame {
         
         viewAllUsersButton.setEnabled(true);
         viewAllLogsButton.setEnabled(false);
-
     }
 
     private void adminDisplayUsers() {
@@ -1519,7 +1536,6 @@ public class HomePage extends JFrame {
         
         viewAllUsersButton.setEnabled(false);
         viewAllLogsButton.setEnabled(true);
-
     }
     
     private void selectUserFromUserList() {
@@ -1559,6 +1575,22 @@ public class HomePage extends JFrame {
         adminUsernameLabel.setText("Username");
         adminEmailLabel.setText("Email");
         adminStatusLabel.setText("Admin Status");
+        
+        clearAdminTextFields();
+        
+        editUserButton.setEnabled(false);
+        deleteUserButton.setEnabled(false);
+        
+        confirmButton.setEnabled(false);
+        
+    }
+    
+    private void clearAdminTextFields() {
+        
+        adminNewUsernameTextField.setText("");
+        adminNewEmailTextField.setText("");
+        adminNewPasswordTextField.setText("");
+        adminChangeAdminStatusCheckBox.setSelected(false);
         
     }
     
