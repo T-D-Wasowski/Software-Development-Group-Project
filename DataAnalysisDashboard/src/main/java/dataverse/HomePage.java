@@ -63,6 +63,7 @@ public class HomePage extends JFrame {
         lableYearDashboard2 = new javax.swing.JLabel();
         SlideBarDashboard2 = new javax.swing.JSlider();
         ResetButtonDashboard2 = new javax.swing.JButton();
+        DescriptionLabelDashboard2 = new javax.swing.JLabel();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
         AdminPanel = new javax.swing.JPanel();
@@ -206,6 +207,8 @@ public class HomePage extends JFrame {
         filtersPanelDashboard2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         BackButtonDashboard2.setBackground(new java.awt.Color(62, 143, 185));
+        BackButtonDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BackButtonDashboard2.setForeground(new java.awt.Color(255, 255, 255));
         BackButtonDashboard2.setText("Back");
         BackButtonDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BackButtonDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -225,6 +228,8 @@ public class HomePage extends JFrame {
         labelHourDashboard2.setText("7 am");
 
         NextButtonDashboard2.setBackground(new java.awt.Color(62, 143, 185));
+        NextButtonDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        NextButtonDashboard2.setForeground(new java.awt.Color(255, 255, 255));
         NextButtonDashboard2.setText("Next");
         NextButtonDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         NextButtonDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -264,6 +269,8 @@ public class HomePage extends JFrame {
         });
 
         ResetButtonDashboard2.setBackground(new java.awt.Color(62, 143, 185));
+        ResetButtonDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ResetButtonDashboard2.setForeground(new java.awt.Color(255, 255, 255));
         ResetButtonDashboard2.setText("Reset");
         ResetButtonDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ResetButtonDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -280,6 +287,9 @@ public class HomePage extends JFrame {
             }
         });
 
+        DescriptionLabelDashboard2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        DescriptionLabelDashboard2.setText("Maximum number of vehicles at 7 am in year 2005 on road A999999");
+
         javax.swing.GroupLayout filtersPanelDashboard2Layout = new javax.swing.GroupLayout(filtersPanelDashboard2);
         filtersPanelDashboard2.setLayout(filtersPanelDashboard2Layout);
         filtersPanelDashboard2Layout.setHorizontalGroup(
@@ -292,13 +302,16 @@ public class HomePage extends JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(NextButtonDashboard2)
                 .addGap(35, 35, 35)
-                .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
-                        .addComponent(lableYearDashboard2)
-                        .addGap(105, 105, 105))
-                    .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
+                                .addComponent(lableYearDashboard2)
+                                .addGap(105, 105, 105))
+                            .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(DescriptionLabelDashboard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(35, 35, 35)
                 .addComponent(ResetButtonDashboard2)
                 .addGap(31, 31, 31))
@@ -306,7 +319,9 @@ public class HomePage extends JFrame {
         filtersPanelDashboard2Layout.setVerticalGroup(
             filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, filtersPanelDashboard2Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(DescriptionLabelDashboard2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
                         .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,7 +354,7 @@ public class HomePage extends JFrame {
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(6, Short.MAX_VALUE))
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -765,7 +780,7 @@ public class HomePage extends JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
@@ -1403,6 +1418,8 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_adminTableMouseReleased
 
     public void repaintDashboard2() {
+        paintDescriptionLabelDashboard2();
+        
         Dashboard2Container.removeAll();
         Dashboard2Container.repaint();
         Dashboard2Container.revalidate();
@@ -1422,6 +1439,18 @@ public class HomePage extends JFrame {
     public void paintlabelHourDashboard2() {
         labelHourDashboard2.setText(hour_dashboard2 + " am");
     }
+    
+    public void paintDescriptionLabelDashboard2(){
+        //print the title of the graph based on the information in the graph
+        //hour will display am if in the morning and pm if in the afternoon 
+        if (hour_dashboard2 < 12) {
+            DescriptionLabelDashboard2.setText("Maximum number of vehicles at " + hour_dashboard2 + " am in year " + year_dashboard2 + " on road " + road_dashboard2 );
+        } else {
+            DescriptionLabelDashboard2.setText("Maximum number of vehicles at " + hour_dashboard2 + " pm in year " + year_dashboard2 + " on road " + road_dashboard2 );
+        }
+        
+        DescriptionLabelDashboard2.repaint();
+    }
 
     public void addElementsToChoiceDashboard2() {
         RoadChoiceDashboard2.removeAll();
@@ -1431,7 +1460,7 @@ public class HomePage extends JFrame {
             RoadChoiceDashboard2.add(road);
         }
         RoadChoiceDashboard2.select(road_dashboard2);
-
+        
     }
 
     public void createHomePage(Boolean isAdmin, User user) {
@@ -1630,6 +1659,7 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_2;
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
+    private javax.swing.JLabel DescriptionLabelDashboard2;
     private javax.swing.JButton NextButtonDashboard2;
     private javax.swing.JButton ResetButtonDashboard2;
     private java.awt.Choice RoadChoiceDashboard2;
@@ -1828,7 +1858,7 @@ public class HomePage extends JFrame {
 
             @Override
             protected void paintComponent(Graphics g) {
-                String vehicles[] = {"Pedal cycles", "2 wmv", "Cars", "Buses", "LGVS", "HGVS", "All motor vehicles"};       //list of vehicles
+                String vehicles[] = {"Pedal cycles", "2 wmv", "Cars", "Buses", "LGVS", "HGVS", "All motor veh"};       //list of vehicles
                 int x = 2;
                 int i = 0;
                 int maxHeight = findMaxHeight();
