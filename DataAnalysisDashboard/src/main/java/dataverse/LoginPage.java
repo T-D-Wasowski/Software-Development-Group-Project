@@ -6,6 +6,7 @@
 package dataverse;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -108,6 +109,11 @@ public class LoginPage extends javax.swing.JFrame {
         loginPasswordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginPasswordTextFieldActionPerformed(evt);
+            }
+        });
+        loginPasswordTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginPasswordTextFieldKeyPressed(evt);
             }
         });
 
@@ -591,6 +597,13 @@ public class LoginPage extends javax.swing.JFrame {
     private void registerAdminCheckBoxMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerAdminCheckBoxMouseMoved
         registerAdminCheckBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_registerAdminCheckBoxMouseMoved
+
+    private void loginPasswordTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginPasswordTextFieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {        //log in if enter key is pressed
+            System.out.println("enter pressed");
+            loginLogin();
+        }
+    }//GEN-LAST:event_loginPasswordTextFieldKeyPressed
  
    /**
      * @param args the command line arguments

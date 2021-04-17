@@ -18,7 +18,7 @@ public class HomePage extends JFrame {
 
     User user;
     UserController userController = new UserController();
-    
+
     Boolean editBool = false;
     Boolean deleteBool = false;
 
@@ -260,7 +260,6 @@ public class HomePage extends JFrame {
         SlideBarDashboard2.setMinimum(2000);
         SlideBarDashboard2.setPaintTicks(true);
         SlideBarDashboard2.setSnapToTicks(true);
-        SlideBarDashboard2.setToolTipText("");
         SlideBarDashboard2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SlideBarDashboard2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -1013,8 +1012,7 @@ public class HomePage extends JFrame {
 
         adminDisplayUsers();
         resetAdminLabels();
-        
-        
+
 
     }//GEN-LAST:event_adminPanelButtonActionPerformed
 
@@ -1291,15 +1289,15 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_confirmButtonMouseExited
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        
+
         if (deleteBool) {
             //Call delete method here
         } else if (editBool) {
             //Call edit method here
         }
-        
+
         resetAdminLabels();
-        
+
         adminDisplayUsers();
 
     }//GEN-LAST:event_confirmButtonActionPerformed
@@ -1360,16 +1358,15 @@ public class HomePage extends JFrame {
         road_dashboard2 = "A1";
         hour_dashboard2 = 7;
         year_dashboard2 = 2000;
-        
-        
+
         SlideBarDashboard2.setValue(year_dashboard2);
         SlideBarDashboard2.repaint();
         paintLableYearDashboard2();
         paintlabelHourDashboard2();
-        addElementsToChoiceDashboard2(); 
+        addElementsToChoiceDashboard2();
         repaintDashboard2();
-        
-        
+
+
     }//GEN-LAST:event_ResetButtonDashboard2ActionPerformed
 
     private void BackButtonDashboard2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonDashboard2MouseEntered
@@ -1397,29 +1394,29 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_ResetButtonDashboard2MouseExited
 
     private void adminTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseClicked
-        
+
     }//GEN-LAST:event_adminTableMouseClicked
 
     private void adminScrollPaneMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminScrollPaneMouseReleased
-      
+
     }//GEN-LAST:event_adminScrollPaneMouseReleased
 
     private void adminTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseReleased
-        
+
         if (!viewAllUsersButton.isEnabled()) {
             selectUserFromUserList();
         } else {
             selectUserFromLogList();
         }
-        
+
         editUserButton.setEnabled(true);
         deleteUserButton.setEnabled(true);
- 
+
     }//GEN-LAST:event_adminTableMouseReleased
 
     public void repaintDashboard2() {
         paintDescriptionLabelDashboard2();
-        
+
         Dashboard2Container.removeAll();
         Dashboard2Container.repaint();
         Dashboard2Container.revalidate();
@@ -1439,16 +1436,16 @@ public class HomePage extends JFrame {
     public void paintlabelHourDashboard2() {
         labelHourDashboard2.setText(hour_dashboard2 + " am");
     }
-    
-    public void paintDescriptionLabelDashboard2(){
+
+    public void paintDescriptionLabelDashboard2() {
         //print the title of the graph based on the information in the graph
         //hour will display am if in the morning and pm if in the afternoon 
         if (hour_dashboard2 < 12) {
-            DescriptionLabelDashboard2.setText("Maximum number of vehicles at " + hour_dashboard2 + " am in year " + year_dashboard2 + " on road " + road_dashboard2 );
+            DescriptionLabelDashboard2.setText("Maximum number of vehicles at " + hour_dashboard2 + " am in year " + year_dashboard2 + " on road " + road_dashboard2);
         } else {
-            DescriptionLabelDashboard2.setText("Maximum number of vehicles at " + hour_dashboard2 + " pm in year " + year_dashboard2 + " on road " + road_dashboard2 );
+            DescriptionLabelDashboard2.setText("Maximum number of vehicles at " + hour_dashboard2 + " pm in year " + year_dashboard2 + " on road " + road_dashboard2);
         }
-        
+
         DescriptionLabelDashboard2.repaint();
     }
 
@@ -1460,7 +1457,7 @@ public class HomePage extends JFrame {
             RoadChoiceDashboard2.add(road);
         }
         RoadChoiceDashboard2.select(road_dashboard2);
-        
+
     }
 
     public void createHomePage(Boolean isAdmin, User user) {
@@ -1527,7 +1524,6 @@ public class HomePage extends JFrame {
 
         Object[][] data = userController.displayLogData();
 
-        
         //Reverse array order
         for (int i = 0; i < data.length / 2; i++) {
             Object[] temp = data[i];
@@ -1535,13 +1531,12 @@ public class HomePage extends JFrame {
             data[data.length - 1 - i] = temp;
         }
 
-
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-    
+
         adjustLogColumns();
-        
+
         viewAllUsersButton.setEnabled(true);
         viewAllLogsButton.setEnabled(false);
     }
@@ -1560,91 +1555,86 @@ public class HomePage extends JFrame {
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-   
+
         adjustUserColumns();
-        
+
         viewAllUsersButton.setEnabled(false);
         viewAllLogsButton.setEnabled(true);
     }
-    
+
     private void selectUserFromUserList() {
-        
+
         int selectedRow = adminTable.getSelectedRow();
-        
+
         adminUsernameLabel.setText(adminTable.getValueAt(selectedRow, 1).toString());
-        
+
         adminEmailLabel.setText(adminTable.getValueAt(selectedRow, 2).toString());
-        
+
         adminStatusLabel.setText(adminTable.getValueAt(selectedRow, 3).toString());
-        
+
     }
-    
+
     private void selectUserFromLogList() {
-        
+
         int selectedRow = adminTable.getSelectedRow();
-        
+
         int userID = Integer.parseInt(adminTable.getValueAt(selectedRow, 3).toString());
-        
+
         System.out.println("UserID: " + userID);
-        
+
         User user = userController.database.getUserById(userID);
-        
+
         adminUsernameLabel.setText(user.getUserName());
-        
+
         adminEmailLabel.setText(user.getUserEmail());
-        
+
         adminStatusLabel.setText(user.getUserAdminFlag().toString());
-        
+
     }
-    
+
     private void resetAdminLabels() {
-        
+
         adminNotificationLabel.setVisible(false);
-        
+
         adminUsernameLabel.setText("Username");
         adminEmailLabel.setText("Email");
         adminStatusLabel.setText("Admin Status");
-        
+
         clearAdminTextFields();
-        
+
         editUserButton.setEnabled(false);
         deleteUserButton.setEnabled(false);
-        
+
         confirmButton.setEnabled(false);
-        
+
     }
-    
+
     private void clearAdminTextFields() {
-        
+
         adminNewUsernameTextField.setText("");
         adminNewEmailTextField.setText("");
         adminNewPasswordTextField.setText("");
         adminChangeAdminStatusCheckBox.setSelected(false);
-        
-    }
-    
-    
 
-    
+    }
+
     private void adjustUserColumns() {
         adjustColumnWidth(0, 58);
         adjustColumnWidth(1, 78);
         adjustColumnWidth(2, 118);
         adjustColumnWidth(3, 58);
     }
-    
+
     private void adjustLogColumns() {
         adjustColumnWidth(0, 53);
         adjustColumnWidth(1, 143);
         adjustColumnWidth(2, 58);
         adjustColumnWidth(3, 58);
     }
-    
+
     private void adjustColumnWidth(int col, int width) {
         adminTable.getColumnModel().getColumn(col).setPreferredWidth(width);
     }
-
-    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1840,7 +1830,7 @@ public class HomePage extends JFrame {
 
             container.add(chart, BorderLayout.NORTH);
             container.add(labels, BorderLayout.SOUTH);
-            
+
             return container;
 
         }
