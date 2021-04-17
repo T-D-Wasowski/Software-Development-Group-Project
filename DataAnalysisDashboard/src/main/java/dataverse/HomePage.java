@@ -327,7 +327,7 @@ public class HomePage extends JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        AdminPanel.setBackground(new java.awt.Color(255, 153, 51));
+        AdminPanel.setBackground(new java.awt.Color(208, 239, 255));
         AdminPanel.setMaximumSize(new java.awt.Dimension(836, 500));
         AdminPanel.setMinimumSize(new java.awt.Dimension(836, 500));
         AdminPanel.setPreferredSize(new java.awt.Dimension(836, 500));
@@ -628,6 +628,10 @@ public class HomePage extends JFrame {
         adminLeftPanel.setMinimumSize(new java.awt.Dimension(313, 442));
         adminLeftPanel.setPreferredSize(new java.awt.Dimension(313, 442));
 
+        adminScrollPane.setMaximumSize(new java.awt.Dimension(313, 442));
+        adminScrollPane.setMinimumSize(new java.awt.Dimension(313, 442));
+        adminScrollPane.setPreferredSize(new java.awt.Dimension(313, 442));
+
         adminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -645,11 +649,11 @@ public class HomePage extends JFrame {
         adminLeftPanel.setLayout(adminLeftPanelLayout);
         adminLeftPanelLayout.setHorizontalGroup(
             adminLeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(adminScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+            .addComponent(adminScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         adminLeftPanelLayout.setVerticalGroup(
             adminLeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(adminScrollPane)
+            .addComponent(adminScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel9.setText("User Details");
@@ -1351,15 +1355,24 @@ public class HomePage extends JFrame {
         String[] headers = {
             "Log ID",
             "Log Date & Time",
-            "Log Reason",
+            "Reason",
             "User ID"
         };
         
         Object[][] data = userController.displayLogData();
         
+        //Reverse array order
+        for (int i = 0; i < data.length / 2; i++) {
+            Object[] temp = data[i];
+            data[i] = data[data.length - 1 - i];
+            data[data.length - 1 - i] = temp;
+        }
+        
         JTable table = new JTable(data, headers);
         
         adminTable.setModel(table.getModel());
+        
+        adjustLogColumns();
         
     }
     
@@ -1378,8 +1391,26 @@ public class HomePage extends JFrame {
         
         adminTable.setModel(table.getModel());
         
-        //AdjustColumns - if needed
+        adjustUserColumns();
 
+    }
+    
+    private void adjustUserColumns() {
+        adjustColumnWidth(0, 58);
+        adjustColumnWidth(1, 78);
+        adjustColumnWidth(2, 118);
+        adjustColumnWidth(3, 58);
+    }
+    
+    private void adjustLogColumns() {
+        adjustColumnWidth(0, 53);
+        adjustColumnWidth(1, 143);
+        adjustColumnWidth(2, 58);
+        adjustColumnWidth(3, 58);
+    }
+    
+    private void adjustColumnWidth(int col, int width) {
+        adminTable.getColumnModel().getColumn(col).setPreferredWidth(width);
     }
     
 
