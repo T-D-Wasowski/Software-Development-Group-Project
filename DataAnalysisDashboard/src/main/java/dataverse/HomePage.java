@@ -1278,12 +1278,13 @@ public class HomePage extends JFrame {
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         
         if (deleteBool) {
-            //Call delete method here
+            //del method here
+            resetAdminLabels();
         } else if (editBool) {
-            //Call edit method here
+            editUser();      
         }
         
-        resetAdminLabels();
+        
         
         adminDisplayUsers();
 
@@ -1580,9 +1581,9 @@ public class HomePage extends JFrame {
         
         editUserButton.setEnabled(false);
         deleteUserButton.setEnabled(false);
-        
+                   
         confirmButton.setEnabled(false);
-        
+  
     }
     
     private void clearAdminTextFields() {
@@ -1591,11 +1592,53 @@ public class HomePage extends JFrame {
         adminNewEmailTextField.setText("");
         adminNewPasswordTextField.setText("");
         adminChangeAdminStatusCheckBox.setSelected(false);
-        
+  
     }
     
-    
-
+    private void editUser() {
+        
+        int status = userController.editUser(
+                adminUsernameLabel.getText(), 
+                adminNewUsernameTextField.getText(), 
+                adminNewEmailTextField.getText(), 
+                adminNewPasswordTextField.getText(), 
+                adminChangeAdminStatusCheckBox.isSelected()
+        );
+        
+        switch (status) {
+            case 0 -> {
+                adminNotificationLabel.setText("Error: Invalid username.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            case 1 -> {       
+                adminNotificationLabel.setText("Account updated.");
+                adminNotificationLabel.setForeground(new Color(0,153,0)); //green
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            case 2 -> {
+                adminNotificationLabel.setText("Error: Invalid email.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            case 3 -> {
+                adminNotificationLabel.setText("Error: Invalid password.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            default -> {
+                adminNotificationLabel.setText("Error: SQL exception.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }  
+        }
+        
+    }
     
     private void adjustUserColumns() {
         adjustColumnWidth(0, 58);
