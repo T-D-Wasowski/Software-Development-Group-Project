@@ -1483,6 +1483,27 @@ public class HomePage extends JFrame {
 
         //AdjustColumns - if needed
     }
+    
+    private void selectUserFromUserList() {
+        
+        int selectedRow = adminTable.getSelectedRow();
+        
+        adminUsernameLabel.setText(adminTable.getValueAt(selectedRow, 1).toString());
+        
+        //adminEmailLabel.setText()
+        
+        adminTable.getValueAt(selectedRow, 2);
+        adminTable.getValueAt(selectedRow, 3);
+        
+        
+        
+    }
+    
+    private void selectUserFromLogList() {
+        
+        
+        
+    }
 
     private void adjustUserColumns() {
         adjustColumnWidth(0, 58);
