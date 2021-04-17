@@ -290,10 +290,9 @@ public class HomePage extends JFrame {
                 .addComponent(NextButtonDashboard2)
                 .addGap(35, 35, 35)
                 .addComponent(RoadChoiceDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(36, 36, 36)
                 .addGroup(filtersPanelDashboard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(filtersPanelDashboard2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lableYearDashboard2)
                         .addGap(105, 105, 105))
                     .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -337,7 +336,7 @@ public class HomePage extends JFrame {
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(6, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -662,7 +661,7 @@ public class HomePage extends JFrame {
                 .addComponent(adminChangeAdminStatusCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(adminNotificationLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -673,6 +672,8 @@ public class HomePage extends JFrame {
         adminLeftPanel.setMinimumSize(new java.awt.Dimension(313, 442));
         adminLeftPanel.setPreferredSize(new java.awt.Dimension(313, 442));
 
+        adminScrollPane.setBackground(new java.awt.Color(208, 239, 255));
+        adminScrollPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         adminScrollPane.setMaximumSize(new java.awt.Dimension(313, 442));
         adminScrollPane.setMinimumSize(new java.awt.Dimension(313, 442));
         adminScrollPane.setPreferredSize(new java.awt.Dimension(313, 442));
@@ -748,7 +749,7 @@ public class HomePage extends JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
@@ -1489,6 +1490,27 @@ public class HomePage extends JFrame {
         
         adjustUserColumns();
         //AdjustColumns - if needed
+    }
+    
+    private void selectUserFromUserList() {
+        
+        int selectedRow = adminTable.getSelectedRow();
+        
+        adminUsernameLabel.setText(adminTable.getValueAt(selectedRow, 1).toString());
+        
+        //adminEmailLabel.setText()
+        
+        adminTable.getValueAt(selectedRow, 2);
+        adminTable.getValueAt(selectedRow, 3);
+        
+        
+        
+    }
+    
+    private void selectUserFromLogList() {
+        
+        
+        
     }
 
     
