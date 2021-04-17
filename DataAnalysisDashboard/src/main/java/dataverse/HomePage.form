@@ -706,7 +706,7 @@
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="adminStatusLabel" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="adminEmailLabel" min="-2" max="-2" attributes="0"/>
                                       <Component id="adminUsernameLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -739,7 +739,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <Component id="adminEmailLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -930,12 +930,12 @@
                     <Property name="text" type="java.lang.String" value="Username"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel12">
+                <Component class="javax.swing.JLabel" name="adminEmailLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="11" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="adminEmailLabel"/>
+                    <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="adminStatusLabel">
@@ -994,6 +994,9 @@
                       <Dimension value="[313, 442]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminScrollPaneMouseReleased"/>
+                  </Events>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
@@ -1008,6 +1011,10 @@
                           </Table>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminTableMouseClicked"/>
+                        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminTableMouseReleased"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

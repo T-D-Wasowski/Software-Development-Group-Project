@@ -333,8 +333,8 @@ class UserDatabase {
     
         Connection connection = connect();
         
-        String sqlString = "SELECT * FROM user"
-                + "WHERE userID = " + userId + ";";
+        String sqlString = "SELECT * FROM user "
+                + "WHERE userID = " + userId  + ";";
         
         ResultSet result = null;
   

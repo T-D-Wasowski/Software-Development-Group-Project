@@ -82,7 +82,7 @@ public class HomePage extends JFrame {
         confirmButton = new javax.swing.JButton();
         adminNotificationLabel = new javax.swing.JLabel();
         adminUsernameLabel = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        adminEmailLabel = new javax.swing.JLabel();
         adminStatusLabel = new javax.swing.JLabel();
         adminLeftPanel = new javax.swing.JPanel();
         adminScrollPane = new javax.swing.JScrollPane();
@@ -593,8 +593,8 @@ public class HomePage extends JFrame {
         adminUsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         adminUsernameLabel.setText("Username");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel12.setText("adminEmailLabel");
+        adminEmailLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        adminEmailLabel.setText("Email");
 
         adminStatusLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         adminStatusLabel.setText("AdminStatus");
@@ -618,7 +618,7 @@ public class HomePage extends JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(adminStatusLabel)
-                            .addComponent(jLabel12)
+                            .addComponent(adminEmailLabel)
                             .addComponent(adminUsernameLabel)))
                     .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, adminRightPanelLayout.createSequentialGroup()
@@ -644,7 +644,7 @@ public class HomePage extends JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addGap(8, 8, 8)
-                .addComponent(jLabel12)
+                .addComponent(adminEmailLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -677,6 +677,11 @@ public class HomePage extends JFrame {
         adminScrollPane.setMaximumSize(new java.awt.Dimension(313, 442));
         adminScrollPane.setMinimumSize(new java.awt.Dimension(313, 442));
         adminScrollPane.setPreferredSize(new java.awt.Dimension(313, 442));
+        adminScrollPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                adminScrollPaneMouseReleased(evt);
+            }
+        });
 
         adminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -689,6 +694,14 @@ public class HomePage extends JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        adminTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminTableMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                adminTableMouseReleased(evt);
+            }
+        });
         adminScrollPane.setViewportView(adminTable);
 
         javax.swing.GroupLayout adminLeftPanelLayout = new javax.swing.GroupLayout(adminLeftPanel);
@@ -981,7 +994,9 @@ public class HomePage extends JFrame {
         AdminPanel.setVisible(true);       //add one panel
 
         adminDisplayUsers();
-        viewAllUsersButton.setEnabled(false);
+        resetAdminLabels();
+        
+        
 
     }//GEN-LAST:event_adminPanelButtonActionPerformed
 
@@ -1175,8 +1190,6 @@ public class HomePage extends JFrame {
 
     private void viewAllLogsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllLogsButtonActionPerformed
         adminDisplayLogs();
-        viewAllUsersButton.setEnabled(true);
-        viewAllLogsButton.setEnabled(false);
     }//GEN-LAST:event_viewAllLogsButtonActionPerformed
 
     private void viewAllUsersButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllUsersButtonMouseMoved
@@ -1193,8 +1206,6 @@ public class HomePage extends JFrame {
 
     private void viewAllUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllUsersButtonActionPerformed
         adminDisplayUsers();
-        viewAllLogsButton.setEnabled(true);
-        viewAllUsersButton.setEnabled(false);
     }//GEN-LAST:event_viewAllUsersButtonActionPerformed
 
     private void deleteUserButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteUserButtonMouseMoved
@@ -1242,7 +1253,7 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_clearButtonMouseExited
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        // TODO add your handling code here:
+        resetAdminLabels();
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void confirmButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseMoved
@@ -1353,6 +1364,26 @@ public class HomePage extends JFrame {
         ResetButtonDashboard2.setBackground(new Color(62, 143, 185));      //blue
     }//GEN-LAST:event_ResetButtonDashboard2MouseExited
 
+    private void adminTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseClicked
+        
+    }//GEN-LAST:event_adminTableMouseClicked
+
+    private void adminScrollPaneMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminScrollPaneMouseReleased
+      
+    }//GEN-LAST:event_adminScrollPaneMouseReleased
+
+    private void adminTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseReleased
+        
+        if (!viewAllUsersButton.isEnabled()) {
+            selectUserFromUserList();
+        } else {
+            selectUserFromLogList();
+        }
+            
+        
+        
+    }//GEN-LAST:event_adminTableMouseReleased
+
     public void repaintDashboard2() {
         Dashboard2Container.removeAll();
         Dashboard2Container.repaint();
@@ -1461,12 +1492,12 @@ public class HomePage extends JFrame {
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-
-       
+    
         adjustLogColumns();
         
+        viewAllUsersButton.setEnabled(true);
+        viewAllLogsButton.setEnabled(false);
 
-        adjustLogColumns();
     }
 
     private void adminDisplayUsers() {
@@ -1483,13 +1514,12 @@ public class HomePage extends JFrame {
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-
-       
+   
         adjustUserColumns();
-
         
-        adjustUserColumns();
-        //AdjustColumns - if needed
+        viewAllUsersButton.setEnabled(false);
+        viewAllLogsButton.setEnabled(true);
+
     }
     
     private void selectUserFromUserList() {
@@ -1498,20 +1528,41 @@ public class HomePage extends JFrame {
         
         adminUsernameLabel.setText(adminTable.getValueAt(selectedRow, 1).toString());
         
-        //adminEmailLabel.setText()
+        adminEmailLabel.setText(adminTable.getValueAt(selectedRow, 2).toString());
         
-        adminTable.getValueAt(selectedRow, 2);
-        adminTable.getValueAt(selectedRow, 3);
-        
-        
+        adminStatusLabel.setText(adminTable.getValueAt(selectedRow, 3).toString());
         
     }
     
     private void selectUserFromLogList() {
         
+        int selectedRow = adminTable.getSelectedRow();
         
+        int userID = Integer.parseInt(adminTable.getValueAt(selectedRow, 3).toString());
+        
+        System.out.println("UserID: " + userID);
+        
+        User user = userController.database.getUserById(userID);
+        
+        adminUsernameLabel.setText(user.getUserName());
+        
+        adminEmailLabel.setText(user.getUserEmail());
+        
+        adminStatusLabel.setText(user.getUserAdminFlag().toString());
         
     }
+    
+    private void resetAdminLabels() {
+        
+        adminNotificationLabel.setVisible(false);
+        
+        adminUsernameLabel.setText("Username");
+        adminEmailLabel.setText("Email");
+        adminStatusLabel.setText("Admin Status");
+        
+    }
+    
+    
 
     
     private void adjustUserColumns() {
@@ -1552,6 +1603,7 @@ public class HomePage extends JFrame {
     private java.awt.Choice RoadChoiceDashboard2;
     private javax.swing.JSlider SlideBarDashboard2;
     private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
+    private javax.swing.JLabel adminEmailLabel;
     private javax.swing.JPanel adminLeftPanel;
     private javax.swing.JTextField adminNewEmailTextField;
     private javax.swing.JTextField adminNewPasswordTextField;
@@ -1570,7 +1622,6 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel filtersPanelDashboard2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
