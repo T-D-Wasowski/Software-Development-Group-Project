@@ -1455,16 +1455,17 @@ public class HomePage extends JFrame {
             data[i] = data[data.length - 1 - i];
             data[data.length - 1 - i] = temp;
         }
-        
+
 
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
 
-        
+       
         adjustLogColumns();
         
 
+        adjustLogColumns();
     }
 
     private void adminDisplayUsers() {
@@ -1482,10 +1483,11 @@ public class HomePage extends JFrame {
 
         adminTable.setModel(table.getModel());
 
-        
+       
         adjustUserColumns();
 
-
+        
+        adjustUserColumns();
         //AdjustColumns - if needed
     }
 
@@ -1507,8 +1509,8 @@ public class HomePage extends JFrame {
     private void adjustColumnWidth(int col, int width) {
         adminTable.getColumnModel().getColumn(col).setPreferredWidth(width);
     }
-    
 
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
