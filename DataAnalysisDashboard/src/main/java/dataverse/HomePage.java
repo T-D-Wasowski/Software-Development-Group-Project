@@ -1448,6 +1448,7 @@ public class HomePage extends JFrame {
         };
 
         Object[][] data = userController.displayLogData();
+
         
         //Reverse array order
         for (int i = 0; i < data.length / 2; i++) {
@@ -1456,12 +1457,16 @@ public class HomePage extends JFrame {
             data[data.length - 1 - i] = temp;
         }
 
+
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
 
+       
         adjustLogColumns();
+        
 
+        adjustLogColumns();
     }
 
     private void adminDisplayUsers() {
@@ -1478,9 +1483,12 @@ public class HomePage extends JFrame {
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-        
+
+       
         adjustUserColumns();
 
+        
+        adjustUserColumns();
         //AdjustColumns - if needed
     }
     
@@ -1505,6 +1513,7 @@ public class HomePage extends JFrame {
         
     }
 
+    
     private void adjustUserColumns() {
         adjustColumnWidth(0, 58);
         adjustColumnWidth(1, 78);
@@ -1522,6 +1531,9 @@ public class HomePage extends JFrame {
     private void adjustColumnWidth(int col, int width) {
         adminTable.getColumnModel().getColumn(col).setPreferredWidth(width);
     }
+
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPanel;
