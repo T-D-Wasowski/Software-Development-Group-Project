@@ -11,6 +11,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,14 +23,14 @@ public class UserController {
 
     public int register(String username, String email, String password, Boolean adminFlag) {
         
-        ResultSet userNameResults = database.getUserByUsername(username);
+        User user = database.getUserByUsername(username);
         
         try {
-            if (userNameResults.next() == false && (username.length() >= 3 && username.length() <= 32)) {
+            if (user == null && (username.length() >= 3 && username.length() <= 32)) {
                               
-                ResultSet userEmailResults = database.getUserByEmail(email);
+                user = database.getUserByEmail(email);
                 
-                if (userEmailResults.next() == false && (email.length() >= 3 && email.length() <= 255)) {                   
+                if (user == null && (email.length() >= 3 && email.length() <= 255)) {                   
                     
                     if (password.length() >= 8 && password.length() <= 32) {
                         
@@ -63,54 +64,45 @@ public class UserController {
         } catch (SQLException e) {            
             System.out.println("SQL Exception error: " + e.getMessage());
             return 4; //Return 4 when there is an SQL exception error
-        } finally {
-            database.disconnect();
         }
+        
     }
     
     public int login(String username, String password) {
         
-        ResultSet user = database.getUserByUsername(username);
+        User user = database.getUserByUsername(username);
         
-        try {
-            //Checks next result in result set, which is the first result (starts at 0)
-            //If it's false, means result set is empty.
-            if(user.next() == false) {
-                
-                System.out.println("User does not exist, please register.");
-                return 0; //Return 0 when user doesn't exist
-                
-            } else {
-                
-                    boolean passwordMatch = PasswordUtility.verifyUserPassword(
-                            password,
-                            user.getString("userEncryptedPassword"),
-                            user.getString("userEncryptionSalt")
-                    );
-                    
-                    if (passwordMatch) {   
-                        
-                        
-                        //Determine if user is admin                       
-                        if (user.getBoolean("userAdminFlag") == true) {
-                            return 1; //Return 1 when password matches and is admin
-                        } else {
-                            return 4; //Return 4 when password matches and is NOT admin
-                        }
+        //Checks next result in result set, which is the first result (starts at 0)
+        //If it's false, means result set is empty.
+        if(user == null) {
+
+            System.out.println("User does not exist, please register.");
+            return 0; //Return 0 when user doesn't exist
+
+        } else {
+
+                boolean passwordMatch = PasswordUtility.verifyUserPassword(
+                        password,
+                        user.getUserEncryptedPassword(),
+                        user.getUserEncryptionSalt()
+                );
+
+                if (passwordMatch) {   
+
+
+                    //Determine if user is admin                     
+                    if (user.getUserAdminFlag()) {
+                        return 1; //Return 1 when password matches and is admin
                     } else {
-                        return 2; //Return 2 when password doesnt match
-                    }        
-                }
-            
-        } catch (SQLException e) {                           
-            System.out.println("SQL Exception error: " + e.getMessage());
-            return 3; //Return 3 when there is an SQL exception error               
-        } finally {
-            database.disconnect();
-        }            
+                        return 3; //Return 3 when password matches and is NOT admin
+                    }
+                } else {
+                    return 2; //Return 2 when password doesnt match
+                }        
+            }              
     }
     
-    public void createLog(Boolean logReason, String username) {
+    public void createLog(Boolean logReason, User user) {
         
         //Getting current date and time
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -118,21 +110,10 @@ public class UserController {
         
         System.out.println(formatter.format(now)); //Test
         
-        //Getting userID & add log to database
-        Integer userID = null;
-        ResultSet userResults = database.getUserByUsername(username);
-        try {
-            userID = userResults.getInt("userID");
-            System.out.println(userID);
-            
-        } catch (SQLException e) {           
-            System.out.println("Error getting userID :" + e.getMessage());
-        } finally {
-            database.disconnect();
-        }
+        //User user = database.getUserByUsername(username);  
         
         try {
-            database.addLog(formatter.format(now), logReason, userID);
+            database.addLog(formatter.format(now), logReason, user.getUserID());
             System.out.println("Log successfully created and added to the database.");
         } catch (SQLException e) {
             System.out.println("Error adding log to database: " + e.getMessage());
@@ -148,8 +129,6 @@ public class UserController {
 }
 
 class UserDatabase {
-    
-    Connection connection;
         
     private void downloadDriver() {
         try {
@@ -162,11 +141,11 @@ class UserDatabase {
     }
     
     
-    private void connect() {
+    private Connection connect() {
         
         downloadDriver();
         
-        //Connection connection = null;
+        Connection connection = null;
         
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:../user.db");
@@ -175,11 +154,11 @@ class UserDatabase {
             System.out.println("Error connecting to database: " + e.getMessage());
         }
         
-        //return connection;
+        return connection;
         
     }
     
-    public void disconnect(/*Connection connection*/) {
+    public void disconnect(Connection connection) {
         
         try {
             if (!connection.isClosed()) {
@@ -194,7 +173,7 @@ class UserDatabase {
     
     public void createTables() {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlDropLogString = "DROP TABLE IF EXISTS log;";
         String sqlDropUserString = "DROP TABLE IF EXISTS user;";
@@ -236,13 +215,13 @@ class UserDatabase {
             System.out.println("Problem creating database tables: " + e.getMessage());       
         }
 
-        disconnect(/*connection*/); 
+        disconnect(connection); 
         
     }
     
     public void addUser(String username, String email, String password, String salt, String adminFlag) throws SQLException {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "INSERT INTO User"
                 + "("
@@ -264,12 +243,12 @@ class UserDatabase {
 
         System.out.println("User inserted into database.");
        
-        disconnect(/*connection*/);
+        disconnect(connection);
     }
     
     public void addLog(String logDateTime, Boolean logReason, Integer userID) throws SQLException {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "INSERT INTO Log"
                 + "("
@@ -287,71 +266,128 @@ class UserDatabase {
 
         System.out.println("Log inserted into database.");
        
-        disconnect(/*connection*/);
+        disconnect(connection);
         
     }
     
-    public ResultSet getUserById(int userId) {
+    public User getUserById(int userId) {
     
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "SELECT * FROM user"
                 + "WHERE userID = " + userId + ";";
         
         ResultSet result = null;
+  
+        User user = null;
         
         try { 
             Statement sqlStatement = connection.createStatement(); 
             result = sqlStatement.executeQuery(sqlString);
-            System.out.println("Results retrieved from database.");
+            
+            if (result.next()) {
+                System.out.println("Results retrieved from database.");
+
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+            } else {
+                System.out.println("This user does not exist!");
+            }
+
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by id: " + e.getMessage());
         }
 
-        return result;
+        disconnect(connection);
+        
+        return user;
         
     }
     
-    public ResultSet getUserByUsername(String userName) {
+    public User getUserByUsername(String userName) {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "SELECT * FROM user "
                 + "WHERE userName = '" + userName + "';";
   
         ResultSet result = null;
         
-        try { 
+        User user = null;
+        
+       try { 
             Statement sqlStatement = connection.createStatement(); 
             result = sqlStatement.executeQuery(sqlString);
-            System.out.println("Results retrieved from database.");
+            
+            if (result.next()) {
+                System.out.println("Results retrieved from database.");
+
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+            } else {
+                System.out.println("This user does not exist!");
+            }
             
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by username: " + e.getMessage());
         }
         
-        return result;
+        disconnect(connection);
+        
+        return user;
         
     }
     
-    public ResultSet getUserByEmail(String userEmail) {
+    public User getUserByEmail(String userEmail) {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "SELECT * FROM user "
                 + "WHERE userEmail = '" + userEmail + "';";
   
         ResultSet result = null;
         
+        User user = null;
+        
+        
         try { 
             Statement sqlStatement = connection.createStatement(); 
             result = sqlStatement.executeQuery(sqlString);
-            System.out.println("Results retrieved from database.");
+            
+            if (result.next()) {
+                System.out.println("Results retrieved from database.");
+
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+            } else {
+                System.out.println("This user does not exist!");
+            }
+            
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by username: " + e.getMessage());
         }
+        
+        disconnect(connection);
 
-        return result;
+        return user;
         
     }
     
