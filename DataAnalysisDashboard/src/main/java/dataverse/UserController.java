@@ -121,6 +121,65 @@ public class UserController {
            
     }
     
+    public Object[][] displayUserData() {
+        
+        ArrayList<User> userList = database.getAllUsers();
+        
+        //4 because only 4 of the user attributes are to be displayed
+        Object[][] data = new Object[userList.size()][4];
+        int counter = 0;
+
+        for (User user : userList) {
+            
+            Object[] userData = {
+                user.getUserID(), 
+                user.getUserName(), 
+                user.getUserEmail(), 
+                user.getUserAdminFlag()
+            };
+            
+            data[counter] = (userData);
+            counter++;
+            
+        }
+        
+        return data;
+        
+    }
+    
+    public Object[][] displayLogData() {
+        
+        ArrayList<Log> logList = database.getAllLogs();
+        
+        //4 because only 4 of the user attributes are to be displayed
+        Object[][] data = new Object[logList.size()][4];
+        int counter = 0;
+        String logReason = null;
+
+        for (Log log : logList) {
+
+            if (log.getLogReason()) {
+               logReason = "Logging in";
+            } else {
+               logReason = "Logging out";
+            }
+            
+            Object[] logData = {
+                log.getLogID(), 
+                log.getLogDateTime(), 
+                logReason, 
+                log.getUserID()
+            };
+            
+            data[counter] = (logData);
+            counter++;
+            
+        }
+        
+        return data;
+        
+    }
+    
     public void recreateDatabase() {
         
         database.createTables();
@@ -391,7 +450,80 @@ class UserDatabase {
         
     }
     
-    public void getAllUsers() {
+    public ArrayList getAllUsers() {
+        
+        Connection connection = connect();
+        
+        String sqlString = "SELECT * FROM user;";
+  
+        ResultSet result = null;
+        
+        ArrayList<User> userList = new ArrayList();
+        
+        User user = null;
+
+        try { 
+            Statement sqlStatement = connection.createStatement(); 
+            result = sqlStatement.executeQuery(sqlString);
+            
+            while(result.next()) {
+                
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+                
+                userList.add(user);    
+            }
+              
+        } catch (SQLException e) {
+            System.out.println("Problem retrieving all users: " + e.getMessage());
+        }
+        
+        disconnect(connection);
+
+        return userList;
+    }
+    
+    public ArrayList getAllLogs() {
+        
+        Connection connection = connect();
+        
+        String sqlString = "SELECT * FROM log;";
+  
+        ResultSet result = null;
+        
+        ArrayList<Log> logList = new ArrayList();
+        
+        Log log = null;
+
+        try { 
+            Statement sqlStatement = connection.createStatement(); 
+            result = sqlStatement.executeQuery(sqlString);
+            
+            while(result.next()) {
+                
+                log = new Log(
+                        result.getInt("logID"),
+                        result.getString("logDateTime"), 
+                        result.getBoolean("logReason"), 
+                        result.getInt("userID")
+                );
+                
+                logList.add(log);    
+            }
+              
+        } catch (SQLException e) {
+            System.out.println("Problem retrieving all logs: " + e.getMessage());
+        }
+        
+        disconnect(connection);
+
+        return logList;
         
     }
     

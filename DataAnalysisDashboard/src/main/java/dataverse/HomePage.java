@@ -1,6 +1,8 @@
 package dataverse;
 
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -24,8 +26,17 @@ public class HomePage extends JFrame {
         DashboardPanel_3.setVisible(false);
         DashboardPanel_4.setVisible(false);
         AdminPanel.setVisible(false);
-        DashboardPanel_1.setVisible(true);       //add one panel
+        DashboardPanel_1.setVisible(true);    
+        
+        //add one panel
         pack();
+        
+        
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                userController.createLog(false, user);
+            }
+        });
 
     }
 
@@ -75,7 +86,7 @@ public class HomePage extends JFrame {
         adminStatusLabel = new javax.swing.JLabel();
         adminLeftPanel = new javax.swing.JPanel();
         adminScrollPane = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        adminTable = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -617,7 +628,7 @@ public class HomePage extends JFrame {
         adminLeftPanel.setMinimumSize(new java.awt.Dimension(313, 442));
         adminLeftPanel.setPreferredSize(new java.awt.Dimension(313, 442));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        adminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -628,7 +639,7 @@ public class HomePage extends JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        adminScrollPane.setViewportView(jTable1);
+        adminScrollPane.setViewportView(adminTable);
 
         javax.swing.GroupLayout adminLeftPanelLayout = new javax.swing.GroupLayout(adminLeftPanel);
         adminLeftPanel.setLayout(adminLeftPanelLayout);
@@ -919,6 +930,8 @@ public class HomePage extends JFrame {
         DashboardPanel_1.setVisible(false);
         AdminPanel.setVisible(true);       //add one panel
 
+        adminDisplayUsers();
+        viewAllUsersButton.setEnabled(false);
 
     }//GEN-LAST:event_adminPanelButtonActionPerformed
 
@@ -1111,7 +1124,9 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_viewAllLogsButtonMouseExited
 
     private void viewAllLogsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllLogsButtonActionPerformed
-        // TODO add your handling code here:
+        adminDisplayLogs();
+        viewAllUsersButton.setEnabled(true);
+        viewAllLogsButton.setEnabled(false);
     }//GEN-LAST:event_viewAllLogsButtonActionPerformed
 
     private void viewAllUsersButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllUsersButtonMouseMoved
@@ -1127,7 +1142,9 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_viewAllUsersButtonMouseExited
 
     private void viewAllUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllUsersButtonActionPerformed
-        // TODO add your handling code here:
+        adminDisplayUsers();
+        viewAllLogsButton.setEnabled(true);
+        viewAllUsersButton.setEnabled(false);
     }//GEN-LAST:event_viewAllUsersButtonActionPerformed
 
     private void deleteUserButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteUserButtonMouseMoved
@@ -1328,7 +1345,45 @@ public class HomePage extends JFrame {
         userController.createLog(false, user);
         this.dispose();
     }
+    
+    private void adminDisplayLogs() {
+        
+        String[] headers = {
+            "Log ID",
+            "Log Date & Time",
+            "Log Reason",
+            "User ID"
+        };
+        
+        Object[][] data = userController.displayLogData();
+        
+        JTable table = new JTable(data, headers);
+        
+        adminTable.setModel(table.getModel());
+        
+    }
+    
+    private void adminDisplayUsers() {
+        
+        String[] headers = {
+            "User ID",
+            "Username",
+            "User Email",
+            "Admin"
+        };
+        
+        Object[][] data = userController.displayUserData();
+        
+        JTable table = new JTable(data, headers);
+        
+        adminTable.setModel(table.getModel());
+        
+        //AdjustColumns - if needed
 
+    }
+    
+
+       
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPanel;
     private javax.swing.JButton BackButtonDashboard2;
@@ -1354,6 +1409,7 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel adminRightPanel;
     private javax.swing.JScrollPane adminScrollPane;
     private javax.swing.JLabel adminStatusLabel;
+    private javax.swing.JTable adminTable;
     private javax.swing.JLabel adminUsernameLabel;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton confirmButton;
@@ -1375,7 +1431,6 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTable jTable1;
     private java.awt.Label labelHourDashboard2;
     private javax.swing.JLabel lableYearDashboard2;
     private javax.swing.JButton logoutButton;
