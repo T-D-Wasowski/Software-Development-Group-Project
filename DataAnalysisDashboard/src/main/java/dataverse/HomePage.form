@@ -249,7 +249,7 @@
                       <Component id="Dashboard2Container" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="filtersPanelDashboard2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="6" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -293,10 +293,9 @@
                           <Component id="NextButtonDashboard2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="RoadChoiceDashboard2" min="-2" pref="166" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="104" max="-2" attributes="0"/>
                                   <Component id="lableYearDashboard2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                               </Group>
@@ -546,7 +545,7 @@
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -757,7 +756,7 @@
                           <Component id="adminChangeAdminStatusCheckBox" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="adminNotificationLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="clearButton" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                               <Component id="confirmButton" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
@@ -977,6 +976,14 @@
               <SubComponents>
                 <Container class="javax.swing.JScrollPane" name="adminScrollPane">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ef" red="d0" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[313, 442]"/>
                     </Property>
