@@ -1,6 +1,8 @@
 package dataverse;
 
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -26,6 +28,13 @@ public class HomePage extends JFrame {
         AdminPanel.setVisible(false);
         DashboardPanel_1.setVisible(true);       //add one panel
         pack();
+        
+        
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                userController.createLog(false, user);
+            }
+        });
 
     }
 
@@ -1328,7 +1337,7 @@ public class HomePage extends JFrame {
         userController.createLog(false, user);
         this.dispose();
     }
-
+       
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPanel;
     private javax.swing.JButton BackButtonDashboard2;
