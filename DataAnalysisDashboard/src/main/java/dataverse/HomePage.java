@@ -1447,9 +1447,7 @@ public class HomePage extends JFrame {
         };
 
         Object[][] data = userController.displayLogData();
-<<<<<<< HEAD
 
-=======
         
         //Reverse array order
         for (int i = 0; i < data.length / 2; i++) {
@@ -1458,17 +1456,15 @@ public class HomePage extends JFrame {
             data[data.length - 1 - i] = temp;
         }
         
->>>>>>> 82b849f748d037697a72a2455bc75ec3ca070a60
+
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-<<<<<<< HEAD
 
-=======
         
         adjustLogColumns();
         
->>>>>>> 82b849f748d037697a72a2455bc75ec3ca070a60
+
     }
 
     private void adminDisplayUsers() {
@@ -1485,16 +1481,14 @@ public class HomePage extends JFrame {
         JTable table = new JTable(data, headers);
 
         adminTable.setModel(table.getModel());
-<<<<<<< HEAD
-=======
+
         
         adjustUserColumns();
->>>>>>> 82b849f748d037697a72a2455bc75ec3ca070a60
+
 
         //AdjustColumns - if needed
     }
-<<<<<<< HEAD
-=======
+
     
     private void adjustUserColumns() {
         adjustColumnWidth(0, 58);
@@ -1514,7 +1508,7 @@ public class HomePage extends JFrame {
         adminTable.getColumnModel().getColumn(col).setPreferredWidth(width);
     }
     
->>>>>>> 82b849f748d037697a72a2455bc75ec3ca070a60
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
