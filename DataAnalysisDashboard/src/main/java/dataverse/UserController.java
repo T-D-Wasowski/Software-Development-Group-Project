@@ -180,6 +180,84 @@ public class UserController {
         
     }
     
+    public int editUser(String username, String newUserName, String newUserEmail, String newUserPassword, Boolean changeUserAdminFlag) {
+        
+        User user = database.getUserByUsername(username);
+        
+        String updateUsername;
+        String updateEmail;
+        String updateEncryptedPassword;
+        String updateEncryptionSalt;
+        Boolean updateAdminFlag;
+        
+        //Checks for changes in attributes
+        if (newUserName.equals("")) {
+            updateUsername = user.getUserName();
+        } else {
+            updateUsername = newUserName;
+        }
+        
+        if (newUserEmail.equals("")) {
+            updateEmail = user.getUserEmail();
+        } else {
+            updateEmail = newUserEmail;
+        }
+        
+        if (newUserPassword.equals("")) {
+            updateEncryptedPassword = user.getUserEncryptedPassword();
+            updateEncryptionSalt = user.getUserEncryptionSalt();
+        } else if (newUserPassword.length() >= 8 && newUserPassword.length() <= 32) {
+            updateEncryptionSalt = PasswordUtility.getSalt(30);
+            updateEncryptedPassword = PasswordUtility.generateSecurePassword(newUserPassword, updateEncryptionSalt);
+        } else {
+            return 3; //Password invalid! 
+        }
+        
+        if (changeUserAdminFlag == false) {
+            updateAdminFlag = user.getUserAdminFlag();
+        } else {
+            updateAdminFlag = !user.getUserAdminFlag();
+        }
+        
+        //Validation checks       
+        User userCheck = null;
+        
+        //Checks if updated username is available
+        if (!username.equals(updateUsername)) {
+            userCheck = database.getUserByUsername(updateUsername);
+        }
+        
+        try {
+            
+            if (userCheck == null && (updateUsername.length() >= 3 && updateUsername.length() <= 32)) {
+                         
+                userCheck = null;
+                
+                if (!user.getUserEmail().equals(updateEmail)) {
+                    userCheck = database.getUserByUsername(updateEmail);
+                }
+                
+                if (userCheck == null && (updateEmail.length() >= 3 && updateEmail.length() <= 255)) {                   
+                    
+                    database.updateUser(username, updateUsername, updateEmail, updateEncryptedPassword, updateEncryptionSalt, updateAdminFlag);
+
+                    return 1; //Return 1 if account is updated successfully
+      
+                } else {
+                    return 2; //Return 2 if email is aleady taken or invalid       
+                }      
+                
+            } else {
+                return 0; //Returns 0 if username already taken or username is invalid
+            } 
+
+        } catch (SQLException e) {
+            System.out.println("Error updating user: " + e.getMessage());
+            return 4; //Means error updating
+        }
+
+    }
+    
     public void recreateDatabase() {
         
         database.createTables();
@@ -527,11 +605,42 @@ class UserDatabase {
         
     }
     
-    public void editUser() {
+    public void updateUser(String username, String newUserName, String newEmail, String newEncryptedPassword, String newEncryptionSalt, Boolean newAdminFlag) throws SQLException {
+        
+        Connection connection = connect();
+        
+        String sqlString = "UPDATE user "
+                + "SET "
+                    + "userName = '" + newUserName + "',"
+                    + "userEmail = '" + newEmail + "',"
+                    + "userEncryptedPassword = '" + newEncryptedPassword + "',"
+                    + "userEncryptionSalt = '" + newEncryptionSalt + "',"
+                    + "userAdminFlag = " + newAdminFlag + " "
+                + "WHERE userName = '" + username + "';";
+
+        Statement sqlStatement = connection.createStatement();
+        sqlStatement.executeUpdate(sqlString);      
+
+        System.out.println("User updated!");
+       
+        disconnect(connection);
         
     }
     
-    public void deleteUser() {
+    public void deleteUser(String username) throws SQLException {
+        
+        Connection connection = connect();
+        
+        String sqlString = "DELETE FROM user "
+                + "WHERE userName = '" + username + "';";
+   
+
+        Statement sqlStatement = connection.createStatement();
+        sqlStatement.executeUpdate(sqlString);      
+
+        System.out.println("User deleted!");
+       
+        disconnect(connection);
         
     }
     

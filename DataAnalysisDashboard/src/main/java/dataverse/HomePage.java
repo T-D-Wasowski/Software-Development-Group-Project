@@ -83,10 +83,11 @@ public class HomePage extends JFrame {
         adminChangeAdminStatusCheckBox = new javax.swing.JCheckBox();
         clearButton = new javax.swing.JButton();
         confirmButton = new javax.swing.JButton();
-        adminNotificationLabel = new javax.swing.JLabel();
         adminUsernameLabel = new javax.swing.JLabel();
         adminEmailLabel = new javax.swing.JLabel();
         adminStatusLabel = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        adminNotificationLabel = new javax.swing.JLabel();
         adminLeftPanel = new javax.swing.JPanel();
         adminScrollPane = new javax.swing.JScrollPane();
         adminTable = new javax.swing.JTable();
@@ -590,9 +591,6 @@ public class HomePage extends JFrame {
             }
         });
 
-        adminNotificationLabel.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        adminNotificationLabel.setText("Notification");
-
         adminUsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         adminUsernameLabel.setText("Username");
 
@@ -602,6 +600,24 @@ public class HomePage extends JFrame {
         adminStatusLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         adminStatusLabel.setText("AdminStatus");
 
+        jPanel5.setBackground(new java.awt.Color(208, 239, 255));
+        jPanel5.setMaximumSize(new java.awt.Dimension(100, 21));
+        jPanel5.setMinimumSize(new java.awt.Dimension(100, 21));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        adminNotificationLabel.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        adminNotificationLabel.setText("Notification");
+
         javax.swing.GroupLayout adminRightPanelLayout = new javax.swing.GroupLayout(adminRightPanel);
         adminRightPanel.setLayout(adminRightPanelLayout);
         adminRightPanelLayout.setHorizontalGroup(
@@ -609,7 +625,10 @@ public class HomePage extends JFrame {
             .addGroup(adminRightPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminNotificationLabel)
+                    .addGroup(adminRightPanelLayout.createSequentialGroup()
+                        .addComponent(adminNotificationLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(adminChangeAdminStatusCheckBox)
                     .addComponent(jLabel8)
                     .addComponent(jLabel7)
@@ -631,7 +650,7 @@ public class HomePage extends JFrame {
                         .addComponent(adminNewEmailTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(adminNewPasswordTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(adminNewUsernameTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(20, 20, 20))
+                .addGap(18, 18, 18))
         );
         adminRightPanelLayout.setVerticalGroup(
             adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -662,8 +681,10 @@ public class HomePage extends JFrame {
                 .addComponent(adminStatusLabel)
                 .addGap(9, 9, 9)
                 .addComponent(adminChangeAdminStatusCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(adminNotificationLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminNotificationLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -763,8 +784,7 @@ public class HomePage extends JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(editUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
-                        .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)))
+                        .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -1195,6 +1215,7 @@ public class HomePage extends JFrame {
 
     private void viewAllLogsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllLogsButtonActionPerformed
         adminDisplayLogs();
+        resetAdminLabels();
     }//GEN-LAST:event_viewAllLogsButtonActionPerformed
 
     private void viewAllUsersButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAllUsersButtonMouseMoved
@@ -1211,6 +1232,7 @@ public class HomePage extends JFrame {
 
     private void viewAllUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllUsersButtonActionPerformed
         adminDisplayUsers();
+        resetAdminLabels();
     }//GEN-LAST:event_viewAllUsersButtonActionPerformed
 
     private void deleteUserButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteUserButtonMouseMoved
@@ -1278,12 +1300,12 @@ public class HomePage extends JFrame {
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         
         if (deleteBool) {
-            //Call delete method here
+            deleteUser();
         } else if (editBool) {
-            //Call edit method here
+            editUser();      
         }
         
-        resetAdminLabels();
+        
         
         adminDisplayUsers();
 
@@ -1397,9 +1419,6 @@ public class HomePage extends JFrame {
             selectUserFromLogList();
         }
         
-        editUserButton.setEnabled(true);
-        deleteUserButton.setEnabled(true);
- 
     }//GEN-LAST:event_adminTableMouseReleased
 
     public void repaintDashboard2() {
@@ -1548,6 +1567,9 @@ public class HomePage extends JFrame {
         
         adminStatusLabel.setText(adminTable.getValueAt(selectedRow, 3).toString());
         
+        editUserButton.setEnabled(true);
+        deleteUserButton.setEnabled(true);
+        
     }
     
     private void selectUserFromLogList() {
@@ -1560,11 +1582,24 @@ public class HomePage extends JFrame {
         
         User user = userController.database.getUserById(userID);
         
-        adminUsernameLabel.setText(user.getUserName());
+        resetAdminLabels();
         
-        adminEmailLabel.setText(user.getUserEmail());
+        if(user == null) {
+            adminNotificationLabel.setText("That user no longer exists.");
+            adminNotificationLabel.setForeground(Color.RED);
+            adminNotificationLabel.setVisible(true);
+        } else {
+            adminUsernameLabel.setText(user.getUserName());
         
-        adminStatusLabel.setText(user.getUserAdminFlag().toString());
+            adminEmailLabel.setText(user.getUserEmail());
+        
+            adminStatusLabel.setText(user.getUserAdminFlag().toString());
+            
+            editUserButton.setEnabled(true);
+            deleteUserButton.setEnabled(true);
+        }
+        
+
         
     }
     
@@ -1580,9 +1615,9 @@ public class HomePage extends JFrame {
         
         editUserButton.setEnabled(false);
         deleteUserButton.setEnabled(false);
-        
+                   
         confirmButton.setEnabled(false);
-        
+  
     }
     
     private void clearAdminTextFields() {
@@ -1591,11 +1626,71 @@ public class HomePage extends JFrame {
         adminNewEmailTextField.setText("");
         adminNewPasswordTextField.setText("");
         adminChangeAdminStatusCheckBox.setSelected(false);
+  
+    }
+    
+    private void editUser() {
+        
+        int status = userController.editUser(
+                adminUsernameLabel.getText(), 
+                adminNewUsernameTextField.getText(), 
+                adminNewEmailTextField.getText(), 
+                adminNewPasswordTextField.getText(), 
+                adminChangeAdminStatusCheckBox.isSelected()
+        );
+        
+        switch (status) {
+            case 0 -> {
+                adminNotificationLabel.setText("Error: Invalid username.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            case 1 -> {       
+                adminNotificationLabel.setText("Account updated.");
+                adminNotificationLabel.setForeground(new Color(0,153,0)); //green
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            case 2 -> {
+                adminNotificationLabel.setText("Error: Invalid email.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            case 3 -> {
+                adminNotificationLabel.setText("Error: Invalid password.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+            default -> {
+                adminNotificationLabel.setText("Error: SQL exception.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }  
+        }
         
     }
     
-    
-
+    private void deleteUser() {
+        
+        if (!adminUsernameLabel.getText().equals("Username")) {
+            try {
+                userController.database.deleteUser(adminUsernameLabel.getText());
+                adminNotificationLabel.setText("Account deleted.");
+                adminNotificationLabel.setForeground(new Color(0,153,0)); //green
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            } catch (SQLException ex) {
+                adminNotificationLabel.setText("Error: SQL exception.");
+                adminNotificationLabel.setForeground(Color.RED);
+                resetAdminLabels();
+                adminNotificationLabel.setVisible(true);
+            }
+        }
+    }
     
     private void adjustUserColumns() {
         adjustColumnWidth(0, 58);
@@ -1666,6 +1761,7 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private java.awt.Label labelHourDashboard2;
     private javax.swing.JLabel lableYearDashboard2;
     private javax.swing.JButton logoutButton;
