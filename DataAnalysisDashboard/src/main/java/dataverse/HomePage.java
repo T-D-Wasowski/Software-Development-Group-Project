@@ -13,6 +13,9 @@ public class HomePage extends JFrame {
     String road_dashboard2 = "A1";
     int hour_dashboard2 = 7;
     int year_dashboard2 = 2000;
+    
+    User user;
+    UserController userController = new UserController();
 
     public HomePage() {
         initComponents();
@@ -278,7 +281,7 @@ public class HomePage extends JFrame {
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -603,7 +606,7 @@ public class HomePage extends JFrame {
                 .addComponent(adminChangeAdminStatusCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(adminNotificationLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(adminRightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -685,7 +688,7 @@ public class HomePage extends JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(208, 239, 255));
@@ -1273,7 +1276,7 @@ public class HomePage extends JFrame {
 
     }
 
-    public void createHomePage(Boolean isAdmin) {
+    public void createHomePage(Boolean isAdmin, User user) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1307,6 +1310,9 @@ public class HomePage extends JFrame {
                 if (isAdmin == false) {
                     h.hideAdmin();
                 }
+                
+                h.user = user;
+                //h.usernameLabel.setText("Current user: " + h.user.getUserName());
 
             }
         });
@@ -1316,9 +1322,10 @@ public class HomePage extends JFrame {
         adminPanelButton.setVisible(false);
     }
 
-    private void logout() {
+    private void logout() {     
         LoginPage loginPage = new LoginPage();
-        loginPage.createLoginPage();
+        loginPage.createLoginPage(); 
+        userController.createLog(false, user);
         this.dispose();
     }
 
