@@ -627,7 +627,20 @@ class UserDatabase {
         
     }
     
-    public void deleteUser() {
+    public void deleteUser(String username) throws SQLException {
+        
+        Connection connection = connect();
+        
+        String sqlString = "DELETE FROM user "
+                + "WHERE userName = '" + username + "';";
+   
+
+        Statement sqlStatement = connection.createStatement();
+        sqlStatement.executeUpdate(sqlString);      
+
+        System.out.println("User deleted!");
+       
+        disconnect(connection);
         
     }
     
