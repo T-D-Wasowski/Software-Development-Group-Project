@@ -9,6 +9,11 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
 
 public class HomePage extends JFrame {
@@ -76,6 +81,18 @@ public class HomePage extends JFrame {
         DescriptionLabelDashboard2 = new javax.swing.JLabel();
         DashboardPanel_3 = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
+        D4PanelMain = new javax.swing.JPanel();
+        D4PanelFilters = new javax.swing.JPanel();
+        D4YearDropdown = new javax.swing.JComboBox<>();
+        D4YearLabel = new javax.swing.JLabel();
+        D4MajorButton = new javax.swing.JButton();
+        D4MinorButton = new javax.swing.JButton();
+        D4CarTaxiCheckbox = new javax.swing.JCheckBox();
+        D4TwoWheelCheckbox = new javax.swing.JCheckBox();
+        D4PedalCheckbox = new javax.swing.JCheckBox();
+        D4BusCoachCheckbox = new javax.swing.JCheckBox();
+        D4HeavyVehicCheckbox = new javax.swing.JCheckBox();
+        D4LargeGoodsCheckbox = new javax.swing.JCheckBox();
         AdminPanel = new javax.swing.JPanel();
         editUserButton = new javax.swing.JButton();
         viewAllLogsButton = new javax.swing.JButton();
@@ -348,9 +365,7 @@ public class HomePage extends JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(DashboardPanel_1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         DashboardPanel_2.setBackground(new java.awt.Color(208, 239, 255));
@@ -533,20 +548,155 @@ public class HomePage extends JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        DashboardPanel_4.setBackground(new java.awt.Color(134, 52, 235));
+        DashboardPanel_4.setBackground(new java.awt.Color(208, 239, 255));
         DashboardPanel_4.setMaximumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_4.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_4.setPreferredSize(new java.awt.Dimension(836, 500));
+
+        /*JFreeChart D4GUIChart = createD4PieChart(D4PieChart());
+        D4PanelMain.add(new ChartPanel(D4GUIChart),BorderLayout.CENTER);
+        D4PanelMain.setVisible(true);*/
+        D4PanelMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout D4PanelMainLayout = new javax.swing.GroupLayout(D4PanelMain);
+        D4PanelMain.setLayout(D4PanelMainLayout);
+        D4PanelMainLayout.setHorizontalGroup(
+            D4PanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        D4PanelMainLayout.setVerticalGroup(
+            D4PanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 391, Short.MAX_VALUE)
+        );
+
+        D4PanelFilters.setBackground(new java.awt.Color(208, 239, 255));
+        D4PanelFilters.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        D4YearDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+
+        D4YearLabel.setText("Year");
+
+        D4MajorButton.setText("Major");
+        D4MajorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4MajorButtonActionPerformed(evt);
+            }
+        });
+
+        D4MinorButton.setText("Minor");
+
+        D4CarTaxiCheckbox.setText("Cars and Taxis");
+        D4CarTaxiCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4CarTaxiCheckboxActionPerformed(evt);
+            }
+        });
+
+        D4TwoWheelCheckbox.setText("Two Wheeled Motor Vehicles");
+        D4TwoWheelCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4TwoWheelCheckboxActionPerformed(evt);
+            }
+        });
+
+        D4PedalCheckbox.setText("Pedal Cycles");
+        D4PedalCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4PedalCheckboxActionPerformed(evt);
+            }
+        });
+
+        D4BusCoachCheckbox.setText("Buses and Coaches");
+
+        D4HeavyVehicCheckbox.setText("Heavy Goods Vehicles");
+        D4HeavyVehicCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4HeavyVehicCheckboxActionPerformed(evt);
+            }
+        });
+
+        D4LargeGoodsCheckbox.setText("Large Goods Vehicles");
+        D4LargeGoodsCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4LargeGoodsCheckboxActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout D4PanelFiltersLayout = new javax.swing.GroupLayout(D4PanelFilters);
+        D4PanelFilters.setLayout(D4PanelFiltersLayout);
+        D4PanelFiltersLayout.setHorizontalGroup(
+            D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addComponent(D4MajorButton)
+                        .addGap(70, 70, 70)
+                        .addComponent(D4YearLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(D4CarTaxiCheckbox))
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addComponent(D4MinorButton)
+                        .addGap(47, 47, 47)
+                        .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addComponent(D4TwoWheelCheckbox)
+                        .addGap(18, 18, 18)
+                        .addComponent(D4PedalCheckbox)
+                        .addGap(18, 18, 18)
+                        .addComponent(D4BusCoachCheckbox))
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(D4HeavyVehicCheckbox)
+                        .addGap(18, 18, 18)
+                        .addComponent(D4LargeGoodsCheckbox)))
+                .addGap(53, 53, 53))
+        );
+
+        D4PanelFiltersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {D4MajorButton, D4MinorButton});
+
+        D4PanelFiltersLayout.setVerticalGroup(
+            D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(D4CarTaxiCheckbox)
+                            .addComponent(D4TwoWheelCheckbox)
+                            .addComponent(D4PedalCheckbox)
+                            .addComponent(D4BusCoachCheckbox))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(D4HeavyVehicCheckbox)
+                            .addComponent(D4LargeGoodsCheckbox)))
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(D4MajorButton)
+                            .addComponent(D4YearLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(D4MinorButton)
+                            .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout DashboardPanel_4Layout = new javax.swing.GroupLayout(DashboardPanel_4);
         DashboardPanel_4.setLayout(DashboardPanel_4Layout);
         DashboardPanel_4Layout.setHorizontalGroup(
             DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(D4PanelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(D4PanelFilters, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         DashboardPanel_4Layout.setVerticalGroup(
             DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(DashboardPanel_4Layout.createSequentialGroup()
+                .addComponent(D4PanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(D4PanelFilters, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         AdminPanel.setBackground(new java.awt.Color(208, 239, 255));
@@ -1595,6 +1745,30 @@ public class HomePage extends JFrame {
         //createBar();
     }//GEN-LAST:event_BC1YasinActionPerformed
 
+    private void D4CarTaxiCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4CarTaxiCheckboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4CarTaxiCheckboxActionPerformed
+
+    private void D4TwoWheelCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4TwoWheelCheckboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4TwoWheelCheckboxActionPerformed
+
+    private void D4PedalCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4PedalCheckboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4PedalCheckboxActionPerformed
+
+    private void D4HeavyVehicCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4HeavyVehicCheckboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4HeavyVehicCheckboxActionPerformed
+
+    private void D4LargeGoodsCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4LargeGoodsCheckboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4LargeGoodsCheckboxActionPerformed
+
+    private void D4MajorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4MajorButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4MajorButtonActionPerformed
+
     public void createBar() {
         //TrafficController.getYas();
     }
@@ -1900,6 +2074,18 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel AdminPanel;
     private javax.swing.JButton BC1Yasin;
     private javax.swing.JButton BackButtonDashboard2;
+    private javax.swing.JCheckBox D4BusCoachCheckbox;
+    private javax.swing.JCheckBox D4CarTaxiCheckbox;
+    private javax.swing.JCheckBox D4HeavyVehicCheckbox;
+    private javax.swing.JCheckBox D4LargeGoodsCheckbox;
+    private javax.swing.JButton D4MajorButton;
+    private javax.swing.JButton D4MinorButton;
+    private javax.swing.JPanel D4PanelFilters;
+    private javax.swing.JPanel D4PanelMain;
+    private javax.swing.JCheckBox D4PedalCheckbox;
+    private javax.swing.JCheckBox D4TwoWheelCheckbox;
+    private javax.swing.JComboBox<String> D4YearDropdown;
+    private javax.swing.JLabel D4YearLabel;
     private javax.swing.JButton Dashboard1;
     private javax.swing.JButton Dashboard2;
     private javax.swing.JPanel Dashboard2Container;
@@ -2136,4 +2322,26 @@ public class HomePage extends JFrame {
         }
 
     }
+    
+    //Pie Chart Creation (Isa)
+    public PieDataset D4PieChart() {
+        DefaultPieDataset D4Dataset = new DefaultPieDataset();
+        D4Dataset.setValue("Cars", 20);
+        D4Dataset.setValue("Boats", 30);
+        D4Dataset.setValue("Motorbikes", 6);
+        
+        return D4Dataset;
+}
+    
+    public JFreeChart createD4PieChart(PieDataset D4PieDataset) {
+        JFreeChart D4Chart = ChartFactory.createPieChart(
+                "Vehicles on major or minor roads per year",
+                D4PieDataset,
+                true,
+                true,
+                false 
+        );
+        return D4Chart;
+    } 
+
 }
