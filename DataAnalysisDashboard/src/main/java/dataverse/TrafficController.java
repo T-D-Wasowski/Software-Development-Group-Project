@@ -66,13 +66,13 @@ public class TrafficController {
     }
 
     //selests the highest traffic at a specific road in a specific point in time
-    public ResultSet getHighestTrafficVolume(int hour) {
+    public ResultSet getHighestTrafficVolume(int hour, String road, int year) {
         Connection connection = DB.getConnection();
         String sql = "SELECT pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, all_hgvs, MAX(all_motor_vehicles)\n"
                 + "FROM Traffic_Volume, Road , Count_Point, Region\n"
-                + "WHERE Traffic_Volume.the_hour = " + hour+ "\n"
-                + "AND Count_Point.the_year = 2000\n"
-                + "AND (Road.road_name = 'A6093' OR Road.start_junction_road_name = 'A6093' OR Road.end_junction_road_name = 'A6093')\n"
+                + "WHERE Traffic_Volume.the_hour = " + hour + "\n"
+                + "AND Count_Point.the_year = " + year + "\n"
+                + "AND (Road.road_name = '"+ road +"' OR Road.start_junction_road_name = '"+ road +"' OR Road.end_junction_road_name = '"+ road +"')\n"
                 + "AND Count_Point.count_point_id = Traffic_Volume.count_point_id\n"
                 + "AND Count_Point.road_name = Road.road_name;";
         ResultSet result = null;
@@ -89,7 +89,7 @@ public class TrafficController {
         } finally {
 
         }
-        return result;
+        return null;
     }
 
     public static class DB {

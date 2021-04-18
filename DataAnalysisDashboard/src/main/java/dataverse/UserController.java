@@ -11,6 +11,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,14 +23,14 @@ public class UserController {
 
     public int register(String username, String email, String password, Boolean adminFlag) {
         
-        ResultSet userNameResults = database.getUserByUsername(username);
+        User user = database.getUserByUsername(username);
         
         try {
-            if (userNameResults.next() == false && (username.length() >= 3 && username.length() <= 32)) {
+            if (user == null && (username.length() >= 3 && username.length() <= 32)) {
                               
-                ResultSet userEmailResults = database.getUserByEmail(email);
+                user = database.getUserByEmail(email);
                 
-                if (userEmailResults.next() == false && (email.length() >= 3 && email.length() <= 255)) {                   
+                if (user == null && (email.length() >= 3 && email.length() <= 255)) {                   
                     
                     if (password.length() >= 8 && password.length() <= 32) {
                         
@@ -63,54 +64,45 @@ public class UserController {
         } catch (SQLException e) {            
             System.out.println("SQL Exception error: " + e.getMessage());
             return 4; //Return 4 when there is an SQL exception error
-        } finally {
-            database.disconnect();
         }
+        
     }
     
     public int login(String username, String password) {
         
-        ResultSet user = database.getUserByUsername(username);
+        User user = database.getUserByUsername(username);
         
-        try {
-            //Checks next result in result set, which is the first result (starts at 0)
-            //If it's false, means result set is empty.
-            if(user.next() == false) {
-                
-                System.out.println("User does not exist, please register.");
-                return 0; //Return 0 when user doesn't exist
-                
-            } else {
-                
-                    boolean passwordMatch = PasswordUtility.verifyUserPassword(
-                            password,
-                            user.getString("userEncryptedPassword"),
-                            user.getString("userEncryptionSalt")
-                    );
-                    
-                    if (passwordMatch) {   
-                        
-                        
-                        //Determine if user is admin                       
-                        if (user.getBoolean("userAdminFlag") == true) {
-                            return 1; //Return 1 when password matches and is admin
-                        } else {
-                            return 4; //Return 4 when password matches and is NOT admin
-                        }
+        //Checks next result in result set, which is the first result (starts at 0)
+        //If it's false, means result set is empty.
+        if(user == null) {
+
+            System.out.println("User does not exist, please register.");
+            return 0; //Return 0 when user doesn't exist
+
+        } else {
+
+                boolean passwordMatch = PasswordUtility.verifyUserPassword(
+                        password,
+                        user.getUserEncryptedPassword(),
+                        user.getUserEncryptionSalt()
+                );
+
+                if (passwordMatch) {   
+
+
+                    //Determine if user is admin                     
+                    if (user.getUserAdminFlag()) {
+                        return 1; //Return 1 when password matches and is admin
                     } else {
-                        return 2; //Return 2 when password doesnt match
-                    }        
-                }
-            
-        } catch (SQLException e) {                           
-            System.out.println("SQL Exception error: " + e.getMessage());
-            return 3; //Return 3 when there is an SQL exception error               
-        } finally {
-            database.disconnect();
-        }            
+                        return 3; //Return 3 when password matches and is NOT admin
+                    }
+                } else {
+                    return 2; //Return 2 when password doesnt match
+                }        
+            }              
     }
     
-    public void createLog(Boolean logReason, String username) {
+    public void createLog(Boolean logReason, User user) {
         
         //Getting current date and time
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -118,26 +110,152 @@ public class UserController {
         
         System.out.println(formatter.format(now)); //Test
         
-        //Getting userID & add log to database
-        Integer userID = null;
-        ResultSet userResults = database.getUserByUsername(username);
-        try {
-            userID = userResults.getInt("userID");
-            System.out.println(userID);
-            
-        } catch (SQLException e) {           
-            System.out.println("Error getting userID :" + e.getMessage());
-        } finally {
-            database.disconnect();
-        }
+        //User user = database.getUserByUsername(username);  
         
         try {
-            database.addLog(formatter.format(now), logReason, userID);
+            database.addLog(formatter.format(now), logReason, user.getUserID());
             System.out.println("Log successfully created and added to the database.");
         } catch (SQLException e) {
             System.out.println("Error adding log to database: " + e.getMessage());
         }
            
+    }
+    
+    public Object[][] displayUserData() {
+        
+        ArrayList<User> userList = database.getAllUsers();
+        
+        //4 because only 4 of the user attributes are to be displayed
+        Object[][] data = new Object[userList.size()][4];
+        int counter = 0;
+
+        for (User user : userList) {
+            
+            Object[] userData = {
+                user.getUserID(), 
+                user.getUserName(), 
+                user.getUserEmail(), 
+                user.getUserAdminFlag()
+            };
+            
+            data[counter] = (userData);
+            counter++;
+            
+        }
+        
+        return data;
+        
+    }
+    
+    public Object[][] displayLogData() {
+        
+        ArrayList<Log> logList = database.getAllLogs();
+        
+        //4 because only 4 of the user attributes are to be displayed
+        Object[][] data = new Object[logList.size()][4];
+        int counter = 0;
+        String logReason = null;
+
+        for (Log log : logList) {
+
+            if (log.getLogReason()) {
+               logReason = "Login";
+            } else {
+               logReason = "Logout";
+            }
+            
+            Object[] logData = {
+                log.getLogID(), 
+                log.getLogDateTime(), 
+                logReason, 
+                log.getUserID()
+            };
+            
+            data[counter] = (logData);
+            counter++;
+            
+        }
+        
+        return data;
+        
+    }
+    
+    public int editUser(String username, String newUserName, String newUserEmail, String newUserPassword, Boolean changeUserAdminFlag) {
+        
+        User user = database.getUserByUsername(username);
+        
+        String updateUsername;
+        String updateEmail;
+        String updateEncryptedPassword;
+        String updateEncryptionSalt;
+        Boolean updateAdminFlag;
+        
+        //Checks for changes in attributes
+        if (newUserName.equals("")) {
+            updateUsername = user.getUserName();
+        } else {
+            updateUsername = newUserName;
+        }
+        
+        if (newUserEmail.equals("")) {
+            updateEmail = user.getUserEmail();
+        } else {
+            updateEmail = newUserEmail;
+        }
+        
+        if (newUserPassword.equals("")) {
+            updateEncryptedPassword = user.getUserEncryptedPassword();
+            updateEncryptionSalt = user.getUserEncryptionSalt();
+        } else if (newUserPassword.length() >= 8 && newUserPassword.length() <= 32) {
+            updateEncryptionSalt = PasswordUtility.getSalt(30);
+            updateEncryptedPassword = PasswordUtility.generateSecurePassword(newUserPassword, updateEncryptionSalt);
+        } else {
+            return 3; //Password invalid! 
+        }
+        
+        if (changeUserAdminFlag == false) {
+            updateAdminFlag = user.getUserAdminFlag();
+        } else {
+            updateAdminFlag = !user.getUserAdminFlag();
+        }
+        
+        //Validation checks       
+        User userCheck = null;
+        
+        //Checks if updated username is available
+        if (!username.equals(updateUsername)) {
+            userCheck = database.getUserByUsername(updateUsername);
+        }
+        
+        try {
+            
+            if (userCheck == null && (updateUsername.length() >= 3 && updateUsername.length() <= 32)) {
+                         
+                userCheck = null;
+                
+                if (!user.getUserEmail().equals(updateEmail)) {
+                    userCheck = database.getUserByUsername(updateEmail);
+                }
+                
+                if (userCheck == null && (updateEmail.length() >= 3 && updateEmail.length() <= 255)) {                   
+                    
+                    database.updateUser(username, updateUsername, updateEmail, updateEncryptedPassword, updateEncryptionSalt, updateAdminFlag);
+
+                    return 1; //Return 1 if account is updated successfully
+      
+                } else {
+                    return 2; //Return 2 if email is aleady taken or invalid       
+                }      
+                
+            } else {
+                return 0; //Returns 0 if username already taken or username is invalid
+            } 
+
+        } catch (SQLException e) {
+            System.out.println("Error updating user: " + e.getMessage());
+            return 4; //Means error updating
+        }
+
     }
     
     public void recreateDatabase() {
@@ -148,8 +266,6 @@ public class UserController {
 }
 
 class UserDatabase {
-    
-    Connection connection;
         
     private void downloadDriver() {
         try {
@@ -162,11 +278,11 @@ class UserDatabase {
     }
     
     
-    private void connect() {
+    private Connection connect() {
         
         downloadDriver();
         
-        //Connection connection = null;
+        Connection connection = null;
         
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:../user.db");
@@ -175,11 +291,11 @@ class UserDatabase {
             System.out.println("Error connecting to database: " + e.getMessage());
         }
         
-        //return connection;
+        return connection;
         
     }
     
-    public void disconnect(/*Connection connection*/) {
+    public void disconnect(Connection connection) {
         
         try {
             if (!connection.isClosed()) {
@@ -194,7 +310,7 @@ class UserDatabase {
     
     public void createTables() {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlDropLogString = "DROP TABLE IF EXISTS log;";
         String sqlDropUserString = "DROP TABLE IF EXISTS user;";
@@ -236,13 +352,13 @@ class UserDatabase {
             System.out.println("Problem creating database tables: " + e.getMessage());       
         }
 
-        disconnect(/*connection*/); 
+        disconnect(connection); 
         
     }
     
     public void addUser(String username, String email, String password, String salt, String adminFlag) throws SQLException {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "INSERT INTO User"
                 + "("
@@ -264,12 +380,12 @@ class UserDatabase {
 
         System.out.println("User inserted into database.");
        
-        disconnect(/*connection*/);
+        disconnect(connection);
     }
     
     public void addLog(String logDateTime, Boolean logReason, Integer userID) throws SQLException {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "INSERT INTO Log"
                 + "("
@@ -287,83 +403,244 @@ class UserDatabase {
 
         System.out.println("Log inserted into database.");
        
-        disconnect(/*connection*/);
+        disconnect(connection);
         
     }
     
-    public ResultSet getUserById(int userId) {
+    public User getUserById(int userId) {
     
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
-        String sqlString = "SELECT * FROM user"
-                + "WHERE userID = " + userId + ";";
+        String sqlString = "SELECT * FROM user "
+                + "WHERE userID = " + userId  + ";";
         
         ResultSet result = null;
+  
+        User user = null;
         
         try { 
             Statement sqlStatement = connection.createStatement(); 
             result = sqlStatement.executeQuery(sqlString);
-            System.out.println("Results retrieved from database.");
+            
+            if (result.next()) {
+                System.out.println("Results retrieved from database.");
+
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+            } else {
+                System.out.println("This user does not exist!");
+            }
+
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by id: " + e.getMessage());
         }
 
-        return result;
+        disconnect(connection);
+        
+        return user;
         
     }
     
-    public ResultSet getUserByUsername(String userName) {
+    public User getUserByUsername(String userName) {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "SELECT * FROM user "
                 + "WHERE userName = '" + userName + "';";
   
         ResultSet result = null;
         
-        try { 
+        User user = null;
+        
+       try { 
             Statement sqlStatement = connection.createStatement(); 
             result = sqlStatement.executeQuery(sqlString);
-            System.out.println("Results retrieved from database.");
+            
+            if (result.next()) {
+                System.out.println("Results retrieved from database.");
+
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+            } else {
+                System.out.println("This user does not exist!");
+            }
             
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by username: " + e.getMessage());
         }
         
-        return result;
+        disconnect(connection);
+        
+        return user;
         
     }
     
-    public ResultSet getUserByEmail(String userEmail) {
+    public User getUserByEmail(String userEmail) {
         
-        /*Connection connection = */connect();
+        Connection connection = connect();
         
         String sqlString = "SELECT * FROM user "
                 + "WHERE userEmail = '" + userEmail + "';";
   
         ResultSet result = null;
         
+        User user = null;
+        
+        
         try { 
             Statement sqlStatement = connection.createStatement(); 
             result = sqlStatement.executeQuery(sqlString);
-            System.out.println("Results retrieved from database.");
+            
+            if (result.next()) {
+                System.out.println("Results retrieved from database.");
+
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+            } else {
+                System.out.println("This user does not exist!");
+            }
+            
         } catch (SQLException e) {
             System.out.println("Problem retrieving user by username: " + e.getMessage());
         }
+        
+        disconnect(connection);
 
-        return result;
+        return user;
         
     }
     
-    public void getAllUsers() {
+    public ArrayList getAllUsers() {
+        
+        Connection connection = connect();
+        
+        String sqlString = "SELECT * FROM user;";
+  
+        ResultSet result = null;
+        
+        ArrayList<User> userList = new ArrayList();
+        
+        User user = null;
+
+        try { 
+            Statement sqlStatement = connection.createStatement(); 
+            result = sqlStatement.executeQuery(sqlString);
+            
+            while(result.next()) {
+                
+                user = new User(
+                        result.getInt("userID"),
+                        result.getString("userName"), 
+                        result.getString("userEmail"), 
+                        result.getString("userEncryptedPassword"), 
+                        result.getString("userEncryptionSalt"), 
+                        result.getBoolean("userAdminFlag")
+                );
+                
+                userList.add(user);    
+            }
+              
+        } catch (SQLException e) {
+            System.out.println("Problem retrieving all users: " + e.getMessage());
+        }
+        
+        disconnect(connection);
+
+        return userList;
+    }
+    
+    public ArrayList getAllLogs() {
+        
+        Connection connection = connect();
+        
+        String sqlString = "SELECT * FROM log;";
+  
+        ResultSet result = null;
+        
+        ArrayList<Log> logList = new ArrayList();
+        
+        Log log = null;
+
+        try { 
+            Statement sqlStatement = connection.createStatement(); 
+            result = sqlStatement.executeQuery(sqlString);
+            
+            while(result.next()) {
+                
+                log = new Log(
+                        result.getInt("logID"),
+                        result.getString("logDateTime"), 
+                        result.getBoolean("logReason"), 
+                        result.getInt("userID")
+                );
+                
+                logList.add(log);    
+            }
+              
+        } catch (SQLException e) {
+            System.out.println("Problem retrieving all logs: " + e.getMessage());
+        }
+        
+        disconnect(connection);
+
+        return logList;
         
     }
     
-    public void editUser() {
+    public void updateUser(String username, String newUserName, String newEmail, String newEncryptedPassword, String newEncryptionSalt, Boolean newAdminFlag) throws SQLException {
+        
+        Connection connection = connect();
+        
+        String sqlString = "UPDATE user "
+                + "SET "
+                    + "userName = '" + newUserName + "',"
+                    + "userEmail = '" + newEmail + "',"
+                    + "userEncryptedPassword = '" + newEncryptedPassword + "',"
+                    + "userEncryptionSalt = '" + newEncryptionSalt + "',"
+                    + "userAdminFlag = " + newAdminFlag + " "
+                + "WHERE userName = '" + username + "';";
+
+        Statement sqlStatement = connection.createStatement();
+        sqlStatement.executeUpdate(sqlString);      
+
+        System.out.println("User updated!");
+       
+        disconnect(connection);
         
     }
     
-    public void deleteUser() {
+    public void deleteUser(String username) throws SQLException {
+        
+        Connection connection = connect();
+        
+        String sqlString = "DELETE FROM user "
+                + "WHERE userName = '" + username + "';";
+   
+
+        Statement sqlStatement = connection.createStatement();
+        sqlStatement.executeUpdate(sqlString);      
+
+        System.out.println("User deleted!");
+       
+        disconnect(connection);
         
     }
     
