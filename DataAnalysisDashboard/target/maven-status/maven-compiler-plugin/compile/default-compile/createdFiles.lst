@@ -26,6 +26,7 @@ dataverse\HomePage.class
 dataverse\TrafficController$RegionTable.class
 dataverse\HomePage$26.class
 dataverse\LoginPage$6.class
+dataverse\LoginPage$21.class
 dataverse\HomePage$5.class
 dataverse\HomePage$46.class
 dataverse\TrafficController$CSVReader.class
