@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import org.jfree.data.jdbc.JDBCCategoryDataset;
 
 public class TrafficController {
 
@@ -22,24 +23,61 @@ public class TrafficController {
 
     }
     
-    public static ResultSet getYas() {
+    /*public void getYas() {
             Connection connection = DB.getConnection();
-            String sql = "SELECT * FROM Road";        //remove everything past WHERE to collect all the data and not just for a specific id
+            Statement stats = null;
             ResultSet result = null;
+            JDBCCategoryDataset dataset = null;
+            
             try {
-                Statement statement = connection.createStatement();
-                result = statement.executeQuery(sql);
-                if (result.next()) {
-                    System.out.println("Road name is " + result.getString("road_name"));
-                }
-
+                
+                String sql = "SELECT * FROM Road";        //remove everything past WHERE to collect all the data and not just for a specific id
+                
+                dataset = new JDBCCategoryDataset(connection, sql);
+                
+                System.out.println("Dataset Columns and rows ! " + dataset.getColumnCount() + " " + dataset.getRowCount());
+            
+                //Statement statement = connection.createStatement();
+                //result = statement.executeQuery(sql);
+                //if (result.next()) {
+                //    System.out.println("Road name is " + result.getString("road_name"));
+                //}
             } catch (Exception e) {
-                System.out.println("Error readiong from Region table" + e.getMessage());
+                System.err.println("Error readiong from Traffic DB" + e.getMessage());
             } finally {
-                return result;
-            }
+                if (stats != null) {
+                    try {
+                        stats.close();
+                    } catch (SQLException e){
+                         System.err.println("SQLException: " + e.getMessage()); 
+                    }
+                }              
+                if (connection != null){
+                    try {
+                     connection.close();   
+                    } catch (SQLException e) {
+                        System.err.println("SQLException: " + e.getMessage());
+                        
+                    }
+                }
+            }    
+            JFreeChart chart = ChartFactory.createBarChart("Ex 1", "Ex 2", "Ex 3", PlotOrientation.VERTICAL, false, true, true);
+            chart.setBackgroundPaint(Color.white);
+            chart.getTitle().setPaint(Color.blue);
+            
+            CategoryPlot p = chart.getCategoryPlot();
+            p.setRangeGridlinePaint(Color.blue);
+            BarRenderer renderer = (BarRenderer) p.getRenderer();
+            renderer.setDrawBarOutline(true);
+            renderer.setShadowVisible(true);
+            renderer.setItemMargin(-4);
+            renderer.setSeriesPaint(0, Color.blue);
+            
+            ChartFrame frame = new ChartFrame("Ex 1", chart);
+            frame.setVisible(true);
+            frame.setSize(400, 300)
 
-        }
+    }*/
     
     public void insertDataIntoTables() {
 
