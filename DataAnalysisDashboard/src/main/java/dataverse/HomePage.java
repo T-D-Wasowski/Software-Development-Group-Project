@@ -36,6 +36,8 @@ public class HomePage extends JFrame {
         logoutButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         DashboardPanel_1 = new javax.swing.JPanel();
+        Dashboard1Con = new javax.swing.JPanel();
+        Dashboard1FiltPan = new javax.swing.JPanel();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
         filtersPanelDashboard2 = new javax.swing.JPanel();
@@ -164,15 +166,41 @@ public class HomePage extends JFrame {
         DashboardPanel_1.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_1.setPreferredSize(new java.awt.Dimension(836, 500));
 
+        javax.swing.GroupLayout Dashboard1ConLayout = new javax.swing.GroupLayout(Dashboard1Con);
+        Dashboard1Con.setLayout(Dashboard1ConLayout);
+        Dashboard1ConLayout.setHorizontalGroup(
+            Dashboard1ConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 836, Short.MAX_VALUE)
+        );
+        Dashboard1ConLayout.setVerticalGroup(
+            Dashboard1ConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 373, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout Dashboard1FiltPanLayout = new javax.swing.GroupLayout(Dashboard1FiltPan);
+        Dashboard1FiltPan.setLayout(Dashboard1FiltPanLayout);
+        Dashboard1FiltPanLayout.setHorizontalGroup(
+            Dashboard1FiltPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        Dashboard1FiltPanLayout.setVerticalGroup(
+            Dashboard1FiltPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout DashboardPanel_1Layout = new javax.swing.GroupLayout(DashboardPanel_1);
         DashboardPanel_1.setLayout(DashboardPanel_1Layout);
         DashboardPanel_1Layout.setHorizontalGroup(
             DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(Dashboard1Con, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Dashboard1FiltPan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         DashboardPanel_1Layout.setVerticalGroup(
             DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(DashboardPanel_1Layout.createSequentialGroup()
+                .addComponent(Dashboard1Con, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(Dashboard1FiltPan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         DashboardPanel_2.setBackground(new java.awt.Color(208, 239, 255));
@@ -1272,6 +1300,8 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel AdminPanel;
     private javax.swing.JButton BackButtonDashboard2;
     private javax.swing.JButton Dashboard1;
+    private javax.swing.JPanel Dashboard1Con;
+    private javax.swing.JPanel Dashboard1FiltPan;
     private javax.swing.JButton Dashboard2;
     private javax.swing.JPanel Dashboard2Container;
     private javax.swing.JButton Dashboard3;
