@@ -2284,7 +2284,8 @@ public class HomePage extends JFrame {
         D4Chart.setBackgroundPaint(new Color(208,239,255));
         D4Chart.getTitle().setPaint(Color.black);
         D4Chart.getPlot().setBackgroundPaint(new Color(208,239,255));
-
+        D4Chart.getLegend().setBackgroundPaint(new Color(208,239,255));
+        
         ChartPanel D4Panel;
         D4Panel = new ChartPanel(D4Chart);
         D4Panel.setVisible(true);
