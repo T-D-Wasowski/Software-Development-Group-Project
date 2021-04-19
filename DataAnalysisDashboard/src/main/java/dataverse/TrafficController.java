@@ -70,12 +70,12 @@ public class TrafficController {
                     }
                 }
             }  
-            JFreeChart chart = ChartFactory.createBarChart("Road", 
-                    PlotOrientation.VERTICAL, false);//, true, true);
-            chart.setBackgroundPaint(Color.white);
-            chart.getTitle().setPaint(Color.blue);
+          /*  JFreeChart D2Chart = ChartFactory.createBarChart("Road", 
+                    PlotOrientation.VERTICAL, true, true, false);//, true, true);
+            D2Chart.setBackgroundPaint(Color.white);
+            D2Chart.getTitle().setPaint(Color.blue);
             
-            CategoryPlot p = chart.getCategoryPlot();
+            CategoryPlot p = D2Chart.getCategoryPlot();
             p.setRangeGridlinePaint(Color.blue);
             BarRenderer renderer = (BarRenderer) p.getRenderer();
             renderer.setDrawBarOutline(true);
@@ -83,11 +83,11 @@ public class TrafficController {
             renderer.setItemMargin(-4);
             renderer.setSeriesPaint(0, Color.blue);
             
-            ChartPanel ChartPanelD2 = new ChartPanel(ChartPanelD2);
+            ChartPanel ChartPanelD2 = new ChartPanel(D2Chart);
             ChartPanelD2.setVisible(true);
             ChartPanelD2.setSize(400, 300);
-            
-    }
+            */
+            }
     
     public void insertDataIntoTables() {
 

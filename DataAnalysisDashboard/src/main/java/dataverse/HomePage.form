@@ -686,23 +686,25 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="D4ExecuteButton" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="D4MajorRadioButton" linkSize="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="D4MinorRadioButton" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="D4YearDropdown" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="D4MajorButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Component id="D4YearLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="D4CarTaxiCheckbox" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="D4MinorButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="D4YearDropdown" min="-2" pref="69" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="D4CarTaxiCheckbox" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -719,16 +721,32 @@
                                   <Component id="D4LargeGoodsCheckbox" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace pref="18" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="D4YearLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="D4MajorRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="D4YearDropdown" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="D4MinorRadioButton" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="D4CarTaxiCheckbox" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="D4TwoWheelCheckbox" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -741,19 +759,13 @@
                                       <Component id="D4LargeGoodsCheckbox" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="D4MajorButton" min="-2" max="-2" attributes="0"/>
-                                      <Component id="D4YearLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="D4MinorButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="D4YearDropdown" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
                           </Group>
-                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="D4ExecuteButton" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -793,19 +805,6 @@
                 <Component class="javax.swing.JLabel" name="D4YearLabel">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Year"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JButton" name="D4MajorButton">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Major"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="D4MajorButtonActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="D4MinorButton">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Minor"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="D4CarTaxiCheckbox">
@@ -851,6 +850,24 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="D4LargeGoodsCheckboxActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="D4MajorRadioButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Major"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="D4MinorRadioButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Minor"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="D4ExecuteButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Go"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="D4ExecuteButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

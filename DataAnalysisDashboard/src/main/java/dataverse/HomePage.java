@@ -1,10 +1,13 @@
 package dataverse;
 
+import dataverse.TrafficController.DB;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,14 +84,15 @@ public class HomePage extends JFrame {
         D4PanelFilters = new javax.swing.JPanel();
         D4YearDropdown = new javax.swing.JComboBox<>();
         D4YearLabel = new javax.swing.JLabel();
-        D4MajorButton = new javax.swing.JButton();
-        D4MinorButton = new javax.swing.JButton();
         D4CarTaxiCheckbox = new javax.swing.JCheckBox();
         D4TwoWheelCheckbox = new javax.swing.JCheckBox();
         D4PedalCheckbox = new javax.swing.JCheckBox();
         D4BusCoachCheckbox = new javax.swing.JCheckBox();
         D4HeavyVehicCheckbox = new javax.swing.JCheckBox();
         D4LargeGoodsCheckbox = new javax.swing.JCheckBox();
+        D4MajorRadioButton = new javax.swing.JRadioButton();
+        D4MinorRadioButton = new javax.swing.JRadioButton();
+        D4ExecuteButton = new javax.swing.JButton();
         AdminPanel = new javax.swing.JPanel();
         editUserButton = new javax.swing.JButton();
         viewAllLogsButton = new javax.swing.JButton();
@@ -496,15 +500,6 @@ public class HomePage extends JFrame {
 
         D4YearLabel.setText("Year");
 
-        D4MajorButton.setText("Major");
-        D4MajorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                D4MajorButtonActionPerformed(evt);
-            }
-        });
-
-        D4MinorButton.setText("Minor");
-
         D4CarTaxiCheckbox.setText("Cars and Taxis");
         D4CarTaxiCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -542,24 +537,37 @@ public class HomePage extends JFrame {
             }
         });
 
+        D4MajorRadioButton.setText("Major");
+
+        D4MinorRadioButton.setText("Minor");
+
+        D4ExecuteButton.setText("Go");
+        D4ExecuteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4ExecuteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout D4PanelFiltersLayout = new javax.swing.GroupLayout(D4PanelFilters);
         D4PanelFilters.setLayout(D4PanelFiltersLayout);
         D4PanelFiltersLayout.setHorizontalGroup(
             D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(D4PanelFiltersLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(D4ExecuteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(D4MajorRadioButton)
+                    .addComponent(D4MinorRadioButton))
+                .addGap(26, 26, 26)
+                .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addComponent(D4MajorButton)
-                        .addGap(70, 70, 70)
+                        .addGap(23, 23, 23)
                         .addComponent(D4YearLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(D4CarTaxiCheckbox))
-                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addComponent(D4MinorButton)
-                        .addGap(47, 47, 47)
-                        .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(24, 24, 24)))
+                .addGap(18, 18, 18)
+                .addComponent(D4CarTaxiCheckbox)
                 .addGap(18, 18, 18)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
@@ -573,16 +581,27 @@ public class HomePage extends JFrame {
                         .addComponent(D4HeavyVehicCheckbox)
                         .addGap(18, 18, 18)
                         .addComponent(D4LargeGoodsCheckbox)))
-                .addGap(53, 53, 53))
+                .addContainerGap())
         );
 
-        D4PanelFiltersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {D4MajorButton, D4MinorButton});
+        D4PanelFiltersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {D4MajorRadioButton, D4MinorRadioButton});
 
         D4PanelFiltersLayout.setVerticalGroup(
             D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(D4YearLabel)
+                            .addComponent(D4MajorRadioButton))
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(D4MinorRadioButton))))
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
                         .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(D4CarTaxiCheckbox)
@@ -592,16 +611,12 @@ public class HomePage extends JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(D4HeavyVehicCheckbox)
-                            .addComponent(D4LargeGoodsCheckbox)))
-                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(D4MajorButton)
-                            .addComponent(D4YearLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(D4MinorButton)
-                            .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                            .addComponent(D4LargeGoodsCheckbox))))
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, D4PanelFiltersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(D4ExecuteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout DashboardPanel_4Layout = new javax.swing.GroupLayout(DashboardPanel_4);
@@ -1680,7 +1695,7 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_BC1YasinActionPerformed
 
     private void D4CarTaxiCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4CarTaxiCheckboxActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_D4CarTaxiCheckboxActionPerformed
 
     private void D4TwoWheelCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4TwoWheelCheckboxActionPerformed
@@ -1699,10 +1714,6 @@ public class HomePage extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_D4LargeGoodsCheckboxActionPerformed
 
-    private void D4MajorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4MajorButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_D4MajorButtonActionPerformed
-
     private void BC2Yasin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BC2Yasin1ActionPerformed
         TrafficController d = new TrafficController();
         ResultSet rs = d.getYasinCon3();
@@ -1712,6 +1723,10 @@ public class HomePage extends JFrame {
             Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_BC2Yasin1ActionPerformed
+
+    private void D4ExecuteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4ExecuteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4ExecuteButtonActionPerformed
 
     public void createBar() {
         //TrafficController.getYas();
@@ -2024,10 +2039,11 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel ChartAreaYas;
     private javax.swing.JCheckBox D4BusCoachCheckbox;
     private javax.swing.JCheckBox D4CarTaxiCheckbox;
+    private javax.swing.JButton D4ExecuteButton;
     private javax.swing.JCheckBox D4HeavyVehicCheckbox;
     private javax.swing.JCheckBox D4LargeGoodsCheckbox;
-    private javax.swing.JButton D4MajorButton;
-    private javax.swing.JButton D4MinorButton;
+    private javax.swing.JRadioButton D4MajorRadioButton;
+    private javax.swing.JRadioButton D4MinorRadioButton;
     private javax.swing.JPanel D4PanelFilters;
     private javax.swing.JPanel D4PanelMain;
     private javax.swing.JCheckBox D4PedalCheckbox;
@@ -2266,10 +2282,15 @@ public class HomePage extends JFrame {
     //Pie Chart Creation (Isa)
     public PieDataset D4PieChart() {
         DefaultPieDataset D4Dataset = new DefaultPieDataset();
-        D4Dataset.setValue("Cars", 20);
-        D4Dataset.setValue("Boats", 30);
-        D4Dataset.setValue("Motorbikes", 6);
-
+        Map<String, Integer> D4Hash = null; 
+        try {
+            D4Hash = getVehicleCountD4("2000", "Major", null );
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        for (Map.Entry<String, Integer> pair: D4Hash.entrySet()) {
+            D4Dataset.setValue(pair.getKey(), pair.getValue());
+        }
         return D4Dataset;
     }
 
@@ -2297,5 +2318,41 @@ public class HomePage extends JFrame {
         return D4Chart;
                 
     }
+    
+    public Map<String, Integer> getVehicleCountD4(String Year, String RoadType, ArrayList<String> VehicleType) throws SQLException {
+        Connection D4Connection = DB.getConnection();
+        Map<String, Integer> D4Map = new HashMap<String, Integer>();
+        String D4MajorRoadQuery = "SELECT SUM(pedal_cycles) AS PedalCycles, "
+                + " SUM(two_wheeled_motor_vehicles) AS TwoWheel, "
+                + " SUM(cars_and_taxis) AS CarsTaxis, "
+                + " SUM(buses_and_coaches) AS BusesCoaches, "
+                + " SUM (lgvs) AS LGVS, "
+                + " SUM(all_hgvs) AS HGVS "
+                + " FROM Traffic_Volume AS TV "
+                + " JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id "
+                + " JOIN Road AS Rd ON Rd.road_name = CP.road_name WHERE Rd.road_type =  '" + RoadType + "' "
+                + " AND CP.the_year = '" + Year + "' ";
+        
+        
+        ResultSet D4RS = null;
+        Statement D4Statement = null;
+        try {
+                D4Statement = D4Connection.createStatement();
+                D4RS = D4Statement.executeQuery(D4MajorRoadQuery);
+                while (D4RS.next()) {
+                    D4Map.put("Pedal Cycles", D4RS.getInt("PedalCycles"));
+                    D4Map.put("Two Wheel Motor Vehicles", D4RS.getInt("TwoWheel"));
+                    D4Map.put("Cars and Taxis", D4RS.getInt("CarsTaxis"));
+                    D4Map.put("Buses and Coaches", D4RS.getInt("BusesCoaches"));
+                    D4Map.put("Large Goods Vehicles", D4RS.getInt("LGVS"));
+                    D4Map.put("Heavy Goods Vehicles", D4RS.getInt("HGVS"));
+                }
+            } catch (Exception D4E) {
+                System.out.println("Error reading vehicle data." + D4E.getMessage());
+            } finally {
+                D4Statement.close();
+            }
+        return D4Map;
+}
 
 }
