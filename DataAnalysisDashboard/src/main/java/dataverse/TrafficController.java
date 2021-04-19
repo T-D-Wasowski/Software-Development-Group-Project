@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
@@ -69,7 +70,7 @@ public class TrafficController {
                     }
                 }
             }  
-            /*JFreeChart chart = ChartFactory.createBarChart("Road", 
+            JFreeChart chart = ChartFactory.createBarChart("Road", 
                     PlotOrientation.VERTICAL, false);//, true, true);
             chart.setBackgroundPaint(Color.white);
             chart.getTitle().setPaint(Color.blue);
@@ -82,10 +83,10 @@ public class TrafficController {
             renderer.setItemMargin(-4);
             renderer.setSeriesPaint(0, Color.blue);
             
-            ChartFrame jPanel14 = new ChartFrame("Road", chart);
-            jPanel14.setVisible(true);
-            JPanel14.setSize(400, 300);
-            */
+            ChartPanel ChartPanelD2 = new ChartPanel(ChartPanelD2);
+            ChartPanelD2.setVisible(true);
+            ChartPanelD2.setSize(400, 300);
+            
     }
     
     public void insertDataIntoTables() {
