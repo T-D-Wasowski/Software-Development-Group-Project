@@ -62,6 +62,7 @@ public class HomePage extends JFrame {
         ChartAreaYas = new javax.swing.JPanel();
         ButtonAreaYas = new javax.swing.JPanel();
         BC1Yasin = new javax.swing.JButton();
+        BC2Yasin1 = new javax.swing.JButton();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
         filtersPanelDashboard2 = new javax.swing.JPanel();
@@ -232,20 +233,34 @@ public class HomePage extends JFrame {
             }
         });
 
+        BC2Yasin1.setBackground(new java.awt.Color(71, 120, 250));
+        BC2Yasin1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        BC2Yasin1.setForeground(new java.awt.Color(255, 255, 255));
+        BC2Yasin1.setText("Test");
+        BC2Yasin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BC2Yasin1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ButtonAreaYasLayout = new javax.swing.GroupLayout(ButtonAreaYas);
         ButtonAreaYas.setLayout(ButtonAreaYasLayout);
         ButtonAreaYasLayout.setHorizontalGroup(
             ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                .addGap(159, 159, 159)
+                .addGap(27, 27, 27)
                 .addComponent(BC1Yasin)
-                .addContainerGap(566, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(BC2Yasin1)
+                .addContainerGap(609, Short.MAX_VALUE))
         );
         ButtonAreaYasLayout.setVerticalGroup(
             ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
                 .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(BC1Yasin)
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BC1Yasin)
+                    .addComponent(BC2Yasin1))
                 .addGap(31, 31, 31))
         );
 
@@ -1643,13 +1658,13 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_adminTableMouseReleased
 
     private void BC1YasinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BC1YasinActionPerformed
-        TrafficController c = new TrafficController();
-        ResultSet rs = c.getYasinCon2();
-        try {
-            System.out.println(rs.getInt("road_type"));
-        } catch (SQLException ex) {
-            Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        //TrafficController c = new TrafficController();
+        //ResultSet rs = c.getYasinCon2();
+        //try {
+        //    System.out.println(rs.getInt("road_type"));
+        //} catch (SQLException ex) {
+        //    Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+        //}
         
         
     }//GEN-LAST:event_BC1YasinActionPerformed
@@ -1677,6 +1692,16 @@ public class HomePage extends JFrame {
     private void D4MajorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4MajorButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_D4MajorButtonActionPerformed
+
+    private void BC2Yasin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BC2Yasin1ActionPerformed
+        TrafficController d = new TrafficController();
+        ResultSet rs = d.getYasinCon3();
+        try {
+            System.out.println(rs.getString("Hello"));
+        } catch (SQLException ex) {
+            Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BC2Yasin1ActionPerformed
 
     public void createBar() {
         //TrafficController.getYas();
@@ -1982,6 +2007,7 @@ public class HomePage extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPanel;
     private javax.swing.JButton BC1Yasin;
+    private javax.swing.JButton BC2Yasin1;
     private javax.swing.JButton BackButtonDashboard2;
     private javax.swing.JPanel ButtonAreaYas;
     private javax.swing.JPanel ChartAreaYas;

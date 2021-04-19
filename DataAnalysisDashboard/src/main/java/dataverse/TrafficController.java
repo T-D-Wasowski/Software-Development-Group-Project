@@ -158,6 +158,29 @@ public class TrafficController {
         }
         return null;
     }
+    
+    public ResultSet getYasinCon3() {
+        Connection connection = DB.getConnection();
+        String sql = "SELECT count(Traffic_Volume.all_motor_vehicles), Count_Point.the_year"
+                + "FROM Traffic_Volume, Count_Point"
+                + "WHERE Count_Point.the_year = 2004";
+                //+ "'" + volume + "'" + year + "'"; 
+        ResultSet result = null;
+        try {
+            Statement statement = connection.createStatement();
+            result = statement.executeQuery(sql);
+            if (result.next()) {
+                // System.out.println("Region name is " + result.getString("region_name"));
+            }
+            return result;
+
+        } catch (Exception e) {
+            System.out.println("Error readiong from Region table" + e.getMessage());
+        } finally {
+
+        }
+        return null;
+    }
 
     public static class DB {
 
