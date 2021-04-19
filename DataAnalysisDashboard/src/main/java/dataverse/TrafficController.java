@@ -1,5 +1,6 @@
 package dataverse;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.sql.Connection;
@@ -9,6 +10,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
 
 public class TrafficController {
@@ -22,8 +30,8 @@ public class TrafficController {
         table.createTraffic_Volume();
 
     }
-    
-    /*public void getYas() {
+     
+    public void getYas() {
             Connection connection = DB.getConnection();
             Statement stats = null;
             ResultSet result = null;
@@ -31,8 +39,8 @@ public class TrafficController {
             
             try {
                 
-                String sql = "SELECT * FROM Road";        //remove everything past WHERE to collect all the data and not just for a specific id
-                
+                String sql = "SELECT road_type FROM Road";        //remove everything past WHERE to collect all the data and not just for a specific id
+                //"SELECT pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, all_hgvs, MAX(all_motor_vehicles)\n"
                 dataset = new JDBCCategoryDataset(connection, sql);
                 
                 System.out.println("Dataset Columns and rows ! " + dataset.getColumnCount() + " " + dataset.getRowCount());
@@ -60,8 +68,9 @@ public class TrafficController {
                         
                     }
                 }
-            }    
-            JFreeChart chart = ChartFactory.createBarChart("Ex 1", "Ex 2", "Ex 3", PlotOrientation.VERTICAL, false, true, true);
+            }  
+            /*JFreeChart chart = ChartFactory.createBarChart("Road", 
+                    PlotOrientation.VERTICAL, false);//, true, true);
             chart.setBackgroundPaint(Color.white);
             chart.getTitle().setPaint(Color.blue);
             
@@ -73,11 +82,11 @@ public class TrafficController {
             renderer.setItemMargin(-4);
             renderer.setSeriesPaint(0, Color.blue);
             
-            ChartFrame frame = new ChartFrame("Ex 1", chart);
-            frame.setVisible(true);
-            frame.setSize(400, 300)
-
-    }*/
+            ChartFrame jPanel14 = new ChartFrame("Road", chart);
+            jPanel14.setVisible(true);
+            JPanel14.setSize(400, 300);
+            */
+    }
     
     public void insertDataIntoTables() {
 
@@ -104,6 +113,7 @@ public class TrafficController {
     }
 
     //selests the highest traffic at a specific road in a specific point in time
+    
     public ResultSet getHighestTrafficVolume(int hour, String road, int year) {
         Connection connection = DB.getConnection();
         String sql = "SELECT pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, all_hgvs, MAX(all_motor_vehicles)\n"
@@ -113,6 +123,25 @@ public class TrafficController {
                 + "AND (Road.road_name = '"+ road +"' OR Road.start_junction_road_name = '"+ road +"' OR Road.end_junction_road_name = '"+ road +"')\n"
                 + "AND Count_Point.count_point_id = Traffic_Volume.count_point_id\n"
                 + "AND Count_Point.road_name = Road.road_name;";
+        ResultSet result = null;
+        try {
+            Statement statement = connection.createStatement();
+            result = statement.executeQuery(sql);
+            if (result.next()) {
+                // System.out.println("Region name is " + result.getString("region_name"));
+            }
+            return result;
+
+        } catch (Exception e) {
+            System.out.println("Error readiong from Region table" + e.getMessage());
+        } finally {
+
+        }
+        return null;
+    }
+    public ResultSet getYasinCon2(int road) {
+        Connection connection = DB.getConnection();
+        String sql = "SELECT road_type, count (distinct road_type) FROM road;"; 
         ResultSet result = null;
         try {
             Statement statement = connection.createStatement();
