@@ -182,6 +182,31 @@ public class TrafficController {
         }
         return null;
     }
+    
+    /*public ResultSet getYasDBDataValues(int Year, String RoadName, String Direction, int Hours) {
+        Connection connection = DB.getConnection();
+        String sql = "select sum(TV.all_motor_vehicles) AS Number_Of_Vehs "
+                + "From Traffic_Volume AS TV "
+                + "JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id "
+                + "JOIN Road AS RD ON RD.road_name = CP.road_name WHERE CP.the_year = 2004 AND RD.road_name = 'C'; ";
+                
+                //+ "'" + volume + "'" + year + "'"; 
+        ResultSet result = null;
+        try {
+            Statement statement = connection.createStatement();
+            result = statement.executeQuery(sql);
+            if (result.next()) {
+                // System.out.println("Region name is " + result.getString("region_name"));
+            }
+            return result;
+
+        } catch (Exception e) {
+            System.out.println("Error readiong from Region table" + e.getMessage());
+        } finally {
+
+        }
+        return null;
+    }*/
 
     public static class DB {
 
