@@ -19,6 +19,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DatasetChangeListener;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
@@ -1762,7 +1763,14 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_adminTableMouseReleased
 
     private void D4CarTaxiCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4CarTaxiCheckboxActionPerformed
+        String CTRoadType = null;    
+        String CarsTaxisSelected = "SUM(cars_and_taxis) AS CarsTaxis"
+             + "FROM Traffic_Volume AS TV"
+             + "JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id"
+             + "JOIN Road AS Rd ON Rd.road_name = CP.road_name WHERE Rd.road_type =  '" + CTRoadType + "' ";
         
+         DefaultPieDataset D4Dataset = new DefaultPieDataset();
+         D4Dataset.addChangeListener((DatasetChangeListener) D4CarTaxiCheckbox);
     }//GEN-LAST:event_D4CarTaxiCheckboxActionPerformed
 
     private void D4TwoWheelCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4TwoWheelCheckboxActionPerformed
@@ -1828,24 +1836,17 @@ public class HomePage extends JFrame {
         
         DefaultPieDataset D4Dataset = new DefaultPieDataset();
         if (CarTaxi != null && !CarTaxi.isEmpty()) {
-            D4Dataset.setValue("Cars and Taxis", D4DataMap.get("Cars and Taxis"));
+            D4Panel.actionPerformed(evt);
+            D4Dataset.setValue("Cars and Taxis", D4DataMap.get("Cars and Taxis")); 
+            System.out.println(CarTaxi);
         }
         
-        D4PanelMain.removeAll();
-        D4PanelMain.repaint();
-        D4PanelMain.revalidate();
-        JFreeChart D4GUIChart = createD4PieChart(D4Dataset);
-        D4PanelMain.add(D4Panel);
-        D4PanelMain.repaint();
-        D4PanelMain.validate();
-        D4PanelMain.setVisible(true);
         
-        
-        /*D4Panel.setChart(D4GUIChart);
         D4Panel.repaint();
-        D4PanelMain.add(D4Panel);
+        D4Panel.revalidate();
+        
         D4Panel.setVisible(true);
-        System.out.println(CarTaxi);*/
+        
                   
     }//GEN-LAST:event_D4ExecuteButtonActionPerformed
 
@@ -2522,5 +2523,12 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setSize(813,370);
         dashboard1ChartPanel.setVisible(true);
         return dashboard1ChartPanel;
+    }
+    
+    public void carsAndTaxisSelected(String CTRoadType) {
+        //String CarsTaxisSelected = "SUM(cars_and_taxis) AS CarsTaxis"
+               // + "FROM Traffic_Volume AS TV"
+              //  + "JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id"
+              //  + "JOIN Road AS Rd ON Rd.road_name = CP.road_name WHERE Rd.road_type =  '" + CTRoadType + "' ";
     }
 }
