@@ -2303,7 +2303,7 @@ public class HomePage extends JFrame {
 
             @Override
             protected void paintComponent(Graphics g) {
-                String vehicles[] = {"Pedal cycles", "2 wmv", "Cars", "Buses", "LGVS", "HGVS", "All motor vehicles"};       //list of vehicles
+                String vehicles[] = {"Pedal cycles", "2 wmv", "Cars", "Buses", "LGVS", "HGVS", "All motor veh"};       //list of vehicles
                 int x = 2;
                 int i = 0;
                 int maxHeight = findMaxHeight();
