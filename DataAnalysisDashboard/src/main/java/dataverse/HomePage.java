@@ -71,20 +71,16 @@ public class HomePage extends JFrame {
         DashboardPanel_1 = new javax.swing.JPanel();
         ChartAreaYas = new javax.swing.JPanel();
         ButtonAreaYas = new javax.swing.JPanel();
-        YrChangeYas = new java.awt.Label();
-        VehicleTypeLbl = new java.awt.Label();
-        label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
-        DirectYas = new java.awt.Choice();
-        RoadTypeYas = new java.awt.Choice();
-        VehTypeYas = new java.awt.Choice();
-        BarTitleYas = new java.awt.Label();
+        RYYas = new java.awt.Label();
         jSlider1 = new javax.swing.JSlider();
-        choice1 = new java.awt.Choice();
-        MinHrYasin1 = new javax.swing.JButton();
-        PlusHrYasin2 = new javax.swing.JButton();
-        BC1Yasin = new javax.swing.JButton();
+        SouthYas = new javax.swing.JButton();
+        WestYas = new javax.swing.JButton();
+        NorthYas = new javax.swing.JButton();
+        EastYas = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        BarTitleYas1 = new java.awt.Label();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
         filtersPanelDashboard2 = new javax.swing.JPanel();
@@ -247,132 +243,90 @@ public class HomePage extends JFrame {
         ButtonAreaYas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ButtonAreaYas.setPreferredSize(new java.awt.Dimension(816, 111));
 
-        YrChangeYas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        YrChangeYas.setText("Road Set");
-
-        VehicleTypeLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        VehicleTypeLbl.setText("Vehicle Type");
-
-        label1.setText("Hour");
-
         label2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         label2.setText("Year");
 
         label3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         label3.setText("Change Direction");
 
-        BarTitleYas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BarTitleYas.setText("Total Vehicles Per Road");
+        RYYas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        RYYas.setText("View All");
 
-        MinHrYasin1.setBackground(new java.awt.Color(71, 120, 250));
-        MinHrYasin1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        MinHrYasin1.setForeground(new java.awt.Color(255, 255, 255));
-        MinHrYasin1.setText("- 1HR");
-        MinHrYasin1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MinHrYasin1ActionPerformed(evt);
-            }
-        });
+        SouthYas.setText("South");
 
-        PlusHrYasin2.setBackground(new java.awt.Color(71, 120, 250));
-        PlusHrYasin2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        PlusHrYasin2.setForeground(new java.awt.Color(255, 255, 255));
-        PlusHrYasin2.setText("+ 1HR");
-        PlusHrYasin2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PlusHrYasin2ActionPerformed(evt);
-            }
-        });
+        WestYas.setText("West");
 
-        BC1Yasin.setBackground(new java.awt.Color(71, 120, 250));
-        BC1Yasin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BC1Yasin.setForeground(new java.awt.Color(255, 255, 255));
-        BC1Yasin.setText("Bar Chart");
-        BC1Yasin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BC1YasinActionPerformed(evt);
-            }
-        });
+        NorthYas.setText("North");
+
+        EastYas.setText("East");
+
+        jButton1.setText("No Filter");
+
+        BarTitleYas1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas1.setText("Total Vehicles Per Road");
 
         javax.swing.GroupLayout ButtonAreaYasLayout = new javax.swing.GroupLayout(ButtonAreaYas);
         ButtonAreaYas.setLayout(ButtonAreaYasLayout);
         ButtonAreaYasLayout.setHorizontalGroup(
             ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(VehTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MinHrYasin1))
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addComponent(VehicleTypeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113)
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BarTitleYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouthYas, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(RYYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(176, 176, 176)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(191, 191, 191)))
                 .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(YrChangeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(RoadTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PlusHrYasin2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(WestYas, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addComponent(NorthYas, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(EastYas, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))
                     .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addComponent(BC1Yasin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DirectYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(107, 107, 107))
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)))
-                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(choice1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                    .addGap(307, 307, 307)
+                    .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(364, Short.MAX_VALUE)))
         );
         ButtonAreaYasLayout.setVerticalGroup(
             ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addComponent(BarTitleYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(YrChangeYas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(VehicleTypeLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(label2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RYYas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
                 .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DirectYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RoadTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(VehTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(MinHrYasin1)
-                            .addComponent(PlusHrYasin2)
-                            .addComponent(BC1Yasin))
-                        .addContainerGap())))
+                    .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(SouthYas)
+                        .addComponent(WestYas)
+                        .addComponent(NorthYas)
+                        .addComponent(EastYas))
+                    .addComponent(jButton1))
+                .addGap(36, 36, 36))
+            .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
+                    .addContainerGap(73, Short.MAX_VALUE)
+                    .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(16, 16, 16)))
         );
-
-        YrChangeYas.getAccessibleContext().setAccessibleName("YrChangeYas");
 
         javax.swing.GroupLayout DashboardPanel_1Layout = new javax.swing.GroupLayout(DashboardPanel_1);
         DashboardPanel_1.setLayout(DashboardPanel_1Layout);
@@ -555,7 +509,7 @@ public class HomePage extends JFrame {
                 .addComponent(Dashboard2Container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filtersPanelDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(2, Short.MAX_VALUE))
         );
 
         DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
@@ -694,7 +648,6 @@ public class HomePage extends JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(D4YearLabel)))
                 .addGap(19, 19, 19)
-                .addGap(18, 18, 18)
                 .addComponent(D4CarTaxiCheckbox)
                 .addGap(18, 18, 18)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1808,18 +1761,6 @@ public class HomePage extends JFrame {
 
     }//GEN-LAST:event_adminTableMouseReleased
 
-    private void BC1YasinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BC1YasinActionPerformed
-        //TrafficController c = new TrafficController();
-        //ResultSet rs = c.getYasinCon2();
-        //try {
-        //    System.out.println(rs.getInt("road_type"));
-        //} catch (SQLException ex) {
-        //    Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
-        //}
-
-
-    }//GEN-LAST:event_BC1YasinActionPerformed
-
     private void D4CarTaxiCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4CarTaxiCheckboxActionPerformed
         
     }//GEN-LAST:event_D4CarTaxiCheckboxActionPerformed
@@ -1839,16 +1780,6 @@ public class HomePage extends JFrame {
     private void D4LargeGoodsCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4LargeGoodsCheckboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_D4LargeGoodsCheckboxActionPerformed
-
-    private void MinHrYasin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinHrYasin1ActionPerformed
-        TrafficController d = new TrafficController();
-        ResultSet rs = d.getYasinCon3();
-        try {
-            System.out.println(rs.getString("Hello"));
-        } catch (SQLException ex) {
-            Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_MinHrYasin1ActionPerformed
 
     private void D4ExecuteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4ExecuteButtonActionPerformed
           String D4RoadDropdown = D4RoadChoice.getSelectedItem().toString();
@@ -1917,10 +1848,6 @@ public class HomePage extends JFrame {
         System.out.println(CarTaxi);*/
                   
     }//GEN-LAST:event_D4ExecuteButtonActionPerformed
-
-    private void PlusHrYasin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlusHrYasin2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PlusHrYasin2ActionPerformed
 
     private void D4RoadChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4RoadChoiceActionPerformed
         // TODO add your handling code here:
@@ -2239,9 +2166,8 @@ public class HomePage extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPanel;
-    private javax.swing.JButton BC1Yasin;
     private javax.swing.JButton BackButtonDashboard2;
-    private java.awt.Label BarTitleYas;
+    private java.awt.Label BarTitleYas1;
     private javax.swing.JPanel ButtonAreaYas;
     private javax.swing.JPanel ChartAreaYas;
     private javax.swing.JCheckBox D4BusCoachCheckbox;
@@ -2266,17 +2192,15 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
     private javax.swing.JLabel DescriptionLabelDashboard2;
-    private java.awt.Choice DirectYas;
-    private javax.swing.JButton MinHrYasin1;
+    private javax.swing.JButton EastYas;
     private javax.swing.JButton NextButtonDashboard2;
-    private javax.swing.JButton PlusHrYasin2;
+    private javax.swing.JButton NorthYas;
+    private java.awt.Label RYYas;
     private javax.swing.JButton ResetButtonDashboard2;
     private java.awt.Choice RoadChoiceDashboard2;
-    private java.awt.Choice RoadTypeYas;
     private javax.swing.JSlider SlideBarDashboard2;
-    private java.awt.Choice VehTypeYas;
-    private java.awt.Label VehicleTypeLbl;
-    private java.awt.Label YrChangeYas;
+    private javax.swing.JButton SouthYas;
+    private javax.swing.JButton WestYas;
     private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
     private javax.swing.JLabel adminEmailLabel;
     private javax.swing.JPanel adminLeftPanel;
@@ -2290,7 +2214,6 @@ public class HomePage extends JFrame {
     private javax.swing.JLabel adminStatusLabel;
     private javax.swing.JTable adminTable;
     private javax.swing.JLabel adminUsernameLabel;
-    private java.awt.Choice choice1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -2299,6 +2222,7 @@ public class HomePage extends JFrame {
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JButton editUserButton;
     private javax.swing.JPanel filtersPanelDashboard2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2316,7 +2240,6 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSlider jSlider1;
-    private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label labelHourDashboard2;
