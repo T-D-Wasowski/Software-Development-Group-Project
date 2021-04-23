@@ -1,17 +1,24 @@
 package dataverse;
 
+import dataverse.TrafficController.DB;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
@@ -53,21 +60,31 @@ public class HomePage extends JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         logoutButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         DashboardPanel_1 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
+        ChartAreaYas = new javax.swing.JPanel();
+        ButtonAreaYas = new javax.swing.JPanel();
+        YrChangeYas = new java.awt.Label();
+        VehicleTypeLbl = new java.awt.Label();
+        label1 = new java.awt.Label();
+        label2 = new java.awt.Label();
+        label3 = new java.awt.Label();
+        DirectYas = new java.awt.Choice();
+        RoadTypeYas = new java.awt.Choice();
+        VehTypeYas = new java.awt.Choice();
+        BarTitleYas = new java.awt.Label();
+        jSlider1 = new javax.swing.JSlider();
+        choice1 = new java.awt.Choice();
+        MinHrYasin1 = new javax.swing.JButton();
+        PlusHrYasin2 = new javax.swing.JButton();
         BC1Yasin = new javax.swing.JButton();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
         filtersPanelDashboard2 = new javax.swing.JPanel();
@@ -85,14 +102,15 @@ public class HomePage extends JFrame {
         D4PanelFilters = new javax.swing.JPanel();
         D4YearDropdown = new javax.swing.JComboBox<>();
         D4YearLabel = new javax.swing.JLabel();
-        D4MajorButton = new javax.swing.JButton();
-        D4MinorButton = new javax.swing.JButton();
         D4CarTaxiCheckbox = new javax.swing.JCheckBox();
         D4TwoWheelCheckbox = new javax.swing.JCheckBox();
         D4PedalCheckbox = new javax.swing.JCheckBox();
         D4BusCoachCheckbox = new javax.swing.JCheckBox();
         D4HeavyVehicCheckbox = new javax.swing.JCheckBox();
         D4LargeGoodsCheckbox = new javax.swing.JCheckBox();
+        D4ExecuteButton = new javax.swing.JButton();
+        D4RoadChoice = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
         AdminPanel = new javax.swing.JPanel();
         editUserButton = new javax.swing.JButton();
         viewAllLogsButton = new javax.swing.JButton();
@@ -211,33 +229,60 @@ public class HomePage extends JFrame {
         DashboardPanel_1.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_1.setPreferredSize(new java.awt.Dimension(836, 500));
 
-        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+        ChartAreaYas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ChartAreaYas.setPreferredSize(new java.awt.Dimension(813, 370));
+        ChartAreaYas.add(createDB1BarChart());
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 69, Short.MAX_VALUE)
+        javax.swing.GroupLayout ChartAreaYasLayout = new javax.swing.GroupLayout(ChartAreaYas);
+        ChartAreaYas.setLayout(ChartAreaYasLayout);
+        ChartAreaYasLayout.setHorizontalGroup(
+            ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 811, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel7.setBackground(new java.awt.Color(71, 120, 210));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+        ChartAreaYasLayout.setVerticalGroup(
+            ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 368, Short.MAX_VALUE)
         );
 
-        jPanel9.setBackground(new java.awt.Color(51, 153, 255));
+        ButtonAreaYas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ButtonAreaYas.setPreferredSize(new java.awt.Dimension(816, 111));
+
+        YrChangeYas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        YrChangeYas.setText("Road Set");
+
+        VehicleTypeLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        VehicleTypeLbl.setText("Vehicle Type");
+
+        label1.setText("Hour");
+
+        label2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        label2.setText("Year");
+
+        label3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        label3.setText("Change Direction");
+
+        BarTitleYas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas.setText("Total Vehicles Per Road");
+
+        MinHrYasin1.setBackground(new java.awt.Color(71, 120, 250));
+        MinHrYasin1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        MinHrYasin1.setForeground(new java.awt.Color(255, 255, 255));
+        MinHrYasin1.setText("- 1HR");
+        MinHrYasin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MinHrYasin1ActionPerformed(evt);
+            }
+        });
+
+        PlusHrYasin2.setBackground(new java.awt.Color(71, 120, 250));
+        PlusHrYasin2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        PlusHrYasin2.setForeground(new java.awt.Color(255, 255, 255));
+        PlusHrYasin2.setText("+ 1HR");
+        PlusHrYasin2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlusHrYasin2ActionPerformed(evt);
+            }
+        });
 
         BC1Yasin.setBackground(new java.awt.Color(71, 120, 250));
         BC1Yasin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -249,123 +294,104 @@ public class HomePage extends JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(BC1Yasin)
-                .addGap(37, 37, 37))
+        javax.swing.GroupLayout ButtonAreaYasLayout = new javax.swing.GroupLayout(ButtonAreaYas);
+        ButtonAreaYas.setLayout(ButtonAreaYasLayout);
+        ButtonAreaYasLayout.setHorizontalGroup(
+            ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(VehTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MinHrYasin1))
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addComponent(VehicleTypeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BarTitleYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(YrChangeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(RoadTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PlusHrYasin2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addComponent(BC1Yasin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DirectYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107))
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)))
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(choice1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54))
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(BC1Yasin)
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-
-        jPanel10.setBackground(new java.awt.Color(71, 100, 240));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
-        );
-
-        jPanel11.setBackground(new java.awt.Color(51, 153, 255));
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel12.setBackground(new java.awt.Color(71, 100, 240));
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 144, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        ButtonAreaYasLayout.setVerticalGroup(
+            ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addComponent(BarTitleYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 12, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(YrChangeYas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(VehicleTypeLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DirectYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RoadTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(VehTypeYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MinHrYasin1)
+                            .addComponent(PlusHrYasin2)
+                            .addComponent(BC1Yasin))
+                        .addContainerGap())))
         );
 
-        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        YrChangeYas.getAccessibleContext().setAccessibleName("YrChangeYas");
 
         javax.swing.GroupLayout DashboardPanel_1Layout = new javax.swing.GroupLayout(DashboardPanel_1);
         DashboardPanel_1.setLayout(DashboardPanel_1Layout);
         DashboardPanel_1Layout.setHorizontalGroup(
             DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DashboardPanel_1Layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addContainerGap()
                 .addGroup(DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(DashboardPanel_1Layout.createSequentialGroup()
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(ButtonAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ChartAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DashboardPanel_1Layout.setVerticalGroup(
             DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(DashboardPanel_1Layout.createSequentialGroup()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addGroup(DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DashboardPanel_1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ChartAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ButtonAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         DashboardPanel_2.setBackground(new java.awt.Color(208, 239, 255));
@@ -487,7 +513,7 @@ public class HomePage extends JFrame {
                                 .addGap(105, 105, 105))
                             .addComponent(SlideBarDashboard2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(DescriptionLabelDashboard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ResetButtonDashboard2)
                 .addGap(31, 31, 31))
         );
@@ -553,10 +579,11 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_4.setPreferredSize(new java.awt.Dimension(836, 500));
 
-        /*JFreeChart D4GUIChart = createD4PieChart(D4PieChart());
+        JFreeChart D4GUIChart = createD4PieChart(D4PieChart());
         D4PanelMain.add(new ChartPanel(D4GUIChart),BorderLayout.CENTER);
-        D4PanelMain.setVisible(true);*/
-        D4PanelMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D4PanelMain.setVisible(true);
+        D4PanelMain.setBackground(new java.awt.Color(208, 239, 255));
+        D4PanelMain.setPreferredSize(new java.awt.Dimension(813, 370));
 
         javax.swing.GroupLayout D4PanelMainLayout = new javax.swing.GroupLayout(D4PanelMain);
         D4PanelMain.setLayout(D4PanelMainLayout);
@@ -566,25 +593,24 @@ public class HomePage extends JFrame {
         );
         D4PanelMainLayout.setVerticalGroup(
             D4PanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGap(0, 370, Short.MAX_VALUE)
         );
 
         D4PanelFilters.setBackground(new java.awt.Color(208, 239, 255));
         D4PanelFilters.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        D4PanelFilters.setOpaque(false);
+        D4PanelFilters.setPreferredSize(new java.awt.Dimension(802, 111));
 
         D4YearDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
-
-        D4YearLabel.setText("Year");
-
-        D4MajorButton.setText("Major");
-        D4MajorButton.addActionListener(new java.awt.event.ActionListener() {
+        D4YearDropdown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                D4MajorButtonActionPerformed(evt);
+                D4YearDropdownActionPerformed(evt);
             }
         });
 
-        D4MinorButton.setText("Minor");
+        D4YearLabel.setText("Year");
 
+        D4CarTaxiCheckbox.setSelected(true);
         D4CarTaxiCheckbox.setText("Cars and Taxis");
         D4CarTaxiCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -592,6 +618,7 @@ public class HomePage extends JFrame {
             }
         });
 
+        D4TwoWheelCheckbox.setSelected(true);
         D4TwoWheelCheckbox.setText("Two Wheeled Motor Vehicles");
         D4TwoWheelCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -599,6 +626,7 @@ public class HomePage extends JFrame {
             }
         });
 
+        D4PedalCheckbox.setSelected(true);
         D4PedalCheckbox.setText("Pedal Cycles");
         D4PedalCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -606,8 +634,15 @@ public class HomePage extends JFrame {
             }
         });
 
+        D4BusCoachCheckbox.setSelected(true);
         D4BusCoachCheckbox.setText("Buses and Coaches");
+        D4BusCoachCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4BusCoachCheckboxActionPerformed(evt);
+            }
+        });
 
+        D4HeavyVehicCheckbox.setSelected(true);
         D4HeavyVehicCheckbox.setText("Heavy Goods Vehicles");
         D4HeavyVehicCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -615,6 +650,7 @@ public class HomePage extends JFrame {
             }
         });
 
+        D4LargeGoodsCheckbox.setSelected(true);
         D4LargeGoodsCheckbox.setText("Large Goods Vehicles");
         D4LargeGoodsCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -622,24 +658,44 @@ public class HomePage extends JFrame {
             }
         });
 
+        D4ExecuteButton.setText("Go");
+        D4ExecuteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4ExecuteButtonActionPerformed(evt);
+            }
+        });
+
+        D4RoadChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Major", "Minor" }));
+        D4RoadChoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4RoadChoiceActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Road Type");
+
         javax.swing.GroupLayout D4PanelFiltersLayout = new javax.swing.GroupLayout(D4PanelFilters);
         D4PanelFilters.setLayout(D4PanelFiltersLayout);
         D4PanelFiltersLayout.setHorizontalGroup(
             D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(D4PanelFiltersLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(D4ExecuteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(D4RoadChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addComponent(D4MajorButton)
-                        .addGap(70, 70, 70)
-                        .addComponent(D4YearLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(D4CarTaxiCheckbox))
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel11)))
+                .addGap(16, 16, 16)
+                .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addComponent(D4MinorButton)
-                        .addGap(47, 47, 47)
-                        .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(23, 23, 23)
+                        .addComponent(D4YearLabel)))
+                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
+                .addComponent(D4CarTaxiCheckbox)
                 .addGap(18, 18, 18)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
@@ -653,16 +709,25 @@ public class HomePage extends JFrame {
                         .addComponent(D4HeavyVehicCheckbox)
                         .addGap(18, 18, 18)
                         .addComponent(D4LargeGoodsCheckbox)))
-                .addGap(53, 53, 53))
+                .addContainerGap())
         );
 
-        D4PanelFiltersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {D4MajorButton, D4MinorButton});
+        D4PanelFiltersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {D4RoadChoice, D4YearDropdown});
 
         D4PanelFiltersLayout.setVerticalGroup(
             D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(D4YearLabel)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(D4RoadChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7))
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
                         .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(D4CarTaxiCheckbox)
@@ -672,31 +737,33 @@ public class HomePage extends JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(D4HeavyVehicCheckbox)
-                            .addComponent(D4LargeGoodsCheckbox)))
-                    .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(D4MajorButton)
-                            .addComponent(D4YearLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(D4MinorButton)
-                            .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                            .addComponent(D4LargeGoodsCheckbox))))
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, D4PanelFiltersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(D4ExecuteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout DashboardPanel_4Layout = new javax.swing.GroupLayout(DashboardPanel_4);
         DashboardPanel_4.setLayout(DashboardPanel_4Layout);
         DashboardPanel_4Layout.setHorizontalGroup(
             DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(D4PanelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(D4PanelFilters, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(DashboardPanel_4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(D4PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+                    .addComponent(D4PanelFilters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE))
+                .addContainerGap())
         );
         DashboardPanel_4Layout.setVerticalGroup(
             DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DashboardPanel_4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(D4PanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(D4PanelFilters, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(D4PanelFilters, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         AdminPanel.setBackground(new java.awt.Color(208, 239, 255));
@@ -1742,11 +1809,19 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_adminTableMouseReleased
 
     private void BC1YasinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BC1YasinActionPerformed
-        //createBar();
+        //TrafficController c = new TrafficController();
+        //ResultSet rs = c.getYasinCon2();
+        //try {
+        //    System.out.println(rs.getInt("road_type"));
+        //} catch (SQLException ex) {
+        //    Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+        //}
+
+
     }//GEN-LAST:event_BC1YasinActionPerformed
 
     private void D4CarTaxiCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4CarTaxiCheckboxActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_D4CarTaxiCheckboxActionPerformed
 
     private void D4TwoWheelCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4TwoWheelCheckboxActionPerformed
@@ -1765,16 +1840,108 @@ public class HomePage extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_D4LargeGoodsCheckboxActionPerformed
 
-    private void D4MajorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4MajorButtonActionPerformed
+    private void MinHrYasin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinHrYasin1ActionPerformed
+        TrafficController d = new TrafficController();
+        ResultSet rs = d.getYasinCon3();
+        try {
+            System.out.println(rs.getString("Hello"));
+        } catch (SQLException ex) {
+            Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_MinHrYasin1ActionPerformed
+
+    private void D4ExecuteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4ExecuteButtonActionPerformed
+          String D4RoadDropdown = D4RoadChoice.getSelectedItem().toString();
+          System.out.println(D4RoadDropdown);
+          
+          String D4YearChoice = D4YearDropdown.getSelectedItem().toString();
+          System.out.println(D4YearChoice);
+          
+          String CarTaxi = "";
+          String BusCoach = "";
+          String TwoWheelers = "";
+          String Pedals = "";
+          String HGVS = "";
+          String LGVS = "";
+          if (D4CarTaxiCheckbox.isSelected()) {
+              CarTaxi = D4CarTaxiCheckbox.getText();
+          }
+          if (D4BusCoachCheckbox.isSelected()) {
+              BusCoach = D4BusCoachCheckbox.getText();
+          }
+          
+          if (D4TwoWheelCheckbox.isSelected()) {
+              TwoWheelers = D4TwoWheelCheckbox.getText();
+          }
+          
+          if (D4PedalCheckbox.isSelected()) {
+              Pedals = D4PedalCheckbox.getText();
+          }
+          
+          if (D4HeavyVehicCheckbox.isSelected()) {
+              HGVS = D4HeavyVehicCheckbox.getText();
+          }
+          
+          if (D4LargeGoodsCheckbox.isSelected()) {
+              LGVS = D4LargeGoodsCheckbox.getText();
+          }
+          
+          
+          Map<String, Integer> D4DataMap = null;
+        try {
+         D4DataMap = getVehicleCountD4(D4RoadDropdown, D4YearChoice, null);
+            
+        } catch (SQLException ex) {
+            System.out.println("SQL Error found");
+        }
+        
+        DefaultPieDataset D4Dataset = new DefaultPieDataset();
+        if (CarTaxi != null && !CarTaxi.isEmpty()) {
+            D4Dataset.setValue("Cars and Taxis", D4DataMap.get("Cars and Taxis"));
+        }
+        
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JFreeChart D4GUIChart = createD4PieChart(D4Dataset);
+        D4PanelMain.add(D4Panel);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
+        D4PanelMain.setVisible(true);
+        
+        
+        /*D4Panel.setChart(D4GUIChart);
+        D4Panel.repaint();
+        D4PanelMain.add(D4Panel);
+        D4Panel.setVisible(true);
+        System.out.println(CarTaxi);*/
+                  
+    }//GEN-LAST:event_D4ExecuteButtonActionPerformed
+
+    private void PlusHrYasin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlusHrYasin2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_D4MajorButtonActionPerformed
+    }//GEN-LAST:event_PlusHrYasin2ActionPerformed
+
+    private void D4RoadChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4RoadChoiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4RoadChoiceActionPerformed
+
+    private void D4YearDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4YearDropdownActionPerformed
+        
+    }//GEN-LAST:event_D4YearDropdownActionPerformed
+
+    private void D4BusCoachCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4BusCoachCheckboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_D4BusCoachCheckboxActionPerformed
+
 
     public void createBar() {
         //TrafficController.getYas();
     }
+
     public void repaintDashboard2() {
         paintDescriptionLabelDashboard2();
-        
+
         Dashboard2Container.removeAll();
         Dashboard2Container.repaint();
         Dashboard2Container.revalidate();
@@ -1793,7 +1960,7 @@ public class HomePage extends JFrame {
             DescriptionLabelDashboard2.setText("Highest number of vehicles at " + hour_dashboard2 + " pm in year " + year_dashboard2 + " on road " + road_dashboard2);
         }
         DescriptionLabelDashboard2.repaint();
-        
+
     }
 
     public void paintLableYearDashboard2() {
@@ -2074,15 +2241,18 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel AdminPanel;
     private javax.swing.JButton BC1Yasin;
     private javax.swing.JButton BackButtonDashboard2;
+    private java.awt.Label BarTitleYas;
+    private javax.swing.JPanel ButtonAreaYas;
+    private javax.swing.JPanel ChartAreaYas;
     private javax.swing.JCheckBox D4BusCoachCheckbox;
     private javax.swing.JCheckBox D4CarTaxiCheckbox;
+    private javax.swing.JButton D4ExecuteButton;
     private javax.swing.JCheckBox D4HeavyVehicCheckbox;
     private javax.swing.JCheckBox D4LargeGoodsCheckbox;
-    private javax.swing.JButton D4MajorButton;
-    private javax.swing.JButton D4MinorButton;
     private javax.swing.JPanel D4PanelFilters;
     private javax.swing.JPanel D4PanelMain;
     private javax.swing.JCheckBox D4PedalCheckbox;
+    private javax.swing.JComboBox<String> D4RoadChoice;
     private javax.swing.JCheckBox D4TwoWheelCheckbox;
     private javax.swing.JComboBox<String> D4YearDropdown;
     private javax.swing.JLabel D4YearLabel;
@@ -2096,10 +2266,17 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
     private javax.swing.JLabel DescriptionLabelDashboard2;
+    private java.awt.Choice DirectYas;
+    private javax.swing.JButton MinHrYasin1;
     private javax.swing.JButton NextButtonDashboard2;
+    private javax.swing.JButton PlusHrYasin2;
     private javax.swing.JButton ResetButtonDashboard2;
     private java.awt.Choice RoadChoiceDashboard2;
+    private java.awt.Choice RoadTypeYas;
     private javax.swing.JSlider SlideBarDashboard2;
+    private java.awt.Choice VehTypeYas;
+    private java.awt.Label VehicleTypeLbl;
+    private java.awt.Label YrChangeYas;
     private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
     private javax.swing.JLabel adminEmailLabel;
     private javax.swing.JPanel adminLeftPanel;
@@ -2113,6 +2290,10 @@ public class HomePage extends JFrame {
     private javax.swing.JLabel adminStatusLabel;
     private javax.swing.JTable adminTable;
     private javax.swing.JLabel adminUsernameLabel;
+    private java.awt.Choice choice1;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton confirmButton;
     private javax.swing.JButton deleteUserButton;
@@ -2120,6 +2301,7 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel filtersPanelDashboard2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2129,25 +2311,22 @@ public class HomePage extends JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JSlider jSlider1;
+    private java.awt.Label label1;
+    private java.awt.Label label2;
+    private java.awt.Label label3;
     private java.awt.Label labelHourDashboard2;
     private javax.swing.JLabel lableYearDashboard2;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton viewAllLogsButton;
     private javax.swing.JButton viewAllUsersButton;
     // End of variables declaration//GEN-END:variables
-
+    private ChartPanel D4Panel = new ChartPanel(null);
+    
     public static class Dashboard2Chart extends JPanel {
 
         private static Map<Color, Integer> bars = new LinkedHashMap<>();
@@ -2322,26 +2501,103 @@ public class HomePage extends JFrame {
         }
 
     }
-    
+
     //Pie Chart Creation (Isa)
     public PieDataset D4PieChart() {
         DefaultPieDataset D4Dataset = new DefaultPieDataset();
-        D4Dataset.setValue("Cars", 20);
-        D4Dataset.setValue("Boats", 30);
-        D4Dataset.setValue("Motorbikes", 6);
-        
+        Map<String, Integer> D4Hash = null; 
+        try {
+            D4Hash = getVehicleCountD4("2000", "Major", null );
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        for (Map.Entry<String, Integer> pair: D4Hash.entrySet()) {
+            D4Dataset.setValue(pair.getKey(), pair.getValue());
+        }
         return D4Dataset;
-}
-    
+    }
+
     public JFreeChart createD4PieChart(PieDataset D4PieDataset) {
         JFreeChart D4Chart = ChartFactory.createPieChart(
                 "Vehicles on major or minor roads per year",
                 D4PieDataset,
                 true,
                 true,
-                false 
+                false
         );
+        D4Chart.setBackgroundPaint(new Color(208,239,255));
+        D4Chart.getTitle().setPaint(Color.black);
+        D4Chart.getPlot().setBackgroundPaint(new Color(208,239,255));
+        D4Chart.getLegend().setBackgroundPaint(new Color(208,239,255));
+        
+        
+        D4Panel.setChart(D4Chart);
+        D4Panel.setVisible(true);
+        D4Panel.setSize(825, 370);
+        D4Panel.setAlignmentX(CENTER_ALIGNMENT);
+        D4Panel.setBackground(new Color(208,239,255));
+        D4Panel.repaint();
+        D4PanelMain.remove(D4Panel);
+        D4PanelMain.revalidate();
+        D4PanelMain.add(D4Panel);
         return D4Chart;
-    } 
-
+                
+    }
+    
+    
+    public Map<String, Integer> getVehicleCountD4(String Year, String RoadType, ArrayList<String> VehicleType) throws SQLException {
+        Connection D4Connection = DB.getConnection();
+        Map<String, Integer> D4Map = new HashMap<String, Integer>();
+        String D4MajorRoadQuery = "SELECT SUM(pedal_cycles) AS PedalCycles, "
+                + " SUM(two_wheeled_motor_vehicles) AS TwoWheel, "
+                + " SUM(cars_and_taxis) AS CarsTaxis, "
+                + " SUM(buses_and_coaches) AS BusesCoaches, "
+                + " SUM (lgvs) AS LGVS, "
+                + " SUM(all_hgvs) AS HGVS "
+                + " FROM Traffic_Volume AS TV "
+                + " JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id "
+                + " JOIN Road AS Rd ON Rd.road_name = CP.road_name WHERE Rd.road_type =  '" + RoadType + "' "
+                + " AND CP.the_year = '" + Year + "' ";
+        
+        
+        ResultSet D4RS = null;
+        Statement D4Statement = null;
+        try {
+                D4Statement = D4Connection.createStatement();
+                D4RS = D4Statement.executeQuery(D4MajorRoadQuery);
+                while (D4RS.next()) {
+                    D4Map.put("Pedal Cycles", D4RS.getInt("PedalCycles"));
+                    D4Map.put("Two Wheel Motor Vehicles", D4RS.getInt("TwoWheel"));
+                    D4Map.put("Cars and Taxis", D4RS.getInt("CarsTaxis"));
+                    D4Map.put("Buses and Coaches", D4RS.getInt("BusesCoaches"));
+                    D4Map.put("Large Goods Vehicles", D4RS.getInt("LGVS"));
+                    D4Map.put("Heavy Goods Vehicles", D4RS.getInt("HGVS"));
+                }
+            } catch (Exception D4E) {
+                System.out.println("Error reading vehicle data." + D4E.getMessage());
+            } finally {
+                D4Statement.close();
+            }
+        return D4Map;
+}
+    public CategoryDataset createDashboard1DataSet ( ){
+        DefaultCategoryDataset db1Dataset = new DefaultCategoryDataset();
+        db1Dataset.addValue(10, "A199", "2005"); //Count, Road Name, Year
+        db1Dataset.addValue(20, "C", "2010"); //Count, Road Name, Year
+        db1Dataset.addValue(30, "A1", "2015"); //Count, Road Name, Year
+        
+        return db1Dataset;
+    }
+    
+    
+    
+    public JPanel createDB1BarChart(){ 
+        CategoryDataset db1Dataset = createDashboard1DataSet();
+        JFreeChart DB1chart = ChartFactory.createBarChart("A199", "Road Name", "Amount of Vehicles", db1Dataset, PlotOrientation.VERTICAL,
+                true, true, false);
+        ChartPanel dashboard1ChartPanel = new ChartPanel(DB1chart);
+        dashboard1ChartPanel.setSize(813,370);
+        dashboard1ChartPanel.setVisible(true);
+        return dashboard1ChartPanel;
+    }
 }
