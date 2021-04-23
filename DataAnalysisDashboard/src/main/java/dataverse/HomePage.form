@@ -520,7 +520,7 @@
                       <Component id="Dashboard2Container" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="filtersPanelDashboard2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -779,8 +779,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="D4PanelMain" alignment="1" pref="816" max="32767" attributes="0"/>
-                          <Component id="D4PanelFilters" alignment="1" pref="816" max="32767" attributes="0"/>
+                          <Component id="D4PanelMain" alignment="1" pref="824" max="32767" attributes="0"/>
+                          <Component id="D4PanelFilters" alignment="1" pref="824" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -792,7 +792,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="D4PanelMain" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="D4PanelFilters" pref="102" max="32767" attributes="0"/>
+                      <Component id="D4PanelFilters" pref="112" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -888,7 +888,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <EmptySpace pref="32" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1120,7 +1120,7 @@
                               <Component id="deleteUserButton" min="-2" pref="43" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

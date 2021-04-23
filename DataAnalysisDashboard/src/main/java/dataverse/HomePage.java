@@ -693,11 +693,8 @@ public class HomePage extends JFrame {
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(D4YearLabel)))
-<<<<<<< HEAD
                 .addGap(19, 19, 19)
-=======
                 .addGap(18, 18, 18)
->>>>>>> IQDashboard4
                 .addComponent(D4CarTaxiCheckbox)
                 .addGap(18, 18, 18)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1921,11 +1918,10 @@ public class HomePage extends JFrame {
                   
     }//GEN-LAST:event_D4ExecuteButtonActionPerformed
 
-<<<<<<< HEAD
     private void PlusHrYasin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlusHrYasin2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PlusHrYasin2ActionPerformed
-=======
+
     private void D4RoadChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4RoadChoiceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_D4RoadChoiceActionPerformed
@@ -1937,7 +1933,7 @@ public class HomePage extends JFrame {
     private void D4BusCoachCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4BusCoachCheckboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_D4BusCoachCheckboxActionPerformed
->>>>>>> IQDashboard4
+
 
     public void createBar() {
         //TrafficController.getYas();
@@ -2294,13 +2290,10 @@ public class HomePage extends JFrame {
     private javax.swing.JLabel adminStatusLabel;
     private javax.swing.JTable adminTable;
     private javax.swing.JLabel adminUsernameLabel;
-<<<<<<< HEAD
     private java.awt.Choice choice1;
-=======
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
->>>>>>> IQDashboard4
     private javax.swing.JButton clearButton;
     private javax.swing.JButton confirmButton;
     private javax.swing.JButton deleteUserButton;
