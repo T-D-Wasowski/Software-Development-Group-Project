@@ -1770,7 +1770,7 @@ public class HomePage extends JFrame {
              + "JOIN Road AS Rd ON Rd.road_name = CP.road_name WHERE Rd.road_type =  '" + CTRoadType + "' ";
         
          DefaultPieDataset D4Dataset = new DefaultPieDataset();
-         D4Dataset.addChangeListener((DatasetChangeListener) D4CarTaxiCheckbox);
+         
     }//GEN-LAST:event_D4CarTaxiCheckboxActionPerformed
 
     private void D4TwoWheelCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4TwoWheelCheckboxActionPerformed
@@ -1790,7 +1790,8 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_D4LargeGoodsCheckboxActionPerformed
 
     private void D4ExecuteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4ExecuteButtonActionPerformed
-          String D4RoadDropdown = D4RoadChoice.getSelectedItem().toString();
+          
+        String D4RoadDropdown = D4RoadChoice.getSelectedItem().toString();
           System.out.println(D4RoadDropdown);
           
           String D4YearChoice = D4YearDropdown.getSelectedItem().toString();
@@ -2513,6 +2514,19 @@ public class HomePage extends JFrame {
         return db1Dataset;
     }
     
+    
+    private void refreshD4Chart() {
+        DefaultPieDataset D4Dataset = new DefaultPieDataset();
+        D4Panel.removeAll();
+        D4Panel.revalidate();
+        JFreeChart d4Chart = createD4PieChart(D4Dataset);
+        d4Chart.removeLegend();
+        ChartPanel newD4Panel = new ChartPanel(d4Chart);
+        D4Panel.setLayout(new BorderLayout());
+        D4Panel.add(newD4Panel);
+        D4Panel.repaint();
+        
+    }
     
     
     public JPanel createDB1BarChart(){ 
