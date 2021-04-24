@@ -183,14 +183,15 @@ public class TrafficController {
         return null;
     }
     
-    /*public ResultSet getYasDBDataValues(int Year, String RoadName, String Direction, int Hours) {
+    public ResultSet getDefaultYas(int road, int traffic) {
         Connection connection = DB.getConnection();
-        String sql = "select sum(TV.all_motor_vehicles) AS Number_Of_Vehs "
-                + "From Traffic_Volume AS TV "
-                + "JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id "
-                + "JOIN Road AS RD ON RD.road_name = CP.road_name WHERE CP.the_year = 2004 AND RD.road_name = 'C'; ";
-                
+        String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs" + traffic + "\n" +
+                "From Traffic_Volume AS TV\n" +
+                "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
+                "JOIN Road AS RD ON RD.road_name = CPC.road_name" + road + "\n" +
+                "GROUP BY CPC.road_name";
                 //+ "'" + volume + "'" + year + "'"; 
+        
         ResultSet result = null;
         try {
             Statement statement = connection.createStatement();
@@ -206,7 +207,43 @@ public class TrafficController {
 
         }
         return null;
+    }
+    
+    /*public ResultSet getConTestY(){
+        Connection DefYas = DB.getConnection();
+        Statement StYas = null;
+        JDBCCategoryDataset defDataYas = null;
+        
+        try {
+           
+            String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs \n" +
+                "From Traffic_Volume AS TV\n" +
+                "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
+                "JOIN Road AS RD ON RD.road_name = CPC.road_name \n" +
+                "GROUP BY CPC.road_name";
+            
+            defDataYas = new JDBCCategoryDataset(DefYas, sql);
+            
+            System.out.println("Dataset Columns and Rows : " + defDataYas.getColumnCount() + " " + defDataYas.getRowCount());
+            
+        
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());        
+        } finally {
+            if (StYas != null){
+                try{
+                    StYas.close();
+                } catch (SQLException e) {
+                    System.out.println("SQLException: " + e.getMessage());
+                }
+            }
+            if (DefYas != null) {
+                
+            }
+        }
+        return null;    
     }*/
+    
 
     public static class DB {
 
