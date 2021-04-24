@@ -2,6 +2,7 @@ package dataverse;
 
 import dataverse.TrafficController.DB;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
@@ -73,19 +74,23 @@ public class HomePage extends JFrame {
         jPanel2 = new javax.swing.JPanel();
         DashboardPanel_1 = new javax.swing.JPanel();
         ChartAreaYas = new javax.swing.JPanel();
-        ButtonAreaYas = new javax.swing.JPanel();
-        ChangeDirectionDB1 = new java.awt.Label();
-        AllVehsDB1 = new javax.swing.JButton();
         SouthChoice = new java.awt.Choice();
         WestChoice = new java.awt.Choice();
         NorthChoice = new java.awt.Choice();
         EastChoice = new java.awt.Choice();
+        ButtonAreaYas = new javax.swing.JPanel();
+        ChangeDirectionDB1 = new java.awt.Label();
+        AllVehsDB1 = new javax.swing.JButton();
         SouthTextDB1 = new java.awt.Label();
         NorthTextDB1 = new java.awt.Label();
         WestTextDB1 = new java.awt.Label();
         EastTextDB1 = new java.awt.Label();
         RYYas = new java.awt.Label();
         BarTitleYas1 = new java.awt.Label();
+        SouthComboDB1 = new javax.swing.JComboBox<>();
+        WestComboDB1 = new javax.swing.JComboBox<>();
+        NorthComboDB1 = new javax.swing.JComboBox<>();
+        EastComboDB1 = new javax.swing.JComboBox<>();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
         filtersPanelDashboard2 = new javax.swing.JPanel();
@@ -239,15 +244,34 @@ public class HomePage extends JFrame {
         //ChartAreaYas.setVisible(true);
         //drawDefaultYas();
 
+        SouthChoice.add("Year");
+        SouthChoice.add("2000");
+
         javax.swing.GroupLayout ChartAreaYasLayout = new javax.swing.GroupLayout(ChartAreaYas);
         ChartAreaYas.setLayout(ChartAreaYasLayout);
         ChartAreaYasLayout.setHorizontalGroup(
             ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 811, Short.MAX_VALUE)
+            .addGroup(ChartAreaYasLayout.createSequentialGroup()
+                .addGap(338, 338, 338)
+                .addComponent(SouthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(WestChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(NorthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(EastChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(233, Short.MAX_VALUE))
         );
         ChartAreaYasLayout.setVerticalGroup(
             ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 368, Short.MAX_VALUE)
+            .addGroup(ChartAreaYasLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addGroup(ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EastChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NorthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(WestChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SouthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         ButtonAreaYas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -281,6 +305,19 @@ public class HomePage extends JFrame {
         BarTitleYas1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas1.setText("Total Vehicles Per Road");
 
+        SouthComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+        SouthComboDB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouthComboDB1ActionPerformed(evt);
+            }
+        });
+
+        WestComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+
+        NorthComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+
+        EastComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+
         javax.swing.GroupLayout ButtonAreaYasLayout = new javax.swing.GroupLayout(ButtonAreaYas);
         ButtonAreaYas.setLayout(ButtonAreaYasLayout);
         ButtonAreaYasLayout.setHorizontalGroup(
@@ -288,29 +325,34 @@ public class HomePage extends JFrame {
             .addGroup(ButtonAreaYasLayout.createSequentialGroup()
                 .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SouthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SouthTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(WestChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(WestTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(57, 57, 57)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NorthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NorthTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
+                        .addGap(63, 63, 63)
+                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(SouthTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SouthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                                .addComponent(EastChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)
-                                .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(EastTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(46, 46, 46)
+                                .addComponent(WestTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(NorthTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(WestComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(NorthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(EastTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(EastComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                                .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(ButtonAreaYasLayout.createSequentialGroup()
                         .addGap(177, 177, 177)
                         .addComponent(ChangeDirectionDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addGap(56, 56, 56)
                 .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AllVehsDB1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
@@ -326,10 +368,9 @@ public class HomePage extends JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(RYYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AllVehsDB1))
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AllVehsDB1)
+                            .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ButtonAreaYasLayout.createSequentialGroup()
                         .addComponent(ChangeDirectionDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -340,11 +381,11 @@ public class HomePage extends JFrame {
                             .addComponent(EastTextDB1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(NorthTextDB1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(WestChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SouthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NorthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EastChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SouthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(WestComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NorthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EastComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(39, 39, 39))
         );
 
@@ -2022,7 +2063,11 @@ public class HomePage extends JFrame {
         draw2KNorthYas();
     }//GEN-LAST:event_AllVehsDB1MouseClicked
 
+    private void SouthComboDB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouthComboDB1ActionPerformed
+        
+    }//GEN-LAST:event_SouthComboDB1ActionPerformed
 
+    
     public void createBar() {
         //TrafficController.getYas();
     }
@@ -2356,17 +2401,21 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_4;
     private javax.swing.JLabel DescriptionLabelDashboard2;
     private java.awt.Choice EastChoice;
+    private javax.swing.JComboBox<String> EastComboDB1;
     private java.awt.Label EastTextDB1;
     private javax.swing.JButton NextButtonDashboard2;
     private java.awt.Choice NorthChoice;
+    private javax.swing.JComboBox<String> NorthComboDB1;
     private java.awt.Label NorthTextDB1;
     private java.awt.Label RYYas;
     private javax.swing.JButton ResetButtonDashboard2;
     private java.awt.Choice RoadChoiceDashboard2;
     private javax.swing.JSlider SlideBarDashboard2;
     private java.awt.Choice SouthChoice;
+    private javax.swing.JComboBox<String> SouthComboDB1;
     private java.awt.Label SouthTextDB1;
     private java.awt.Choice WestChoice;
+    private javax.swing.JComboBox<String> WestComboDB1;
     private java.awt.Label WestTextDB1;
     private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
     private javax.swing.JLabel adminEmailLabel;
@@ -2698,4 +2747,17 @@ public class HomePage extends JFrame {
               //  + "JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id"
               //  + "JOIN Road AS Rd ON Rd.road_name = CP.road_name WHERE Rd.road_type =  '" + CTRoadType + "' ";
     }
+    
+    /*public class SouthComboDB1 extends DashboardPanel_1 implements ActionListener {
+        String[] SYear = { "Year", "2000", "2001", "2002", "2003", "2004", "2005",
+            "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", 
+            "2015", "2016", "2017", "2018", "2019"
+        };
+
+    //Create the combo box, select item at index 4.
+    //Indices start at 0, so 4 specifies the pig.
+    JComboBox SoutComboDB1 = new JComboBox(SYear);
+    SouthComboDB1.setSelectedIndex(4);
+    SouthComboDB1.addActionListener(this);
+    }*/
 }
