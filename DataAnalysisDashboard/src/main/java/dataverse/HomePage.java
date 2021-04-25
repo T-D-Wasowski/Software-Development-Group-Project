@@ -2125,7 +2125,7 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setVisible(true);*/
         
         
-        JFreeChart DB1chart = ChartFactory.createLineChart("Total Number of Vehicles Per Road", 
+        JFreeChart DB1chart = ChartFactory.createBarChart("Total Number of Vehicles Per Road", 
                 "Road Name", "Total Vehicle Amount", defDataYas, PlotOrientation.VERTICAL, false, true, false);
         DB1chart.setBackgroundPaint(Color.white);
         DB1chart.getTitle().setPaint(Color.blue);
