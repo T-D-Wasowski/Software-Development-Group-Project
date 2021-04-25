@@ -311,7 +311,7 @@ public class HomePage extends JFrame {
 
         jPanel2.setBackground(new java.awt.Color(208, 239, 255));
 
-        DashboardPanel_1.setBackground(new java.awt.Color(235, 64, 52));
+        DashboardPanel_1.setBackground(new java.awt.Color(208, 239, 255));
         DashboardPanel_1.setMaximumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_1.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_1.setPreferredSize(new java.awt.Dimension(836, 500));
@@ -319,6 +319,7 @@ public class HomePage extends JFrame {
         JFreeChart DB1Chart = drawDefaultYas();
         ChartAreaYas.add(new ChartPanel(DB1Chart),BorderLayout.CENTER);
         ChartAreaYas.setVisible(true);
+        ChartAreaYas.setBackground(new java.awt.Color(208, 239, 255));
         ChartAreaYas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ChartAreaYas.setPreferredSize(new java.awt.Dimension(813, 370));
         //ChartAreaYas.add(createDB1BarChart());
@@ -339,28 +340,179 @@ public class HomePage extends JFrame {
             .addGap(0, 368, Short.MAX_VALUE)
         );
 
+        South2000sButtons.setBackground(new java.awt.Color(208, 239, 255));
         South2000sButtons.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         South2000sButtons.setPreferredSize(new java.awt.Dimension(816, 111));
 
+        SouZZero.setBackground(new java.awt.Color(62, 143, 185));
+        SouZZero.setForeground(new java.awt.Color(255, 255, 255));
         SouZZero.setText("2000");
+        SouZZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZZeroMouseExited(evt);
+            }
+        });
+        SouZZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZZeroActionPerformed(evt);
+            }
+        });
 
+        SouZOne.setBackground(new java.awt.Color(62, 143, 185));
+        SouZOne.setForeground(new java.awt.Color(255, 255, 255));
         SouZOne.setText("2001");
+        SouZOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZOneMouseExited(evt);
+            }
+        });
+        SouZOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZOneActionPerformed(evt);
+            }
+        });
 
+        SouZTwo.setBackground(new java.awt.Color(62, 143, 185));
+        SouZTwo.setForeground(new java.awt.Color(255, 255, 255));
         SouZTwo.setText("2002");
+        SouZTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZTwoMouseExited(evt);
+            }
+        });
+        SouZTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZTwoActionPerformed(evt);
+            }
+        });
 
+        SouZThree.setBackground(new java.awt.Color(62, 143, 185));
+        SouZThree.setForeground(new java.awt.Color(255, 255, 255));
         SouZThree.setText("2003");
+        SouZThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZThreeMouseExited(evt);
+            }
+        });
+        SouZThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZThreeActionPerformed(evt);
+            }
+        });
 
+        SouZFour.setBackground(new java.awt.Color(62, 143, 185));
+        SouZFour.setForeground(new java.awt.Color(255, 255, 255));
         SouZFour.setText("2004");
+        SouZFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZFourMouseExited(evt);
+            }
+        });
+        SouZFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZFourActionPerformed(evt);
+            }
+        });
 
+        SouZSix.setBackground(new java.awt.Color(62, 143, 185));
+        SouZSix.setForeground(new java.awt.Color(255, 255, 255));
         SouZSix.setText("2006");
+        SouZSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZSixMouseExited(evt);
+            }
+        });
+        SouZSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZSixActionPerformed(evt);
+            }
+        });
 
+        SouZFive.setBackground(new java.awt.Color(62, 143, 185));
+        SouZFive.setForeground(new java.awt.Color(255, 255, 255));
         SouZFive.setText("2005");
+        SouZFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZFiveMouseExited(evt);
+            }
+        });
+        SouZFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZFiveActionPerformed(evt);
+            }
+        });
 
+        SouZSeven.setBackground(new java.awt.Color(62, 143, 185));
+        SouZSeven.setForeground(new java.awt.Color(255, 255, 255));
         SouZSeven.setText("2007");
+        SouZSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZSevenMouseExited(evt);
+            }
+        });
+        SouZSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZSevenActionPerformed(evt);
+            }
+        });
 
+        SouZEight.setBackground(new java.awt.Color(62, 143, 185));
+        SouZEight.setForeground(new java.awt.Color(255, 255, 255));
         SouZEight.setText("2008");
+        SouZEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZEightMouseExited(evt);
+            }
+        });
+        SouZEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZEightActionPerformed(evt);
+            }
+        });
 
+        SouZNine.setBackground(new java.awt.Color(62, 143, 185));
+        SouZNine.setForeground(new java.awt.Color(255, 255, 255));
         SouZNine.setText("2009");
+        SouZNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouZNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouZNineMouseExited(evt);
+            }
+        });
+        SouZNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouZNineActionPerformed(evt);
+            }
+        });
 
         BarTitleYas1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas1.setText("Total Vehicles Per Road Going South In The 2000s");
@@ -416,28 +568,180 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("South 2000s", South2000sButtons);
 
+        South2010sButtons.setBackground(new java.awt.Color(208, 239, 255));
+
         BarTitleYas2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas2.setText("Total Vehicles Per Road Going South In The 2010s");
 
+        SouTZero.setBackground(new java.awt.Color(62, 143, 185));
+        SouTZero.setForeground(new java.awt.Color(255, 255, 255));
         SouTZero.setText("2010");
+        SouTZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTZeroMouseExited(evt);
+            }
+        });
+        SouTZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTZeroActionPerformed(evt);
+            }
+        });
 
+        SouTOne.setBackground(new java.awt.Color(62, 143, 185));
+        SouTOne.setForeground(new java.awt.Color(255, 255, 255));
         SouTOne.setText("2011");
+        SouTOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTOneMouseExited(evt);
+            }
+        });
+        SouTOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTOneActionPerformed(evt);
+            }
+        });
 
+        SouTTwo.setBackground(new java.awt.Color(62, 143, 185));
+        SouTTwo.setForeground(new java.awt.Color(255, 255, 255));
         SouTTwo.setText("2012");
+        SouTTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTTwoMouseExited(evt);
+            }
+        });
+        SouTTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTTwoActionPerformed(evt);
+            }
+        });
 
+        SouTThree.setBackground(new java.awt.Color(62, 143, 185));
+        SouTThree.setForeground(new java.awt.Color(255, 255, 255));
         SouTThree.setText("2013");
+        SouTThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTThreeMouseExited(evt);
+            }
+        });
+        SouTThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTThreeActionPerformed(evt);
+            }
+        });
 
+        SouTFour.setBackground(new java.awt.Color(62, 143, 185));
+        SouTFour.setForeground(new java.awt.Color(255, 255, 255));
         SouTFour.setText("2014");
+        SouTFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTFourMouseExited(evt);
+            }
+        });
+        SouTFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTFourActionPerformed(evt);
+            }
+        });
 
+        SouTFive.setBackground(new java.awt.Color(62, 143, 185));
+        SouTFive.setForeground(new java.awt.Color(255, 255, 255));
         SouTFive.setText("2015");
+        SouTFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTFiveMouseExited(evt);
+            }
+        });
+        SouTFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTFiveActionPerformed(evt);
+            }
+        });
 
+        SouTSix.setBackground(new java.awt.Color(62, 143, 185));
+        SouTSix.setForeground(new java.awt.Color(255, 255, 255));
         SouTSix.setText("2016");
+        SouTSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTSixMouseExited(evt);
+            }
+        });
+        SouTSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTSixActionPerformed(evt);
+            }
+        });
 
+        SouTSeven.setBackground(new java.awt.Color(62, 143, 185));
+        SouTSeven.setForeground(new java.awt.Color(255, 255, 255));
         SouTSeven.setText("2017");
+        SouTSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTSevenMouseExited(evt);
+            }
+        });
+        SouTSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTSevenActionPerformed(evt);
+            }
+        });
 
+        SouTEight.setBackground(new java.awt.Color(62, 143, 185));
+        SouTEight.setForeground(new java.awt.Color(255, 255, 255));
         SouTEight.setText("2018");
+        SouTEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTEightMouseExited(evt);
+            }
+        });
+        SouTEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTEightActionPerformed(evt);
+            }
+        });
 
+        SouTNine.setBackground(new java.awt.Color(62, 143, 185));
+        SouTNine.setForeground(new java.awt.Color(255, 255, 255));
         SouTNine.setText("2019");
+        SouTNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SouTNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SouTNineMouseExited(evt);
+            }
+        });
+        SouTNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouTNineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout South2010sButtonsLayout = new javax.swing.GroupLayout(South2010sButtons);
         South2010sButtons.setLayout(South2010sButtonsLayout);
@@ -492,28 +796,180 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("South 2010s", South2010sButtons);
 
+        West2000sButtons.setBackground(new java.awt.Color(208, 239, 255));
+
         BarTitleYas3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas3.setText("Total Vehicles Per Road Going West In The 2000s");
 
+        WesZZero.setBackground(new java.awt.Color(62, 143, 185));
+        WesZZero.setForeground(new java.awt.Color(255, 255, 255));
         WesZZero.setText("2000");
+        WesZZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZZeroMouseExited(evt);
+            }
+        });
+        WesZZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZZeroActionPerformed(evt);
+            }
+        });
 
+        WesZOne.setBackground(new java.awt.Color(62, 143, 185));
+        WesZOne.setForeground(new java.awt.Color(255, 255, 255));
         WesZOne.setText("2001");
+        WesZOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZOneMouseExited(evt);
+            }
+        });
+        WesZOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZOneActionPerformed(evt);
+            }
+        });
 
+        WesZTwo.setBackground(new java.awt.Color(62, 143, 185));
+        WesZTwo.setForeground(new java.awt.Color(255, 255, 255));
         WesZTwo.setText("2002");
+        WesZTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZTwoMouseExited(evt);
+            }
+        });
+        WesZTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZTwoActionPerformed(evt);
+            }
+        });
 
+        WesZThree.setBackground(new java.awt.Color(62, 143, 185));
+        WesZThree.setForeground(new java.awt.Color(255, 255, 255));
         WesZThree.setText("2003");
+        WesZThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZThreeMouseExited(evt);
+            }
+        });
+        WesZThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZThreeActionPerformed(evt);
+            }
+        });
 
+        WesZFour.setBackground(new java.awt.Color(62, 143, 185));
+        WesZFour.setForeground(new java.awt.Color(255, 255, 255));
         WesZFour.setText("2004");
+        WesZFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZFourMouseExited(evt);
+            }
+        });
+        WesZFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZFourActionPerformed(evt);
+            }
+        });
 
+        WesZFive.setBackground(new java.awt.Color(62, 143, 185));
+        WesZFive.setForeground(new java.awt.Color(255, 255, 255));
         WesZFive.setText("2005");
+        WesZFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZFiveMouseExited(evt);
+            }
+        });
+        WesZFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZFiveActionPerformed(evt);
+            }
+        });
 
+        WesZSix.setBackground(new java.awt.Color(62, 143, 185));
+        WesZSix.setForeground(new java.awt.Color(255, 255, 255));
         WesZSix.setText("2006");
+        WesZSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZSixMouseExited(evt);
+            }
+        });
+        WesZSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZSixActionPerformed(evt);
+            }
+        });
 
+        WesZSeven.setBackground(new java.awt.Color(62, 143, 185));
+        WesZSeven.setForeground(new java.awt.Color(255, 255, 255));
         WesZSeven.setText("2007");
+        WesZSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZSevenMouseExited(evt);
+            }
+        });
+        WesZSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZSevenActionPerformed(evt);
+            }
+        });
 
+        WesZEight.setBackground(new java.awt.Color(62, 143, 185));
+        WesZEight.setForeground(new java.awt.Color(255, 255, 255));
         WesZEight.setText("2008");
+        WesZEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZEightMouseExited(evt);
+            }
+        });
+        WesZEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZEightActionPerformed(evt);
+            }
+        });
 
+        WesZNine.setBackground(new java.awt.Color(62, 143, 185));
+        WesZNine.setForeground(new java.awt.Color(255, 255, 255));
         WesZNine.setText("2009");
+        WesZNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesZNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesZNineMouseExited(evt);
+            }
+        });
+        WesZNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesZNineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout West2000sButtonsLayout = new javax.swing.GroupLayout(West2000sButtons);
         West2000sButtons.setLayout(West2000sButtonsLayout);
@@ -568,33 +1024,180 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("West 2000s", West2000sButtons);
 
+        West2010sButtons.setBackground(new java.awt.Color(208, 239, 255));
+
         BarTitleYas4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas4.setText("Total Vehicles Per Road Going West In The 2010s");
 
+        WesTZero.setBackground(new java.awt.Color(62, 143, 185));
+        WesTZero.setForeground(new java.awt.Color(255, 255, 255));
         WesTZero.setText("2010");
+        WesTZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTZeroMouseExited(evt);
+            }
+        });
+        WesTZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTZeroActionPerformed(evt);
+            }
+        });
 
+        WesTOne.setBackground(new java.awt.Color(62, 143, 185));
+        WesTOne.setForeground(new java.awt.Color(255, 255, 255));
         WesTOne.setText("2011");
+        WesTOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTOneMouseExited(evt);
+            }
+        });
         WesTOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 WesTOneActionPerformed(evt);
             }
         });
 
+        WesTTwo.setBackground(new java.awt.Color(62, 143, 185));
+        WesTTwo.setForeground(new java.awt.Color(255, 255, 255));
         WesTTwo.setText("2012");
+        WesTTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTTwoMouseExited(evt);
+            }
+        });
+        WesTTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTTwoActionPerformed(evt);
+            }
+        });
 
+        WesTThree.setBackground(new java.awt.Color(62, 143, 185));
+        WesTThree.setForeground(new java.awt.Color(255, 255, 255));
         WesTThree.setText("2013");
+        WesTThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTThreeMouseExited(evt);
+            }
+        });
+        WesTThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTThreeActionPerformed(evt);
+            }
+        });
 
+        WesTFour.setBackground(new java.awt.Color(62, 143, 185));
+        WesTFour.setForeground(new java.awt.Color(255, 255, 255));
         WesTFour.setText("2014");
+        WesTFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTFourMouseExited(evt);
+            }
+        });
+        WesTFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTFourActionPerformed(evt);
+            }
+        });
 
+        WesTFive.setBackground(new java.awt.Color(62, 143, 185));
+        WesTFive.setForeground(new java.awt.Color(255, 255, 255));
         WesTFive.setText("2015");
+        WesTFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTFiveMouseExited(evt);
+            }
+        });
+        WesTFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTFiveActionPerformed(evt);
+            }
+        });
 
+        WesTSix.setBackground(new java.awt.Color(62, 143, 185));
+        WesTSix.setForeground(new java.awt.Color(255, 255, 255));
         WesTSix.setText("2016");
+        WesTSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTSixMouseExited(evt);
+            }
+        });
+        WesTSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTSixActionPerformed(evt);
+            }
+        });
 
+        WesTSeven.setBackground(new java.awt.Color(62, 143, 185));
+        WesTSeven.setForeground(new java.awt.Color(255, 255, 255));
         WesTSeven.setText("2017");
+        WesTSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTSevenMouseExited(evt);
+            }
+        });
+        WesTSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTSevenActionPerformed(evt);
+            }
+        });
 
+        WesTEight.setBackground(new java.awt.Color(62, 143, 185));
+        WesTEight.setForeground(new java.awt.Color(255, 255, 255));
         WesTEight.setText("2018");
+        WesTEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTEightMouseExited(evt);
+            }
+        });
+        WesTEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTEightActionPerformed(evt);
+            }
+        });
 
+        WesTNine.setBackground(new java.awt.Color(62, 143, 185));
+        WesTNine.setForeground(new java.awt.Color(255, 255, 255));
         WesTNine.setText("2019");
+        WesTNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                WesTNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                WesTNineMouseExited(evt);
+            }
+        });
+        WesTNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WesTNineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout West2010sButtonsLayout = new javax.swing.GroupLayout(West2010sButtons);
         West2010sButtons.setLayout(West2010sButtonsLayout);
@@ -649,33 +1252,181 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("West 2010s", West2010sButtons);
 
+        North2000sButtons.setBackground(new java.awt.Color(208, 239, 255));
+
         BarTitleYas5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas5.setText("Total Vehicles Per Road Going North In The 2000s");
 
+        NouZZero.setBackground(new java.awt.Color(62, 143, 185));
+        NouZZero.setForeground(new java.awt.Color(255, 255, 255));
         NouZZero.setText("2000");
+        NouZZero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NouZZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZZeroMouseExited(evt);
+            }
+        });
         NouZZero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NouZZeroActionPerformed(evt);
             }
         });
 
+        NouZOne.setBackground(new java.awt.Color(62, 143, 185));
+        NouZOne.setForeground(new java.awt.Color(255, 255, 255));
         NouZOne.setText("2001");
+        NouZOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZOneMouseExited(evt);
+            }
+        });
+        NouZOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZOneActionPerformed(evt);
+            }
+        });
 
+        NouZTwo.setBackground(new java.awt.Color(62, 143, 185));
+        NouZTwo.setForeground(new java.awt.Color(255, 255, 255));
         NouZTwo.setText("2002");
+        NouZTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZTwoMouseExited(evt);
+            }
+        });
+        NouZTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZTwoActionPerformed(evt);
+            }
+        });
 
+        NouZThree.setBackground(new java.awt.Color(62, 143, 185));
+        NouZThree.setForeground(new java.awt.Color(255, 255, 255));
         NouZThree.setText("2003");
+        NouZThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZThreeMouseExited(evt);
+            }
+        });
+        NouZThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZThreeActionPerformed(evt);
+            }
+        });
 
+        NouZFour.setBackground(new java.awt.Color(62, 143, 185));
+        NouZFour.setForeground(new java.awt.Color(255, 255, 255));
         NouZFour.setText("2004");
+        NouZFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZFourMouseExited(evt);
+            }
+        });
+        NouZFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZFourActionPerformed(evt);
+            }
+        });
 
+        NouZFive.setBackground(new java.awt.Color(62, 143, 185));
+        NouZFive.setForeground(new java.awt.Color(255, 255, 255));
         NouZFive.setText("2005");
+        NouZFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZFiveMouseExited(evt);
+            }
+        });
+        NouZFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZFiveActionPerformed(evt);
+            }
+        });
 
+        NouZSix.setBackground(new java.awt.Color(62, 143, 185));
+        NouZSix.setForeground(new java.awt.Color(255, 255, 255));
         NouZSix.setText("2006");
+        NouZSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZSixMouseExited(evt);
+            }
+        });
+        NouZSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZSixActionPerformed(evt);
+            }
+        });
 
+        NouZSeven.setBackground(new java.awt.Color(62, 143, 185));
+        NouZSeven.setForeground(new java.awt.Color(255, 255, 255));
         NouZSeven.setText("2007");
+        NouZSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZSevenMouseExited(evt);
+            }
+        });
+        NouZSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZSevenActionPerformed(evt);
+            }
+        });
 
+        NouZEight.setBackground(new java.awt.Color(62, 143, 185));
+        NouZEight.setForeground(new java.awt.Color(255, 255, 255));
         NouZEight.setText("2008");
+        NouZEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZEightMouseExited(evt);
+            }
+        });
+        NouZEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZEightActionPerformed(evt);
+            }
+        });
 
+        NouZNine.setBackground(new java.awt.Color(62, 143, 185));
+        NouZNine.setForeground(new java.awt.Color(255, 255, 255));
         NouZNine.setText("2009");
+        NouZNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouZNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouZNineMouseExited(evt);
+            }
+        });
+        NouZNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZNineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout North2000sButtonsLayout = new javax.swing.GroupLayout(North2000sButtons);
         North2000sButtons.setLayout(North2000sButtonsLayout);
@@ -728,28 +1479,180 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("North 2000s", North2000sButtons);
 
+        North2010sButtons.setBackground(new java.awt.Color(208, 239, 255));
+
         BarTitleYas6.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas6.setText("Total Vehicles Per Road Going North In The 2010s");
 
+        NouTZero.setBackground(new java.awt.Color(62, 143, 185));
+        NouTZero.setForeground(new java.awt.Color(255, 255, 255));
         NouTZero.setText("2010");
+        NouTZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTZeroMouseExited(evt);
+            }
+        });
+        NouTZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTZeroActionPerformed(evt);
+            }
+        });
 
+        NouTOne.setBackground(new java.awt.Color(62, 143, 185));
+        NouTOne.setForeground(new java.awt.Color(255, 255, 255));
         NouTOne.setText("2011");
+        NouTOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTOneMouseExited(evt);
+            }
+        });
+        NouTOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTOneActionPerformed(evt);
+            }
+        });
 
+        NouTTwo.setBackground(new java.awt.Color(62, 143, 185));
+        NouTTwo.setForeground(new java.awt.Color(255, 255, 255));
         NouTTwo.setText("2012");
+        NouTTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTTwoMouseExited(evt);
+            }
+        });
+        NouTTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTTwoActionPerformed(evt);
+            }
+        });
 
+        NouTThree.setBackground(new java.awt.Color(62, 143, 185));
+        NouTThree.setForeground(new java.awt.Color(255, 255, 255));
         NouTThree.setText("2013");
+        NouTThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTThreeMouseExited(evt);
+            }
+        });
+        NouTThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTThreeActionPerformed(evt);
+            }
+        });
 
+        NouTFour.setBackground(new java.awt.Color(62, 143, 185));
+        NouTFour.setForeground(new java.awt.Color(255, 255, 255));
         NouTFour.setText("2014");
+        NouTFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTFourMouseExited(evt);
+            }
+        });
+        NouTFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTFourActionPerformed(evt);
+            }
+        });
 
+        NouTFive.setBackground(new java.awt.Color(62, 143, 185));
+        NouTFive.setForeground(new java.awt.Color(255, 255, 255));
         NouTFive.setText("2015");
+        NouTFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTFiveMouseExited(evt);
+            }
+        });
+        NouTFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTFiveActionPerformed(evt);
+            }
+        });
 
+        NouTSix.setBackground(new java.awt.Color(62, 143, 185));
+        NouTSix.setForeground(new java.awt.Color(255, 255, 255));
         NouTSix.setText("2016");
+        NouTSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTSixMouseExited(evt);
+            }
+        });
+        NouTSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTSixActionPerformed(evt);
+            }
+        });
 
+        NouTSeven.setBackground(new java.awt.Color(62, 143, 185));
+        NouTSeven.setForeground(new java.awt.Color(255, 255, 255));
         NouTSeven.setText("2017");
+        NouTSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTSevenMouseExited(evt);
+            }
+        });
+        NouTSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTSevenActionPerformed(evt);
+            }
+        });
 
+        NouTEight.setBackground(new java.awt.Color(62, 143, 185));
+        NouTEight.setForeground(new java.awt.Color(255, 255, 255));
         NouTEight.setText("2018");
+        NouTEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTEightMouseExited(evt);
+            }
+        });
+        NouTEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTEightActionPerformed(evt);
+            }
+        });
 
+        NouTNine.setBackground(new java.awt.Color(62, 143, 185));
+        NouTNine.setForeground(new java.awt.Color(255, 255, 255));
         NouTNine.setText("2019");
+        NouTNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NouTNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NouTNineMouseExited(evt);
+            }
+        });
+        NouTNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouTNineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout North2010sButtonsLayout = new javax.swing.GroupLayout(North2010sButtons);
         North2010sButtons.setLayout(North2010sButtonsLayout);
@@ -803,33 +1706,180 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("North 2010s", North2010sButtons);
 
+        East2000sButtons.setBackground(new java.awt.Color(208, 239, 255));
+
         BarTitleYas7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas7.setText("Total Vehicles Per Road Going East In The 2000s");
 
+        EasZZero.setBackground(new java.awt.Color(62, 143, 185));
+        EasZZero.setForeground(new java.awt.Color(255, 255, 255));
         EasZZero.setText("2000");
+        EasZZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZZeroMouseExited(evt);
+            }
+        });
+        EasZZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZZeroActionPerformed(evt);
+            }
+        });
 
+        EasZOne.setBackground(new java.awt.Color(62, 143, 185));
+        EasZOne.setForeground(new java.awt.Color(255, 255, 255));
         EasZOne.setText("2001");
+        EasZOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZOneMouseExited(evt);
+            }
+        });
+        EasZOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZOneActionPerformed(evt);
+            }
+        });
 
+        EasZTwo.setBackground(new java.awt.Color(62, 143, 185));
+        EasZTwo.setForeground(new java.awt.Color(255, 255, 255));
         EasZTwo.setText("2002");
+        EasZTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZTwoMouseExited(evt);
+            }
+        });
+        EasZTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZTwoActionPerformed(evt);
+            }
+        });
 
+        EasZThree.setBackground(new java.awt.Color(62, 143, 185));
+        EasZThree.setForeground(new java.awt.Color(255, 255, 255));
         EasZThree.setText("2003");
+        EasZThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZThreeMouseExited(evt);
+            }
+        });
+        EasZThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZThreeActionPerformed(evt);
+            }
+        });
 
+        EasZFour.setBackground(new java.awt.Color(62, 143, 185));
+        EasZFour.setForeground(new java.awt.Color(255, 255, 255));
         EasZFour.setText("2004");
+        EasZFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZFourMouseExited(evt);
+            }
+        });
+        EasZFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZFourActionPerformed(evt);
+            }
+        });
 
+        EasZFive.setBackground(new java.awt.Color(62, 143, 185));
+        EasZFive.setForeground(new java.awt.Color(255, 255, 255));
         EasZFive.setText("2005");
+        EasZFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZFiveMouseExited(evt);
+            }
+        });
+        EasZFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZFiveActionPerformed(evt);
+            }
+        });
 
+        EasZSix.setBackground(new java.awt.Color(62, 143, 185));
+        EasZSix.setForeground(new java.awt.Color(255, 255, 255));
         EasZSix.setText("2006");
+        EasZSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZSixMouseExited(evt);
+            }
+        });
+        EasZSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZSixActionPerformed(evt);
+            }
+        });
 
+        EasZSeven.setBackground(new java.awt.Color(62, 143, 185));
+        EasZSeven.setForeground(new java.awt.Color(255, 255, 255));
         EasZSeven.setText("2007");
+        EasZSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZSevenMouseExited(evt);
+            }
+        });
         EasZSeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EasZSevenActionPerformed(evt);
             }
         });
 
+        EasZEight.setBackground(new java.awt.Color(62, 143, 185));
+        EasZEight.setForeground(new java.awt.Color(255, 255, 255));
         EasZEight.setText("2008");
+        EasZEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZEightMouseExited(evt);
+            }
+        });
+        EasZEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZEightActionPerformed(evt);
+            }
+        });
 
+        EasZNine.setBackground(new java.awt.Color(62, 143, 185));
+        EasZNine.setForeground(new java.awt.Color(255, 255, 255));
         EasZNine.setText("2009");
+        EasZNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasZNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasZNineMouseExited(evt);
+            }
+        });
+        EasZNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZNineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout East2000sButtonsLayout = new javax.swing.GroupLayout(East2000sButtons);
         East2000sButtons.setLayout(East2000sButtonsLayout);
@@ -884,28 +1934,180 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("East 2000s", East2000sButtons);
 
+        East2010sButtons.setBackground(new java.awt.Color(208, 239, 255));
+
         BarTitleYas8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BarTitleYas8.setText("Total Vehicles Per Road Going East In The 2010s");
 
+        EasTZero.setBackground(new java.awt.Color(62, 143, 185));
+        EasTZero.setForeground(new java.awt.Color(255, 255, 255));
         EasTZero.setText("2010");
+        EasTZero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTZeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTZeroMouseExited(evt);
+            }
+        });
+        EasTZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTZeroActionPerformed(evt);
+            }
+        });
 
+        EasTOne.setBackground(new java.awt.Color(62, 143, 185));
+        EasTOne.setForeground(new java.awt.Color(255, 255, 255));
         EasTOne.setText("2011");
+        EasTOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTOneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTOneMouseExited(evt);
+            }
+        });
+        EasTOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTOneActionPerformed(evt);
+            }
+        });
 
+        EasTTwo.setBackground(new java.awt.Color(62, 143, 185));
+        EasTTwo.setForeground(new java.awt.Color(255, 255, 255));
         EasTTwo.setText("2012");
+        EasTTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTTwoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTTwoMouseExited(evt);
+            }
+        });
+        EasTTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTTwoActionPerformed(evt);
+            }
+        });
 
+        EasTThree.setBackground(new java.awt.Color(62, 143, 185));
+        EasTThree.setForeground(new java.awt.Color(255, 255, 255));
         EasTThree.setText("2013");
+        EasTThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTThreeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTThreeMouseExited(evt);
+            }
+        });
+        EasTThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTThreeActionPerformed(evt);
+            }
+        });
 
+        EasTFour.setBackground(new java.awt.Color(62, 143, 185));
+        EasTFour.setForeground(new java.awt.Color(255, 255, 255));
         EasTFour.setText("2014");
+        EasTFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTFourMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTFourMouseExited(evt);
+            }
+        });
+        EasTFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTFourActionPerformed(evt);
+            }
+        });
 
+        EasTFive.setBackground(new java.awt.Color(62, 143, 185));
+        EasTFive.setForeground(new java.awt.Color(255, 255, 255));
         EasTFive.setText("2015");
+        EasTFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTFiveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTFiveMouseExited(evt);
+            }
+        });
+        EasTFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTFiveActionPerformed(evt);
+            }
+        });
 
+        EasTSix.setBackground(new java.awt.Color(62, 143, 185));
+        EasTSix.setForeground(new java.awt.Color(255, 255, 255));
         EasTSix.setText("2016");
+        EasTSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTSixMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTSixMouseExited(evt);
+            }
+        });
+        EasTSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTSixActionPerformed(evt);
+            }
+        });
 
+        EasTSeven.setBackground(new java.awt.Color(62, 143, 185));
+        EasTSeven.setForeground(new java.awt.Color(255, 255, 255));
         EasTSeven.setText("2017");
+        EasTSeven.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTSevenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTSevenMouseExited(evt);
+            }
+        });
+        EasTSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTSevenActionPerformed(evt);
+            }
+        });
 
+        EasTEight.setBackground(new java.awt.Color(62, 143, 185));
+        EasTEight.setForeground(new java.awt.Color(255, 255, 255));
         EasTEight.setText("2018");
+        EasTEight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTEightMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTEightMouseExited(evt);
+            }
+        });
+        EasTEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTEightActionPerformed(evt);
+            }
+        });
 
+        EasTNine.setBackground(new java.awt.Color(62, 143, 185));
+        EasTNine.setForeground(new java.awt.Color(255, 255, 255));
         EasTNine.setText("2019");
+        EasTNine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EasTNineMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EasTNineMouseExited(evt);
+            }
+        });
+        EasTNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasTNineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout East2010sButtonsLayout = new javax.swing.GroupLayout(East2010sButtons);
         East2010sButtons.setLayout(East2010sButtonsLayout);
@@ -960,7 +2162,17 @@ public class HomePage extends JFrame {
 
         jTabbedPane1.addTab("East 2010s", East2010sButtons);
 
+        CompVehsAll.setBackground(new java.awt.Color(62, 143, 185));
+        CompVehsAll.setForeground(new java.awt.Color(255, 255, 255));
         CompVehsAll.setText("Compare All Vehicles Travelling Every Road Between 2000 and 2019");
+        CompVehsAll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CompVehsAllMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CompVehsAllMouseExited(evt);
+            }
+        });
         CompVehsAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CompVehsAllActionPerformed(evt);
@@ -2085,6 +3297,8 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_Dashboard1ActionPerformed
 
     public JFreeChart drawDefaultYas(){
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
         Connection DefYas = DB.getConnection();
         Statement StYas = null;
         JDBCCategoryDataset defDataYas = null;
@@ -2148,6 +3362,8 @@ public class HomePage extends JFrame {
         ChartAreaYas.setAlignmentX(CENTER_ALIGNMENT);
         chartAreaF.setVisible(true);
         ChartAreaYas.add(chartAreaF);
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
         return DB1chart;
 //DashboardPanel_1;        
         //ChartPanel DashboardPanel_1 = new ChartPanel(DB1chart);
@@ -2156,10 +3372,14 @@ public class HomePage extends JFrame {
         
         
     }    
-    public JFreeChart draw2KNorthYas(){
+    public JFreeChart drawDB1Yas(int year, String direction){
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
         Connection DefYas = DB.getConnection();
         Statement StYas = null;
-        JDBCCategoryDataset TwoThZN = null;
+        JDBCCategoryDataset Edit = null;
+        //TrafficController TCYAS = new TrafficController();
+        //TCYAS.draw2KNorthYas(year, direction);
         
         try {
            
@@ -2167,12 +3387,12 @@ public class HomePage extends JFrame {
                     "From Traffic_Volume AS TV \n" +
                     "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
                     "JOIN Road AS RD ON RD.road_name = CPC.road_name\n" +
-                    "WHERE CPC.the_year = 2000 AND TV.direction_of_travel = 'S' \n"+
+                    "WHERE CPC.the_year = " + year + " AND TV.direction_of_travel = '" + direction + "' \n"+
                     "GROUP BY CPC.road_name";
 
-            TwoThZN = new JDBCCategoryDataset(DefYas, sql);
+            Edit = new JDBCCategoryDataset(DefYas, sql);
             
-            System.out.println("Dataset Columns and Rows : " + TwoThZN.getColumnCount() + " " + TwoThZN.getRowCount());
+            System.out.println("Dataset Columns and Rows : " + Edit.getColumnCount() + " " + Edit.getRowCount());
             
         
         } catch (SQLException ex) {
@@ -2199,8 +3419,8 @@ public class HomePage extends JFrame {
         
         
         
-        JFreeChart DB1chart = ChartFactory.createBarChart("Total Vehicles Going North in the Year 2000", 
-                "Road Name", "Total Vehicle Amount", TwoThZN, PlotOrientation.VERTICAL, false, true, false);
+        JFreeChart DB1chart = ChartFactory.createBarChart("Total Vehicles Per Road", 
+                "Road Name", "Total Vehicle Amount", Edit, PlotOrientation.VERTICAL, false, true, false);
         DB1chart.setBackgroundPaint(Color.white);
         DB1chart.getTitle().setPaint(Color.blue);
         
@@ -2209,8 +3429,9 @@ public class HomePage extends JFrame {
         BarRenderer renderer = (BarRenderer) DFY.getRenderer();
         renderer.setDrawBarOutline(true);
         renderer.setShadowVisible(true);
-        renderer.setItemMargin(-4);
+        //renderer.setItemMargin(-4);
         renderer.setSeriesPaint(0, Color.blue);
+        
         
         /*ChartPanel dashboard1ChartPanel = new ChartPanel(DB1chart);
         dashboard1ChartPanel.setSize(813,370);
@@ -2223,6 +3444,8 @@ public class HomePage extends JFrame {
         chartAreaF.setVisible(true);
         ChartAreaYas.add(chartAreaF);
         return DB1chart;
+        
+        
     }    
     private void Dashboard1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseEntered
         //dashboard 1 hover
@@ -2645,20 +3868,1462 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_D4BusCoachCheckboxActionPerformed
 
     private void WesTOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTOneActionPerformed
-        // TODO add your handling code here:
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2011; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
     }//GEN-LAST:event_WesTOneActionPerformed
 
     private void EasZSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZSevenActionPerformed
-        // TODO add your handling code here:
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2007; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
     }//GEN-LAST:event_EasZSevenActionPerformed
 
     private void CompVehsAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompVehsAllActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
         drawDefaultYas();
     }//GEN-LAST:event_CompVehsAllActionPerformed
 
     private void NouZZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZZeroActionPerformed
-        draw2KNorthYas();
+
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2000; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+        
     }//GEN-LAST:event_NouZZeroActionPerformed
+
+    private void NouZZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZZeroMouseEntered
+        NouZZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZZeroMouseEntered
+
+    private void NouZZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZZeroMouseExited
+        NouZZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZZeroMouseExited
+
+    private void SouZZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZZeroMouseEntered
+        SouZZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZZeroMouseEntered
+
+    private void SouZZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZZeroMouseExited
+        SouZZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZZeroMouseExited
+
+    private void SouZOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZOneMouseEntered
+        SouZOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZOneMouseEntered
+
+    private void SouZOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZOneMouseExited
+        SouZOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZOneMouseExited
+
+    private void SouZTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZTwoMouseEntered
+        SouZTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZTwoMouseEntered
+
+    private void SouZTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZTwoMouseExited
+        SouZTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZTwoMouseExited
+
+    private void SouZThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZThreeMouseEntered
+        SouZThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZThreeMouseEntered
+
+    private void SouZThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZThreeMouseExited
+        SouZThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZThreeMouseExited
+
+    private void SouZFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZFourMouseEntered
+        SouZFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZFourMouseEntered
+
+    private void SouZFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZFourMouseExited
+        SouZFour.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZFourMouseExited
+
+    private void SouZFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZFiveMouseEntered
+        SouZFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZFiveMouseEntered
+
+    private void SouZFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZFiveMouseExited
+        SouZFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZFiveMouseExited
+
+    private void SouZSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZSixMouseEntered
+        SouZSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZSixMouseEntered
+
+    private void SouZSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZSixMouseExited
+        SouZSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZSixMouseExited
+
+    private void SouZSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZSevenMouseEntered
+        SouZSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZSevenMouseEntered
+
+    private void SouZSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZSevenMouseExited
+        SouZSeven.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZSevenMouseExited
+
+    private void SouZEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZEightMouseEntered
+        SouZEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZEightMouseEntered
+
+    private void SouZEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZEightMouseExited
+        SouZEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZEightMouseExited
+
+    private void SouZNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZNineMouseEntered
+        SouZNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouZNineMouseEntered
+
+    private void SouZNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouZNineMouseExited
+        SouZNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouZNineMouseExited
+
+    private void SouTZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTZeroActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2010; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTZeroActionPerformed
+
+    private void SouTZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTZeroMouseEntered
+        SouTZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTZeroMouseEntered
+
+    private void SouTOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTOneMouseEntered
+        SouTOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTOneMouseEntered
+
+    private void SouTTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTTwoMouseEntered
+        SouTTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTTwoMouseEntered
+
+    private void SouTThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTThreeMouseEntered
+        SouTThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTThreeMouseEntered
+
+    private void SouTFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTFourMouseEntered
+        SouTFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTFourMouseEntered
+
+    private void SouTFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTFiveMouseEntered
+        SouTFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTFiveMouseEntered
+
+    private void SouTSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTSixMouseEntered
+        SouTSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTSixMouseEntered
+
+    private void SouTSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTSevenMouseEntered
+        SouTSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTSevenMouseEntered
+
+    private void SouTEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTEightMouseEntered
+        SouTEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTEightMouseEntered
+
+    private void SouTNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTNineMouseEntered
+        SouTNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_SouTNineMouseEntered
+
+    private void WesZZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZZeroMouseEntered
+        WesZZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZZeroMouseEntered
+
+    private void WesZOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZOneMouseEntered
+        WesZOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZOneMouseEntered
+
+    private void WesZTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZTwoMouseEntered
+        WesZTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZTwoMouseEntered
+
+    private void WesZThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZThreeMouseEntered
+        WesZThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZThreeMouseEntered
+
+    private void WesZFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZFourMouseEntered
+        WesZFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZFourMouseEntered
+
+    private void WesZFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZFiveMouseEntered
+        WesZFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZFiveMouseEntered
+
+    private void WesZSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZSixMouseEntered
+        WesZSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZSixMouseEntered
+
+    private void WesZSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZSevenMouseEntered
+        WesZSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZSevenMouseEntered
+
+    private void WesZEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZEightMouseEntered
+        WesZEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZEightMouseEntered
+
+    private void WesZNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZNineMouseEntered
+        WesZNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesZNineMouseEntered
+
+    private void WesTZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTZeroMouseEntered
+        WesTZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTZeroMouseEntered
+
+    private void WesTOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTOneMouseEntered
+        WesTOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTOneMouseEntered
+
+    private void WesTTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTTwoMouseEntered
+        WesTTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTTwoMouseEntered
+
+    private void WesTThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTThreeMouseEntered
+        WesTThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTThreeMouseEntered
+
+    private void WesTFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTFourMouseEntered
+        WesTFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTFourMouseEntered
+
+    private void WesTFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTFiveMouseEntered
+        WesTFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTFiveMouseEntered
+
+    private void WesTSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTSixMouseEntered
+        WesTSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTSixMouseEntered
+
+    private void WesTSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTSevenMouseEntered
+        WesTSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTSevenMouseEntered
+
+    private void WesTEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTEightMouseEntered
+        WesTEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTEightMouseEntered
+
+    private void WesTNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTNineMouseEntered
+        WesTNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_WesTNineMouseEntered
+
+    private void NouZOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZOneMouseEntered
+        NouZOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZOneMouseEntered
+
+    private void NouZOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZOneMouseExited
+        NouZOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZOneMouseExited
+
+    private void NouZTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZTwoMouseEntered
+        NouZTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZTwoMouseEntered
+
+    private void NouZTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZTwoMouseExited
+        NouZTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZTwoMouseExited
+
+    private void NouZThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZThreeMouseEntered
+        NouZThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZThreeMouseEntered
+
+    private void NouZFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZFourMouseEntered
+        NouZFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZFourMouseEntered
+
+    private void NouZFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZFiveMouseEntered
+        NouZFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZFiveMouseEntered
+
+    private void NouZSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZSixMouseEntered
+        NouZSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZSixMouseEntered
+
+    private void NouZSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZSevenMouseEntered
+        NouZSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZSevenMouseEntered
+
+    private void NouZEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZEightMouseEntered
+        NouZEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZEightMouseEntered
+
+    private void NouZNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZNineMouseEntered
+        NouZNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouZNineMouseEntered
+
+    private void NouTZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTZeroMouseEntered
+        NouTZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTZeroMouseEntered
+
+    private void NouTOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTOneMouseEntered
+        NouTOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTOneMouseEntered
+
+    private void NouTTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTTwoMouseEntered
+        NouTTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTTwoMouseEntered
+
+    private void NouTThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTThreeMouseEntered
+        NouTThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTThreeMouseEntered
+
+    private void NouTFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTFourMouseEntered
+        NouTFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTFourMouseEntered
+
+    private void NouTFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTFiveMouseEntered
+        NouTFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTFiveMouseEntered
+
+    private void NouTSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTSixMouseEntered
+        NouTSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTSixMouseEntered
+
+    private void NouTSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTSevenMouseEntered
+        NouTSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTSevenMouseEntered
+
+    private void NouTEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTEightMouseEntered
+        NouTEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTEightMouseEntered
+
+    private void NouTNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTNineMouseEntered
+        NouTNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_NouTNineMouseEntered
+
+    private void EasZZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZZeroMouseEntered
+        EasZZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZZeroMouseEntered
+
+    private void EasZOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZOneMouseEntered
+        EasZOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZOneMouseEntered
+
+    private void EasZTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZTwoMouseEntered
+        EasZTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZTwoMouseEntered
+
+    private void EasZThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZThreeMouseEntered
+        EasZThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZThreeMouseEntered
+
+    private void EasZFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZFourMouseEntered
+        EasZFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZFourMouseEntered
+
+    private void EasZFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZFiveMouseEntered
+        EasZFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZFiveMouseEntered
+
+    private void EasZSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZSixMouseEntered
+        EasZSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZSixMouseEntered
+
+    private void EasZSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZSevenMouseEntered
+        EasZSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZSevenMouseEntered
+
+    private void EasZEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZEightMouseEntered
+        EasZEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZEightMouseEntered
+
+    private void EasZNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZNineMouseEntered
+        EasZNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasZNineMouseEntered
+
+    private void EasTZeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTZeroMouseEntered
+        EasTZero.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTZeroMouseEntered
+
+    private void EasTOneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTOneMouseEntered
+        EasTOne.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTOneMouseEntered
+
+    private void EasTTwoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTTwoMouseEntered
+        EasTTwo.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTTwoMouseEntered
+
+    private void EasTThreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTThreeMouseEntered
+        EasTThree.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTThreeMouseEntered
+
+    private void EasTFourMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTFourMouseEntered
+        EasTFour.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTFourMouseEntered
+
+    private void EasTFiveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTFiveMouseEntered
+        EasTFive.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTFiveMouseEntered
+
+    private void EasTSixMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTSixMouseEntered
+        EasTSix.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTSixMouseEntered
+
+    private void EasTSevenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTSevenMouseEntered
+        EasTSeven.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTSevenMouseEntered
+
+    private void EasTEightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTEightMouseEntered
+        EasTEight.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTEightMouseEntered
+
+    private void EasTNineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTNineMouseEntered
+        EasTNine.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_EasTNineMouseEntered
+
+    private void SouTZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTZeroMouseExited
+        SouTZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTZeroMouseExited
+
+    private void SouTOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTOneMouseExited
+        SouTOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTOneMouseExited
+
+    private void SouTTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTTwoMouseExited
+        SouTTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTTwoMouseExited
+
+    private void SouTThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTThreeMouseExited
+        SouTThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTThreeMouseExited
+
+    private void SouTFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTFourMouseExited
+        SouTFour.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTFourMouseExited
+
+    private void SouTFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTFiveMouseExited
+        SouTFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTFiveMouseExited
+
+    private void SouTSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTSixMouseExited
+        SouTSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTSixMouseExited
+
+    private void SouTSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTSevenMouseExited
+        SouTSeven.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTSevenMouseExited
+
+    private void SouTEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTEightMouseExited
+        SouTEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTEightMouseExited
+
+    private void SouTNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouTNineMouseExited
+        SouTNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_SouTNineMouseExited
+
+    private void WesZZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZZeroMouseExited
+        WesZZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZZeroMouseExited
+
+    private void WesZOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZOneMouseExited
+        WesZOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZOneMouseExited
+
+    private void WesZTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZTwoMouseExited
+        WesZTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZTwoMouseExited
+
+    private void WesZThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZThreeMouseExited
+        WesZThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZThreeMouseExited
+
+    private void WesZFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZFourMouseExited
+        WesZFour.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZFourMouseExited
+
+    private void WesZFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZFiveMouseExited
+        WesZFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZFiveMouseExited
+
+    private void WesZSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZSixMouseExited
+        WesZSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZSixMouseExited
+
+    private void WesZSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZSevenMouseExited
+        WesZSeven.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZSevenMouseExited
+
+    private void WesZEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZEightMouseExited
+        WesZEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZEightMouseExited
+
+    private void WesZNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesZNineMouseExited
+        WesZNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesZNineMouseExited
+
+    private void WesTZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTZeroMouseExited
+        WesTZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTZeroMouseExited
+
+    private void WesTOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTOneMouseExited
+        WesTOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTOneMouseExited
+
+    private void WesTTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTTwoMouseExited
+        WesTTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTTwoMouseExited
+
+    private void WesTThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTThreeMouseExited
+        WesTThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTThreeMouseExited
+
+    private void WesTFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTFourMouseExited
+        WesTFour.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTFourMouseExited
+
+    private void WesTFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTFiveMouseExited
+        WesTFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTFiveMouseExited
+
+    private void WesTSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTSixMouseExited
+        WesTSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTSixMouseExited
+
+    private void WesTSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTSevenMouseExited
+        WesTSeven.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTSevenMouseExited
+
+    private void WesTEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTEightMouseExited
+        WesTEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTEightMouseExited
+
+    private void WesTNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesTNineMouseExited
+        WesTNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_WesTNineMouseExited
+
+    private void NouZThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZThreeMouseExited
+        NouZThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZThreeMouseExited
+
+    private void NouZFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZFourMouseExited
+        NouZFour.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZFourMouseExited
+
+    private void NouZFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZFiveMouseExited
+        NouZFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZFiveMouseExited
+
+    private void NouZSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZSixMouseExited
+        NouZSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZSixMouseExited
+
+    private void NouZSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZSevenMouseExited
+       NouZSeven.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZSevenMouseExited
+
+    private void NouZEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZEightMouseExited
+        NouZEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZEightMouseExited
+
+    private void NouZNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouZNineMouseExited
+        NouZNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouZNineMouseExited
+
+    private void NouTZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTZeroMouseExited
+        NouTZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTZeroMouseExited
+
+    private void NouTOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTOneMouseExited
+       NouTOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTOneMouseExited
+
+    private void NouTTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTTwoMouseExited
+        NouTTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTTwoMouseExited
+
+    private void NouTThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTThreeMouseExited
+        NouTThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTThreeMouseExited
+
+    private void NouTFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTFourMouseExited
+        NouTFour.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTFourMouseExited
+
+    private void NouTFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTFiveMouseExited
+        NouTFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTFiveMouseExited
+
+    private void NouTSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTSixMouseExited
+        NouTSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTSixMouseExited
+
+    private void NouTSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTSevenMouseExited
+        NouTSeven.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTSevenMouseExited
+
+    private void NouTEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTEightMouseExited
+        NouTEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTEightMouseExited
+
+    private void NouTNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NouTNineMouseExited
+        NouTNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_NouTNineMouseExited
+
+    private void EasZZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZZeroMouseExited
+        EasZZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZZeroMouseExited
+
+    private void EasZOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZOneMouseExited
+        EasZOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZOneMouseExited
+
+    private void EasZTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZTwoMouseExited
+        EasZTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZTwoMouseExited
+
+    private void EasZThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZThreeMouseExited
+        EasZThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZThreeMouseExited
+
+    private void EasZFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZFourMouseExited
+        EasZFour.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZFourMouseExited
+
+    private void EasZFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZFiveMouseExited
+        EasZFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZFiveMouseExited
+
+    private void EasZSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZSixMouseExited
+        EasZSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZSixMouseExited
+
+    private void EasZSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZSevenMouseExited
+        EasZSeven.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZSevenMouseExited
+
+    private void EasZEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZEightMouseExited
+        EasZEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZEightMouseExited
+
+    private void EasZNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasZNineMouseExited
+        EasZNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasZNineMouseExited
+
+    private void EasTZeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTZeroMouseExited
+        EasTZero.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTZeroMouseExited
+
+    private void EasTOneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTOneMouseExited
+        EasTOne.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTOneMouseExited
+
+    private void EasTTwoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTTwoMouseExited
+        EasTTwo.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTTwoMouseExited
+
+    private void EasTThreeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTThreeMouseExited
+        EasTThree.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTThreeMouseExited
+
+    private void EasTFourMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTFourMouseExited
+       EasTFour.setBackground(new Color(62, 143, 185));      //blue.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTFourMouseExited
+
+    private void EasTFiveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTFiveMouseExited
+        EasTFive.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTFiveMouseExited
+
+    private void EasTSixMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTSixMouseExited
+        EasTSix.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTSixMouseExited
+
+    private void EasTSevenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTSevenMouseExited
+        EasTSeven.setBackground(new Color(62, 143, 185));      //blue.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTSevenMouseExited
+
+    private void EasTEightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTEightMouseExited
+        EasTEight.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTEightMouseExited
+
+    private void EasTNineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EasTNineMouseExited
+        EasTNine.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_EasTNineMouseExited
+
+    private void CompVehsAllMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CompVehsAllMouseEntered
+        CompVehsAll.setBackground(new Color(245, 160, 39));       //orange
+    }//GEN-LAST:event_CompVehsAllMouseEntered
+
+    private void CompVehsAllMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CompVehsAllMouseExited
+        CompVehsAll.setBackground(new Color(62, 143, 185));      //blue
+    }//GEN-LAST:event_CompVehsAllMouseExited
+
+    private void SouZTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2000; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZTwoActionPerformed
+
+    private void SouZZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZZeroActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2000; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZZeroActionPerformed
+
+    private void SouZOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZOneActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2001; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZOneActionPerformed
+
+    private void SouZThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2003; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZThreeActionPerformed
+
+    private void SouZFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2004; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZFourActionPerformed
+
+    private void SouZFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2005; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZFiveActionPerformed
+
+    private void SouZSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2006; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZSixActionPerformed
+
+    private void SouZSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZSevenActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2007; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZSevenActionPerformed
+
+    private void SouZEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2008; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZEightActionPerformed
+
+    private void SouZNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouZNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2009; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouZNineActionPerformed
+
+    private void SouTOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTOneActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2011; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTOneActionPerformed
+
+    private void SouTTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2012; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTTwoActionPerformed
+
+    private void SouTThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2013; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTThreeActionPerformed
+
+    private void SouTFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2014; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTFourActionPerformed
+
+    private void SouTFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2015; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTFiveActionPerformed
+
+    private void SouTSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2016; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTSixActionPerformed
+
+    private void SouTSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTSevenActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2017; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTSevenActionPerformed
+
+    private void SouTEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2018; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTEightActionPerformed
+
+    private void SouTNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouTNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2019; 
+        String direction = "S";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_SouTNineActionPerformed
+
+    private void WesZZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZZeroActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2000; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZZeroActionPerformed
+
+    private void WesZOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZOneActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2001; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZOneActionPerformed
+
+    private void WesZTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2002; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZTwoActionPerformed
+
+    private void WesZThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2003; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZThreeActionPerformed
+
+    private void WesZFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2004; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZFourActionPerformed
+
+    private void WesZFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2005; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZFiveActionPerformed
+
+    private void WesZSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2006; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZSixActionPerformed
+
+    private void WesZSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZSevenActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2007; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZSevenActionPerformed
+
+    private void WesZEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2008; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZEightActionPerformed
+
+    private void WesZNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2009; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesZNineActionPerformed
+
+    private void WesTZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTZeroActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2010; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTZeroActionPerformed
+
+    private void WesTTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2012; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTTwoActionPerformed
+
+    private void WesTThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2013; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTThreeActionPerformed
+
+    private void WesTFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2013; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTFourActionPerformed
+
+    private void WesTFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2015; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTFiveActionPerformed
+
+    private void WesTSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2016; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTSixActionPerformed
+
+    private void WesTSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTSevenActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2017; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTSevenActionPerformed
+
+    private void WesTEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2018; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTEightActionPerformed
+
+    private void WesTNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2019; 
+        String direction = "W";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_WesTNineActionPerformed
+
+    private void NouZOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZOneActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2001; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZOneActionPerformed
+
+    private void NouZTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2002; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZTwoActionPerformed
+
+    private void NouZThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2003; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZThreeActionPerformed
+
+    private void NouZFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2004; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZFourActionPerformed
+
+    private void NouZFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2005; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZFiveActionPerformed
+
+    private void NouZSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2006; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZSixActionPerformed
+
+    private void NouZSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZSevenActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2007; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZSevenActionPerformed
+
+    private void NouZEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2008; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZEightActionPerformed
+
+    private void NouZNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2009; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouZNineActionPerformed
+
+    private void NouTZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTZeroActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2010; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTZeroActionPerformed
+
+    private void NouTOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTOneActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2011; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTOneActionPerformed
+
+    private void NouTTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2012; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTTwoActionPerformed
+
+    private void NouTThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2013; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTThreeActionPerformed
+
+    private void NouTFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2014; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTFourActionPerformed
+
+    private void NouTFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2015; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTFiveActionPerformed
+
+    private void NouTSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2016; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTSixActionPerformed
+
+    private void NouTSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTSevenActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2017; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTSevenActionPerformed
+
+    private void NouTEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2018; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTEightActionPerformed
+
+    private void NouTNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouTNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2019; 
+        String direction = "N";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_NouTNineActionPerformed
+
+    private void EasZZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZZeroActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2000; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZZeroActionPerformed
+
+    private void EasZOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZOneActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2001; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZOneActionPerformed
+
+    private void EasZTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2002; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZTwoActionPerformed
+
+    private void EasZThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2003; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZThreeActionPerformed
+
+    private void EasZFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2004; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZFourActionPerformed
+
+    private void EasZFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2005; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZFiveActionPerformed
+
+    private void EasZSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2006; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZSixActionPerformed
+
+    private void EasZEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2008; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZEightActionPerformed
+
+    private void EasZNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2009; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasZNineActionPerformed
+
+    private void EasTZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTZeroActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2010; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTZeroActionPerformed
+
+    private void EasTOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTOneActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2011; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTOneActionPerformed
+
+    private void EasTTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTTwoActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2012; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTTwoActionPerformed
+
+    private void EasTThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTThreeActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2013; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTThreeActionPerformed
+
+    private void EasTFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTFourActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2014; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTFourActionPerformed
+
+    private void EasTFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTFiveActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2015; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTFiveActionPerformed
+
+    private void EasTSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTSixActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2016; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTSixActionPerformed
+
+    private void EasTSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTSevenActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2017; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTSevenActionPerformed
+
+    private void EasTEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTEightActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2018; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTEightActionPerformed
+
+    private void EasTNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasTNineActionPerformed
+        ChartAreaYas.removeAll();
+        ChartAreaYas.repaint();
+        ChartAreaYas.revalidate();
+        
+        int year = 2019; 
+        String direction = "E";
+        drawDB1Yas(year, direction);
+    }//GEN-LAST:event_EasTNineActionPerformed
 
     
     public void createBar() {
@@ -3311,6 +5976,12 @@ public class HomePage extends JFrame {
 
     }
 
+    //public CategoryDataset createDataset() {  
+    //    DefaultCategoryDataset D1Dataset = new DefaultCategoryDataset();  
+    //} return D1Dataset;
+    
+        
+        
     //Pie Chart Creation (Isa)
     public PieDataset D4PieChart() {
         DefaultPieDataset D4Dataset = new DefaultPieDataset();

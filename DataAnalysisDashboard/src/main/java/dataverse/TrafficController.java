@@ -212,6 +212,41 @@ public class TrafficController {
         }
     }
     
+    
+    /*public JDBCCategoryDataset draw2KNorthYas(int Year, String Direction){
+        Connection DefYas = DB.getConnection();
+        Statement StYas = null;
+        JDBCCategoryDataset YearDirectionYas = null;
+        
+        try {
+           
+            String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs, CPC.the_year, TV.direction_of_travel \n"+
+                    "From Traffic_Volume AS TV \n" +
+                    "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
+                    "JOIN Road AS RD ON RD.road_name = CPC.road_name\n" +
+                    "WHERE CPC.the_year = " + Year + " AND TV.direction_of_travel = '" + Direction + "' \n"+
+                    "GROUP BY CPC.road_name";
+
+            YearDirectionYas = new JDBCCategoryDataset(DefYas, sql);
+            
+            System.out.println("Dataset Columns and Rows : " + YearDirectionYas.getColumnCount() + " " + YearDirectionYas.getRowCount());
+            
+        
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());        
+        } finally {
+            if (StYas != null){
+                try{
+                    StYas.close();
+                } catch (SQLException e) {
+                    System.out.println("SQLException: " + e.getMessage());
+                }
+                
+            } 
+        }        
+    }   */
+    
+    //public 
     /*public ResultSet getConTestY(){
         Connection DefYas = DB.getConnection();
         Statement StYas = null;
