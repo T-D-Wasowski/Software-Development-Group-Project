@@ -74,23 +74,104 @@ public class HomePage extends JFrame {
         jPanel2 = new javax.swing.JPanel();
         DashboardPanel_1 = new javax.swing.JPanel();
         ChartAreaYas = new javax.swing.JPanel();
-        SouthChoice = new java.awt.Choice();
-        WestChoice = new java.awt.Choice();
-        NorthChoice = new java.awt.Choice();
-        EastChoice = new java.awt.Choice();
-        ButtonAreaYas = new javax.swing.JPanel();
-        ChangeDirectionDB1 = new java.awt.Label();
-        AllVehsDB1 = new javax.swing.JButton();
-        SouthTextDB1 = new java.awt.Label();
-        NorthTextDB1 = new java.awt.Label();
-        WestTextDB1 = new java.awt.Label();
-        EastTextDB1 = new java.awt.Label();
-        RYYas = new java.awt.Label();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        South2000sButtons = new javax.swing.JPanel();
+        SouZZero = new javax.swing.JButton();
+        SouZOne = new javax.swing.JButton();
+        SouZTwo = new javax.swing.JButton();
+        SouZThree = new javax.swing.JButton();
+        SouZFour = new javax.swing.JButton();
+        SouZSix = new javax.swing.JButton();
+        SouZFive = new javax.swing.JButton();
+        SouZSeven = new javax.swing.JButton();
+        SouZEight = new javax.swing.JButton();
+        SouZNine = new javax.swing.JButton();
         BarTitleYas1 = new java.awt.Label();
-        SouthComboDB1 = new javax.swing.JComboBox<>();
-        WestComboDB1 = new javax.swing.JComboBox<>();
-        NorthComboDB1 = new javax.swing.JComboBox<>();
-        EastComboDB1 = new javax.swing.JComboBox<>();
+        South2010sButtons = new javax.swing.JPanel();
+        BarTitleYas2 = new java.awt.Label();
+        SouTZero = new javax.swing.JButton();
+        SouTOne = new javax.swing.JButton();
+        SouTTwo = new javax.swing.JButton();
+        SouTThree = new javax.swing.JButton();
+        SouTFour = new javax.swing.JButton();
+        SouTFive = new javax.swing.JButton();
+        SouTSix = new javax.swing.JButton();
+        SouTSeven = new javax.swing.JButton();
+        SouTEight = new javax.swing.JButton();
+        SouTNine = new javax.swing.JButton();
+        West2000sButtons = new javax.swing.JPanel();
+        BarTitleYas3 = new java.awt.Label();
+        WesZZero = new javax.swing.JButton();
+        WesZOne = new javax.swing.JButton();
+        WesZTwo = new javax.swing.JButton();
+        WesZThree = new javax.swing.JButton();
+        WesZFour = new javax.swing.JButton();
+        WesZFive = new javax.swing.JButton();
+        WesZSix = new javax.swing.JButton();
+        WesZSeven = new javax.swing.JButton();
+        WesZEight = new javax.swing.JButton();
+        WesZNine = new javax.swing.JButton();
+        West2010sButtons = new javax.swing.JPanel();
+        BarTitleYas4 = new java.awt.Label();
+        WesTZero = new javax.swing.JButton();
+        WesTOne = new javax.swing.JButton();
+        WesTTwo = new javax.swing.JButton();
+        WesTThree = new javax.swing.JButton();
+        WesTFour = new javax.swing.JButton();
+        WesTFive = new javax.swing.JButton();
+        WesTSix = new javax.swing.JButton();
+        WesTSeven = new javax.swing.JButton();
+        WesTEight = new javax.swing.JButton();
+        WesTNine = new javax.swing.JButton();
+        North2000sButtons = new javax.swing.JPanel();
+        BarTitleYas5 = new java.awt.Label();
+        NouZZero = new javax.swing.JButton();
+        NouZOne = new javax.swing.JButton();
+        NouZTwo = new javax.swing.JButton();
+        NouZThree = new javax.swing.JButton();
+        NouZFour = new javax.swing.JButton();
+        NouZFive = new javax.swing.JButton();
+        NouZSix = new javax.swing.JButton();
+        NouZSeven = new javax.swing.JButton();
+        NouZEight = new javax.swing.JButton();
+        NouZNine = new javax.swing.JButton();
+        North2010sButtons = new javax.swing.JPanel();
+        BarTitleYas6 = new java.awt.Label();
+        NouTZero = new javax.swing.JButton();
+        NouTOne = new javax.swing.JButton();
+        NouTTwo = new javax.swing.JButton();
+        NouTThree = new javax.swing.JButton();
+        NouTFour = new javax.swing.JButton();
+        NouTFive = new javax.swing.JButton();
+        NouTSix = new javax.swing.JButton();
+        NouTSeven = new javax.swing.JButton();
+        NouTEight = new javax.swing.JButton();
+        NouTNine = new javax.swing.JButton();
+        East2000sButtons = new javax.swing.JPanel();
+        BarTitleYas7 = new java.awt.Label();
+        EasZZero = new javax.swing.JButton();
+        EasZOne = new javax.swing.JButton();
+        EasZTwo = new javax.swing.JButton();
+        EasZThree = new javax.swing.JButton();
+        EasZFour = new javax.swing.JButton();
+        EasZFive = new javax.swing.JButton();
+        EasZSix = new javax.swing.JButton();
+        EasZSeven = new javax.swing.JButton();
+        EasZEight = new javax.swing.JButton();
+        EasZNine = new javax.swing.JButton();
+        East2010sButtons = new javax.swing.JPanel();
+        BarTitleYas8 = new java.awt.Label();
+        EasTZero = new javax.swing.JButton();
+        EasTOne = new javax.swing.JButton();
+        EasTTwo = new javax.swing.JButton();
+        EasTThree = new javax.swing.JButton();
+        EasTFour = new javax.swing.JButton();
+        EasTFive = new javax.swing.JButton();
+        EasTSix = new javax.swing.JButton();
+        EasTSeven = new javax.swing.JButton();
+        EasTEight = new javax.swing.JButton();
+        EasTNine = new javax.swing.JButton();
+        CompVehsAll = new javax.swing.JButton();
         DashboardPanel_2 = new javax.swing.JPanel();
         Dashboard2Container = new javax.swing.JPanel();
         filtersPanelDashboard2 = new javax.swing.JPanel();
@@ -235,6 +316,9 @@ public class HomePage extends JFrame {
         DashboardPanel_1.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_1.setPreferredSize(new java.awt.Dimension(836, 500));
 
+        JFreeChart DB1Chart = drawDefaultYas();
+        ChartAreaYas.add(new ChartPanel(DB1Chart),BorderLayout.CENTER);
+        ChartAreaYas.setVisible(true);
         ChartAreaYas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ChartAreaYas.setPreferredSize(new java.awt.Dimension(813, 370));
         //ChartAreaYas.add(createDB1BarChart());
@@ -244,150 +328,645 @@ public class HomePage extends JFrame {
         //ChartAreaYas.setVisible(true);
         //drawDefaultYas();
 
-        SouthChoice.add("Year");
-        SouthChoice.add("2000");
-
         javax.swing.GroupLayout ChartAreaYasLayout = new javax.swing.GroupLayout(ChartAreaYas);
         ChartAreaYas.setLayout(ChartAreaYasLayout);
         ChartAreaYasLayout.setHorizontalGroup(
             ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ChartAreaYasLayout.createSequentialGroup()
-                .addGap(338, 338, 338)
-                .addComponent(SouthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(WestChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(NorthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(EastChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(233, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         ChartAreaYasLayout.setVerticalGroup(
             ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ChartAreaYasLayout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addGroup(ChartAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EastChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NorthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(WestChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SouthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(185, Short.MAX_VALUE))
+            .addGap(0, 368, Short.MAX_VALUE)
         );
 
-        ButtonAreaYas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ButtonAreaYas.setPreferredSize(new java.awt.Dimension(816, 111));
+        South2000sButtons.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        South2000sButtons.setPreferredSize(new java.awt.Dimension(816, 111));
 
-        ChangeDirectionDB1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        ChangeDirectionDB1.setText("Change Direction");
+        SouZZero.setText("2000");
 
-        AllVehsDB1.setText("No Filter");
-        AllVehsDB1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AllVehsDB1MouseClicked(evt);
-            }
-        });
+        SouZOne.setText("2001");
 
-        SouthTextDB1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        SouthTextDB1.setText("South");
+        SouZTwo.setText("2002");
 
-        NorthTextDB1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        NorthTextDB1.setText("North");
+        SouZThree.setText("2003");
 
-        WestTextDB1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        WestTextDB1.setText("West");
+        SouZFour.setText("2004");
 
-        EastTextDB1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        EastTextDB1.setText("East");
+        SouZSix.setText("2006");
 
-        RYYas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        RYYas.setText("View All");
+        SouZFive.setText("2005");
+
+        SouZSeven.setText("2007");
+
+        SouZEight.setText("2008");
+
+        SouZNine.setText("2009");
 
         BarTitleYas1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BarTitleYas1.setText("Total Vehicles Per Road");
+        BarTitleYas1.setText("Total Vehicles Per Road Going South In The 2000s");
 
-        SouthComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
-        SouthComboDB1.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout South2000sButtonsLayout = new javax.swing.GroupLayout(South2000sButtons);
+        South2000sButtons.setLayout(South2000sButtonsLayout);
+        South2000sButtonsLayout.setHorizontalGroup(
+            South2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, South2000sButtonsLayout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addGroup(South2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(South2000sButtonsLayout.createSequentialGroup()
+                        .addComponent(SouZZero)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouZOne)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouZTwo)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouZThree)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouZFour)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouZFive)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouZSix)))
+                .addGap(18, 18, 18)
+                .addComponent(SouZSeven)
+                .addGap(18, 18, 18)
+                .addComponent(SouZEight)
+                .addGap(18, 18, 18)
+                .addComponent(SouZNine)
+                .addGap(37, 37, 37))
+        );
+        South2000sButtonsLayout.setVerticalGroup(
+            South2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(South2000sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(South2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SouZSix)
+                    .addComponent(SouZFive)
+                    .addComponent(SouZFour)
+                    .addComponent(SouZThree)
+                    .addComponent(SouZTwo)
+                    .addComponent(SouZOne)
+                    .addComponent(SouZZero)
+                    .addComponent(SouZSeven)
+                    .addComponent(SouZEight)
+                    .addComponent(SouZNine))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("South 2000s", South2000sButtons);
+
+        BarTitleYas2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas2.setText("Total Vehicles Per Road Going South In The 2010s");
+
+        SouTZero.setText("2010");
+
+        SouTOne.setText("2011");
+
+        SouTTwo.setText("2012");
+
+        SouTThree.setText("2013");
+
+        SouTFour.setText("2014");
+
+        SouTFive.setText("2015");
+
+        SouTSix.setText("2016");
+
+        SouTSeven.setText("2017");
+
+        SouTEight.setText("2018");
+
+        SouTNine.setText("2019");
+
+        javax.swing.GroupLayout South2010sButtonsLayout = new javax.swing.GroupLayout(South2010sButtons);
+        South2010sButtons.setLayout(South2010sButtonsLayout);
+        South2010sButtonsLayout.setHorizontalGroup(
+            South2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(South2010sButtonsLayout.createSequentialGroup()
+                .addGroup(South2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(South2010sButtonsLayout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(BarTitleYas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(South2010sButtonsLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(SouTZero)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTOne)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTTwo)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTThree)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTFour)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTFive)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTSix)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTSeven)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTEight)
+                        .addGap(18, 18, 18)
+                        .addComponent(SouTNine)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        South2010sButtonsLayout.setVerticalGroup(
+            South2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(South2010sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(South2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SouTZero)
+                    .addComponent(SouTOne)
+                    .addComponent(SouTTwo)
+                    .addComponent(SouTThree)
+                    .addComponent(SouTFour)
+                    .addComponent(SouTFive)
+                    .addComponent(SouTSix)
+                    .addComponent(SouTSeven)
+                    .addComponent(SouTEight)
+                    .addComponent(SouTNine))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("South 2010s", South2010sButtons);
+
+        BarTitleYas3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas3.setText("Total Vehicles Per Road Going West In The 2000s");
+
+        WesZZero.setText("2000");
+
+        WesZOne.setText("2001");
+
+        WesZTwo.setText("2002");
+
+        WesZThree.setText("2003");
+
+        WesZFour.setText("2004");
+
+        WesZFive.setText("2005");
+
+        WesZSix.setText("2006");
+
+        WesZSeven.setText("2007");
+
+        WesZEight.setText("2008");
+
+        WesZNine.setText("2009");
+
+        javax.swing.GroupLayout West2000sButtonsLayout = new javax.swing.GroupLayout(West2000sButtons);
+        West2000sButtons.setLayout(West2000sButtonsLayout);
+        West2000sButtonsLayout.setHorizontalGroup(
+            West2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(West2000sButtonsLayout.createSequentialGroup()
+                .addGroup(West2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(West2000sButtonsLayout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(BarTitleYas3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(West2000sButtonsLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(WesZZero)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZOne)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZTwo)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZThree)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZFour)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZFive)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZSix)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZSeven)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZEight)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesZNine)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        West2000sButtonsLayout.setVerticalGroup(
+            West2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(West2000sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(West2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(WesZZero)
+                    .addComponent(WesZOne)
+                    .addComponent(WesZTwo)
+                    .addComponent(WesZThree)
+                    .addComponent(WesZFour)
+                    .addComponent(WesZFive)
+                    .addComponent(WesZSix)
+                    .addComponent(WesZSeven)
+                    .addComponent(WesZEight)
+                    .addComponent(WesZNine))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("West 2000s", West2000sButtons);
+
+        BarTitleYas4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas4.setText("Total Vehicles Per Road Going West In The 2010s");
+
+        WesTZero.setText("2010");
+
+        WesTOne.setText("2011");
+        WesTOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SouthComboDB1ActionPerformed(evt);
+                WesTOneActionPerformed(evt);
             }
         });
 
-        WestComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+        WesTTwo.setText("2012");
 
-        NorthComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+        WesTThree.setText("2013");
 
-        EastComboDB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" }));
+        WesTFour.setText("2014");
 
-        javax.swing.GroupLayout ButtonAreaYasLayout = new javax.swing.GroupLayout(ButtonAreaYas);
-        ButtonAreaYas.setLayout(ButtonAreaYasLayout);
-        ButtonAreaYasLayout.setHorizontalGroup(
-            ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SouthTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SouthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(WestTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(NorthTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(WestComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(NorthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(EastTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(EastComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                                .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(ChangeDirectionDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(56, 56, 56)
-                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AllVehsDB1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
-                        .addComponent(RYYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)))
-                .addGap(96, 96, 96))
+        WesTFive.setText("2015");
+
+        WesTSix.setText("2016");
+
+        WesTSeven.setText("2017");
+
+        WesTEight.setText("2018");
+
+        WesTNine.setText("2019");
+
+        javax.swing.GroupLayout West2010sButtonsLayout = new javax.swing.GroupLayout(West2010sButtons);
+        West2010sButtons.setLayout(West2010sButtonsLayout);
+        West2010sButtonsLayout.setHorizontalGroup(
+            West2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(West2010sButtonsLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(West2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(West2010sButtonsLayout.createSequentialGroup()
+                        .addComponent(WesTZero)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesTOne)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesTTwo)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesTThree)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesTFour)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesTFive)
+                        .addGap(18, 18, 18)
+                        .addComponent(WesTSix))
+                    .addGroup(West2010sButtonsLayout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(BarTitleYas4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(WesTSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(WesTEight)
+                .addGap(18, 18, 18)
+                .addComponent(WesTNine)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        ButtonAreaYasLayout.setVerticalGroup(
-            ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createSequentialGroup()
-                .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(RYYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AllVehsDB1)
-                            .addComponent(BarTitleYas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(ButtonAreaYasLayout.createSequentialGroup()
-                        .addComponent(ChangeDirectionDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(SouthTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(WestTextDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(EastTextDB1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NorthTextDB1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ButtonAreaYasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SouthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(WestComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NorthComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EastComboDB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        West2010sButtonsLayout.setVerticalGroup(
+            West2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(West2010sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(West2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(WesTZero)
+                    .addComponent(WesTOne)
+                    .addComponent(WesTTwo)
+                    .addComponent(WesTThree)
+                    .addComponent(WesTFour)
+                    .addComponent(WesTFive)
+                    .addComponent(WesTSix)
+                    .addComponent(WesTSeven)
+                    .addComponent(WesTEight)
+                    .addComponent(WesTNine))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("West 2010s", West2010sButtons);
+
+        BarTitleYas5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas5.setText("Total Vehicles Per Road Going North In The 2000s");
+
+        NouZZero.setText("2000");
+        NouZZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouZZeroActionPerformed(evt);
+            }
+        });
+
+        NouZOne.setText("2001");
+
+        NouZTwo.setText("2002");
+
+        NouZThree.setText("2003");
+
+        NouZFour.setText("2004");
+
+        NouZFive.setText("2005");
+
+        NouZSix.setText("2006");
+
+        NouZSeven.setText("2007");
+
+        NouZEight.setText("2008");
+
+        NouZNine.setText("2009");
+
+        javax.swing.GroupLayout North2000sButtonsLayout = new javax.swing.GroupLayout(North2000sButtons);
+        North2000sButtons.setLayout(North2000sButtonsLayout);
+        North2000sButtonsLayout.setHorizontalGroup(
+            North2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, North2000sButtonsLayout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addGroup(North2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BarTitleYas5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(North2000sButtonsLayout.createSequentialGroup()
+                        .addComponent(NouZZero)
+                        .addGap(18, 18, 18)
+                        .addComponent(NouZOne, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(NouZTwo)
+                        .addGap(18, 18, 18)
+                        .addComponent(NouZThree)
+                        .addGap(18, 18, 18)
+                        .addComponent(NouZFour)
+                        .addGap(18, 18, 18)
+                        .addComponent(NouZFive)
+                        .addGap(18, 18, 18)
+                        .addComponent(NouZSix)))
+                .addGap(18, 18, 18)
+                .addComponent(NouZSeven)
+                .addGap(18, 18, 18)
+                .addComponent(NouZEight)
+                .addGap(18, 18, 18)
+                .addComponent(NouZNine)
                 .addGap(39, 39, 39))
         );
+        North2000sButtonsLayout.setVerticalGroup(
+            North2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(North2000sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(North2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NouZZero)
+                    .addComponent(NouZOne)
+                    .addComponent(NouZTwo)
+                    .addComponent(NouZThree)
+                    .addComponent(NouZFour)
+                    .addComponent(NouZFive)
+                    .addComponent(NouZSix)
+                    .addComponent(NouZSeven)
+                    .addComponent(NouZEight)
+                    .addComponent(NouZNine))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("North 2000s", North2000sButtons);
+
+        BarTitleYas6.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas6.setText("Total Vehicles Per Road Going North In The 2010s");
+
+        NouTZero.setText("2010");
+
+        NouTOne.setText("2011");
+
+        NouTTwo.setText("2012");
+
+        NouTThree.setText("2013");
+
+        NouTFour.setText("2014");
+
+        NouTFive.setText("2015");
+
+        NouTSix.setText("2016");
+
+        NouTSeven.setText("2017");
+
+        NouTEight.setText("2018");
+
+        NouTNine.setText("2019");
+
+        javax.swing.GroupLayout North2010sButtonsLayout = new javax.swing.GroupLayout(North2010sButtons);
+        North2010sButtons.setLayout(North2010sButtonsLayout);
+        North2010sButtonsLayout.setHorizontalGroup(
+            North2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(North2010sButtonsLayout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(BarTitleYas6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(North2010sButtonsLayout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(NouTZero)
+                .addGap(18, 18, 18)
+                .addComponent(NouTOne)
+                .addGap(18, 18, 18)
+                .addComponent(NouTTwo)
+                .addGap(18, 18, 18)
+                .addComponent(NouTThree)
+                .addGap(18, 18, 18)
+                .addComponent(NouTFour)
+                .addGap(18, 18, 18)
+                .addComponent(NouTFive)
+                .addGap(18, 18, 18)
+                .addComponent(NouTSix)
+                .addGap(18, 18, 18)
+                .addComponent(NouTSeven)
+                .addGap(18, 18, 18)
+                .addComponent(NouTEight)
+                .addGap(18, 18, 18)
+                .addComponent(NouTNine)
+                .addGap(36, 36, 36))
+        );
+        North2010sButtonsLayout.setVerticalGroup(
+            North2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(North2010sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(North2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NouTZero)
+                    .addComponent(NouTOne)
+                    .addComponent(NouTTwo)
+                    .addComponent(NouTThree)
+                    .addComponent(NouTFour)
+                    .addComponent(NouTFive)
+                    .addComponent(NouTSix)
+                    .addComponent(NouTSeven)
+                    .addComponent(NouTEight)
+                    .addComponent(NouTNine))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("North 2010s", North2010sButtons);
+
+        BarTitleYas7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas7.setText("Total Vehicles Per Road Going East In The 2000s");
+
+        EasZZero.setText("2000");
+
+        EasZOne.setText("2001");
+
+        EasZTwo.setText("2002");
+
+        EasZThree.setText("2003");
+
+        EasZFour.setText("2004");
+
+        EasZFive.setText("2005");
+
+        EasZSix.setText("2006");
+
+        EasZSeven.setText("2007");
+        EasZSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasZSevenActionPerformed(evt);
+            }
+        });
+
+        EasZEight.setText("2008");
+
+        EasZNine.setText("2009");
+
+        javax.swing.GroupLayout East2000sButtonsLayout = new javax.swing.GroupLayout(East2000sButtons);
+        East2000sButtons.setLayout(East2000sButtonsLayout);
+        East2000sButtonsLayout.setHorizontalGroup(
+            East2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(East2000sButtonsLayout.createSequentialGroup()
+                .addGroup(East2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(East2000sButtonsLayout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(BarTitleYas7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(East2000sButtonsLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(EasZZero)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZOne)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZTwo)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZThree)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZFour)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZFive)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZSix)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZSeven)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZEight)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasZNine)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        East2000sButtonsLayout.setVerticalGroup(
+            East2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(East2000sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(East2000sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EasZZero)
+                    .addComponent(EasZOne)
+                    .addComponent(EasZTwo)
+                    .addComponent(EasZThree)
+                    .addComponent(EasZFour)
+                    .addComponent(EasZFive)
+                    .addComponent(EasZSix)
+                    .addComponent(EasZSeven)
+                    .addComponent(EasZEight)
+                    .addComponent(EasZNine))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("East 2000s", East2000sButtons);
+
+        BarTitleYas8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        BarTitleYas8.setText("Total Vehicles Per Road Going East In The 2010s");
+
+        EasTZero.setText("2010");
+
+        EasTOne.setText("2011");
+
+        EasTTwo.setText("2012");
+
+        EasTThree.setText("2013");
+
+        EasTFour.setText("2014");
+
+        EasTFive.setText("2015");
+
+        EasTSix.setText("2016");
+
+        EasTSeven.setText("2017");
+
+        EasTEight.setText("2018");
+
+        EasTNine.setText("2019");
+
+        javax.swing.GroupLayout East2010sButtonsLayout = new javax.swing.GroupLayout(East2010sButtons);
+        East2010sButtons.setLayout(East2010sButtonsLayout);
+        East2010sButtonsLayout.setHorizontalGroup(
+            East2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(East2010sButtonsLayout.createSequentialGroup()
+                .addGroup(East2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(East2010sButtonsLayout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(BarTitleYas8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(East2010sButtonsLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(EasTZero)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTOne)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTTwo)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTThree)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTFour)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTFive)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTSix)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTSeven)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTEight)
+                        .addGap(18, 18, 18)
+                        .addComponent(EasTNine)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        East2010sButtonsLayout.setVerticalGroup(
+            East2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(East2010sButtonsLayout.createSequentialGroup()
+                .addComponent(BarTitleYas8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(East2010sButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EasTZero)
+                    .addComponent(EasTOne)
+                    .addComponent(EasTTwo)
+                    .addComponent(EasTThree)
+                    .addComponent(EasTFour)
+                    .addComponent(EasTFive)
+                    .addComponent(EasTSix)
+                    .addComponent(EasTSeven)
+                    .addComponent(EasTEight)
+                    .addComponent(EasTNine))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("East 2010s", East2010sButtons);
+
+        CompVehsAll.setText("Compare All Vehicles Travelling Every Road Between 2000 and 2019");
+        CompVehsAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CompVehsAllActionPerformed(evt);
+            }
+        });
+        jTabbedPane1.addTab("Overview", CompVehsAll);
 
         javax.swing.GroupLayout DashboardPanel_1Layout = new javax.swing.GroupLayout(DashboardPanel_1);
         DashboardPanel_1.setLayout(DashboardPanel_1Layout);
@@ -395,9 +974,9 @@ public class HomePage extends JFrame {
             DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DashboardPanel_1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ChartAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(DashboardPanel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ChartAreaYas, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DashboardPanel_1Layout.setVerticalGroup(
@@ -406,7 +985,8 @@ public class HomePage extends JFrame {
                 .addContainerGap()
                 .addComponent(ChartAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonAreaYas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13))
         );
 
         DashboardPanel_2.setBackground(new java.awt.Color(208, 239, 255));
@@ -766,8 +1346,8 @@ public class HomePage extends JFrame {
             .addGroup(DashboardPanel_4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(D4PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
-                    .addComponent(D4PanelFilters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE))
+                    .addComponent(D4PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
+                    .addComponent(D4PanelFilters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE))
                 .addContainerGap())
         );
         DashboardPanel_4Layout.setVerticalGroup(
@@ -1360,11 +1940,11 @@ public class HomePage extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(AdminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_2, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+            .addComponent(DashboardPanel_4, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+            .addComponent(AdminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -1501,10 +2081,10 @@ public class HomePage extends JFrame {
         DashboardPanel_1.setVisible(true);       //add one panel
 
         //TrafficController.getYas();
-        drawDefaultYas();
+        //TrafficController.getDefaultYas();
     }//GEN-LAST:event_Dashboard1ActionPerformed
 
-    public void drawDefaultYas(){
+    public JFreeChart drawDefaultYas(){
         Connection DefYas = DB.getConnection();
         Statement StYas = null;
         JDBCCategoryDataset defDataYas = null;
@@ -1545,7 +2125,7 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setVisible(true);*/
         
         
-        JFreeChart DB1chart = ChartFactory.createBarChart("Total Number of Vehicles Per Road", 
+        JFreeChart DB1chart = ChartFactory.createLineChart("Total Number of Vehicles Per Road", 
                 "Road Name", "Total Vehicle Amount", defDataYas, PlotOrientation.VERTICAL, false, true, false);
         DB1chart.setBackgroundPaint(Color.white);
         DB1chart.getTitle().setPaint(Color.blue);
@@ -1558,20 +2138,25 @@ public class HomePage extends JFrame {
         renderer.setItemMargin(-4);
         renderer.setSeriesPaint(0, Color.blue);
         
-        /*ChartPanel dashboard1ChartPanel = new ChartPanel(DB11chart);
+        /*ChartPanel dashboard1ChartPanel = new ChartPanel(DB1chart);
         dashboard1ChartPanel.setSize(813,370);
         dashboard1ChartPanel.setVisible(true);*/
         
-        ChartFrame chartAreaF = new ChartFrame("Total Number of Vehicles Per Road", DB1chart);
+        ChartPanel chartAreaF = new ChartPanel(DB1chart);
+        chartAreaF.setChart(DB1chart);
         chartAreaF.setSize(813,370);
+        ChartAreaYas.setAlignmentX(CENTER_ALIGNMENT);
         chartAreaF.setVisible(true);
-        /*ChartPanel DashboardPanel_1 = new ChartPanel(DB1chart);
-        DashboardPanel_1.setSize(813,370);
-        DashboardPanel_1.setVisible(true);*/
+        ChartAreaYas.add(chartAreaF);
+        return DB1chart;
+//DashboardPanel_1;        
+        //ChartPanel DashboardPanel_1 = new ChartPanel(DB1chart);
+        //DashboardPanel_1.setSize(813,370);
+        //DashboardPanel_1.setVisible(true);
         
         
     }    
-    public void draw2KNorthYas(){
+    public JFreeChart draw2KNorthYas(){
         Connection DefYas = DB.getConnection();
         Statement StYas = null;
         JDBCCategoryDataset TwoThZN = null;
@@ -1613,31 +2198,31 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setVisible(true);*/
         
         
+        
         JFreeChart DB1chart = ChartFactory.createBarChart("Total Vehicles Going North in the Year 2000", 
                 "Road Name", "Total Vehicle Amount", TwoThZN, PlotOrientation.VERTICAL, false, true, false);
         DB1chart.setBackgroundPaint(Color.white);
         DB1chart.getTitle().setPaint(Color.blue);
         
-        /*CategoryPlot DFY = DB1chart.getCategoryPlot();
+        CategoryPlot DFY = DB1chart.getCategoryPlot();
         DFY.setRangeGridlinePaint(Color.red);
         BarRenderer renderer = (BarRenderer) DFY.getRenderer();
         renderer.setDrawBarOutline(true);
         renderer.setShadowVisible(true);
         renderer.setItemMargin(-4);
-        renderer.setSeriesPaint(0, Color.blue);*/
+        renderer.setSeriesPaint(0, Color.blue);
         
-        /*ChartPanel dashboard1ChartPanel = new ChartPanel(DB11chart);
+        /*ChartPanel dashboard1ChartPanel = new ChartPanel(DB1chart);
         dashboard1ChartPanel.setSize(813,370);
         dashboard1ChartPanel.setVisible(true);*/
         
-        ChartFrame chartAreaF = new ChartFrame("Total Number of Vehicles Per Road", DB1chart);
+        ChartPanel chartAreaF = new ChartPanel(DB1chart);
+        chartAreaF.setChart(DB1chart);
         chartAreaF.setSize(813,370);
+        ChartAreaYas.setAlignmentX(CENTER_ALIGNMENT);
         chartAreaF.setVisible(true);
-        /*ChartPanel DashboardPanel_1 = new ChartPanel(DB1chart);
-        DashboardPanel_1.setSize(813,370);
-        DashboardPanel_1.setVisible(true);*/
-        
-        
+        ChartAreaYas.add(chartAreaF);
+        return DB1chart;
     }    
     private void Dashboard1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseEntered
         //dashboard 1 hover
@@ -2059,13 +2644,21 @@ public class HomePage extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_D4BusCoachCheckboxActionPerformed
 
-    private void AllVehsDB1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AllVehsDB1MouseClicked
-        draw2KNorthYas();
-    }//GEN-LAST:event_AllVehsDB1MouseClicked
+    private void WesTOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTOneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WesTOneActionPerformed
 
-    private void SouthComboDB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouthComboDB1ActionPerformed
-        
-    }//GEN-LAST:event_SouthComboDB1ActionPerformed
+    private void EasZSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasZSevenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EasZSevenActionPerformed
+
+    private void CompVehsAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompVehsAllActionPerformed
+        drawDefaultYas();
+    }//GEN-LAST:event_CompVehsAllActionPerformed
+
+    private void NouZZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouZZeroActionPerformed
+        draw2KNorthYas();
+    }//GEN-LAST:event_NouZZeroActionPerformed
 
     
     public void createBar() {
@@ -2372,12 +2965,17 @@ public class HomePage extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPanel;
-    private javax.swing.JButton AllVehsDB1;
     private javax.swing.JButton BackButtonDashboard2;
     private java.awt.Label BarTitleYas1;
-    private javax.swing.JPanel ButtonAreaYas;
-    private java.awt.Label ChangeDirectionDB1;
+    private java.awt.Label BarTitleYas2;
+    private java.awt.Label BarTitleYas3;
+    private java.awt.Label BarTitleYas4;
+    private java.awt.Label BarTitleYas5;
+    private java.awt.Label BarTitleYas6;
+    private java.awt.Label BarTitleYas7;
+    private java.awt.Label BarTitleYas8;
     private javax.swing.JPanel ChartAreaYas;
+    private javax.swing.JButton CompVehsAll;
     private javax.swing.JCheckBox D4BusCoachCheckbox;
     private javax.swing.JCheckBox D4CarTaxiCheckbox;
     private javax.swing.JButton D4ExecuteButton;
@@ -2400,23 +2998,98 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel DashboardPanel_3;
     private javax.swing.JPanel DashboardPanel_4;
     private javax.swing.JLabel DescriptionLabelDashboard2;
-    private java.awt.Choice EastChoice;
-    private javax.swing.JComboBox<String> EastComboDB1;
-    private java.awt.Label EastTextDB1;
+    private javax.swing.JButton EasTEight;
+    private javax.swing.JButton EasTFive;
+    private javax.swing.JButton EasTFour;
+    private javax.swing.JButton EasTNine;
+    private javax.swing.JButton EasTOne;
+    private javax.swing.JButton EasTSeven;
+    private javax.swing.JButton EasTSix;
+    private javax.swing.JButton EasTThree;
+    private javax.swing.JButton EasTTwo;
+    private javax.swing.JButton EasTZero;
+    private javax.swing.JButton EasZEight;
+    private javax.swing.JButton EasZFive;
+    private javax.swing.JButton EasZFour;
+    private javax.swing.JButton EasZNine;
+    private javax.swing.JButton EasZOne;
+    private javax.swing.JButton EasZSeven;
+    private javax.swing.JButton EasZSix;
+    private javax.swing.JButton EasZThree;
+    private javax.swing.JButton EasZTwo;
+    private javax.swing.JButton EasZZero;
+    private javax.swing.JPanel East2000sButtons;
+    private javax.swing.JPanel East2010sButtons;
     private javax.swing.JButton NextButtonDashboard2;
-    private java.awt.Choice NorthChoice;
-    private javax.swing.JComboBox<String> NorthComboDB1;
-    private java.awt.Label NorthTextDB1;
-    private java.awt.Label RYYas;
+    private javax.swing.JPanel North2000sButtons;
+    private javax.swing.JPanel North2010sButtons;
+    private javax.swing.JButton NouTEight;
+    private javax.swing.JButton NouTFive;
+    private javax.swing.JButton NouTFour;
+    private javax.swing.JButton NouTNine;
+    private javax.swing.JButton NouTOne;
+    private javax.swing.JButton NouTSeven;
+    private javax.swing.JButton NouTSix;
+    private javax.swing.JButton NouTThree;
+    private javax.swing.JButton NouTTwo;
+    private javax.swing.JButton NouTZero;
+    private javax.swing.JButton NouZEight;
+    private javax.swing.JButton NouZFive;
+    private javax.swing.JButton NouZFour;
+    private javax.swing.JButton NouZNine;
+    private javax.swing.JButton NouZOne;
+    private javax.swing.JButton NouZSeven;
+    private javax.swing.JButton NouZSix;
+    private javax.swing.JButton NouZThree;
+    private javax.swing.JButton NouZTwo;
+    private javax.swing.JButton NouZZero;
     private javax.swing.JButton ResetButtonDashboard2;
     private java.awt.Choice RoadChoiceDashboard2;
     private javax.swing.JSlider SlideBarDashboard2;
-    private java.awt.Choice SouthChoice;
-    private javax.swing.JComboBox<String> SouthComboDB1;
-    private java.awt.Label SouthTextDB1;
-    private java.awt.Choice WestChoice;
-    private javax.swing.JComboBox<String> WestComboDB1;
-    private java.awt.Label WestTextDB1;
+    private javax.swing.JButton SouTEight;
+    private javax.swing.JButton SouTFive;
+    private javax.swing.JButton SouTFour;
+    private javax.swing.JButton SouTNine;
+    private javax.swing.JButton SouTOne;
+    private javax.swing.JButton SouTSeven;
+    private javax.swing.JButton SouTSix;
+    private javax.swing.JButton SouTThree;
+    private javax.swing.JButton SouTTwo;
+    private javax.swing.JButton SouTZero;
+    private javax.swing.JButton SouZEight;
+    private javax.swing.JButton SouZFive;
+    private javax.swing.JButton SouZFour;
+    private javax.swing.JButton SouZNine;
+    private javax.swing.JButton SouZOne;
+    private javax.swing.JButton SouZSeven;
+    private javax.swing.JButton SouZSix;
+    private javax.swing.JButton SouZThree;
+    private javax.swing.JButton SouZTwo;
+    private javax.swing.JButton SouZZero;
+    private javax.swing.JPanel South2000sButtons;
+    private javax.swing.JPanel South2010sButtons;
+    private javax.swing.JButton WesTEight;
+    private javax.swing.JButton WesTFive;
+    private javax.swing.JButton WesTFour;
+    private javax.swing.JButton WesTNine;
+    private javax.swing.JButton WesTOne;
+    private javax.swing.JButton WesTSeven;
+    private javax.swing.JButton WesTSix;
+    private javax.swing.JButton WesTThree;
+    private javax.swing.JButton WesTTwo;
+    private javax.swing.JButton WesTZero;
+    private javax.swing.JButton WesZEight;
+    private javax.swing.JButton WesZFive;
+    private javax.swing.JButton WesZFour;
+    private javax.swing.JButton WesZNine;
+    private javax.swing.JButton WesZOne;
+    private javax.swing.JButton WesZSeven;
+    private javax.swing.JButton WesZSix;
+    private javax.swing.JButton WesZThree;
+    private javax.swing.JButton WesZTwo;
+    private javax.swing.JButton WesZZero;
+    private javax.swing.JPanel West2000sButtons;
+    private javax.swing.JPanel West2010sButtons;
     private javax.swing.JCheckBox adminChangeAdminStatusCheckBox;
     private javax.swing.JLabel adminEmailLabel;
     private javax.swing.JPanel adminLeftPanel;
@@ -2454,6 +3127,7 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private java.awt.Label labelHourDashboard2;
     private javax.swing.JLabel lableYearDashboard2;
     private javax.swing.JButton logoutButton;
@@ -2737,6 +3411,8 @@ public class HomePage extends JFrame {
         D4Panel.repaint();
         
     }
+    
+    
     
     
     

@@ -183,30 +183,33 @@ public class TrafficController {
         return null;
     }
     
-    public ResultSet getDefaultYas(int road, int traffic) {
-        Connection connection = DB.getConnection();
-        String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs" + traffic + "\n" +
-                "From Traffic_Volume AS TV\n" +
-                "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
-                "JOIN Road AS RD ON RD.road_name = CPC.road_name" + road + "\n" +
-                "GROUP BY CPC.road_name";
-                //+ "'" + volume + "'" + year + "'"; 
-        
-        ResultSet result = null;
-        try {
-            Statement statement = connection.createStatement();
-            result = statement.executeQuery(sql);
-            if (result.next()) {
-                // System.out.println("Region name is " + result.getString("region_name"));
+    public static class Dash1 {
+    
+    public ResultSet getDefaultYas() {
+            Connection connection = DB.getConnection();
+            String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs" +
+                    "From Traffic_Volume AS TV" +
+                    "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id" +
+                    "JOIN Road AS RD ON RD.road_name = CPC.road_name" +
+                    "GROUP BY CPC.road_name";
+                    //+ "'" + volume + "'" + year + "'"; 
+
+            ResultSet result = null;
+            try {
+                Statement statement = connection.createStatement();
+                result = statement.executeQuery(sql);
+                if (result.next()) {
+                    // System.out.println("Region name is " + result.getString("region_name"));
+                }
+                return result;
+
+            } catch (Exception e) {
+                System.out.println("Error readiong from Region table" + e.getMessage());
+            } finally {
+
             }
-            return result;
-
-        } catch (Exception e) {
-            System.out.println("Error readiong from Region table" + e.getMessage());
-        } finally {
-
+            return null;
         }
-        return null;
     }
     
     /*public ResultSet getConTestY(){
