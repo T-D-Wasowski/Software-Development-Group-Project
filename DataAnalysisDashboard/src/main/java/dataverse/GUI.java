@@ -1,3 +1,8 @@
+
+/**
+ *
+ * @author Tomasz, Adelin
+ */
 package dataverse;
 
 import java.awt.BorderLayout;

@@ -1,3 +1,9 @@
+
+/**
+ *
+ * @author Tomasz
+ */
+
 package dataverse;
 
 import java.security.NoSuchAlgorithmException;

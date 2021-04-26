@@ -7,7 +7,7 @@ package dataverse;
 
 /**
  *
- * @author Dawid
+ * @author Tomasz, Adelin, Yasin, Isa, Sefa
  */
 public class Main {
     /**

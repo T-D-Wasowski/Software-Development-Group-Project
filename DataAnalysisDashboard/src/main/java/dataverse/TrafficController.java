@@ -1,3 +1,9 @@
+
+/**
+ *
+ * @author Adelin, Isa, Yasin, Sefa
+ */
+
 package dataverse;
 
 import java.awt.Color;
