@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Tomasz
+ */
+
 package dataverse;
 
 public class Log {
