@@ -146,6 +146,30 @@ public class TrafficController {
         }
         return null;
     }
+    public ResultSet exDB1(int year, String direction) {
+        Connection connection = DB.getConnection();
+        String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs, CPC.the_year, TV.direction_of_travel \n"+
+                    "From Traffic_Volume AS TV \n" +
+                    "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
+                    "JOIN Road AS RD ON RD.road_name = CPC.road_name\n" +
+                    "WHERE CPC.the_year = " + year + " AND TV.direction_of_travel = '" + direction + "' \n"+
+                    "GROUP BY CPC.road_name";
+        ResultSet result = null;
+        try {
+            Statement statement = connection.createStatement();
+            result = statement.executeQuery(sql);
+            if (result.next()) {
+                // System.out.println("Region name is " + result.getString("region_name"));
+            }
+            return result;
+
+        } catch (Exception e) {
+            System.out.println("Error readiong from Region table" + e.getMessage());
+        } finally {
+
+        }
+        return null;
+    }
     public ResultSet getYasinCon2(int road) {
         Connection connection = DB.getConnection();
         String sql = "SELECT road_type, count (distinct road_type) FROM road;"; 

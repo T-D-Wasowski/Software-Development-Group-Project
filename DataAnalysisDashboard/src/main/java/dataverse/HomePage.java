@@ -3452,6 +3452,53 @@ public class HomePage extends JFrame {
         
         
     }    
+    //public JFreeChart exDB1Yas(int year, String direction){
+        //ChartAreaYas.repaint();
+        //ChartAreaYas.revalidate();
+        //TrafficController TCYAS = new TrafficController();
+        //TCYAS.draw2KNorthYas(year, direction);
+        //TrafficController controller = new TrafficController();
+
+        //ResultSet result = controller.exDB1(year, direction);
+        
+        
+        
+        /*JFreeChart DB1chart = ChartFactory.createBarChart("A199", "Road Name", "Amount of Vehicles", db1Dataset, PlotOrientation.VERTICAL,
+                true, true, false);
+        ChartPanel dashboard1ChartPanel = new ChartPanel(DB1chart);
+        dashboard1ChartPanel.setSize(813,370);
+        dashboard1ChartPanel.setVisible(true);*/
+        
+        
+        
+        /*JFreeChart DB1chart = ChartFactory.createBarChart("Total Vehicles Per Road", 
+                "Road Name", "Total Vehicle Amount", result, PlotOrientation.VERTICAL, false, true, false);
+        DB1chart.setBackgroundPaint(Color.white);
+        DB1chart.getTitle().setPaint(Color.blue);
+        
+        CategoryPlot DFY = DB1chart.getCategoryPlot();
+        DFY.setRangeGridlinePaint(Color.red);
+        BarRenderer renderer = (BarRenderer) DFY.getRenderer();
+        renderer.setDrawBarOutline(true);
+        renderer.setShadowVisible(true);*/
+        //renderer.setItemMargin(-4);
+        //renderer.setSeriesPaint(0, Color.blue);
+        
+        
+        /*ChartPanel dashboard1ChartPanel = new ChartPanel(DB1chart);
+        dashboard1ChartPanel.setSize(813,370);
+        dashboard1ChartPanel.setVisible(true);*/
+        
+        /*ChartPanel chartAreaF = new ChartPanel(DB1chart);
+        chartAreaF.setChart(DB1chart);
+        chartAreaF.setSize(813,370);
+        ChartAreaYas.setAlignmentX(CENTER_ALIGNMENT);
+        chartAreaF.setVisible(true);
+        ChartAreaYas.add(chartAreaF);
+        return DB1chart;*/
+        
+        
+    //}    
     private void Dashboard1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard1MouseEntered
         //dashboard 1 hover
         Dashboard1.setBackground(new Color(245, 160, 39));          //orange
@@ -3876,6 +3923,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2011");
         
         int year = 2011; 
         String direction = "W";
@@ -3886,6 +3934,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2007");
         
         int year = 2007; 
         String direction = "E";
@@ -3897,6 +3946,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
         
+        System.out.println("Total vehicles on each road between 2000 and 2019");
         drawDefaultYas();
     }//GEN-LAST:event_CompVehsAllActionPerformed
 
@@ -3905,6 +3955,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2000");
         
         int year = 2000; 
         String direction = "N";
@@ -4004,6 +4055,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2010");
         
         int year = 2010; 
         String direction = "S";
@@ -4574,6 +4626,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2002");
         
         int year = 2000; 
         String direction = "S";
@@ -4584,6 +4637,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2000");
         
         int year = 2000; 
         String direction = "S";
@@ -4594,6 +4648,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2001");
         
         int year = 2001; 
         String direction = "S";
@@ -4604,6 +4659,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2003");
         
         int year = 2003; 
         String direction = "S";
@@ -4614,6 +4670,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2004");
         
         int year = 2004; 
         String direction = "S";
@@ -4624,6 +4681,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2005");
         
         int year = 2005; 
         String direction = "S";
@@ -4634,6 +4692,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2006");
         
         int year = 2006; 
         String direction = "S";
@@ -4644,6 +4703,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2007");
         
         int year = 2007; 
         String direction = "S";
@@ -4654,6 +4714,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2008");
         
         int year = 2008; 
         String direction = "S";
@@ -4664,6 +4725,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2009");
         
         int year = 2009; 
         String direction = "S";
@@ -4674,6 +4736,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2011");
         
         int year = 2011; 
         String direction = "S";
@@ -4684,6 +4747,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2012");
         
         int year = 2012; 
         String direction = "S";
@@ -4694,6 +4758,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2013");
         
         int year = 2013; 
         String direction = "S";
@@ -4704,6 +4769,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2014");
         
         int year = 2014; 
         String direction = "S";
@@ -4714,6 +4780,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2015");
         
         int year = 2015; 
         String direction = "S";
@@ -4724,6 +4791,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2016");
         
         int year = 2016; 
         String direction = "S";
@@ -4734,6 +4802,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2017");
         
         int year = 2017; 
         String direction = "S";
@@ -4744,6 +4813,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling South on each road during the Year 2018");
         
         int year = 2018; 
         String direction = "S";
@@ -4754,7 +4824,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
-        
+        System.out.println("Total vehicles travelling South on each road during the Year 2019");
         int year = 2019; 
         String direction = "S";
         drawDB1Yas(year, direction);
@@ -4764,6 +4834,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2000");
         
         int year = 2000; 
         String direction = "W";
@@ -4774,6 +4845,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2001");
         
         int year = 2001; 
         String direction = "W";
@@ -4784,6 +4856,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2002");
         
         int year = 2002; 
         String direction = "W";
@@ -4794,6 +4867,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2003");
         
         int year = 2003; 
         String direction = "W";
@@ -4804,6 +4878,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2004");
         
         int year = 2004; 
         String direction = "W";
@@ -4814,6 +4889,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2005");
         
         int year = 2005; 
         String direction = "W";
@@ -4824,6 +4900,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2006");
         
         int year = 2006; 
         String direction = "W";
@@ -4834,6 +4911,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2007");
         
         int year = 2007; 
         String direction = "W";
@@ -4844,6 +4922,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2008");
         
         int year = 2008; 
         String direction = "W";
@@ -4854,6 +4933,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2009");
         
         int year = 2009; 
         String direction = "W";
@@ -4864,6 +4944,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2010");
         
         int year = 2010; 
         String direction = "W";
@@ -4874,6 +4955,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2012");
         
         int year = 2012; 
         String direction = "W";
@@ -4884,6 +4966,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2013");
         
         int year = 2013; 
         String direction = "W";
@@ -4894,6 +4977,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2014");
         
         int year = 2013; 
         String direction = "W";
@@ -4904,6 +4988,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2015");
         
         int year = 2015; 
         String direction = "W";
@@ -4914,6 +4999,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2016");
         
         int year = 2016; 
         String direction = "W";
@@ -4924,6 +5010,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2017");
         
         int year = 2017; 
         String direction = "W";
@@ -4934,6 +5021,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2018");
         
         int year = 2018; 
         String direction = "W";
@@ -4944,6 +5032,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling West on each road during the Year 2019");
         
         int year = 2019; 
         String direction = "W";
@@ -4954,6 +5043,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2001");
         
         int year = 2001; 
         String direction = "N";
@@ -4964,6 +5054,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2002");
         
         int year = 2002; 
         String direction = "N";
@@ -4974,6 +5065,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2003");
         
         int year = 2003; 
         String direction = "N";
@@ -4984,6 +5076,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2004");
         
         int year = 2004; 
         String direction = "N";
@@ -4994,6 +5087,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2005");
         
         int year = 2005; 
         String direction = "N";
@@ -5004,6 +5098,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2006");
         
         int year = 2006; 
         String direction = "N";
@@ -5014,6 +5109,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2007");
         
         int year = 2007; 
         String direction = "N";
@@ -5024,6 +5120,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2008");
         
         int year = 2008; 
         String direction = "N";
@@ -5034,6 +5131,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2009");
         
         int year = 2009; 
         String direction = "N";
@@ -5044,6 +5142,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2010");
         
         int year = 2010; 
         String direction = "N";
@@ -5054,6 +5153,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2011");
         
         int year = 2011; 
         String direction = "N";
@@ -5064,6 +5164,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2012");
         
         int year = 2012; 
         String direction = "N";
@@ -5074,6 +5175,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2013");
         
         int year = 2013; 
         String direction = "N";
@@ -5084,6 +5186,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2014");
         
         int year = 2014; 
         String direction = "N";
@@ -5094,6 +5197,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2015");
         
         int year = 2015; 
         String direction = "N";
@@ -5104,6 +5208,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2016");
         
         int year = 2016; 
         String direction = "N";
@@ -5114,6 +5219,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2017");
         
         int year = 2017; 
         String direction = "N";
@@ -5124,6 +5230,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2018");
         
         int year = 2018; 
         String direction = "N";
@@ -5134,6 +5241,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling North on each road during the Year 2019");
         
         int year = 2019; 
         String direction = "N";
@@ -5144,6 +5252,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2000");
         
         int year = 2000; 
         String direction = "E";
@@ -5154,6 +5263,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2001");
         
         int year = 2001; 
         String direction = "E";
@@ -5164,6 +5274,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2002");
         
         int year = 2002; 
         String direction = "E";
@@ -5174,6 +5285,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2003");
         
         int year = 2003; 
         String direction = "E";
@@ -5184,6 +5296,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2004");
         
         int year = 2004; 
         String direction = "E";
@@ -5194,6 +5307,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2005");
         
         int year = 2005; 
         String direction = "E";
@@ -5204,6 +5318,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2006");
         
         int year = 2006; 
         String direction = "E";
@@ -5214,7 +5329,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
-        
+        System.out.println("Total vehicles travelling East on each road during the Year 2008");
         int year = 2008; 
         String direction = "E";
         drawDB1Yas(year, direction);
@@ -5224,6 +5339,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2009");
         
         int year = 2009; 
         String direction = "E";
@@ -5234,6 +5350,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2010");
         
         int year = 2010; 
         String direction = "E";
@@ -5244,6 +5361,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2011");
         
         int year = 2011; 
         String direction = "E";
@@ -5254,6 +5372,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2012");
         
         int year = 2012; 
         String direction = "E";
@@ -5264,6 +5383,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2013");
         
         int year = 2013; 
         String direction = "E";
@@ -5274,6 +5394,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2014");
         
         int year = 2014; 
         String direction = "E";
@@ -5284,6 +5405,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2015");
         
         int year = 2015; 
         String direction = "E";
@@ -5294,6 +5416,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2016");
         
         int year = 2016; 
         String direction = "E";
@@ -5304,6 +5427,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2017");
         
         int year = 2017; 
         String direction = "E";
@@ -5314,6 +5438,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2018");
         
         int year = 2018; 
         String direction = "E";
@@ -5324,6 +5449,7 @@ public class HomePage extends JFrame {
         ChartAreaYas.removeAll();
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
+        System.out.println("Total vehicles travelling East on each road during the Year 2019");
         
         int year = 2019; 
         String direction = "E";
