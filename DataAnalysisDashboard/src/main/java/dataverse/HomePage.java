@@ -205,7 +205,6 @@ public class HomePage extends JFrame {
         D4BusCoachCheckbox = new javax.swing.JCheckBox();
         D4HeavyVehicCheckbox = new javax.swing.JCheckBox();
         D4LargeGoodsCheckbox = new javax.swing.JCheckBox();
-        D4ExecuteButton = new javax.swing.JButton();
         D4RoadChoice = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         AdminPanel = new javax.swing.JPanel();
@@ -2432,8 +2431,8 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_4.setPreferredSize(new java.awt.Dimension(836, 500));
 
-        JFreeChart D4GUIChart = createD4PieChart(D4PieChart());
-        D4PanelMain.add(new ChartPanel(D4GUIChart),BorderLayout.CENTER);
+        JPanel D4GUIChart = createD4PieChart(D4PieChart());
+        D4PanelMain.add(D4GUIChart,BorderLayout.CENTER);
         D4PanelMain.setVisible(true);
         D4PanelMain.setBackground(new java.awt.Color(208, 239, 255));
         D4PanelMain.setPreferredSize(new java.awt.Dimension(813, 370));
@@ -2511,13 +2510,6 @@ public class HomePage extends JFrame {
             }
         });
 
-        D4ExecuteButton.setText("Go");
-        D4ExecuteButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                D4ExecuteButtonActionPerformed(evt);
-            }
-        });
-
         D4RoadChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Major", "Minor" }));
         D4RoadChoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2532,21 +2524,18 @@ public class HomePage extends JFrame {
         D4PanelFiltersLayout.setHorizontalGroup(
             D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(D4ExecuteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(D4RoadChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel11)))
-                .addGap(16, 16, 16)
-                .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(D4RoadChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(D4YearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(D4PanelFiltersLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel11)
+                        .addGap(46, 46, 46)
                         .addComponent(D4YearLabel)))
-                .addGap(19, 19, 19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addComponent(D4CarTaxiCheckbox)
                 .addGap(18, 18, 18)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2591,10 +2580,6 @@ public class HomePage extends JFrame {
                             .addComponent(D4HeavyVehicCheckbox)
                             .addComponent(D4LargeGoodsCheckbox))))
                 .addGap(26, 26, 26))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, D4PanelFiltersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(D4ExecuteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
 
         javax.swing.GroupLayout DashboardPanel_4Layout = new javax.swing.GroupLayout(DashboardPanel_4);
@@ -2604,8 +2589,8 @@ public class HomePage extends JFrame {
             .addGroup(DashboardPanel_4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(D4PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
-                    .addComponent(D4PanelFilters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE))
+                    .addComponent(D4PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+                    .addComponent(D4PanelFilters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE))
                 .addContainerGap())
         );
         DashboardPanel_4Layout.setVerticalGroup(
@@ -3860,104 +3845,100 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_adminTableMouseReleased
 
     private void D4CarTaxiCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4CarTaxiCheckboxActionPerformed
-        String CTRoadType = null;    
-        String CarsTaxisSelected = "SUM(cars_and_taxis) AS CarsTaxis"
-             + "FROM Traffic_Volume AS TV"
-             + "JOIN Count_Point AS CP ON TV.count_point_id = CP.count_point_id"
-             + "JOIN Road AS Rd ON Rd.road_name = CP.road_name WHERE Rd.road_type =  '" + CTRoadType + "' ";
-        
-         DefaultPieDataset D4Dataset = new DefaultPieDataset();
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
          
     }//GEN-LAST:event_D4CarTaxiCheckboxActionPerformed
 
     private void D4TwoWheelCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4TwoWheelCheckboxActionPerformed
-        // TODO add your handling code here:
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
     }//GEN-LAST:event_D4TwoWheelCheckboxActionPerformed
 
     private void D4PedalCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4PedalCheckboxActionPerformed
-        // TODO add your handling code here:
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
     }//GEN-LAST:event_D4PedalCheckboxActionPerformed
 
     private void D4HeavyVehicCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4HeavyVehicCheckboxActionPerformed
-        // TODO add your handling code here:
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
     }//GEN-LAST:event_D4HeavyVehicCheckboxActionPerformed
 
     private void D4LargeGoodsCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4LargeGoodsCheckboxActionPerformed
-        // TODO add your handling code here:
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
     }//GEN-LAST:event_D4LargeGoodsCheckboxActionPerformed
 
-    private void D4ExecuteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4ExecuteButtonActionPerformed
-          
-        String D4RoadDropdown = D4RoadChoice.getSelectedItem().toString();
-          System.out.println(D4RoadDropdown);
-          
-          String D4YearChoice = D4YearDropdown.getSelectedItem().toString();
-          System.out.println(D4YearChoice);
-          
-          String CarTaxi = "";
-          String BusCoach = "";
-          String TwoWheelers = "";
-          String Pedals = "";
-          String HGVS = "";
-          String LGVS = "";
-          if (D4CarTaxiCheckbox.isSelected()) {
-              CarTaxi = D4CarTaxiCheckbox.getText();
-          }
-          if (D4BusCoachCheckbox.isSelected()) {
-              BusCoach = D4BusCoachCheckbox.getText();
-          }
-          
-          if (D4TwoWheelCheckbox.isSelected()) {
-              TwoWheelers = D4TwoWheelCheckbox.getText();
-          }
-          
-          if (D4PedalCheckbox.isSelected()) {
-              Pedals = D4PedalCheckbox.getText();
-          }
-          
-          if (D4HeavyVehicCheckbox.isSelected()) {
-              HGVS = D4HeavyVehicCheckbox.getText();
-          }
-          
-          if (D4LargeGoodsCheckbox.isSelected()) {
-              LGVS = D4LargeGoodsCheckbox.getText();
-          }
-          
-          
-          Map<String, Integer> D4DataMap = null;
-        try {
-         D4DataMap = getVehicleCountD4(D4RoadDropdown, D4YearChoice, null);
-            
-        } catch (SQLException ex) {
-            System.out.println("SQL Error found");
-        }
-        
-        DefaultPieDataset D4Dataset = new DefaultPieDataset();
-        if (CarTaxi != null && !CarTaxi.isEmpty()) {
-            D4Panel.actionPerformed(evt);
-            D4Dataset.setValue("Cars and Taxis", D4DataMap.get("Cars and Taxis")); 
-            System.out.println(CarTaxi);
-        }
-        
-        
-        D4Panel.repaint();
-        D4Panel.revalidate();
-        
-        D4Panel.setVisible(true);
-        
-                  
-    }//GEN-LAST:event_D4ExecuteButtonActionPerformed
-
     private void D4RoadChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4RoadChoiceActionPerformed
-        // TODO add your handling code here:
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
     }//GEN-LAST:event_D4RoadChoiceActionPerformed
 
     private void D4YearDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4YearDropdownActionPerformed
-        
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
     }//GEN-LAST:event_D4YearDropdownActionPerformed
 
     private void D4BusCoachCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4BusCoachCheckboxActionPerformed
-        // TODO add your handling code here:
+        PieDataset D4Dataset = D4LoadCheckboxValuesIntoChart();         
+
+        D4PanelMain.removeAll();
+        D4PanelMain.repaint();
+        D4PanelMain.revalidate();
+        JPanel d4Jpanel=createD4PieChart(D4Dataset);
+        D4PanelMain.add(d4Jpanel,BorderLayout.CENTER);
+        D4PanelMain.repaint();
+        D4PanelMain.validate();
     }//GEN-LAST:event_D4BusCoachCheckboxActionPerformed
 
     private void WesTOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesTOneActionPerformed
@@ -5817,7 +5798,6 @@ public class HomePage extends JFrame {
     private javax.swing.JPanel D3PanelNav;
     private javax.swing.JCheckBox D4BusCoachCheckbox;
     private javax.swing.JCheckBox D4CarTaxiCheckbox;
-    private javax.swing.JButton D4ExecuteButton;
     private javax.swing.JCheckBox D4HeavyVehicCheckbox;
     private javax.swing.JCheckBox D4LargeGoodsCheckbox;
     private javax.swing.JPanel D4PanelFilters;
@@ -6158,11 +6138,14 @@ public class HomePage extends JFrame {
         
         
     //Pie Chart Creation (Isa)
+    /*
+    Method to create a dataset as well as set the default values for first viewing of chart upon clicking on Dashboard 4
+    */
     public PieDataset D4PieChart() {
         DefaultPieDataset D4Dataset = new DefaultPieDataset();
         Map<String, Integer> D4Hash = null; 
         try {
-            D4Hash = getVehicleCountD4("2000", "Major", null );
+            D4Hash = getVehicleCountD4("2000", "Major");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -6171,8 +6154,10 @@ public class HomePage extends JFrame {
         }
         return D4Dataset;
     }
-
-    public JFreeChart createD4PieChart(PieDataset D4PieDataset) {
+    /*
+    Method to create the initial Pie Chart for Dashboard 4
+    */
+    public JPanel createD4PieChart(PieDataset D4PieDataset) {
         JFreeChart D4Chart = ChartFactory.createPieChart(
                 "Vehicles on major or minor roads per year",
                 D4PieDataset,
@@ -6180,29 +6165,25 @@ public class HomePage extends JFrame {
                 true,
                 false
         );
-        D4Chart.setBackgroundPaint(new Color(208,239,255));
+        D4Chart.setBackgroundPaint(new Color(208,239,255)); // Setting background color to standard blue color decided on by group
         D4Chart.getTitle().setPaint(Color.black);
         D4Chart.getPlot().setBackgroundPaint(new Color(208,239,255));
         D4Chart.getLegend().setBackgroundPaint(new Color(208,239,255));
         
-        
-        D4Panel.setChart(D4Chart);
-        D4Panel.setVisible(true);
-        D4Panel.setSize(825, 370);
-        D4Panel.setAlignmentX(CENTER_ALIGNMENT);
-        D4Panel.setBackground(new Color(208,239,255));
-        D4Panel.repaint();
-        D4PanelMain.remove(D4Panel);
-        D4PanelMain.revalidate();
-        D4PanelMain.add(D4Panel);
-        return D4Chart;
+        ChartPanel D4PanelTemp= new ChartPanel(D4Chart); // CReating a chart panel to display the pie chart
+        D4PanelTemp.setVisible(true);
+        D4PanelTemp.setSize(825, 370); // Setting the chart size according to size of panel, in order to correctly display chart in a seamless manner and fit it properly within the border
+        D4PanelTemp.setBackground(new Color(208,239,255));
+        return D4PanelTemp;
                 
     }
     
-    
-    public Map<String, Integer> getVehicleCountD4(String Year, String RoadType, ArrayList<String> VehicleType) throws SQLException {
-        Connection D4Connection = DB.getConnection();
-        Map<String, Integer> D4Map = new HashMap<String, Integer>();
+    /*
+    method to retrieve value from data base for D4dashboard
+    */
+    public Map<String, Integer> getVehicleCountD4(String Year, String RoadType) throws SQLException {
+        Connection D4Connection = DB.getConnection(); // Creating a connection with the database to retrieve data
+        Map<String, Integer> D4Map = new HashMap<String, Integer>(); // Creating a map to store values 
         String D4MajorRoadQuery = "SELECT SUM(pedal_cycles) AS PedalCycles, "
                 + " SUM(two_wheeled_motor_vehicles) AS TwoWheel, "
                 + " SUM(cars_and_taxis) AS CarsTaxis, "
@@ -6219,8 +6200,8 @@ public class HomePage extends JFrame {
         Statement D4Statement = null;
         try {
                 D4Statement = D4Connection.createStatement();
-                D4RS = D4Statement.executeQuery(D4MajorRoadQuery);
-                while (D4RS.next()) {
+                D4RS = D4Statement.executeQuery(D4MajorRoadQuery); // Executing the above query
+                while (D4RS.next()) { // Iterating through created result set to fetch column values that were retrieved from the database
                     D4Map.put("Pedal Cycles", D4RS.getInt("PedalCycles"));
                     D4Map.put("Two Wheel Motor Vehicles", D4RS.getInt("TwoWheel"));
                     D4Map.put("Cars and Taxis", D4RS.getInt("CarsTaxis"));
@@ -6231,10 +6212,95 @@ public class HomePage extends JFrame {
             } catch (Exception D4E) {
                 System.out.println("Error reading vehicle data." + D4E.getMessage());
             } finally {
-                D4Statement.close();
+                D4Statement.close(); 
             }
         return D4Map;
 }
+    /*
+    Method to load values of Vehicle Type, Road Type and Year based on GUI checkbox and dropdown,
+    user selection, preparing for when the chart will be repainted
+    */
+    private PieDataset D4LoadCheckboxValuesIntoChart() {
+        String D4RoadDropdown = D4RoadChoice.getSelectedItem().toString(); // Fetching the Road Type value from GUI user selection
+          System.out.println(D4RoadDropdown);
+          
+          String D4YearChoice = D4YearDropdown.getSelectedItem().toString(); // Fetching the Year value from GUI user selection
+          System.out.println(D4YearChoice);
+          
+          String CarTaxi = "";
+          String BusCoach = "";
+          String TwoWheelers = "";
+          String Pedals = "";
+          String HGVS = "";
+          String LGVS = "";
+          //Populating Vehicle Type checkbox values based on user selection within the GUI
+          if (D4CarTaxiCheckbox.isSelected()) {
+              CarTaxi = D4CarTaxiCheckbox.getText();
+          }
+          if (D4BusCoachCheckbox.isSelected()) {
+              BusCoach = D4BusCoachCheckbox.getText();
+          }
+          
+          if (D4TwoWheelCheckbox.isSelected()) {
+              TwoWheelers = D4TwoWheelCheckbox.getText();
+          }
+          
+          if (D4PedalCheckbox.isSelected()) {
+              Pedals = D4PedalCheckbox.getText();
+          }
+          
+          if (D4HeavyVehicCheckbox.isSelected()) {
+              HGVS = D4HeavyVehicCheckbox.getText();
+          }
+          
+          if (D4LargeGoodsCheckbox.isSelected()) {
+              LGVS = D4LargeGoodsCheckbox.getText();
+          }
+          
+          
+          Map<String, Integer> D4DataMap = null;
+        try {
+            
+         D4DataMap = getVehicleCountD4(D4YearChoice,D4RoadDropdown);// Getting the Vehicle Type values from database
+            
+        } catch (SQLException ex) {
+            System.out.println("SQL Error found");
+        }
+        
+        DefaultPieDataset D4Dataset = new DefaultPieDataset();
+        // Preparing a data set that loads values of the chart based on user checbox selection within the GUI
+        if (CarTaxi != null && !CarTaxi.isEmpty()) {
+            D4Dataset.setValue("Cars and Taxis", D4DataMap.get("Cars and Taxis")); 
+            System.out.println("Car taxi data :: "+CarTaxi);
+        }
+        if (BusCoach != null && !BusCoach.isEmpty()) {
+            D4Dataset.setValue("Buses and Coaches", D4DataMap.get("Buses and Coaches")); 
+            System.out.println("Bus and Coach data :: " + BusCoach);
+        }
+        if (TwoWheelers != null && !TwoWheelers.isEmpty()) {
+            D4Dataset.setValue("Two Wheel Motor Vehicles", D4DataMap.get("Two Wheel Motor Vehicles")); 
+            System.out.println("Two Wheeler data :: " + TwoWheelers);
+        }
+        if ( HGVS!= null && !HGVS.isEmpty()) {
+            D4Dataset.setValue("Heavy Goods Vehicles", D4DataMap.get("Heavy Goods Vehicles")); 
+            System.out.println("Heavy Goods Vehicle data :: " + TwoWheelers);
+        }
+        if (Pedals != null && !Pedals.isEmpty()) {
+            D4Dataset.setValue("Pedal Cycles", D4DataMap.get("Pedal Cycles")); 
+            System.out.println("Pedal Cycle data :: " + TwoWheelers);
+        }
+        if ( LGVS!= null && !LGVS.isEmpty()) {
+            D4Dataset.setValue("Large Goods Vehicles", D4DataMap.get("Large Goods Vehicles")); 
+            System.out.println("Large Goods Vehicle data :: " + TwoWheelers);
+        }
+        
+        return D4Dataset;
+    }
+    
+    
+    
+    
+    
     public CategoryDataset createDashboard1DataSet ( ){
         DefaultCategoryDataset db1Dataset = new DefaultCategoryDataset();
         db1Dataset.addValue(10, "A199", "2005"); //Count, Road Name, Year
@@ -6249,11 +6315,11 @@ public class HomePage extends JFrame {
         DefaultPieDataset D4Dataset = new DefaultPieDataset();
         D4Panel.removeAll();
         D4Panel.revalidate();
-        JFreeChart d4Chart = createD4PieChart(D4Dataset);
-        d4Chart.removeLegend();
-        ChartPanel newD4Panel = new ChartPanel(d4Chart);
+        JPanel d4Chart = createD4PieChart(D4Dataset);
+       // d4Chart.removeLegend();
+        //ChartPanel newD4Panel = new ChartPanel(d4Chart);
         D4Panel.setLayout(new BorderLayout());
-        D4Panel.add(newD4Panel);
+        //D4Panel.add(newD4Panel);
         D4Panel.repaint();
         
     }
