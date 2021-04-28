@@ -31,6 +31,8 @@ import org.jfree.data.general.DatasetChangeListener;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
+import org.jfree.ui.ApplicationFrame;
+import org.jfree.ui.RefineryUtilities;
 
 public class HomePage extends JFrame {
 
@@ -72,6 +74,7 @@ public class HomePage extends JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        choice1 = new java.awt.Choice();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -189,6 +192,8 @@ public class HomePage extends JFrame {
         ResetButtonDashboard2 = new javax.swing.JButton();
         DescriptionLabelDashboard2 = new javax.swing.JLabel();
         DashboardPanel_3 = new javax.swing.JPanel();
+        D3PanelMain = new javax.swing.JPanel();
+        D3PanelNav = new javax.swing.JPanel();
         DashboardPanel_4 = new javax.swing.JPanel();
         D4PanelMain = new javax.swing.JPanel();
         D4PanelFilters = new javax.swing.JPanel();
@@ -2370,20 +2375,56 @@ public class HomePage extends JFrame {
                 .addContainerGap(2, Short.MAX_VALUE))
         );
 
-        DashboardPanel_3.setBackground(new java.awt.Color(52, 235, 162));
+        DashboardPanel_3.setBackground(new java.awt.Color(208, 239, 255));
         DashboardPanel_3.setMaximumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_3.setMinimumSize(new java.awt.Dimension(836, 500));
         DashboardPanel_3.setPreferredSize(new java.awt.Dimension(836, 500));
+
+        D3PanelMain.setPreferredSize(new java.awt.Dimension(813, 370));
+
+        javax.swing.GroupLayout D3PanelMainLayout = new javax.swing.GroupLayout(D3PanelMain);
+        D3PanelMain.setLayout(D3PanelMainLayout);
+        D3PanelMainLayout.setHorizontalGroup(
+            D3PanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 813, Short.MAX_VALUE)
+        );
+        D3PanelMainLayout.setVerticalGroup(
+            D3PanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 370, Short.MAX_VALUE)
+        );
+
+        D3PanelNav.setPreferredSize(new java.awt.Dimension(802, 111));
+
+        javax.swing.GroupLayout D3PanelNavLayout = new javax.swing.GroupLayout(D3PanelNav);
+        D3PanelNav.setLayout(D3PanelNavLayout);
+        D3PanelNavLayout.setHorizontalGroup(
+            D3PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 813, Short.MAX_VALUE)
+        );
+        D3PanelNavLayout.setVerticalGroup(
+            D3PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout DashboardPanel_3Layout = new javax.swing.GroupLayout(DashboardPanel_3);
         DashboardPanel_3.setLayout(DashboardPanel_3Layout);
         DashboardPanel_3Layout.setHorizontalGroup(
             DashboardPanel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(DashboardPanel_3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(DashboardPanel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(D3PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(D3PanelNav, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         DashboardPanel_3Layout.setVerticalGroup(
             DashboardPanel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(DashboardPanel_3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(D3PanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(D3PanelNav, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         DashboardPanel_4.setBackground(new java.awt.Color(208, 239, 255));
@@ -5772,6 +5813,8 @@ public class HomePage extends JFrame {
     private java.awt.Label BarTitleYas8;
     private javax.swing.JPanel ChartAreaYas;
     private javax.swing.JButton CompVehsAll;
+    private javax.swing.JPanel D3PanelMain;
+    private javax.swing.JPanel D3PanelNav;
     private javax.swing.JCheckBox D4BusCoachCheckbox;
     private javax.swing.JCheckBox D4CarTaxiCheckbox;
     private javax.swing.JButton D4ExecuteButton;
@@ -5902,6 +5945,7 @@ public class HomePage extends JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private java.awt.Choice choice1;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton confirmButton;
     private javax.swing.JButton deleteUserButton;
@@ -6227,7 +6271,7 @@ public class HomePage extends JFrame {
     }
     
     /*public class SouthComboDB1 extends DashboardPanel_1 implements ActionListener {
-        String[] SYear = { "Year", "2000", "2001", "2002", "2003", "2004", "2005",
+        String[] SYea r = { "Year", "2000", "2001", "2002", "2003", "2004", "2005",
             "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", 
             "2015", "2016", "2017", "2018", "2019"
         };
@@ -6238,4 +6282,65 @@ public class HomePage extends JFrame {
     SouthComboDB1.setSelectedIndex(4);
     SouthComboDB1.addActionListener(this);
     }*/
-}
+
+    // Sefa Line Chart
+
+    private static class D3Panel {
+
+        public D3Panel() {
+        }
+    }
+
+    private static class DashboardPanel_3 {
+
+        public DashboardPanel_3() {
+        }
+    }
+   
+    
+    // line chart creation (sefa)
+    
+
+  public class LineChart extends D3Panel {
+
+   public LineChart( String applicationTitle , String LineChart ) {
+
+       String chartTitle = null;
+      JFreeChart lineChart = ChartFactory.createLineChart(
+         chartTitle,
+         "Years","Number of Schools",
+         createDataset(),
+         PlotOrientation.VERTICAL,
+         true,true,false);
+         
+      ChartPanel chartPanel = new ChartPanel( lineChart );
+      chartPanel.setPreferredSize( new java.awt.Dimension( 560 , 367 ) );
+      setContentPanel( chartPanel );
+   }
+
+   private DefaultCategoryDataset createDataset( ) {
+      DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
+      dataset.addValue( 15 , "Vehicles" , "1970" );
+      dataset.addValue( 30 , "Vehicles" , "1980" );
+      dataset.addValue( 60 , "Vehicles" ,  "1990" );
+      dataset.addValue( 120 , "Vehicles" , "2000" );
+      dataset.addValue( 240 , "Vehicles" , "2010" );
+      dataset.addValue( 300 , "Vehicles" , "2014" );
+      return dataset;
+   
+
+   }
+
+        private void setContentPanel(ChartPanel chartPanel) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+  
+  
+
+        }
+  
+ 
+ 
+   
+

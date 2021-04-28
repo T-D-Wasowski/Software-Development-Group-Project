@@ -46,7 +46,7 @@ public class TrafficController {
             
             try {
                 
-                String sql = "SELECT road_type FROM Road";        //remove everything past WHERE to collect all the data and not just for a specific id
+                String sql = "SELECT road_type FROM Road";       //remove everything past WHERE to collect all the data and not just for a specific id
                 //"SELECT pedal_cycles, two_wheeled_motor_vehicles, cars_and_taxis, buses_and_coaches, lgvs, all_hgvs, MAX(all_motor_vehicles)\n"
                 dataset = new JDBCCategoryDataset(connection, sql);
                 
@@ -94,6 +94,7 @@ public class TrafficController {
             ChartPanelD2.setSize(400, 300);
             */
             }
+    
     
     public void insertDataIntoTables() {
 
