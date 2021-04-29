@@ -19,7 +19,6 @@ dataverse\LoginPage.class
 dataverse\HomePage$60.class
 dataverse\LoginPage$1.class
 dataverse\HomePage$40.class
-dataverse\HomePage$D3Panel.class
 dataverse\HomePage$26.class
 dataverse\LoginPage$6.class
 dataverse\HomePage$46.class
@@ -125,9 +124,9 @@ dataverse\HomePage$102.class
 dataverse\LoginPage$2.class
 dataverse\User.class
 dataverse\HomePage$125.class
-dataverse\HomePage$DashboardPanel_3.class
 dataverse\HomePage$59.class
 dataverse\HomePage$41.class
+dataverse\HomePage$223.class
 dataverse\HomePage$83.class
 dataverse\HomePage$10.class
 dataverse\HomePage$30.class
@@ -194,7 +193,6 @@ dataverse\UserDatabase.class
 dataverse\HomePage$157.class
 dataverse\HomePage$117.class
 dataverse\HomePage$96.class
-dataverse\HomePage$LineChart.class
 dataverse\HomePage$145.class
 dataverse\HomePage$185.class
 dataverse\HomePage$215.class

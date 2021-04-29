@@ -3342,7 +3342,7 @@ public class HomePage extends JFrame {
         //TrafficController.getDefaultYas();
     }//GEN-LAST:event_Dashboard1ActionPerformed
 
-    public JFreeChart drawDefaultYas(){
+    public JFreeChart drawDefaultYas(){ //Chart that loads up on default after logging in, this is also the all vehicles travelling per year chart.
         ChartAreaYas.repaint();
         ChartAreaYas.revalidate();
         Connection DefYas = DB.getConnection();
@@ -3350,19 +3350,19 @@ public class HomePage extends JFrame {
         JDBCCategoryDataset defDataYas = null;
         
         try {
-           
+           //My query 
             String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs \n" +
                 "From Traffic_Volume AS TV\n" +
                 "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
                 "JOIN Road AS RD ON RD.road_name = CPC.road_name \n" +
                 "GROUP BY CPC.road_name";
             
-            defDataYas = new JDBCCategoryDataset(DefYas, sql);
+            defDataYas = new JDBCCategoryDataset(DefYas, sql); //The dataset
             
             System.out.println("Dataset Columns and Rows : " + defDataYas.getColumnCount() + " " + defDataYas.getRowCount());
             
         
-        } catch (SQLException ex) {
+        } catch (SQLException ex) { //Try and catch method
             System.out.println("SQLException: " + ex.getMessage());        
         } finally {
             if (StYas != null){
@@ -3384,10 +3384,10 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setSize(813,370);
         dashboard1ChartPanel.setVisible(true);*/
         
-        
+        //Chart features
         JFreeChart DB1chart = ChartFactory.createBarChart("Total Number of Vehicles Per Road", 
                 "Road Name", "Total Vehicle Amount", defDataYas, PlotOrientation.VERTICAL, false, true, false);
-        DB1chart.setBackgroundPaint(Color.white);
+        DB1chart.setBackgroundPaint(new Color(208,239,255)); //Ensuring the chart colour background is following the GUI colour scheme.
         DB1chart.getTitle().setPaint(Color.blue);
         
         CategoryPlot DFY = DB1chart.getCategoryPlot();
@@ -3402,9 +3402,9 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setSize(813,370);
         dashboard1ChartPanel.setVisible(true);*/
         
-        ChartPanel chartAreaF = new ChartPanel(DB1chart);
+        ChartPanel chartAreaF = new ChartPanel(DB1chart); //Ensuring the chart uses correct size to be disaplayed
         chartAreaF.setChart(DB1chart);
-        chartAreaF.setSize(813,370);
+        chartAreaF.setSize(843,370);
         ChartAreaYas.setAlignmentX(CENTER_ALIGNMENT);
         chartAreaF.setVisible(true);
         ChartAreaYas.add(chartAreaF);
@@ -3418,9 +3418,9 @@ public class HomePage extends JFrame {
         
         
     }    
-    public JFreeChart drawDB1Yas(int year, String direction){
-        ChartAreaYas.repaint();
-        ChartAreaYas.revalidate();
+    public JFreeChart drawDB1Yas(int year, String direction){ //Chart generator to show vehicles travelling specific direction and year using year and direction as parameters
+        ChartAreaYas.repaint(); //Repaints the chartarea to replace 
+        ChartAreaYas.revalidate(); //Revalidates the chart area
         Connection DefYas = DB.getConnection();
         Statement StYas = null;
         JDBCCategoryDataset Edit = null;
@@ -3428,7 +3428,7 @@ public class HomePage extends JFrame {
         //TCYAS.draw2KNorthYas(year, direction);
         
         try {
-           
+           //My query used to take the data I need for my charts
             String sql = "select CPC.road_name, sum(TV.all_motor_vehicles) AS Number_Of_Vehs, CPC.the_year, TV.direction_of_travel \n"+
                     "From Traffic_Volume AS TV \n" +
                     "JOIN Count_Point AS CPC ON TV.count_point_id = CPC.count_point_id\n" +
@@ -3436,11 +3436,11 @@ public class HomePage extends JFrame {
                     "WHERE CPC.the_year = " + year + " AND TV.direction_of_travel = '" + direction + "' \n"+
                     "GROUP BY CPC.road_name";
 
-            Edit = new JDBCCategoryDataset(DefYas, sql);
+            Edit = new JDBCCategoryDataset(DefYas, sql); //The dataset used for this
             
             System.out.println("Dataset Columns and Rows : " + Edit.getColumnCount() + " " + Edit.getRowCount());
             
-        
+        //Try and catch statements for error catching
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());        
         } finally {
@@ -3464,10 +3464,10 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setVisible(true);*/
         
         
-        
+        //My chart features
         JFreeChart DB1chart = ChartFactory.createBarChart("Total Vehicles Per Road", 
                 "Road Name", "Total Vehicle Amount", Edit, PlotOrientation.VERTICAL, false, true, false);
-        DB1chart.setBackgroundPaint(Color.white);
+        DB1chart.setBackgroundPaint(new Color(208,239,255)); //Chart colour following the colour scheme
         DB1chart.getTitle().setPaint(Color.blue);
         
         CategoryPlot DFY = DB1chart.getCategoryPlot();
@@ -3483,9 +3483,9 @@ public class HomePage extends JFrame {
         dashboard1ChartPanel.setSize(813,370);
         dashboard1ChartPanel.setVisible(true);*/
         
-        ChartPanel chartAreaF = new ChartPanel(DB1chart);
+        ChartPanel chartAreaF = new ChartPanel(DB1chart); //Code enssuring the chart is the correct size.
         chartAreaF.setChart(DB1chart);
-        chartAreaF.setSize(813,370);
+        chartAreaF.setSize(843,370);
         ChartAreaYas.setAlignmentX(CENTER_ALIGNMENT);
         chartAreaF.setVisible(true);
         ChartAreaYas.add(chartAreaF);
@@ -4879,14 +4879,14 @@ public class HomePage extends JFrame {
     }//GEN-LAST:event_WesZZeroActionPerformed
 
     private void WesZOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZOneActionPerformed
-        ChartAreaYas.removeAll();
-        ChartAreaYas.repaint();
-        ChartAreaYas.revalidate();
-        System.out.println("Total vehicles travelling West on each road during the Year 2001");
+        ChartAreaYas.removeAll(); //Removes all the current elements in the chart
+        ChartAreaYas.repaint(); //Repaints the elements in the chart
+        ChartAreaYas.revalidate(); //Validates to make sure everything is fine
+        System.out.println("Total vehicles travelling West on each road during the Year 2001"); //Prints out the selected option in the console.
         
-        int year = 2001; 
-        String direction = "W";
-        drawDB1Yas(year, direction);
+        int year = 2001; //The year used to be generated
+        String direction = "W"; //The direction used to be generated 
+        drawDB1Yas(year, direction); //The parameter takes the chart generation code and enters the above for parameters.
     }//GEN-LAST:event_WesZOneActionPerformed
 
     private void WesZTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WesZTwoActionPerformed
