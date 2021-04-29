@@ -45,6 +45,7 @@ public class HomePage extends JFrame {
 
     Boolean editBool = false;
     Boolean deleteBool = false;
+    private Object linechart;
 
     public HomePage() {
         initComponents();
@@ -194,6 +195,7 @@ public class HomePage extends JFrame {
         DashboardPanel_3 = new javax.swing.JPanel();
         D3PanelMain = new javax.swing.JPanel();
         D3PanelNav = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         DashboardPanel_4 = new javax.swing.JPanel();
         D4PanelMain = new javax.swing.JPanel();
         D4PanelFilters = new javax.swing.JPanel();
@@ -572,7 +574,7 @@ public class HomePage extends JFrame {
                     .addComponent(SouZSeven)
                     .addComponent(SouZEight)
                     .addComponent(SouZNine))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("South 2000s", South2000sButtons);
@@ -800,7 +802,7 @@ public class HomePage extends JFrame {
                     .addComponent(SouTSeven)
                     .addComponent(SouTEight)
                     .addComponent(SouTNine))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("South 2010s", South2010sButtons);
@@ -1028,7 +1030,7 @@ public class HomePage extends JFrame {
                     .addComponent(WesZSeven)
                     .addComponent(WesZEight)
                     .addComponent(WesZNine))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("West 2000s", West2000sButtons);
@@ -1256,7 +1258,7 @@ public class HomePage extends JFrame {
                     .addComponent(WesTSeven)
                     .addComponent(WesTEight)
                     .addComponent(WesTNine))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("West 2010s", West2010sButtons);
@@ -1483,7 +1485,7 @@ public class HomePage extends JFrame {
                     .addComponent(NouZSeven)
                     .addComponent(NouZEight)
                     .addComponent(NouZNine))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("North 2000s", North2000sButtons);
@@ -1710,7 +1712,7 @@ public class HomePage extends JFrame {
                     .addComponent(NouTSeven)
                     .addComponent(NouTEight)
                     .addComponent(NouTNine))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("North 2010s", North2010sButtons);
@@ -1938,7 +1940,7 @@ public class HomePage extends JFrame {
                     .addComponent(EasZSeven)
                     .addComponent(EasZEight)
                     .addComponent(EasZNine))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("East 2000s", East2000sButtons);
@@ -2166,7 +2168,7 @@ public class HomePage extends JFrame {
                     .addComponent(EasTSeven)
                     .addComponent(EasTEight)
                     .addComponent(EasTNine))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("East 2010s", East2010sButtons);
@@ -2394,15 +2396,28 @@ public class HomePage extends JFrame {
 
         D3PanelNav.setPreferredSize(new java.awt.Dimension(802, 111));
 
+        jButton1.setText("BarChart");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout D3PanelNavLayout = new javax.swing.GroupLayout(D3PanelNav);
         D3PanelNav.setLayout(D3PanelNavLayout);
         D3PanelNavLayout.setHorizontalGroup(
             D3PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 813, Short.MAX_VALUE)
+            .addGroup(D3PanelNavLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jButton1)
+                .addContainerGap(703, Short.MAX_VALUE))
         );
         D3PanelNavLayout.setVerticalGroup(
             D3PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(D3PanelNavLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jButton1)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DashboardPanel_3Layout = new javax.swing.GroupLayout(DashboardPanel_3);
@@ -2535,7 +2550,7 @@ public class HomePage extends JFrame {
                         .addComponent(jLabel11)
                         .addGap(46, 46, 46)
                         .addComponent(D4YearLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(D4CarTaxiCheckbox)
                 .addGap(18, 18, 18)
                 .addGroup(D4PanelFiltersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2589,8 +2604,8 @@ public class HomePage extends JFrame {
             .addGroup(DashboardPanel_4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(DashboardPanel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(D4PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
-                    .addComponent(D4PanelFilters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE))
+                    .addComponent(D4PanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
+                    .addComponent(D4PanelFilters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE))
                 .addContainerGap())
         );
         DashboardPanel_4Layout.setVerticalGroup(
@@ -5478,6 +5493,12 @@ public class HomePage extends JFrame {
         drawDB1Yas(year, direction);
     }//GEN-LAST:event_EasTNineActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+ 
+      
+      
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     
     public void createBar() {
         //TrafficController.getYas();
@@ -5931,6 +5952,7 @@ public class HomePage extends JFrame {
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JButton editUserButton;
     private javax.swing.JPanel filtersPanelDashboard2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -6350,63 +6372,56 @@ public class HomePage extends JFrame {
     }*/
 
     // Sefa Line Chart
-
-    private static class D3Panel {
-
-        public D3Panel() {
-        }
-    }
-
-    private static class DashboardPanel_3 {
-
-        public DashboardPanel_3() {
-        }
-    }
-   
-    
-    // line chart creation (sefa)
     
 
-  public class LineChart extends D3Panel {
 
-   public LineChart( String applicationTitle , String LineChart ) {
+//public class BarChart {
+//public static void main(String[] args) {
+		//TODO: Add code to generate PDFs with charts
+	}
 
-       String chartTitle = null;
-      JFreeChart lineChart = ChartFactory.createLineChart(
-         chartTitle,
-         "Years","Number of Schools",
-         createDataset(),
-         PlotOrientation.VERTICAL,
-         true,true,false);
-         
-      ChartPanel chartPanel = new ChartPanel( lineChart );
-      chartPanel.setPreferredSize( new java.awt.Dimension( 560 , 367 ) );
-      setContentPanel( chartPanel );
-   }
+	//public static JFreeChart generateBarChart() {
+		//DefaultPieDataset dataSet = new DefaultPieDataset();
+		//dataSet.setValue("2000", 19.64);
+		//dataSet.setValue("2001", 17.3);
+		//dataSet.setValue("2002", 4.54);
+		//dataSet.setValue("2003", 3.4);
+		//dataSet.setValue("2004", 2.83);
+		//dataSet.setValue("2005", 2.48);
+		//dataSet.setValue("2006", 2.38);
+                //dataSet.setValue("2007", 2.38);
+                //dataSet.setValue("2008", 2.38);
+                //dataSet.setValue("2009", 2.38);
+                //dataSet.setValue("2010", 2.38);
+                //dataSet.setValue("2010", 2.38);
+                //dataSet.setValue("2011", 2.38);
+                //dataSet.setValue("2012", 2.38);
+                //dataSet.setValue("2013", 2.38);
+                //dataSet.setValue("2014", 2.38);
+                //dataSet.setValue("2015", 2.38);
+                //dataSet.setValue("2016", 2.38);
+                //dataSet.setValue("2017", 2.38);
+                //dataSet.setValue("2018", 2.38);
+                //dataSet.setValue("2019", 2.38);
+            
 
-   private DefaultCategoryDataset createDataset( ) {
-      DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
-      dataset.addValue( 15 , "Vehicles" , "1970" );
-      dataset.addValue( 30 , "Vehicles" , "1980" );
-      dataset.addValue( 60 , "Vehicles" ,  "1990" );
-      dataset.addValue( 120 , "Vehicles" , "2000" );
-      dataset.addValue( 240 , "Vehicles" , "2010" );
-      dataset.addValue( 300 , "Vehicles" , "2014" );
-      return dataset;
-   
+		//JFreeChart chart = ChartFactory.createPieChart(
+				//"Total Number Of Vehicles Per Year", dataSet, true, true, false);
 
-   }
+		//return chart;
+	//}
 
-        private void setContentPanel(ChartPanel chartPanel) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
-  
-  
+	//public static JFreeChart generateBarChart() {
+		//DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
+		//dataSet.setValue("Year", "2000");
+		//dataSet.setValue("Year", "2001 ");
+		//dataSet.setValue("3", "Year", "1850 ");
+		//dataSet.setValue("4", "Year", "1900 ");
+		//dataSet.setValue("5", "Year", "1950 ");
+		//dataSet.setValue("6", "Year", "2000 ");
 
-        }
-  
- 
- 
-   
+		//JFreeChart chart = ChartFactory.createBarChart(
+				//"Total Number of vehicles Per Year", "Year", "Numbers",
+				//dataSet, PlotOrientation.VERTICAL, false, true, false);
 
+		//return chart;
