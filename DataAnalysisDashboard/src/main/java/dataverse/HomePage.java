@@ -195,7 +195,6 @@ public class HomePage extends JFrame {
         DashboardPanel_3 = new javax.swing.JPanel();
         D3PanelMain = new javax.swing.JPanel();
         D3PanelNav = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         DashboardPanel_4 = new javax.swing.JPanel();
         D4PanelMain = new javax.swing.JPanel();
         D4PanelFilters = new javax.swing.JPanel();
@@ -2396,28 +2395,15 @@ public class HomePage extends JFrame {
 
         D3PanelNav.setPreferredSize(new java.awt.Dimension(802, 111));
 
-        jButton1.setText("BarChart");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout D3PanelNavLayout = new javax.swing.GroupLayout(D3PanelNav);
         D3PanelNav.setLayout(D3PanelNavLayout);
         D3PanelNavLayout.setHorizontalGroup(
             D3PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(D3PanelNavLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jButton1)
-                .addContainerGap(703, Short.MAX_VALUE))
+            .addGap(0, 813, Short.MAX_VALUE)
         );
         D3PanelNavLayout.setVerticalGroup(
             D3PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(D3PanelNavLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jButton1)
-                .addContainerGap(39, Short.MAX_VALUE))
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout DashboardPanel_3Layout = new javax.swing.GroupLayout(DashboardPanel_3);
@@ -3296,8 +3282,6 @@ public class HomePage extends JFrame {
         DashboardPanel_4.setVisible(false);
         AdminPanel.setVisible(false);
         DashboardPanel_3.setVisible(true);       //add one panel
-
-
     }//GEN-LAST:event_Dashboard3ActionPerformed
 
     private void Dashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard2ActionPerformed
@@ -5493,12 +5477,6 @@ public class HomePage extends JFrame {
         drawDB1Yas(year, direction);
     }//GEN-LAST:event_EasTNineActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- 
-      
-      
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     
     public void createBar() {
         //TrafficController.getYas();
@@ -5952,7 +5930,6 @@ public class HomePage extends JFrame {
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JButton editUserButton;
     private javax.swing.JPanel filtersPanelDashboard2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -6371,57 +6348,100 @@ public class HomePage extends JFrame {
     SouthComboDB1.addActionListener(this);
     }*/
 
-    // Sefa Line Chart
+    private static class defaultCategoryDataset extends DefaultCategoryDataset {
+
+        public defaultCategoryDataset() {
+        }
+    }
+
+    private static class dataSet {
+
+        public dataSet() {
+        }
+    }
+
+}
+    
+    
+    
+    // Sefa bar  Chart
     
 
 
-//public class BarChart {
-//public static void main(String[] args) {
-		//TODO: Add code to generate PDFs with charts
+    public class BarChart {
+    public static void main(String[] args) {
+
 	}
 
-	//public static JFreeChart generateBarChart() {
-		//DefaultPieDataset dataSet = new DefaultPieDataset();
-		//dataSet.setValue("2000", 19.64);
-		//dataSet.setValue("2001", 17.3);
-		//dataSet.setValue("2002", 4.54);
-		//dataSet.setValue("2003", 3.4);
-		//dataSet.setValue("2004", 2.83);
-		//dataSet.setValue("2005", 2.48);
-		//dataSet.setValue("2006", 2.38);
-                //dataSet.setValue("2007", 2.38);
-                //dataSet.setValue("2008", 2.38);
-                //dataSet.setValue("2009", 2.38);
-                //dataSet.setValue("2010", 2.38);
-                //dataSet.setValue("2010", 2.38);
-                //dataSet.setValue("2011", 2.38);
-                //dataSet.setValue("2012", 2.38);
-                //dataSet.setValue("2013", 2.38);
-                //dataSet.setValue("2014", 2.38);
-                //dataSet.setValue("2015", 2.38);
-                //dataSet.setValue("2016", 2.38);
-                //dataSet.setValue("2017", 2.38);
-                //dataSet.setValue("2018", 2.38);
-                //dataSet.setValue("2019", 2.38);
+        /**
+         *
+         * @return
+         */
+        public static JFreeChart generateBarChart() {
+            
+		DefaultBarChartDataset dataSet = new D3PanelMain();
+		dataSet.setValue("2000", 324);
+		dataSet.setValue("2001", 216);
+		dataSet.setValue("2002", 216);
+		dataSet.setValue("2003" ,312);
+		dataSet.setValue("2004", 576);
+		dataSet.setValue("2005", 420);
+		dataSet.setValue("2006", 407);
+                dataSet.setValue("2007", 384);
+                dataSet.setValue("2008", 528);
+                dataSet.setValue("2009", 528);
+                dataSet.setValue("2010", 240);
+                dataSet.setValue("2011", 288);
+                dataSet.setValue("2012", 360);
+                dataSet.setValue("2013", 264);
+                dataSet.setValue("2014", 167);
+                dataSet.setValue("2015", 120);
+                dataSet.setValue("2016", 264);
+                dataSet.setValue("2017", 264);
+                dataSet.setValue("2018", 336);
+                dataSet.setValue("2019", 312);
             
 
-		//JFreeChart chart = ChartFactory.createPieChart(
-				//"Total Number Of Vehicles Per Year", dataSet, true, true, false);
+		JFreeChart chart = ChartFactory.D3PanelMain(
+				"Total Number Of Vehicles Per Year", dataSet, true, true, false);
 
-		//return chart;
-	//}
+		return chart;
+	
+        }
 
-	//public static JFreeChart generateBarChart() {
-		//DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
-		//dataSet.setValue("Year", "2000");
-		//dataSet.setValue("Year", "2001 ");
-		//dataSet.setValue("3", "Year", "1850 ");
-		//dataSet.setValue("4", "Year", "1900 ");
-		//dataSet.setValue("5", "Year", "1950 ");
-		//dataSet.setValue("6", "Year", "2000 ");
+               public static JFreeChart D3PanelMain() {
+               
+		DefaultCategoryDataset dataSet = new D3PanelMain();
+		dataSet.setValue("Year", "2000");
+		dataSet.setValue("Year", "2019 ");
+                dataSet.setValue("2000", 324);
+		dataSet.setValue("2001", 216);
+		dataSet.setValue("2002", 216);
+		dataSet.setValue("2003" ,312);
+		dataSet.setValue("2004", 576);
+		dataSet.setValue("2005", 420);
+		dataSet.setValue("2006", 407);
+                dataSet.setValue("2007", 384);
+                dataSet.setValue("2008", 528);
+                dataSet.setValue("2009", 528);
+                dataSet.setValue("2010", 240);
+                dataSet.setValue("2011", 288);
+                dataSet.setValue("2012", 360);
+                dataSet.setValue("2013", 264);
+                dataSet.setValue("2014", 167);
+                dataSet.setValue("2015", 120);
+                dataSet.setValue("2016", 264);
+                dataSet.setValue("2017", 264);
+                dataSet.setValue("2018", 336);
+                dataSet.setValue("2019", 312);
 
-		//JFreeChart chart = ChartFactory.createBarChart(
-				//"Total Number of vehicles Per Year", "Year", "Numbers",
-				//dataSet, PlotOrientation.VERTICAL, false, true, false);
+		JFreeChart chart = D3PanelMain.createBarChart(
+				"Total Number of vehicles Per Year", "Year", "Numbers",
+				dataSet, PlotOrientation.VERTICAL, false, true, false);
 
-		//return chart;
+		return dataset;
+                BarChart.setVisible(true);
+  }  
+}
+
+    
